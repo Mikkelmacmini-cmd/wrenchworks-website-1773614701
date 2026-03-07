@@ -52,12 +52,14 @@ body {
 }
 .brand {
   text-decoration: none;
-  color: var(--text);
-  font-size: 1.02rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
 }
-.brand span { color: var(--gold); }
+.brand img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
 
 .top-nav {
   display: flex;
@@ -521,4 +523,5 @@ body {
   .nav-cta { display: none; }
   .template-track img { width: 180px; height: 112px; }
   .service-row { grid-template-columns: 1fr; }
+  .brand img { height: 34px; }
 }

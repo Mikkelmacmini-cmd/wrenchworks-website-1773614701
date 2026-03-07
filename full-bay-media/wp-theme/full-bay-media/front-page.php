@@ -11,7 +11,9 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="/" class="brand">Full Bay <span>Media</span></a>
+    <a href="/" class="brand" aria-label="Full Bay Media home">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/full-bay-media-logo.png'); ?>" alt="Full Bay Media logo">
+    </a>
     <div class="top-nav">
       <a href="#contact" class="btn btn-primary nav-cta">Book Audit</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
