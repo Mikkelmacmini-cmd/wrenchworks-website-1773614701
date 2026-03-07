@@ -254,6 +254,19 @@ body {
   gap: 1.2rem;
   align-items: center;
 }
+.split-grid.reverse .image-wrap { order: 2; }
+.split-grid.reverse .split-copy { order: 1; }
+.inline-image {
+  margin-top: 2rem;
+}
+.inline-image img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 7;
+}
 .image-wrap img {
   width: 100%;
   border-radius: 20px;

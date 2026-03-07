@@ -87,11 +87,23 @@
       <figure><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1400&q=80" alt="Mechanic working under vehicle" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1400&q=80" alt="Clean automotive service environment" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=80" alt="Automotive tools and precision work" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80" alt="Consultant and business owner reviewing plans on laptop" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Professional discussing business strategy with client" loading="lazy"></figure>
-      <figure><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80" alt="Shop owner and advisor working together at computer" loading="lazy"></figure>
     </div>
     <p style="text-align:center;margin-top:1.2rem;"><a href="#contact" class="btn btn-primary">Build My Shop Website</a></p>
+  </div>
+</section>
+
+<section class="section image-split">
+  <div class="container split-grid reverse">
+    <div class="image-wrap">
+      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1600&q=80" alt="Consultant and shop owner reviewing a website on laptop" loading="lazy">
+    </div>
+    <div class="split-copy">
+      <h2>Clear strategy with your shop owner, not generic agency fluff.</h2>
+      <p class="section-intro" style="text-align:left;margin-left:0;">We sit down, review your goals, and build the exact web, SEO, and GBP plan your shop needs to win locally.</p>
+      <div class="hero-cta" style="justify-content:flex-start;">
+        <a href="#contact" class="btn btn-primary">Plan My Growth System</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -119,6 +131,10 @@
   <div class="container">
     <h2>How we work</h2>
     <p class="section-intro">A straightforward process that respects your time and keeps momentum high.</p>
+
+    <div class="inline-image">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80" alt="Advisor and business owner collaborating on a marketing plan" loading="lazy">
+    </div>
 
     <div class="process">
       <div class="step"><b>01 / Audit</b>Website, SEO, GBP, and review baseline.</div>
