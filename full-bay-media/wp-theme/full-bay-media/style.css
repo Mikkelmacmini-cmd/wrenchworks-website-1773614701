@@ -68,7 +68,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1.35rem;
-  padding-top: 34px;
+  padding-top: 72px;
 }
 .menu-toggle {
   width: 40px;
@@ -537,7 +537,7 @@ body {
   .template-track img { width: 180px; height: 112px; }
   .service-row { grid-template-columns: 1fr; }
   .header-inner { min-height: 0; padding-top: 0; }
-  .top-nav { gap: .8rem; padding-top: 18px; }
+  .top-nav { gap: .8rem; padding-top: 44px; }
   .brand img { height: 180px; margin-top: -14px; }
   .hero-content { padding-top: 88px; }
 }
