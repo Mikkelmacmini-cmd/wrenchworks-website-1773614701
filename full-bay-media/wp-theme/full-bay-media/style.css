@@ -1,0 +1,119 @@
+/*
+Theme Name: Full Bay Media
+Theme URI: https://fullbaymedia.com
+Author: MJ
+Description: Clean, minimal, premium-but-approachable marketing theme for independent auto repair shops.
+Version: 1.0.0
+Text Domain: full-bay-media
+*/
+
+:root {
+  --oil-black: #111315;
+  --steel-gray: #39424e;
+  --shop-white: #f7f8fa;
+  --signal-blue: #2b6ef3;
+  --safety-amber: #f5a524;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--oil-black);
+  background: var(--shop-white);
+  line-height: 1.6;
+}
+
+.container { width: min(1100px, 92vw); margin: 0 auto; }
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e8eaef;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+  color: var(--oil-black);
+}
+.brand span { color: var(--signal-blue); }
+
+.btn {
+  display: inline-block;
+  padding: .8rem 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-primary { background: var(--signal-blue); color: #fff; }
+.btn-secondary { background: #fff; color: var(--oil-black); border: 1px solid #d6dbe5; }
+
+.hero {
+  padding: 5.5rem 0 4rem;
+  background: linear-gradient(180deg, #fff 0%, #f3f6ff 100%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 2rem;
+  align-items: center;
+}
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .8rem; }
+h1 { font-size: clamp(2rem, 4.5vw, 3.3rem); }
+h2 { font-size: clamp(1.5rem, 2.5vw, 2.1rem); }
+.lead { font-size: 1.1rem; color: var(--steel-gray); max-width: 58ch; }
+.hero-cta { display: flex; gap: .8rem; margin-top: 1.25rem; flex-wrap: wrap; }
+.card {
+  background: var(--card);
+  border: 1px solid #e7eaf0;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 28px rgba(22, 31, 44, 0.06);
+}
+.metric { font-size: 1.6rem; font-weight: 700; }
+.metric small { display: block; color: var(--steel-gray); font-size: .9rem; font-weight: 500; }
+
+.section { padding: 4rem 0; }
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.service h3 { font-size: 1.08rem; }
+.service p { color: var(--steel-gray); margin: 0; }
+
+.dark {
+  background: var(--oil-black);
+  color: #f4f7ff;
+}
+.dark .muted { color: #b3c0d8; }
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .9rem;
+}
+.step { background: #1b1f25; border: 1px solid #2f3744; border-radius: 12px; padding: 1rem; }
+.step b { color: var(--safety-amber); }
+
+.footer {
+  border-top: 1px solid #e8eaef;
+  padding: 1.5rem 0 2.5rem;
+  color: #6b7280;
+  font-size: .95rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid, .grid-4, .process { grid-template-columns: 1fr; }
+  .hero { padding-top: 4rem; }
+}
