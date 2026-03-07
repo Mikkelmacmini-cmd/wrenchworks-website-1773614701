@@ -12,15 +12,24 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="brand">Full Bay <span>Media</span></a>
-    <nav class="top-nav" aria-label="Main navigation">
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#results" class="nav-link">Results</a>
-      <a href="#process" class="nav-link">Process</a>
-      <a href="#faq" class="nav-link">FAQ</a>
+    <div class="top-nav">
       <a href="#contact" class="btn btn-primary nav-cta">Book Audit</a>
-    </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<div class="menu-drawer" aria-hidden="true">
+  <nav class="drawer-nav" aria-label="Main navigation">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#results" class="nav-link">Results</a>
+    <a href="#process" class="nav-link">Process</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</div>
 
 <section class="hero reveal">
   <div class="narrow reveal">
@@ -31,6 +40,29 @@
       <a href="#contact" class="btn btn-primary">Book a Free Shop Audit</a>
       <a href="#services" class="btn btn-secondary">Learn more &rsaquo;</a>
       <a href="#results" class="btn btn-secondary">See Results &rsaquo;</a>
+    </div>
+  </div>
+</section>
+
+<section class="hero-media reveal">
+  <div class="media-wrap">
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1920&q=80">
+      <source src="https://cdn.coverr.co/videos/coverr-a-mechanic-working-under-the-car-1579191964288?download=1080p.mp4" type="video/mp4">
+    </video>
+    <div class="media-overlay">
+      <h2>Our websites make it real.</h2>
+      <p>Built to earn trust fast and turn local traffic into booked repair jobs.</p>
+    </div>
+  </div>
+  <div class="template-strip" aria-label="Template previews">
+    <div class="template-track">
+      <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=80" alt="Automotive service website template preview" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Repair shop landing page preview" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Auto diagnostics template preview" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=80" alt="Mechanic portfolio template preview" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80" alt="Shop growth dashboard template preview" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=80" alt="Automotive service website template preview duplicate" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Repair shop landing page preview duplicate" loading="lazy">
     </div>
   </div>
 </section>

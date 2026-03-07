@@ -11,6 +11,25 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Two-line menu toggle
+  const menuBtn = document.querySelector('.menu-toggle');
+  const drawer = document.querySelector('.menu-drawer');
+  if (menuBtn && drawer) {
+    menuBtn.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+      });
+    });
+  }
+
   // Reveal animations
   if (!prefersReduced) {
     const revealItems = document.querySelectorAll('.reveal');
@@ -25,6 +44,12 @@
     revealItems.forEach(el => io.observe(el));
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+  }
+
+  // Duplicate template cards for seamless marquee
+  const track = document.querySelector('.template-track');
+  if (track && !prefersReduced) {
+    track.innerHTML += track.innerHTML;
   }
 
   // FAQ accordion
