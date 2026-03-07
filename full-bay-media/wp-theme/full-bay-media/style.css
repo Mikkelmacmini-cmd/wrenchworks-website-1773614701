@@ -147,6 +147,30 @@ body {
   text-align: center;
   padding: 8rem 0 5.4rem;
 }
+.hero-with-image {
+  position: relative;
+  border-radius: 0 0 34px 34px;
+  overflow: hidden;
+}
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(10,10,10,.55), rgba(10,10,10,.45)),
+    url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=2200&q=80');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.hero-with-image h1,
+.hero-with-image p,
+.hero-with-image .eyebrow { color: #fff; }
+.hero-with-image .eyebrow { opacity: .92; }
+.hero-with-image .btn-secondary { color: #f3d28a; }
 .eyebrow {
   color: var(--gold);
   font-size: 1.05rem;
@@ -211,8 +235,10 @@ body {
 }
 .band-2 {
   background-image:
-    linear-gradient(180deg, rgba(22,18,10,.42), rgba(12,10,6,.55)),
-    radial-gradient(circle at 70% 20%, #c8a24a 0%, #6e5630 42%, #121212 100%);
+    linear-gradient(180deg, rgba(12,10,8,.46), rgba(12,10,8,.58)),
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80');
+  background-size: cover;
+  background-position: center;
 }
 .section h2 {
   margin: 0;
@@ -229,33 +255,60 @@ body {
   margin: .9rem auto 0;
 }
 
-.grid {
-  margin-top: 2.3rem;
+.service-rows {
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: .8rem;
 }
-.card {
+.service-row {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: start;
+  gap: .9rem;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 1.5rem;
+  border-radius: 16px;
+  padding: 1rem;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,.08);
-  border-color: #c7c7cc;
+.service-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.07);
+  border-color: #c9c3b5;
 }
-.card h3 {
-  margin: 0;
-  font-size: 1.25rem;
+.service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d8bd7c, #b8923f);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: .86rem;
+}
+.service-row h3 {
+  margin: .15rem 0 0;
+  font-size: 1.15rem;
   letter-spacing: -0.02em;
 }
-.card p {
-  margin: .65rem 0 0;
+.service-row p {
+  margin: .45rem 0 0;
   color: var(--muted);
-  font-size: 1.02rem;
+  font-size: 1.01rem;
+}
+
+.chart-panel {
+  margin: 2rem auto 1.2rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.chart-panel img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 360px;
 }
 
 .metrics {
@@ -312,47 +365,10 @@ body {
   font-size: .92rem;
 }
 
-.hero-media {
-  padding: 0 0 4.2rem;
-}
-.media-wrap {
-  width: min(1280px, 96vw);
-  margin: 0 auto;
-  border-radius: 26px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid #2f2a20;
-  background: #121212;
-}
-.media-wrap video {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  max-height: 70vh;
-}
-.media-overlay {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.52));
-  padding: 1rem;
-}
-.media-overlay h2 {
-  margin: 0;
-  font-size: clamp(1.8rem, 4.8vw, 4rem);
-  color: #fff;
-}
-.media-overlay p {
-  margin: .7rem auto 0;
-  max-width: 44ch;
-  color: rgba(255,255,255,.88);
-}
+.template-strip-wrap { padding: 1rem 0 3.8rem; }
 .template-strip {
   width: min(1280px, 96vw);
-  margin: .85rem auto 0;
+  margin: .2rem auto 0;
   overflow: hidden;
 }
 .template-track {
@@ -499,9 +515,10 @@ body {
 }
 
 @media (max-width: 900px) {
-  .grid, .process, .metrics, .split-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .process, .metrics, .split-grid, .gallery-grid { grid-template-columns: 1fr; }
   .hero { padding-top: 5.8rem; padding-bottom: 5rem; }
   .visual-band { min-height: 46vh; }
   .nav-cta { display: none; }
   .template-track img { width: 180px; height: 112px; }
+  .service-row { grid-template-columns: 1fr; }
 }

@@ -31,8 +31,9 @@
   </nav>
 </div>
 
-<section class="hero reveal">
-  <div class="narrow reveal">
+<section class="hero hero-with-image reveal">
+  <div class="hero-backdrop"></div>
+  <div class="narrow reveal hero-content">
     <div class="eyebrow">Built for Independent Auto Repair Shops</div>
     <h1>Fill Every Bay with Better Local Visibility.</h1>
     <p>Websites, local SEO, Google Business Profile optimization, and review systems designed to bring in more of the right repair jobs.</p>
@@ -44,17 +45,8 @@
   </div>
 </section>
 
-<section class="hero-media reveal">
-  <div class="media-wrap">
-    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1920&q=80">
-      <source src="https://cdn.coverr.co/videos/coverr-a-mechanic-working-under-the-car-1579191964288?download=1080p.mp4" type="video/mp4">
-    </video>
-    <div class="media-overlay">
-      <h2>Our websites make it real.</h2>
-      <p>Built to earn trust fast and turn local traffic into booked repair jobs.</p>
-    </div>
-  </div>
-  <div class="template-strip" aria-label="Template previews">
+<section class="template-strip-wrap reveal" aria-label="Template previews">
+  <div class="template-strip">
     <div class="template-track">
       <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=80" alt="Automotive service website template preview" loading="lazy">
       <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Repair shop landing page preview" loading="lazy">
@@ -96,22 +88,22 @@
     <p class="section-intro">Everything your shop needs to look premium online and convert local search into booked work.</p>
     <p style="text-align:center;margin-top:1rem;"><a href="#contact" class="btn btn-primary">Start With a Free Audit</a></p>
 
-    <div class="grid stagger">
-      <article class="card">
-        <h3>Website Design & Build</h3>
-        <p>Fast, clean, mobile-first sites that earn trust and drive calls.</p>
+    <div class="service-rows stagger">
+      <article class="service-row">
+        <div class="service-icon">01</div>
+        <div><h3>Website Design & Build</h3><p>Fast, clean, mobile-first websites that position your shop as the obvious local choice.</p></div>
       </article>
-      <article class="card">
-        <h3>Local SEO Optimization</h3>
-        <p>Rank better for high-intent local searches in your service area.</p>
+      <article class="service-row">
+        <div class="service-icon">02</div>
+        <div><h3>Local SEO Optimization</h3><p>Higher visibility for high-intent repair searches in your city and service radius.</p></div>
       </article>
-      <article class="card">
-        <h3>GBP Optimization & Management</h3>
-        <p>Turn your profile into a daily source of clicks, calls, and directions.</p>
+      <article class="service-row">
+        <div class="service-icon">03</div>
+        <div><h3>GBP Optimization & Management</h3><p>Optimize and actively manage your profile to generate consistent calls and direction clicks.</p></div>
       </article>
-      <article class="card">
-        <h3>Automated Review Funnels</h3>
-        <p>Get more 5-star reviews consistently with simple automations.</p>
+      <article class="service-row">
+        <div class="service-icon">04</div>
+        <div><h3>Automated Review Funnels</h3><p>Turn happy customers into review momentum without adding manual follow-up friction.</p></div>
       </article>
     </div>
   </div>
@@ -133,22 +125,26 @@
 <section class="section image-split reveal">
   <div class="container split-grid reverse">
     <div class="image-wrap">
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1600&q=80" alt="Consultant and shop owner reviewing a website on laptop" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80" alt="Shop owner and strategist reviewing growth plan at a laptop" loading="lazy">
     </div>
     <div class="split-copy">
-      <h2>Clear strategy with your shop owner, not generic agency fluff.</h2>
-      <p class="section-intro" style="text-align:left;margin-left:0;">We sit down, review your goals, and build the exact web, SEO, and GBP plan your shop needs to win locally.</p>
+      <h2>A real growth plan built around your shop.</h2>
+      <p class="section-intro" style="text-align:left;margin-left:0;">No recycled playbooks. We align your website, local SEO, GBP, and reviews into one practical system your team can actually run.</p>
       <div class="hero-cta" style="justify-content:flex-start;">
-        <a href="#contact" class="btn btn-primary">Plan My Growth System</a>
+        <a href="#contact" class="btn btn-primary">Build My Growth Plan</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section reveal">
+<section class="section reveal metrics-with-chart">
   <div class="container">
     <h2>Measured by outcomes.</h2>
     <p class="section-intro">No vanity metrics. We focus on calls, qualified leads, and booked jobs.</p>
+
+    <div class="chart-panel">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80" alt="Growth chart dashboard visual" loading="lazy">
+    </div>
 
     <div class="metrics stagger">
       <div class="metric"><span class="num">More Calls</span><span class="label">From local search and maps</span></div>
