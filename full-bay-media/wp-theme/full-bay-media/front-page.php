@@ -28,6 +28,13 @@
   </div>
 </section>
 
+<section class="visual-band band-1">
+  <div class="narrow">
+    <h2>Built for the pace of a real shop.</h2>
+    <p>Simple systems that work while you’re turning wrenches.</p>
+  </div>
+</section>
+
 <section id="services" class="section section-soft">
   <div class="container">
     <h2>Simple systems. Real shop growth.</h2>
@@ -64,6 +71,13 @@
       <div class="metric"><span class="num">More Trust</span><span class="label">From stronger websites and reviews</span></div>
       <div class="metric"><span class="num">More Bookings</span><span class="label">From streamlined online conversion</span></div>
     </div>
+  </div>
+</section>
+
+<section class="visual-band band-2">
+  <div class="narrow">
+    <h2>Premium online presence. Practical results.</h2>
+    <p>More trust, better leads, and fuller bays—without extra busywork.</p>
   </div>
 </section>
 
