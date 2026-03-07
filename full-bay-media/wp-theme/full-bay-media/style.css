@@ -60,17 +60,17 @@ body {
   align-items: center;
 }
 .brand img {
-  height: 150px;
+  height: 122px;
   width: auto;
   display: block;
-  margin-top: -6px;
+  margin-top: -2px;
 }
 
 .top-nav {
   display: flex;
   align-items: flex-start;
   gap: 1.35rem;
-  padding-top: 108px;
+  padding-top: 42px;
 }
 .menu-toggle {
   width: 40px;
@@ -539,7 +539,7 @@ body {
   .template-track img { width: 180px; height: 112px; }
   .service-row { grid-template-columns: 1fr; }
   .header-inner { min-height: 0; padding-top: 0; }
-  .top-nav { gap: .8rem; padding-top: 72px; }
-  .brand img { height: 102px; margin-top: -4px; }
+  .top-nav { gap: .8rem; padding-top: 26px; }
+  .brand img { height: 86px; margin-top: -2px; }
   .hero-content { padding-top: 88px; }
 }
