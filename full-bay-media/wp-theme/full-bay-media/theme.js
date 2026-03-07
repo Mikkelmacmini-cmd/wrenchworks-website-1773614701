@@ -7,6 +7,11 @@
     if (!header) return;
     if (window.scrollY > 16) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
+
+    const hero = document.querySelector('.hero-with-image');
+    const switchPoint = hero ? (hero.offsetHeight - 120) : 420;
+    if (window.scrollY > switchPoint) header.classList.add('light-ui');
+    else header.classList.remove('light-ui');
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
