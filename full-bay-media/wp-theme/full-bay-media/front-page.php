@@ -87,6 +87,9 @@
       <figure><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1400&q=80" alt="Mechanic working under vehicle" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1400&q=80" alt="Clean automotive service environment" loading="lazy"></figure>
       <figure><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=80" alt="Automotive tools and precision work" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80" alt="Consultant and business owner reviewing plans on laptop" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Professional discussing business strategy with client" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80" alt="Shop owner and advisor working together at computer" loading="lazy"></figure>
     </div>
     <p style="text-align:center;margin-top:1.2rem;"><a href="#contact" class="btn btn-primary">Build My Shop Website</a></p>
   </div>
