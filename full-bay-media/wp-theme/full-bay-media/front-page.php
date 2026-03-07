@@ -12,7 +12,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="brand" aria-label="Full Bay Media home">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/full-bay-media-logo-v5.png'); ?>" alt="Full Bay Media logo">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/full-bay-media-logo-v4.png'); ?>" alt="Full Bay Media logo">
     </a>
     <div class="top-nav">
       <a href="#contact" class="btn btn-primary nav-cta">Book Audit</a>
