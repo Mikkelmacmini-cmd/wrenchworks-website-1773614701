@@ -1,0 +1,13 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect width="1200" height="400" fill="#FFFFFF"/>
+  <g transform="translate(90,85)">
+    <rect x="0" y="0" width="230" height="230" rx="34" fill="#121212"/>
+    <rect x="28" y="30" width="32" height="170" rx="16" fill="#C8A24A"/>
+    <rect x="72" y="30" width="32" height="170" rx="16" fill="#C8A24A"/>
+    <path d="M128 80C128 56 147 37 171 37H202V69H175C168 69 162 75 162 82V92H202V123H162V200H128V80Z" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(370,133)">
+    <text x="0" y="80" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="700" fill="#121212" letter-spacing="-1.5">Full Bay</text>
+    <text x="0" y="150" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="500" fill="#C8A24A" letter-spacing="1.2">MEDIA</text>
+  </g>
+</svg>

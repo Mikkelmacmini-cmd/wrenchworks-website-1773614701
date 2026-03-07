@@ -1,0 +1,15 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect width="1200" height="400" fill="#FFFFFF"/>
+  <g transform="translate(82,88)">
+    <rect x="0" y="0" width="224" height="224" rx="28" fill="#F7F7F5" stroke="#D7D3C9"/>
+    <path d="M42 182L74 74H106L138 182H112L105 160H74L67 182H42ZM80 138H99L90 104L80 138Z" fill="#121212"/>
+    <path d="M146 182V74H177C206 74 224 89 224 115C224 140 206 156 177 156H169V182H146ZM169 136H175C188 136 199 130 199 115C199 100 188 94 175 94H169V136Z" fill="#C8A24A"/>
+  </g>
+  <g transform="translate(360,126)">
+    <text x="0" y="84" font-family="Sora, Inter, Arial, sans-serif" font-size="76" font-weight="600" fill="#121212" letter-spacing="-2">FULL BAY</text>
+    <text x="0" y="150" font-family="Sora, Inter, Arial, sans-serif" font-size="48" font-weight="500" fill="#121212" letter-spacing="10">MEDIA</text>
+    <circle cx="300" cy="140" r="7" fill="#C8A24A"/>
+    <circle cx="332" cy="140" r="7" fill="#C8A24A"/>
+    <circle cx="364" cy="140" r="7" fill="#C8A24A"/>
+  </g>
+</svg>
