@@ -46,10 +46,11 @@ body {
   border-bottom: 0;
 }
 .header-inner {
-  min-height: 92px;
+  min-height: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  padding-top: 8px;
 }
 .brand {
   text-decoration: none;
@@ -64,8 +65,9 @@ body {
 
 .top-nav {
   display: flex;
-  align-items: center;
-  gap: .65rem;
+  align-items: flex-start;
+  gap: 1.35rem;
+  padding-top: 12px;
 }
 .menu-toggle {
   width: 40px;
@@ -124,7 +126,7 @@ body {
   border-radius: 10px;
 }
 .nav-link:hover { color: var(--text); transform: translateY(-1px); background: #f6f6f4; }
-.nav-cta { margin-left: .1rem; }
+.nav-cta { margin-left: .1rem; margin-right: .4rem; }
 
 .btn {
   display: inline-block;
@@ -168,6 +170,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
+  padding-top: 120px;
 }
 .hero-with-image h1,
 .hero-with-image p,
@@ -524,6 +527,8 @@ body {
   .nav-cta { display: none; }
   .template-track img { width: 180px; height: 112px; }
   .service-row { grid-template-columns: 1fr; }
-  .header-inner { min-height: 78px; }
+  .header-inner { min-height: 0; padding-top: 6px; }
+  .top-nav { gap: .8rem; padding-top: 8px; }
   .brand img { height: 180px; }
+  .hero-content { padding-top: 88px; }
 }
