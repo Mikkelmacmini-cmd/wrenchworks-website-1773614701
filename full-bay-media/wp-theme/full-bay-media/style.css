@@ -56,7 +56,7 @@ body {
   align-items: center;
 }
 .brand img {
-  height: 42px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -523,5 +523,5 @@ body {
   .nav-cta { display: none; }
   .template-track img { width: 180px; height: 112px; }
   .service-row { grid-template-columns: 1fr; }
-  .brand img { height: 34px; }
+  .brand img { height: 46px; }
 }
