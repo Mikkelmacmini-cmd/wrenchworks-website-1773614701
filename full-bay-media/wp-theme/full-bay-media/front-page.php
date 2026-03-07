@@ -12,76 +12,85 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="brand">Full Bay <span>Media</span></a>
-    <a href="#contact" class="btn btn-primary">Book Free Audit</a>
+    <a href="#contact" class="nav-link">Book Audit</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Digital Growth for Independent Auto Repair Shops</h1>
-      <p class="lead">We build modern websites, improve local SEO, optimize your Google Business Profile, and automate reviews—so your bays stay full.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Book a Free Shop Growth Audit</a>
-        <a href="#services" class="btn btn-secondary">See Services</a>
-      </div>
-    </div>
-    <div class="card">
-      <p class="metric">+37%<small>Avg. lift in qualified local leads</small></p>
-      <p class="metric">4.8★<small>Reputation targets with review funnels</small></p>
-      <p class="metric">24/7<small>Your website sells while your team works the floor</small></p>
+  <div class="narrow">
+    <div class="eyebrow">Built for Independent Auto Repair Shops</div>
+    <h1>Fill Every Bay with Better Local Visibility.</h1>
+    <p>Websites, local SEO, Google Business Profile optimization, and review systems designed to bring in more of the right repair jobs.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Book a Free Shop Audit</a>
+      <a href="#services" class="btn btn-secondary">Learn more &rsaquo;</a>
     </div>
   </div>
 </section>
 
-<section id="services" class="section">
+<section id="services" class="section section-soft">
   <div class="container">
-    <h2>Built for independent shops. Not dealerships.</h2>
-    <p class="lead">Simple systems that drive calls, bookings, and trust.</p>
-    <div class="grid-4">
-      <article class="card service">
+    <h2>Simple systems. Real shop growth.</h2>
+    <p class="section-intro">Everything your shop needs to look premium online and convert local search into booked work.</p>
+
+    <div class="grid">
+      <article class="card">
         <h3>Website Design & Build</h3>
-        <p>Clean, fast websites that convert local drivers into booked jobs.</p>
+        <p>Fast, clean, mobile-first sites that earn trust and drive calls.</p>
       </article>
-      <article class="card service">
+      <article class="card">
         <h3>Local SEO Optimization</h3>
-        <p>Show up where people search when they need repairs now.</p>
+        <p>Rank better for high-intent local searches in your service area.</p>
       </article>
-      <article class="card service">
+      <article class="card">
         <h3>GBP Optimization & Management</h3>
-        <p>Turn your Google profile into a conversion engine.</p>
+        <p>Turn your profile into a daily source of clicks, calls, and directions.</p>
       </article>
-      <article class="card service">
+      <article class="card">
         <h3>Automated Review Funnels</h3>
-        <p>Get more 5-star reviews without adding manual follow-up work.</p>
+        <p>Get more 5-star reviews consistently with simple automations.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section dark">
+<section class="section">
   <div class="container">
-    <h2>Our 4-Step Shop Growth Process</h2>
-    <p class="muted">Audit → Build → Launch → Grow</p>
+    <h2>Measured by outcomes.</h2>
+    <p class="section-intro">No vanity metrics. We focus on calls, qualified leads, and booked jobs.</p>
+
+    <div class="metrics">
+      <div class="metric"><span class="num">More Calls</span><span class="label">From local search and maps</span></div>
+      <div class="metric"><span class="num">More Trust</span><span class="label">From stronger websites and reviews</span></div>
+      <div class="metric"><span class="num">More Bookings</span><span class="label">From streamlined online conversion</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <h2>How we work</h2>
+    <p class="section-intro">A straightforward process that respects your time and keeps momentum high.</p>
+
     <div class="process">
-      <div class="step"><b>01 Audit</b><p>Website, GBP, SEO, and reviews gap analysis.</p></div>
-      <div class="step"><b>02 Build</b><p>Conversion-first website and optimization foundation.</p></div>
-      <div class="step"><b>03 Launch</b><p>Tracking, forms, and review automations turned on.</p></div>
-      <div class="step"><b>04 Grow</b><p>Monthly iteration focused on leads and booked work.</p></div>
+      <div class="step"><b>01 / Audit</b>Website, SEO, GBP, and review baseline.</div>
+      <div class="step"><b>02 / Build</b>Implement site and optimization foundation.</div>
+      <div class="step"><b>03 / Launch</b>Deploy tracking, forms, and automations.</div>
+      <div class="step"><b>04 / Grow</b>Monthly iteration focused on revenue outcomes.</div>
     </div>
   </div>
 </section>
 
 <section id="contact" class="section">
-  <div class="container card">
-    <h2>Ready to Fill More Bays?</h2>
-    <p class="lead">Book a free 20-minute shop growth audit and get a clear action plan.</p>
-    <p><a class="btn btn-primary" href="mailto:hello@fullbaymedia.com">Book My Free Audit</a></p>
+  <div class="narrow cta-box">
+    <h2>Ready to fill more bays?</h2>
+    <p class="section-intro">Book a free 20-minute growth audit and get a clear plan for your shop.</p>
+    <p style="margin-top:1.1rem;"><a href="mailto:hello@fullbaymedia.com" class="btn btn-primary">Book My Free Audit</a></p>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container">Full Bay Media — Websites, SEO, GBP, and Review Systems for Independent Auto Repair Shops.</div>
+  Full Bay Media — Websites, SEO, GBP, and review systems for independent auto repair shops.
 </footer>
 
 <?php wp_footer(); ?>

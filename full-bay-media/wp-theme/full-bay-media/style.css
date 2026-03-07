@@ -2,118 +2,214 @@
 Theme Name: Full Bay Media
 Theme URI: https://fullbaymedia.com
 Author: MJ
-Description: Clean, minimal, premium-but-approachable marketing theme for independent auto repair shops.
-Version: 1.0.0
+Description: Apple-inspired clean/minimal agency theme for independent auto repair shops.
+Version: 1.1.0
 Text Domain: full-bay-media
 */
 
 :root {
-  --oil-black: #111315;
-  --steel-gray: #39424e;
-  --shop-white: #f7f8fa;
-  --signal-blue: #2b6ef3;
-  --safety-amber: #f5a524;
-  --card: #ffffff;
+  --bg: #ffffff;
+  --bg-soft: #f5f5f7;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #d2d2d7;
+  --blue: #0071e3;
+  --blue-hover: #0077ed;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--oil-black);
-  background: var(--shop-white);
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
 }
 
-.container { width: min(1100px, 92vw); margin: 0 auto; }
+.container { width: min(1200px, 92vw); margin-inline: auto; }
+.narrow { width: min(840px, 92vw); margin-inline: auto; }
 
 .site-header {
-  background: #fff;
-  border-bottom: 1px solid #e8eaef;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
+  backdrop-filter: saturate(180%) blur(14px);
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 .header-inner {
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
 }
 .brand {
-  font-weight: 700;
-  letter-spacing: .2px;
   text-decoration: none;
-  color: var(--oil-black);
+  color: var(--text);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
-.brand span { color: var(--signal-blue); }
+.brand span { color: var(--blue); }
+
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .93rem;
+}
 
 .btn {
   display: inline-block;
-  padding: .8rem 1.1rem;
-  border-radius: 10px;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  padding: .62rem 1rem;
+  transition: all .2s ease;
 }
-.btn-primary { background: var(--signal-blue); color: #fff; }
-.btn-secondary { background: #fff; color: var(--oil-black); border: 1px solid #d6dbe5; }
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--blue-hover); }
+.btn-secondary {
+  color: var(--blue);
+  background: transparent;
+}
 
 .hero {
-  padding: 5.5rem 0 4rem;
-  background: linear-gradient(180deg, #fff 0%, #f3f6ff 100%);
+  text-align: center;
+  padding: 7.5rem 0 6.5rem;
 }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 2rem;
+.eyebrow {
+  color: var(--blue);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: .85rem;
+}
+.hero h1 {
+  font-size: clamp(2.3rem, 6.5vw, 4.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.hero p {
+  margin: 1.2rem auto 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 1.8vw, 1.6rem);
+  line-height: 1.35;
+  max-width: 36ch;
+}
+.hero-cta {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: .9rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
-h1, h2, h3 { line-height: 1.2; margin: 0 0 .8rem; }
-h1 { font-size: clamp(2rem, 4.5vw, 3.3rem); }
-h2 { font-size: clamp(1.5rem, 2.5vw, 2.1rem); }
-.lead { font-size: 1.1rem; color: var(--steel-gray); max-width: 58ch; }
-.hero-cta { display: flex; gap: .8rem; margin-top: 1.25rem; flex-wrap: wrap; }
-.card {
-  background: var(--card);
-  border: 1px solid #e7eaf0;
-  border-radius: 14px;
-  padding: 1.2rem;
-  box-shadow: 0 8px 28px rgba(22, 31, 44, 0.06);
-}
-.metric { font-size: 1.6rem; font-weight: 700; }
-.metric small { display: block; color: var(--steel-gray); font-size: .9rem; font-weight: 500; }
 
-.section { padding: 4rem 0; }
-.grid-4 {
+.section {
+  padding: 6rem 0;
+}
+.section-soft {
+  background: var(--bg-soft);
+  border-top: 1px solid #ececf0;
+  border-bottom: 1px solid #ececf0;
+}
+.section h2 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.section-intro {
+  text-align: center;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  max-width: 54ch;
+  margin: .9rem auto 0;
+}
+
+.grid {
+  margin-top: 2.3rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
-.service h3 { font-size: 1.08rem; }
-.service p { color: var(--steel-gray); margin: 0; }
-
-.dark {
-  background: var(--oil-black);
-  color: #f4f7ff;
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.5rem;
 }
-.dark .muted { color: #b3c0d8; }
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.card p {
+  margin: .65rem 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1rem;
+  margin-top: 2.1rem;
+}
+.metric {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding-top: 1.2rem;
+}
+.metric .num {
+  display: block;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.metric .label { color: var(--muted); }
 
 .process {
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0,1fr));
   gap: .9rem;
 }
-.step { background: #1b1f25; border: 1px solid #2f3744; border-radius: 12px; padding: 1rem; }
-.step b { color: var(--safety-amber); }
+.step {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+  background: #fff;
+}
+.step b {
+  display: block;
+  margin-bottom: .35rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+.cta-box {
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #fff;
+  padding: 2.2rem 1.2rem;
+}
 
 .footer {
-  border-top: 1px solid #e8eaef;
-  padding: 1.5rem 0 2.5rem;
-  color: #6b7280;
-  font-size: .95rem;
+  border-top: 1px solid #ececf0;
+  padding: 1.4rem 0 2.4rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: .92rem;
 }
 
 @media (max-width: 900px) {
-  .hero-grid, .grid-4, .process { grid-template-columns: 1fr; }
-  .hero { padding-top: 4rem; }
+  .grid, .process, .metrics { grid-template-columns: 1fr; }
+  .hero { padding-top: 5.5rem; padding-bottom: 5rem; }
 }
