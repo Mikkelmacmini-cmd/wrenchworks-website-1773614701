@@ -62,7 +62,7 @@
   <div class="glow"></div>
   <span class="tag">Built for Independent Auto Repair Shops</span>
   <h1 class="h1">Fill every bay with modern, measurable digital growth.</h1>
-  <p class="sub">Websites, local SEO, Google Business Profile optimization, and review systems engineered for independent repair operators.</p>
+  <p class="sub">Conversion-first websites, local SEO, Google Business Profile optimization, and review systems engineered for independent repair operators.</p>
   <div class="actions">
     <a href="#contact" class="btn btn-pri">Book a Free Shop Audit</a>
     <a href="#services" class="btn btn-sec">Explore Services</a>
@@ -96,7 +96,7 @@
 </main>
 
 <section id="services" class="wrap section reveal">
-  <h2 class="h2">Services</h2>
+  <div class="section-head"><div><div class="kicker">Services</div><h2 class="h2">What we execute for shop growth</h2></div></div>
   <div class="cards service-grid">
     <article class="card service-card"><div class="svc-icon">↗</div><h3>Website Design & Build</h3><p>Clean, fast, mobile-first sites built to convert local traffic into booked work.</p></article>
     <article class="card service-card"><div class="svc-icon">◎</div><h3>Local SEO Optimization</h3><p>Page structure, content, and technical improvements to improve local visibility.</p></article>
@@ -113,7 +113,7 @@
 </section>
 
 <section id="process" class="wrap section reveal">
-  <h2 class="h2">Process</h2>
+  <div class="section-head"><div><div class="kicker">Method</div><h2 class="h2">How the system gets deployed</h2></div></div>
   <div class="process-rail">
     <article class="card process-step"><span class="step-no">01</span><h3>Audit</h3><p>Website, SEO, GBP, and reviews baseline.</p></article>
     <article class="card process-step"><span class="step-no">02</span><h3>Build</h3><p>Implement conversion and visibility foundation.</p></article>
@@ -123,7 +123,7 @@
 </section>
 
 <section id="industries" class="wrap section reveal">
-  <h2 class="h2">Who We Help</h2>
+  <div class="section-head"><div><div class="kicker">Industries</div><h2 class="h2">Built for operators that depend on local trust</h2></div></div>
   <div class="cards">
     <article class="card"><h3>Independent Auto Repair Shops</h3><p>Shops that need more qualified local calls, stronger trust signals, and better conversion from website traffic.</p></article>
     <article class="card"><h3>Collision Repair Centers</h3><p>Operators that want higher local visibility and a reputation system that consistently earns 5-star reviews.</p></article>
@@ -141,7 +141,7 @@
 
 <section id="contact" class="wrap section reveal">
   <div class="panel">
-    <h2 class="h2">Ready to grow booked jobs?</h2>
+    <h2 class="h2">Ready to scale booked work predictably?</h2>
     <p class="sub">Book a free 20-minute growth audit and get a clear plan for your shop.</p>
     <p><a href="mailto:hello@fullbaymedia.com" class="btn btn-pri">Book My Free Audit</a></p>
   </div>
