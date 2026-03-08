@@ -30,7 +30,7 @@
   <div class="glow"></div>
   <span class="tag">Built for Independent Auto Repair Shops</span>
   <h1 class="h1">The digital growth system that keeps your bays full.</h1>
-  <p class="sub">Websites, local SEO, Google Business Profile optimization, and review automations—designed like a premium SaaS experience and built for real operators.</p>
+  <p class="sub">Websites, local SEO, Google Business Profile optimization, and review automations built for real operators.</p>
   <div class="actions">
     <a href="#contact" class="btn btn-pri">Book a Free Shop Audit</a>
     <a href="#services" class="btn btn-sec">Explore Services</a>
@@ -65,11 +65,11 @@
 
 <section id="services" class="wrap section reveal">
   <h2 class="h2">Services</h2>
-  <div class="cards">
-    <article class="card"><h3>Website Design & Build</h3><p>Clean, fast, mobile-first sites built to convert local traffic into booked work.</p></article>
-    <article class="card"><h3>Local SEO Optimization</h3><p>Page structure, content, and technical improvements to improve local visibility.</p></article>
-    <article class="card"><h3>GBP Optimization & Management</h3><p>Profile positioning, posting cadence, and conversion-focused management.</p></article>
-    <article class="card"><h3>Automated Review Funnels</h3><p>Consistent review growth with smart, low-friction request automation.</p></article>
+  <div class="cards service-grid">
+    <article class="card service-card"><div class="svc-icon">↗</div><h3>Website Design & Build</h3><p>Clean, fast, mobile-first sites built to convert local traffic into booked work.</p></article>
+    <article class="card service-card"><div class="svc-icon">◎</div><h3>Local SEO Optimization</h3><p>Page structure, content, and technical improvements to improve local visibility.</p></article>
+    <article class="card service-card"><div class="svc-icon">⌖</div><h3>GBP Optimization & Management</h3><p>Profile positioning, posting cadence, and conversion-focused management.</p></article>
+    <article class="card service-card"><div class="svc-icon">★</div><h3>Automated Review Funnels</h3><p>Consistent review growth with smart, low-friction request automation.</p></article>
   </div>
 </section>
 
@@ -82,11 +82,11 @@
 
 <section id="process" class="wrap section reveal">
   <h2 class="h2">Process</h2>
-  <div class="cards">
-    <article class="card"><h3>01 / Audit</h3><p>Website, SEO, GBP, and reviews baseline.</p></article>
-    <article class="card"><h3>02 / Build</h3><p>Implement conversion and visibility foundation.</p></article>
-    <article class="card"><h3>03 / Launch</h3><p>Deploy tracking, forms, and automation.</p></article>
-    <article class="card"><h3>04 / Grow</h3><p>Iterate monthly on booked-job outcomes.</p></article>
+  <div class="process-rail">
+    <article class="card process-step"><span class="step-no">01</span><h3>Audit</h3><p>Website, SEO, GBP, and reviews baseline.</p></article>
+    <article class="card process-step"><span class="step-no">02</span><h3>Build</h3><p>Implement conversion and visibility foundation.</p></article>
+    <article class="card process-step"><span class="step-no">03</span><h3>Launch</h3><p>Deploy tracking, forms, and automation.</p></article>
+    <article class="card process-step"><span class="step-no">04</span><h3>Grow</h3><p>Iterate monthly on booked-job outcomes.</p></article>
   </div>
 </section>
 
