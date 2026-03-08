@@ -50,8 +50,8 @@
 <div class="menu-drawer">
   <nav class="menu-nav">
     <a href="#services">Services</a>
-    <a href="#results">Results</a>
-    <a href="#process">Process</a>
+    <a href="#results">Outcomes</a>
+    <a href="#process">Method</a>
     <a href="#industries">Industries</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
@@ -61,8 +61,8 @@
 <main class="wrap hero reveal">
   <div class="glow"></div>
   <span class="tag">Built for Independent Auto Repair Shops</span>
-  <h1 class="h1">The digital growth system that keeps your bays full.</h1>
-  <p class="sub">Websites, local SEO, Google Business Profile optimization, and review automations built for real operators.</p>
+  <h1 class="h1">Fill every bay with modern, measurable digital growth.</h1>
+  <p class="sub">Websites, local SEO, Google Business Profile optimization, and review systems engineered for independent repair operators.</p>
   <div class="actions">
     <a href="#contact" class="btn btn-pri">Book a Free Shop Audit</a>
     <a href="#services" class="btn btn-sec">Explore Services</a>
@@ -81,8 +81,8 @@
 
   <div class="grid">
     <section class="panel">
-      <h2 class="h2">High-performance local presence.</h2>
-      <p class="sub">From first click to booked job, every section is optimized for trust and conversion.</p>
+      <h2 class="h2">A premium local presence that performs.</h2>
+      <p class="sub">From search impression to booked job, every touchpoint is designed for trust, clarity, and conversion.</p>
       <div class="metrics">
         <div class="metric"><b>More Calls</b><span>From maps + local search</span></div>
         <div class="metric"><b>More Trust</b><span>From design + reviews</span></div>
@@ -108,7 +108,7 @@
 <section id="results" class="wrap section reveal">
   <div class="band">
     <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1800&q=80" alt="Automotive digital marketing growth results visualization">
-    <div class="overlay"><h3>Premium execution. Practical outcomes.</h3></div>
+    <div class="overlay"><h3>Precision design. Real shop outcomes.</h3></div>
   </div>
 </section>
 
@@ -141,7 +141,7 @@
 
 <section id="contact" class="wrap section reveal">
   <div class="panel">
-    <h2 class="h2">Ready to fill more bays?</h2>
+    <h2 class="h2">Ready to grow booked jobs?</h2>
     <p class="sub">Book a free 20-minute growth audit and get a clear plan for your shop.</p>
     <p><a href="mailto:hello@fullbaymedia.com" class="btn btn-pri">Book My Free Audit</a></p>
   </div>
