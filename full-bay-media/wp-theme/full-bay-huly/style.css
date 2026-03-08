@@ -92,3 +92,23 @@ body{
   .grid,.cards,.metrics{grid-template-columns:1fr}
   .hero{padding-top:120px}
 }
+
+
+/* Pass 2 enhancements */
+body:before, body:after{content:"";position:fixed;inset:auto;pointer-events:none;z-index:-1}
+body:before{width:46vw;height:46vw;left:-12vw;top:18vh;background:radial-gradient(circle,rgba(122,170,255,.18),transparent 65%);filter:blur(36px);animation:floatA 12s ease-in-out infinite}
+body:after{width:40vw;height:40vw;right:-10vw;top:8vh;background:radial-gradient(circle,rgba(230,201,122,.18),transparent 66%);filter:blur(34px);animation:floatB 13s ease-in-out infinite}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(18px)}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+.template-row{overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.03);padding:.6rem}
+.template-track{display:flex;gap:.7rem;width:max-content;animation:scrollx 24s linear infinite}
+.template-track img{width:220px;height:130px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
+@keyframes scrollx{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.section{scroll-margin-top:88px}
+.card,.panel{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.panel:hover{border-color:rgba(230,201,122,.45);box-shadow:0 18px 40px rgba(0,0,0,.28)}

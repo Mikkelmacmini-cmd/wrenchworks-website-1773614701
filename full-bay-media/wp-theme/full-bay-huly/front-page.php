@@ -26,7 +26,7 @@
   </nav>
 </div>
 
-<main class="wrap hero">
+<main class="wrap hero reveal">
   <div class="glow"></div>
   <span class="tag">Built for Independent Auto Repair Shops</span>
   <h1 class="h1">The digital growth system that keeps your bays full.</h1>
@@ -34,6 +34,17 @@
   <div class="actions">
     <a href="#contact" class="btn btn-pri">Book a Free Shop Audit</a>
     <a href="#services" class="btn btn-sec">Explore Services</a>
+  </div>
+
+  <div class="template-row reveal">
+    <div class="template-track" id="templateTrack">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Template 1">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=80" alt="Template 2">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Template 3">
+      <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80" alt="Template 4">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Template 1 dup">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=80" alt="Template 2 dup">
+    </div>
   </div>
 
   <div class="grid">
@@ -52,7 +63,7 @@
   </div>
 </main>
 
-<section id="services" class="wrap section">
+<section id="services" class="wrap section reveal">
   <h2 class="h2">Services</h2>
   <div class="cards">
     <article class="card"><h3>Website Design & Build</h3><p>Clean, fast, mobile-first sites built to convert local traffic into booked work.</p></article>
@@ -62,14 +73,14 @@
   </div>
 </section>
 
-<section id="results" class="wrap section">
+<section id="results" class="wrap section reveal">
   <div class="band">
     <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1800&q=80" alt="Results">
     <div class="overlay"><h3>Premium execution. Practical outcomes.</h3></div>
   </div>
 </section>
 
-<section id="process" class="wrap section">
+<section id="process" class="wrap section reveal">
   <h2 class="h2">Process</h2>
   <div class="cards">
     <article class="card"><h3>01 / Audit</h3><p>Website, SEO, GBP, and reviews baseline.</p></article>
@@ -79,14 +90,14 @@
   </div>
 </section>
 
-<section id="faq" class="wrap section faq">
+<section id="faq" class="wrap section faq reveal">
   <h2 class="h2">FAQ</h2>
   <details><summary>How fast can we launch?</summary><p>Most builds launch in 7–14 days based on content and approvals.</p></details>
   <details><summary>Do you work with dealerships?</summary><p>Our focus is independent repair shops and collision operators.</p></details>
   <details><summary>Do you manage monthly?</summary><p>Yes—ongoing optimization and reporting plans are available.</p></details>
 </section>
 
-<section id="contact" class="wrap section">
+<section id="contact" class="wrap section reveal">
   <div class="panel">
     <h2 class="h2">Ready to fill more bays?</h2>
     <p class="sub">Book a free 20-minute growth audit and get a clear plan for your shop.</p>
