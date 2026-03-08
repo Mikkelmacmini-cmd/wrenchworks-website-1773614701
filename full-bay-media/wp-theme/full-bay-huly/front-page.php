@@ -4,6 +4,37 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full Bay Media | Websites, Local SEO & GBP for Auto Repair Shops</title>
+  <meta name="description" content="Full Bay Media helps independent auto repair shops grow with high-converting websites, local SEO, Google Business Profile optimization, and review funnel automation.">
+  <link rel="canonical" href="<?php echo esc_url(home_url('/')); ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Full Bay Media | Digital Growth for Independent Auto Repair Shops">
+  <meta property="og:description" content="Websites, local SEO, GBP optimization, and review systems for independent repair shops.">
+  <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Full Bay Media",
+        "url": "<?php echo esc_url(home_url('/')); ?>",
+        "description": "Digital growth partner for independent auto repair shops.",
+        "areaServed": ["Denver", "Colorado"],
+        "serviceType": ["Website Design", "Local SEO", "Google Business Profile Optimization", "Review Funnel Automation"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"How fast can we launch?","acceptedAnswer":{"@type":"Answer","text":"Most builds launch in 7–14 days depending on content and approvals."}},
+          {"@type":"Question","name":"Do you work with dealerships?","acceptedAnswer":{"@type":"Answer","text":"Our focus is independent auto repair shops and collision operators."}},
+          {"@type":"Question","name":"Do you manage monthly?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ongoing optimization and reporting plans are available."}}
+        ]
+      }
+    ]
+  }
+  </script>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -21,6 +52,7 @@
     <a href="#services">Services</a>
     <a href="#results">Results</a>
     <a href="#process">Process</a>
+    <a href="#industries">Industries</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -38,12 +70,12 @@
 
   <div class="template-row reveal">
     <div class="template-track" id="templateTrack">
-      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Template 1">
-      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=80" alt="Template 2">
-      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Template 3">
-      <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80" alt="Template 4">
-      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Template 1 dup">
-      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=80" alt="Template 2 dup">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Auto repair shop website homepage concept">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=80" alt="Google Business Profile optimization dashboard concept">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Local SEO strategy planning for repair shops">
+      <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80" alt="Automotive service lead generation landing page">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Auto repair shop website homepage concept duplicate">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=80" alt="Google Business Profile optimization dashboard concept duplicate">
     </div>
   </div>
 
@@ -58,7 +90,7 @@
       </div>
     </section>
     <section class="panel">
-      <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80" alt="Automotive shop" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15)">
+      <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80" alt="Independent automotive repair shop service bay" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.15)">
     </section>
   </div>
 </main>
@@ -75,7 +107,7 @@
 
 <section id="results" class="wrap section reveal">
   <div class="band">
-    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1800&q=80" alt="Results">
+    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1800&q=80" alt="Automotive digital marketing growth results visualization">
     <div class="overlay"><h3>Premium execution. Practical outcomes.</h3></div>
   </div>
 </section>
@@ -87,6 +119,16 @@
     <article class="card process-step"><span class="step-no">02</span><h3>Build</h3><p>Implement conversion and visibility foundation.</p></article>
     <article class="card process-step"><span class="step-no">03</span><h3>Launch</h3><p>Deploy tracking, forms, and automation.</p></article>
     <article class="card process-step"><span class="step-no">04</span><h3>Grow</h3><p>Iterate monthly on booked-job outcomes.</p></article>
+  </div>
+</section>
+
+<section id="industries" class="wrap section reveal">
+  <h2 class="h2">Who We Help</h2>
+  <div class="cards">
+    <article class="card"><h3>Independent Auto Repair Shops</h3><p>Shops that need more qualified local calls, stronger trust signals, and better conversion from website traffic.</p></article>
+    <article class="card"><h3>Collision Repair Centers</h3><p>Operators that want higher local visibility and a reputation system that consistently earns 5-star reviews.</p></article>
+    <article class="card"><h3>Multi-Location Service Operators</h3><p>Teams that need standardized local SEO and GBP management across multiple service areas.</p></article>
+    <article class="card"><h3>Service Areas</h3><p>Denver and Colorado-focused local marketing support for automotive businesses that rely on map-pack visibility.</p></article>
   </div>
 </section>
 
