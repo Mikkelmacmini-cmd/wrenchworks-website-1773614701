@@ -95,6 +95,24 @@
   </div>
 </main>
 
+
+<section class="wrap section reveal visual-strip">
+  <div class="visual-grid">
+    <article class="viz-card">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="High-end automotive front close-up">
+      <div class="viz-copy"><h3>Premium brand feel</h3><p>First-impression visuals that build trust instantly.</p></div>
+    </article>
+    <article class="viz-card">
+      <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1200&q=80" alt="Website dashboard and analytics screen">
+      <div class="viz-copy"><h3>Data-backed growth</h3><p>Clarity on calls, reviews, and conversion performance.</p></div>
+    </article>
+    <article class="viz-card">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Advisor collaborating with business owner">
+      <div class="viz-copy"><h3>Operator-focused strategy</h3><p>Practical plans built around real shop constraints.</p></div>
+    </article>
+  </div>
+</section>
+
 <section id="services" class="wrap section reveal">
   <div class="section-head"><div><div class="kicker">Services</div><h2 class="h2">What we execute for shop growth</h2></div></div>
   <div class="cards service-grid">
@@ -107,8 +125,16 @@
 
 <section id="results" class="wrap section reveal">
   <div class="band">
-    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1800&q=80" alt="Automotive digital marketing growth results visualization">
+    <img src="https://images.unsplash.com/photo-1462899006636-339e08d1844e?auto=format&fit=crop&w=1800&q=80" alt="Automotive digital marketing growth results visualization">
     <div class="overlay"><h3>Precision design. Real shop outcomes.</h3></div>
+  </div>
+</section>
+
+<section class="wrap section reveal results-metrics">
+  <div class="results-grid">
+    <div class="panel"><h3>Visibility</h3><p class="sub">Map-pack presence and local search share improve with structured GBP + SEO execution.</p></div>
+    <div class="panel"><h3>Reputation</h3><p class="sub">Review velocity and rating consistency increase with automation + response cadence.</p></div>
+    <div class="panel"><h3>Conversion</h3><p class="sub">Better page flow, stronger calls-to-action, and faster contact routes lift booked jobs.</p></div>
   </div>
 </section>
 

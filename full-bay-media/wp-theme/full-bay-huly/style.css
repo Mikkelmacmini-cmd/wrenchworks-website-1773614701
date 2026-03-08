@@ -219,3 +219,21 @@ body{letter-spacing:-0.01em}
   .service-grid{grid-template-columns:1fr}
   .section-head{display:block}
 }
+
+
+/* Pass 5 graphics + imagery */
+.visual-strip{padding-top:40px}
+.visual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.viz-card{border:1px solid rgba(255,255,255,.14);background:linear-gradient(180deg,rgba(24,30,46,.62),rgba(14,18,30,.58));border-radius:18px;overflow:hidden}
+.viz-card img{width:100%;height:180px;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.03)}
+.viz-copy{padding:.9rem 1rem 1rem}
+.viz-copy h3{margin:.1rem 0 .45rem;font-size:1.04rem;letter-spacing:-.02em}
+.viz-copy p{margin:0;color:var(--muted);font-size:.96rem;line-height:1.45}
+
+.results-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.results-grid .panel h3{margin:.1rem 0 .4rem;font-size:1.14rem;letter-spacing:-.02em}
+
+@media (max-width:900px){
+  .visual-grid,.results-grid{grid-template-columns:1fr}
+  .viz-card img{height:200px}
+}
