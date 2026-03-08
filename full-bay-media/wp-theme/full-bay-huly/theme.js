@@ -36,9 +36,9 @@
       const r = card.getBoundingClientRect();
       const px = (e.clientX-r.left)/r.width;
       const py = (e.clientY-r.top)/r.height;
-      const rx = (0.5-py)*5;
-      const ry = (px-0.5)*6;
-      card.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      const rx = (0.5-py)*2.2;
+      const ry = (px-0.5)*2.8;
+      card.style.transform = `translateY(-3px) rotateX(${rx}deg) rotateY(${ry}deg)`;
       card.style.setProperty('--cx', `${px*100}%`);
       card.style.setProperty('--cy', `${py*100}%`);
     });
