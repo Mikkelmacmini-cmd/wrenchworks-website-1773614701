@@ -1,0 +1,94 @@
+/*
+Theme Name: Full Bay Huly
+Theme URI: https://fullbaymedia.com
+Author: MJ
+Description: Separate high-end Full Bay Media theme inspired by modern SaaS dark-glass design.
+Version: 1.0.0
+Text Domain: full-bay-huly
+*/
+
+:root{
+  --bg:#07090f;
+  --bg2:#0d1220;
+  --card:rgba(20,26,40,.55);
+  --line:rgba(255,255,255,.14);
+  --text:#eef3ff;
+  --muted:#a7b3c8;
+  --gold1:#E6C97A;
+  --gold2:#C8A75B;
+  --gold3:#9E7C32;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 85% -5%, rgba(230,201,122,.14), transparent 60%),
+    radial-gradient(1000px 600px at 0% 0%, rgba(120,150,255,.12), transparent 62%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
+  min-height:100vh;
+  overflow-x:hidden;
+}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+
+.site-header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(8,12,20,.35);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.head{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--text);font-weight:700;letter-spacing:-.02em}
+.logo img{height:34px;width:auto}
+.logo span{opacity:.96}
+
+.menu-btn{width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.05);display:grid;place-items:center;cursor:pointer}
+.menu-btn i,.menu-btn i:before,.menu-btn i:after{display:block;content:"";width:16px;height:2px;background:#fff;border-radius:2px;transition:.22s}
+.menu-btn i:before{transform:translateY(-5px)}
+.menu-btn i:after{transform:translateY(3px)}
+.menu-open .menu-btn i{background:transparent}
+.menu-open .menu-btn i:before{transform:translateY(1px) rotate(45deg)}
+.menu-open .menu-btn i:after{transform:translateY(-1px) rotate(-45deg)}
+
+.menu-drawer{position:fixed;inset:0;background:rgba(6,8,14,.88);backdrop-filter:blur(10px);z-index:55;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s}
+.menu-open .menu-drawer{opacity:1;pointer-events:auto}
+.menu-nav{display:grid;gap:1rem;text-align:center}
+.menu-nav a{color:#fff;text-decoration:none;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;letter-spacing:-.02em}
+
+.hero{padding:150px 0 70px;position:relative}
+.glow{position:absolute;inset:auto auto 0 0;width:42vw;height:42vw;max-width:620px;max-height:620px;background:radial-gradient(circle,rgba(230,201,122,.2),transparent 65%);filter:blur(30px);pointer-events:none}
+
+.tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.03);color:#d7e1f4;font-size:.85rem}
+.h1{font-size:clamp(2.4rem,7vw,5.3rem);line-height:.98;letter-spacing:-.045em;margin:.8rem 0 1rem;max-width:12ch}
+.sub{color:var(--muted);font-size:clamp(1.02rem,1.8vw,1.26rem);line-height:1.45;max-width:62ch}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.btn{display:inline-block;padding:.82rem 1.16rem;border-radius:12px;text-decoration:none;font-weight:700}
+.btn-pri{color:#241602;background:linear-gradient(180deg,var(--gold1),var(--gold2),var(--gold3));box-shadow:0 10px 30px rgba(200,167,91,.28)}
+.btn-sec{color:#eef3ff;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;margin-top:1.3rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1rem;backdrop-filter:blur(8px)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.8rem}
+.metric{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.9rem}
+.metric b{display:block;font-size:1.35rem}
+.metric span{color:var(--muted);font-size:.92rem}
+
+.section{padding:68px 0}
+.h2{font-size:clamp(1.6rem,3.7vw,3rem);letter-spacing:-.03em;margin:0 0 .6rem}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem;transition:.24s}
+.card:hover{transform:translateY(-4px);border-color:rgba(230,201,122,.45)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.1rem}
+.card p{margin:0;color:var(--muted)}
+
+.band{margin:22px 0;border:1px solid rgba(255,255,255,.13);border-radius:24px;overflow:hidden;position:relative;background:#0b111d}
+.band img{width:100%;display:block;max-height:420px;object-fit:cover;opacity:.78}
+.band .overlay{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:1rem;background:linear-gradient(180deg,rgba(5,8,14,.25),rgba(5,8,14,.62))}
+.band .overlay h3{font-size:clamp(1.6rem,4vw,3rem);margin:0}
+
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.9rem;margin-bottom:.6rem}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{color:var(--muted)}
+
+.footer{padding:28px 0 42px;color:#97a7c3;font-size:.9rem}
+
+@media (max-width:900px){
+  .grid,.cards,.metrics{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+}
