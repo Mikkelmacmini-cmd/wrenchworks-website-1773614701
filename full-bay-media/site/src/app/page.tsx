@@ -262,12 +262,22 @@ export default function Home() {
               key={item.title}
               className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
             >
-              <div className="relative h-56 w-full border-b border-white/10 bg-[#0b1224] p-3">
+              <div
+                className="relative h-56 w-full border-b border-white/10 p-3"
+                style={{
+                  backgroundColor: "#0b1224",
+                  backgroundImage:
+                    "linear-gradient(135deg, rgba(255,255,255,0.06) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.06) 25%, transparent 25%), linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%), linear-gradient(315deg, rgba(255,255,255,0.06) 25%, #0b1224 25%)",
+                  backgroundPosition: "10px 0, 10px 0, 0 0, 0 0",
+                  backgroundSize: "20px 20px",
+                  backgroundRepeat: "repeat",
+                }}
+              >
                 <Image
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-contain"
+                  className="object-contain p-2"
                   sizes="(max-width: 768px) 100vw, 25vw"
                 />
               </div>
