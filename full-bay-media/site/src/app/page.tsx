@@ -256,37 +256,17 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="services" className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((item) => (
-            <article
-              key={item.title}
-              className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
-            >
-              <div
-                className="relative h-56 w-full border-b border-white/10 p-3"
-                style={{
-                  backgroundColor: "#0b1224",
-                  backgroundImage:
-                    "linear-gradient(135deg, rgba(255,255,255,0.06) 25%, transparent 25%), linear-gradient(225deg, rgba(255,255,255,0.06) 25%, transparent 25%), linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%), linear-gradient(315deg, rgba(255,255,255,0.06) 25%, #0b1224 25%)",
-                  backgroundPosition: "10px 0, 10px 0, 0 0, 0 0",
-                  backgroundSize: "20px 20px",
-                  backgroundRepeat: "repeat",
-                }}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  className="object-contain p-2"
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="font-display text-xl font-semibold">{item.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-white/75">{item.text}</p>
-              </div>
-            </article>
-          ))}
+        <section id="services" className="mt-14">
+          <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-2">
+            <Image
+              src="/images/services-section.png"
+              alt="Services section with Websites, Local SEO, Google Business Profile, and Automated Review Systems"
+              width={930}
+              height={789}
+              className="h-auto w-full"
+              priority
+            />
+          </div>
         </section>
 
         <section className="mt-10 grid gap-4 md:grid-cols-2" aria-label="Repair shop visual gallery">
