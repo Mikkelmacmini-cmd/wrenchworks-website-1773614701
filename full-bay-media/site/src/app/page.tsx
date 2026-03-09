@@ -290,18 +290,18 @@ export default function Home() {
 
         <div className="h-56" aria-hidden="true" />
 
-        <section id="process" className="mt-0 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
+        <section id="process" className="mt-0 p-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
-          <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">Your shop growth roadmap</h3>
+          <h3 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Your shop growth roadmap</h3>
 
-          <div className="relative mt-10 overflow-x-auto rounded-3xl border border-white/15 bg-[#060a16] p-6 md:p-8">
+          <div className="relative mt-12 overflow-x-auto p-2 md:p-4">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.22),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.2),transparent_45%)]" />
-            <div className="pointer-events-none absolute left-8 right-8 top-1/2 h-[6px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/70 via-cyan-200/40 to-violet-300/60" />
+            <div className="pointer-events-none absolute left-10 right-10 top-1/2 h-[8px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/70 via-cyan-200/40 to-violet-300/60" />
 
-            <div className="relative flex min-w-[920px] items-center justify-between gap-4 py-6">
+            <div className="relative flex min-w-[1180px] items-center justify-between gap-6 py-12">
               {process.map((item, idx) => (
-                <article key={item.step} className="group relative w-[170px]">
-                  <div className="rounded-2xl border border-white/20 bg-gradient-to-b from-cyan-300/25 to-violet-300/15 p-4 backdrop-blur-sm transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-200/70 group-hover:shadow-[0_12px_30px_-12px_rgba(34,211,238,0.65)]">
+                <article key={item.step} className="group relative w-[210px]">
+                  <div className="rounded-2xl border border-white/20 bg-gradient-to-b from-cyan-300/25 to-violet-300/15 p-5 backdrop-blur-sm transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-200/70 group-hover:shadow-[0_12px_30px_-12px_rgba(34,211,238,0.65)]">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-200/60 bg-[#0b1224] text-xs font-semibold text-cyan-100">
                         {idx + 1}
