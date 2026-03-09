@@ -25,7 +25,7 @@ const services = [
   {
     title: "Automated Review Systems",
     text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
-    image: "/images/service-reviews.webp",
+    image: "/images/service-reviews-v2.png",
     alt: "Automated review funnel turning customer feedback into 5-star ratings",
   },
 ];
