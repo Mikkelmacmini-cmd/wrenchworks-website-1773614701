@@ -3,7 +3,17 @@ import Image from "next/image";
 const primaryCta = "#contact";
 const secondaryCta = "#services";
 
-const services = [
+type ServiceItem = {
+  title: string;
+  text: string;
+  image: string;
+  alt: string;
+  imageScale?: number;
+  imageFrameClass?: string;
+  imageBoxClass?: string;
+};
+
+const services: ServiceItem[] = [
   {
     title: "Google Business Profile",
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
@@ -266,7 +276,7 @@ export default function Home() {
             >
               <div className="border-b border-white/10 bg-[#0b1224] p-2">
                 <div className={`relative flex h-52 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
-                  <div className="relative h-full w-full max-w-[280px]">
+                  <div className={`relative h-full w-full ${item.imageBoxClass ?? "max-w-[280px]"}`}>
                     <Image
                       src={item.image}
                       alt={item.alt}
