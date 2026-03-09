@@ -1,91 +1,85 @@
 import Image from "next/image";
 
-const cta = "#";
+const primaryCta = "#contact";
+const secondaryCta = "#services";
 
 const services = [
   {
-    title: "Conversion-First Website Systems",
-    text: "Premium page architecture that answers trust, authority, and next-step questions in seconds.",
+    title: "Websites",
+    text: "Fast, clean websites that make your shop look pro and make it easy for people to call, book, or get directions.",
   },
   {
-    title: "Local SEO That Maps to Real Jobs",
-    text: "City + service intent targeting, schema deployment, and entity-rich pages that attract buying traffic.",
+    title: "Local SEO",
+    text: "We help your shop show up when local drivers search for repair help, brakes, oil changes, and more.",
   },
   {
-    title: "Review Flywheel + Reputation Ops",
-    text: "Post-service ask flows, response frameworks, and profile optimization that compounds over time.",
+    title: "Google Business Profile",
+    text: "We optimize your profile, services, photos, and posts so your first impression looks as strong as your work.",
+  },
+  {
+    title: "Automated Review Systems",
+    text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
   },
 ];
 
 const promisePoints = [
-  "No generic templates — every section mapped to conversion intent.",
-  "Built for independent shops and owner-operators, not vanity marketing.",
-  "Measured by booked diagnostics, not likes or traffic screenshots.",
+  "We focus on what actually moves the needle.",
+  "Built for independent shops and owner-operators.",
+  "Measured on the KPIs you care about: car count, ARO, and high-quality reviews.",
 ];
 
 const process = [
   {
     step: "01",
-    title: "Diagnostic Audit",
-    text: "We identify friction in your current site, local presence, and review pipeline.",
+    title: "Audit",
+    text: "We review your website, Google profile, reviews, and local search presence.",
   },
   {
     step: "02",
-    title: "Offer + Messaging Architecture",
-    text: "We clarify your value proposition and align content with high-intent customer decisions.",
+    title: "Plan",
+    text: "We build a clear game plan based on your goals, market, and shop capacity.",
   },
   {
     step: "03",
-    title: "Build + SEO Implementation",
-    text: "We ship a premium site experience with structured SEO and conversion tracking foundations.",
+    title: "Build",
+    text: "We update your website pages, local SEO setup, and Google Business Profile.",
   },
   {
     step: "04",
-    title: "Review & Growth Loops",
-    text: "We launch reputation workflows and feedback loops that steadily increase trust and inbound demand.",
-  },
-];
-
-const outcomes = [
-  "More booked diagnostic calls",
-  "Higher-quality local leads",
-  "Improved close rates from better pre-visit trust",
-  "Consistent monthly demand signal",
-];
-
-const stats = [
-  { label: "Avg. lift in qualified calls", value: "+41%" },
-  { label: "Typical launch window", value: "2–4 weeks" },
-  { label: "Core KPIs tracked", value: "12" },
-];
-
-const testimonials = [
-  {
-    quote:
-      "We stopped sounding like every other shop online. Calls got better and customers came in pre-sold.",
-    name: "Independent Shop Owner",
-    role: "5-Bay Repair Facility",
+    title: "Launch",
+    text: "We publish everything, test forms and calls, and make sure tracking is working.",
   },
   {
-    quote:
-      "The new structure made our Google profile and website finally work together. Lead quality improved fast.",
-    name: "Operations Manager",
-    role: "Multi-Location Auto Service",
+    step: "05",
+    title: "Grow",
+    text: "We keep improving with review automation, ongoing updates, and monthly priorities.",
   },
 ];
 
 const faqs = [
   {
-    q: "Who is Full Bay Media built for?",
-    a: "Independent auto repair shops and multi-location operators that need better lead quality, stronger trust, and predictable local growth.",
+    q: "Who do you work with?",
+    a: "Independent auto repair shops and multi-location service businesses.",
   },
   {
-    q: "How fast can we launch?",
-    a: "Most core buildouts launch quickly once assets are ready. We prioritize speed-to-impact while preserving premium quality.",
+    q: "What do you help with first?",
+    a: "Most shops start with website updates, Google Business Profile optimization, and local SEO basics.",
   },
   {
-    q: "What happens during a Diag Call?",
-    a: "We review your current website, Google presence, and review performance, then map the highest-leverage opportunities for the next 30-60 days.",
+    q: "How long does setup take?",
+    a: "Most core work is done in 2-4 weeks depending on how fast we get access and approvals.",
+  },
+  {
+    q: "Do you help us get more reviews?",
+    a: "Yes. We set up simple automated review flows so your team can get more 5-star reviews with less manual effort.",
+  },
+  {
+    q: "Do you lock us into long contracts?",
+    a: "No long-term lock-ins are required to get started. We focus on results and clear next steps.",
+  },
+  {
+    q: "What should we bring to the first call?",
+    a: "Your shop goals, current pain points, and access to your website and Google profile if possible.",
   },
 ];
 
@@ -96,7 +90,7 @@ const orgLd = {
   url: "https://fullbaymedia.com",
   logo: "https://fullbaymedia.com/full-bay-logo.svg",
   description:
-    "Full Bay Media creates premium websites, local SEO systems, and review funnels for independent auto repair shops.",
+    "Full Bay Media helps independent auto repair shops grow car count with websites, local SEO, Google Business Profile optimization, and automated review systems.",
   areaServed: "United States",
 };
 
@@ -106,7 +100,7 @@ const serviceLd = {
   name: "Full Bay Media",
   serviceType: "Auto Repair Shop Marketing",
   description:
-    "Conversion-first websites, local SEO, and review funnel systems for independent auto repair shops.",
+    "Websites, local SEO, Google Business Profile optimization, and automated review systems for independent auto repair shops.",
   url: "https://fullbaymedia.com",
 };
 
@@ -141,38 +135,53 @@ export default function Home() {
       <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-8 md:px-10">
         <header className="mb-14 flex items-center justify-between rounded-full border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-xl">
           <Image src="/full-bay-logo.svg" alt="Full Bay Media logo" width={150} height={32} priority />
-          <a
-            href={cta}
-            className="rounded-full border border-cyan-200/40 bg-cyan-300/10 px-5 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
-          >
-            Book a Diag Call
-          </a>
+
+          <div className="flex items-center gap-3">
+            <a
+              href={primaryCta}
+              className="rounded-full border border-cyan-200/40 bg-cyan-300/10 px-5 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
+            >
+              Get More Cars in the Bay
+            </a>
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10"
+            >
+              <span className="sr-only">Menu</span>
+              <span className="flex flex-col gap-1">
+                <span className="block h-[2px] w-4 bg-white/90" />
+                <span className="block h-[2px] w-4 bg-white/90" />
+                <span className="block h-[2px] w-4 bg-white/90" />
+              </span>
+            </button>
+          </div>
         </header>
 
         <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.22em] text-cyan-100/80">
-              Growth Infrastructure for Auto Repair Shops
+              Digital Growth for Independent Auto Repair Shops
             </p>
             <h1 className="font-display text-4xl font-semibold leading-tight md:text-6xl">
-              Build the kind of shop brand customers choose before they call anyone else.
+              You built the shop. We’ll bring the right people.
             </h1>
             <p className="mt-6 max-w-2xl text-base text-white/75 md:text-lg">
-              Full Bay Media designs premium websites, local search systems, and review flywheels that
-              transform scattered marketing into a clear demand engine.
+              Not your average marketing partner. We build websites, improve local SEO, optimize your Google
+              Business Profile, and set up AI-powered review funnels that help you grow car count.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
-                href={cta}
+                href={primaryCta}
                 className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-6 py-3 text-sm font-bold text-[#081022] transition hover:brightness-110"
               >
-                Book a Diag Call
+                Get More Cars in the Bay
               </a>
               <a
-                href="#services"
+                href={secondaryCta}
                 className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/15"
               >
-                Explore Services
+                See Services
               </a>
             </div>
           </div>
@@ -187,10 +196,6 @@ export default function Home() {
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/80">Typical Outcome Window</p>
-                <p className="mt-1 text-2xl font-semibold">+41% Qualified Diagnostic Calls</p>
-              </div>
             </div>
           </aside>
         </section>
@@ -203,16 +208,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="mt-6 grid gap-3 md:grid-cols-3">
-          {stats.map((stat) => (
-            <article key={stat.label} className="rounded-xl border border-cyan-200/20 bg-cyan-300/10 px-4 py-4">
-              <p className="font-display text-2xl font-semibold text-cyan-100">{stat.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/65">{stat.label}</p>
-            </article>
-          ))}
-        </section>
-
-        <section id="services" className="mt-14 grid gap-4 md:grid-cols-3">
+        <section id="services" className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {services.map((item) => (
             <article
               key={item.title}
@@ -244,11 +240,11 @@ export default function Home() {
         </section>
 
         <section id="process" className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-7 md:p-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Execution Framework</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
-            A creative system built for one thing: more booked work.
+            A clear 5-step process built to grow your shop.
           </h3>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {process.map((item) => (
               <article key={item.step} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                 <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {item.step}</p>
@@ -259,36 +255,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-16 grid gap-4 md:grid-cols-[0.8fr_1.2fr]">
-          <article className="rounded-3xl border border-cyan-200/25 bg-gradient-to-b from-cyan-300/15 to-transparent p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/80">What success looks like</p>
-            <ul className="mt-4 space-y-2 text-sm text-white/85">
-              {outcomes.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
-          </article>
-          <article className="rounded-3xl border border-white/15 bg-white/5 p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Why this works</p>
-            <p className="mt-3 text-sm leading-relaxed text-white/80">
-              Most shops lose opportunities before a customer ever calls — unclear messaging, weak trust
-              cues, inconsistent review velocity, and poor local SEO architecture. We fix those bottlenecks
-              with a unified system so your growth is less dependent on luck or ad spend spikes.
-            </p>
-          </article>
-        </section>
-
-        <section className="mt-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Operator Feedback</p>
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {testimonials.map((t) => (
-              <article key={t.quote} className="rounded-2xl border border-white/15 bg-white/5 p-5">
-                <p className="text-sm leading-relaxed text-white/85">“{t.quote}”</p>
-                <p className="mt-4 text-sm font-semibold">{t.name}</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-white/60">{t.role}</p>
-              </article>
-            ))}
-          </div>
+        <section className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-6">
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Why this works</p>
+          <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
+            Times have changed. The first storefront most customers see is your Google Business Profile and
+            your website. We make sure that first impression matches the level of work your shop delivers,
+            so more people trust you faster and choose your shop first.
+          </p>
         </section>
 
         <section id="faq" className="mt-16">
@@ -303,23 +276,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative mt-16 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-8 text-center md:p-12">
+        <section
+          id="contact"
+          className="relative mt-16 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-8 text-center md:p-12"
+        >
           <div
             className="pointer-events-none absolute inset-0 opacity-20"
             style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
           />
           <div className="relative">
-            <p className="text-xs uppercase tracking-[0.22em] text-cyan-100/80">Ready for a real growth diagnosis?</p>
-            <h3 className="mt-3 font-display text-3xl font-semibold">Book a Diag Call</h3>
+            <p className="text-xs uppercase tracking-[0.22em] text-cyan-100/80">Ready for real growth?</p>
+            <h3 className="mt-3 font-display text-3xl font-semibold">Let’s build your next growth move.</h3>
             <p className="mx-auto mt-3 max-w-2xl text-white/75">
-              We’ll audit your current web experience, local visibility, and review performance — then show
-              you the highest-leverage moves to increase booked work.
+              We’ll review where you are now, show you what to fix first, and give you a clear plan to grow
+              car count, lead quality, and review volume.
             </p>
             <a
-              href={cta}
+              href="#"
               className="mt-7 inline-flex rounded-full bg-white px-7 py-3 text-sm font-bold text-[#0b1224] transition hover:bg-cyan-100"
             >
-              Book a Diag Call
+              Book a Call
             </a>
           </div>
         </section>
