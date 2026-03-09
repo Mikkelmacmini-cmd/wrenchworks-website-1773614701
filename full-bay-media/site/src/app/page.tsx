@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 const primaryCta = "#contact";
@@ -10,6 +11,7 @@ type ServiceItem = {
   text: string;
   image: string;
   alt: string;
+  href: string;
   imageScale?: number;
   imageFrameClass?: string;
   imageBoxClass?: string;
@@ -23,6 +25,7 @@ const services: ServiceItem[] = [
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
     image: "/images/service-gbp-v6.png",
     alt: "Google Business Profile for an automotive repair shop on mobile",
+    href: "/services/google-business-profile",
     imageFit: "contain",
     imagePositionClass: "object-center",
   },
@@ -31,6 +34,7 @@ const services: ServiceItem[] = [
     text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
     image: "/images/service-websites-v5.png",
     alt: "Automotive repair website shown on laptop and phone",
+    href: "/services/mobile-first-websites",
     imageFit: "contain",
     imagePositionClass: "object-center",
     imageScale: 1.5,
@@ -40,6 +44,7 @@ const services: ServiceItem[] = [
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
     image: "/images/service-local-seo-v9.png",
     alt: "SEO and AI search results for local auto repair shops",
+    href: "/services/local-seo-ai-search",
     imageFit: "contain",
     imagePositionClass: "object-center",
     imageScale: 1.5,
@@ -49,6 +54,7 @@ const services: ServiceItem[] = [
     text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
     image: "/images/service-reviews-v4.png",
     alt: "Automated review funnel turning customer feedback into 5-star ratings",
+    href: "/services/automated-review-systems",
   },
 ];
 
@@ -283,11 +289,12 @@ export default function Home() {
 
           <div className="grid gap-10 md:grid-cols-2">
             {services.map((item) => (
-              <article
+              <Link
                 key={item.title}
-                className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] shadow-[0_14px_32px_-24px_rgba(56,189,248,0.55)] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/40 hover:shadow-[0_20px_42px_-22px_rgba(56,189,248,0.75)]"
+                href={item.href}
+                className="group block overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] shadow-[0_14px_32px_-24px_rgba(56,189,248,0.55)] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/40 hover:shadow-[0_20px_42px_-22px_rgba(56,189,248,0.75)]"
               >
-              <div className="border-b border-white/10 bg-[#0b1224] p-0">
+                <div className="border-b border-white/10 bg-[#0b1224] p-0">
                 <div className={`relative flex h-96 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
                   <div className="relative h-full w-full">
                     <Image
@@ -307,7 +314,7 @@ export default function Home() {
                   <h2 className="font-display text-xl font-semibold">{item.title}</h2>
                   <p className="mt-3 text-sm leading-relaxed text-white/75">{item.text}</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
@@ -386,7 +393,7 @@ export default function Home() {
             ['--mx' as string]: '50%',
             ['--my' as string]: '50%',
           }}
-          onMouseMove={(e) => {
+          onPointerMove={(e) => {
             const r = e.currentTarget.getBoundingClientRect();
             const x = ((e.clientX - r.left) / r.width) * 100;
             const y = ((e.clientY - r.top) / r.height) * 100;
@@ -395,10 +402,10 @@ export default function Home() {
           }}
         >
           <div
-            className="pointer-events-none absolute inset-0 opacity-70 transition-all duration-150"
+            className="pointer-events-none absolute inset-0 opacity-60"
             style={{
               background:
-                'radial-gradient(220px 220px at var(--mx) var(--my), rgba(56,189,248,0.28), transparent 70%), radial-gradient(300px 300px at calc(var(--mx) + 8%) calc(var(--my) + 6%), rgba(139,92,246,0.24), transparent 72%)',
+                'radial-gradient(160px 160px at var(--mx) var(--my), rgba(56,189,248,0.26), transparent 72%), radial-gradient(220px 220px at calc(var(--mx) + 6%) calc(var(--my) + 4%), rgba(139,92,246,0.2), transparent 74%)',
             }}
           />
           <div className="relative">
