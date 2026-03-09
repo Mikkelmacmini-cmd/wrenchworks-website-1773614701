@@ -293,29 +293,36 @@ export default function Home() {
         <section id="process" className="mt-0 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
-            A clear 5-step process built to grow your shop.
+            Your shop growth roadmap
           </h3>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {process.map((item) => (
-              <article key={item.step} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {item.step}</p>
-                <h4 className="mt-2 font-display text-lg font-semibold">{item.title}</h4>
-                <p className="mt-2 text-sm text-white/75">{item.text}</p>
-              </article>
-            ))}
+
+          <div className="relative mt-10">
+            <div className="pointer-events-none absolute left-5 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-cyan-200/70 via-violet-200/40 to-transparent md:left-1/2 md:-translate-x-1/2" />
+
+            <div className="space-y-8">
+              {process.map((item, idx) => (
+                <article
+                  key={item.step}
+                  className={`relative grid items-start gap-4 md:grid-cols-2 ${idx % 2 === 0 ? "" : "md:[&>div:first-child]:order-2"}`}
+                >
+                  <div className="relative rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_40px_-30px_rgba(34,211,238,0.45)]">
+                    <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {item.step}</p>
+                    <h4 className="mt-2 font-display text-lg font-semibold">{item.title}</h4>
+                    <p className="mt-2 text-sm text-white/75">{item.text}</p>
+                  </div>
+
+                  <div className="hidden md:block" />
+
+                  <span className="absolute left-5 top-6 h-3 w-3 -translate-x-1/2 rounded-full bg-cyan-200 shadow-[0_0_0_4px_rgba(34,211,238,0.2),0_0_16px_rgba(34,211,238,0.7)] md:left-1/2" />
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="mt-36 rounded-3xl border border-white/15 bg-white/5 p-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Why this works</p>
-          <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
-            Times have changed. The first storefront most customers see is your Google Business Profile and
-            your website. We make sure that first impression matches the level of work your shop delivers,
-            so more people trust you faster and choose your shop first.
-          </p>
-        </section>
+        <div className="h-56" aria-hidden="true" />
 
-        <section id="faq" className="mt-36">
+        <section id="faq" className="mt-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Frequently Asked Questions</p>
           <div className="mt-4 space-y-3">
             {faqs.map((item) => (
@@ -327,9 +334,11 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="h-56" aria-hidden="true" />
+
         <section
           id="contact"
-          className="relative mt-52 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-12 text-center md:p-16"
+          className="relative mt-0 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-12 text-center md:p-16"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-20"
