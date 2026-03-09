@@ -266,16 +266,15 @@ export default function Home() {
             >
               <div className="border-b border-white/10 bg-[#0b1224] p-2">
                 {item.compactImage ? (
-                  <div className="relative mx-auto h-40 w-full max-w-[240px]">
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      fill
-                      unoptimized
-                      className="object-contain"
-                      sizes="240px"
-                    />
-                  </div>
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={1536}
+                    height={1024}
+                    unoptimized
+                    className="mx-auto block h-auto w-full max-w-[240px]"
+                    sizes="240px"
+                  />
                 ) : (
                   <Image
                     src={item.image}
