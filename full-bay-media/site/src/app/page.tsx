@@ -23,9 +23,16 @@ const services = [
 ];
 
 const promisePoints = [
-  "We focus on what actually moves the needle.",
-  "Built for independent shops and owner-operators.",
-  "Measured on the KPIs you care about: car count, ARO, and high-quality reviews.",
+  {
+    text: "We focus on what actually moves the needle.",
+    showGauge: true,
+  },
+  {
+    text: "Built for independent shops and owner-operators.",
+  },
+  {
+    text: "Measured on the KPIs you care about: car count, ARO, and high-quality reviews.",
+  },
 ];
 
 const process = [
@@ -202,9 +209,22 @@ export default function Home() {
 
         <section className="mt-8 grid gap-3 md:grid-cols-3">
           {promisePoints.map((point) => (
-            <p key={point} className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white/80">
-              {point}
-            </p>
+            <article
+              key={point.text}
+              className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white/80"
+            >
+              {point.showGauge ? (
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-200/25 bg-cyan-300/10 px-2 py-1">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-label="RPM gauge icon">
+                    <path d="M4 15a8 8 0 1 1 16 0" stroke="#9AE6FF" strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="M12 12l5-3" stroke="#9AE6FF" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="12" cy="12" r="1.5" fill="#9AE6FF" />
+                  </svg>
+                  <span className="text-xs uppercase tracking-[0.16em] text-cyan-100/80">RPM Gauge</span>
+                </div>
+              ) : null}
+              <p>{point.text}</p>
+            </article>
           ))}
         </section>
 
