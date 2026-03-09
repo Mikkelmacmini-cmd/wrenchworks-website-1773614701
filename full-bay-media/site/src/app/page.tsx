@@ -19,8 +19,11 @@ const services = [
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v5.png",
+    image: "/images/service-local-seo-v6.png",
     alt: "SEO and AI search results for local auto repair shops",
+    imageScale: 1.55,
+    imageFrameClass: "py-6",
+    imageBoxClass: "max-w-[340px]",
   },
   {
     title: "Automated Review Systems",
@@ -263,14 +266,16 @@ export default function Home() {
               className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
             >
               <div className="border-b border-white/10 bg-[#0b1224] p-2">
-                <div className="relative flex h-52 items-center justify-center overflow-hidden">
-                  <div className="relative h-full w-full max-w-[280px]">
+                <div className={`relative flex h-52 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
+                  <div className={`relative h-full w-full ${item.imageBoxClass ?? "max-w-[280px]"}`}>
                     <Image
                       src={item.image}
                       alt={item.alt}
-                      fill
+                      width={1024}
+                      height={1024}
                       unoptimized
-                      className="object-contain"
+                      className="h-full w-full object-contain"
+                      style={{ transform: `scale(${item.imageScale ?? 1})`, transformOrigin: "center" }}
                       sizes="280px"
                     />
                   </div>
