@@ -7,19 +7,19 @@ const services = [
   {
     title: "Websites",
     text: "Fast, clean websites that make your shop look pro and make it easy for people to call, book, or get directions.",
-    image: "/images/service-websites.png",
+    image: "/images/service-websites.png?v=0957",
     alt: "Automotive repair website shown on laptop and phone",
   },
   {
     title: "Local SEO",
     text: "We help your shop show up when local drivers search for repair help, brakes, oil changes, and more.",
-    image: "/images/service-local-seo.webp",
+    image: "/images/service-local-seo.png?v=0957",
     alt: "SEO and AI search results for local auto repair shops",
   },
   {
     title: "Google Business Profile",
     text: "We optimize your profile, services, photos, and posts so your first impression looks as strong as your work.",
-    image: "/images/service-gbp.webp",
+    image: "/images/service-gbp.png?v=0957",
     alt: "Google Business Profile for an automotive repair shop on mobile",
   },
   {
