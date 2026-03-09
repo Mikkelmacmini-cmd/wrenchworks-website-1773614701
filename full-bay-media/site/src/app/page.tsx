@@ -37,6 +37,10 @@ export default function Home() {
       <div className="pointer-events-none absolute -top-32 left-1/2 h-[460px] w-[760px] -translate-x-1/2 rounded-full bg-cyan-300/20 blur-3xl" />
       <div className="pointer-events-none absolute right-[-180px] top-40 h-[440px] w-[440px] rounded-full bg-violet-400/20 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-25" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
+        style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "420px", backgroundRepeat: "repeat" }}
+      />
 
       <main className="relative mx-auto max-w-6xl px-6 pb-20 pt-8 md:px-10">
         <nav className="mb-16 flex items-center justify-between rounded-full border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-xl">
