@@ -288,8 +288,9 @@ export default function Home() {
           ))}
         </section>
 
+        <div className="h-56" aria-hidden="true" />
 
-        <section id="process" className="mt-56 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
+        <section id="process" className="mt-0 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
             A clear 5-step process built to grow your shop.
