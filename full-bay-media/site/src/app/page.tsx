@@ -19,10 +19,10 @@ const services = [
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v5.png",
+    image: "/images/service-local-seo-v8.png",
     alt: "SEO and AI search results for local auto repair shops",
-    imageScale: 1.2,
-    imageFrameClass: "py-6",
+    imageScale: 1,
+    imageFrameClass: "pt-8 pb-4",
   },
   {
     title: "Automated Review Systems",
@@ -258,7 +258,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="services" className="mt-36 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <section id="services" className="mt-36 grid gap-8 pb-28 md:grid-cols-2 lg:grid-cols-4">
           {services.map((item) => (
             <article
               key={item.title}
@@ -289,7 +289,7 @@ export default function Home() {
         </section>
 
 
-        <section id="process" className="mt-40 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
+        <section id="process" className="mt-56 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
             A clear 5-step process built to grow your shop.
