@@ -13,7 +13,7 @@ const services = [
   {
     title: "Local SEO",
     text: "We help your shop show up when local drivers search for repair help, brakes, oil changes, and more.",
-    image: "/images/service-local-seo-v2.png",
+    image: "/images/service-local-seo-v3.png",
     alt: "SEO and AI search results for local auto repair shops",
   },
   {
