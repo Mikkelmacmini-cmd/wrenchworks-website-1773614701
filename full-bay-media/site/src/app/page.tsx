@@ -168,7 +168,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-2xl text-base text-white/75 md:text-lg">
               Not your average marketing partner. We build websites, improve local SEO, optimize your Google
-              Business Profile, and set up AI-powered review funnels that help you grow car count.
+              Business Profile, and set up AI-powered review funnels that grow car count.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
