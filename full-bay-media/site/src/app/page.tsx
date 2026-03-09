@@ -18,7 +18,7 @@ const services = [
   },
   {
     title: "Google Business Profile",
-    text: "We optimize your profile, services, photos, and posts so your first impression looks as strong as your work.",
+    text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
     image: "/images/service-gbp-v2.png",
     alt: "Google Business Profile for an automotive repair shop on mobile",
   },
