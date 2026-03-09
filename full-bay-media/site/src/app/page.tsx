@@ -19,8 +19,9 @@ const services = [
   {
     title: "Google Business Profile",
     text: "We optimize your profile, services, photos, and posts so your first impression looks as strong as your work.",
-    image: "/images/service-gbp-v2.png",
+    image: "/images/service-gbp-v3.png",
     alt: "Google Business Profile for an automotive repair shop on mobile",
+    imageBg: "white",
   },
   {
     title: "Automated Review Systems",
@@ -262,7 +263,7 @@ export default function Home() {
               key={item.title}
               className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
             >
-              <div className="border-b border-white/10 bg-[#0b1224] p-2">
+              <div className={`border-b border-white/10 p-2 ${item.imageBg === "white" ? "bg-white" : "bg-[#0b1224]"}`}>
                 <Image
                   src={item.image}
                   alt={item.alt}
