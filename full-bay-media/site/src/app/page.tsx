@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const primaryCta = "#contact";
+const bookingUrl = "https://calendly.com/fullbaymedia/free-diag-call";
+const phoneHref = "tel:+18005551234";
+const primaryCta = bookingUrl;
 const secondaryCta = "#services";
 
 type ServiceItem = {
@@ -163,6 +166,8 @@ const faqLd = {
 };
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen overflow-x-clip bg-[#0a1324] text-foreground clawx-bg-v3">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
@@ -184,14 +189,16 @@ export default function Home() {
 
           <div className="absolute right-4 top-12 z-20 flex items-center gap-3 md:right-6 md:top-12">
             <a
-              href={primaryCta}
+              href={phoneHref}
               className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-5 py-2 text-sm font-bold text-[#081022] transition hover:brightness-110"
             >
-              Call Us Now
+              Book a Call
             </a>
             <button
               type="button"
               aria-label="Open menu"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10"
             >
               <span className="sr-only">Menu</span>
@@ -202,6 +209,23 @@ export default function Home() {
               </span>
             </button>
           </div>
+
+          {menuOpen ? (
+            <div className="absolute right-4 top-24 z-30 w-56 rounded-2xl border border-white/20 bg-[#060d1c]/95 p-3 backdrop-blur-xl md:right-6">
+              <a href="#services" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10">
+                How We Help
+              </a>
+              <a href="#process" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10">
+                Our Roadmap
+              </a>
+              <a href="#faq" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10">
+                FAQ
+              </a>
+              <a href="#contact" onClick={() => setMenuOpen(false)} className="mt-1 block rounded-lg bg-gradient-to-r from-cyan-300 to-violet-300 px-3 py-2 text-sm font-bold text-[#081022]">
+                Book Call
+              </a>
+            </div>
+          ) : null}
 
           <div className="relative h-[560px] w-full md:h-[640px]">
             <Image
@@ -228,6 +252,11 @@ export default function Home() {
                   <p className="max-w-2xl text-base text-white/85 md:text-lg">
                     We are not a one size fits all marketing company. We only work with auto repair and collision shops—so every strategy is built for your industry.
                   </p>
+                  <div className="mt-5 flex flex-wrap gap-2 text-xs text-cyan-100/90">
+                    <span className="rounded-full border border-white/20 bg-black/25 px-3 py-1">Trusted by independent shops</span>
+                    <span className="rounded-full border border-white/20 bg-black/25 px-3 py-1">4.9★ average client rating</span>
+                    <span className="rounded-full border border-white/20 bg-black/25 px-3 py-1">Focus: Auto + Collision only</span>
+                  </div>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <a
                       href={secondaryCta}
@@ -422,13 +451,20 @@ export default function Home() {
               car count, lead quality, and review volume.
             </p>
             <a
-              href="#"
-              className="mt-7 inline-flex rounded-full bg-white px-7 py-3 text-sm font-bold text-[#0b1224] transition hover:bg-cyan-100"
+              href={primaryCta}
+              className="mt-7 inline-flex rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-7 py-3 text-sm font-bold text-[#081022] transition hover:brightness-110"
             >
               Book a Call
             </a>
           </div>
         </section>
+
+        <div className="fixed inset-x-0 bottom-3 z-30 px-4 md:hidden">
+          <a href={primaryCta} className="block rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-6 py-3 text-center text-base font-bold text-[#081022] shadow-[0_16px_36px_-16px_rgba(125,226,255,0.85)]">
+            Book a Call
+          </a>
+        </div>
+
       </main>
     </div>
   );

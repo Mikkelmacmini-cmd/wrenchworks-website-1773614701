@@ -1,19 +1,42 @@
 import Link from "next/link";
 
+const bookingUrl = "https://calendly.com/fullbaymedia/free-diag-call";
+
 export default function LocalSeoAiSearchPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16 text-white md:px-10">
       <Link href="/" className="text-cyan-200 hover:text-cyan-100">← Back to Home</Link>
       <h1 className="mt-6 font-display text-4xl font-semibold md:text-5xl">Local SEO + AI Search</h1>
-      <p className="mt-6 text-white/80">
-        Search behavior is changing. Drivers still use Google, but they also use AI search tools for
-        recommendations and local options.
-      </p>
-      <div className="mt-8 space-y-4 text-white/80">
-        <p>We optimize your site structure, local pages, metadata, and authority signals.</p>
-        <p>We improve how your shop appears in both classic search and AI-generated answers.</p>
-        <p>The goal is visibility where customers are searching today, not where they searched last year.</p>
-      </div>
+      <p className="mt-4 text-white/80">Drivers search in Google and AI tools now. We optimize for both discovery paths.</p>
+
+      <section className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-white/15 bg-white/5 p-5">
+          <h2 className="font-display text-xl font-semibold">Who It’s For</h2>
+          <p className="mt-2 text-white/80">Shops that want more qualified local leads and stronger search visibility in changing search behavior.</p>
+        </div>
+        <div className="rounded-2xl border border-white/15 bg-white/5 p-5">
+          <h2 className="font-display text-xl font-semibold">Expected Timeline</h2>
+          <p className="mt-2 text-white/80">Technical and on-page gains in 2–4 weeks. Stronger ranking momentum in 60–120 days.</p>
+        </div>
+      </section>
+
+      <section className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-5">
+        <h2 className="font-display text-xl font-semibold">What’s Included</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-white/80">
+          <li>Local keyword mapping and intent strategy</li>
+          <li>On-page SEO structure and internal linking</li>
+          <li>Entity/relevance signals for AI retrieval</li>
+          <li>Content updates for service + city discovery</li>
+        </ul>
+      </section>
+
+      <section className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-5">
+        <h2 className="font-display text-xl font-semibold">FAQ</h2>
+        <p className="mt-3 text-white/80"><strong>Is AI search really important now?</strong> Yes. More users ask AI tools for recommendations before they click traditional results.</p>
+        <p className="mt-3 text-white/80"><strong>Do you do content too?</strong> Yes. We build content that supports both ranking and conversion.</p>
+      </section>
+
+      <a href={bookingUrl} className="mt-10 inline-flex rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-7 py-3 text-sm font-bold text-[#081022]">Book Your Free Diag Call</a>
     </main>
   );
 }
