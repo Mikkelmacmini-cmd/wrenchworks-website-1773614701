@@ -22,6 +22,7 @@ const services = [
     image: "/images/service-local-seo-v5.png",
     alt: "SEO and AI search results for local auto repair shops",
     imageScale: 1.2,
+    imageFrameClass: "py-6",
   },
   {
     title: "Automated Review Systems",
