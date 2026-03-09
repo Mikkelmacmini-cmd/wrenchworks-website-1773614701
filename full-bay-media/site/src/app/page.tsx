@@ -24,6 +24,13 @@ const outcomes = [
   "Better Google visibility and trust",
 ];
 
+const gallery = [
+  { src: "/images/shop-floor.jpg", alt: "Busy repair shop floor with multiple service bays" },
+  { src: "/images/advisor-customer.jpg", alt: "Service advisor helping a customer in the bay" },
+  { src: "/images/diagnostic-tablet.jpg", alt: "Technician running a vehicle diagnostic scan" },
+  { src: "/images/under-lift-inspection.jpg", alt: "Mechanic performing undercar inspection" },
+];
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-background text-foreground">
@@ -32,7 +39,7 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-25" />
 
       <main className="relative mx-auto max-w-6xl px-6 pb-20 pt-8 md:px-10">
-        <nav className="mb-16 flex items-center justify-between rounded-full border border-white/20 bg-white/6 px-5 py-3 backdrop-blur-xl">
+        <nav className="mb-16 flex items-center justify-between rounded-full border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-xl">
           <Image src="/full-bay-logo.svg" alt="Full Bay Media" width={150} height={32} priority />
           <a
             href={cta}
@@ -42,7 +49,7 @@ export default function Home() {
           </a>
         </nav>
 
-        <section className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+        <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.22em] text-cyan-100/80">
               Pass 4 Direction — Premium Build
@@ -64,27 +71,31 @@ export default function Home() {
               </a>
               <a
                 href="#proof"
-                className="rounded-full border border-white/20 bg-white/7 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/12"
+                className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/15"
               >
                 See Framework
               </a>
             </div>
           </div>
 
-          <aside className="floaty rounded-3xl border border-white/20 bg-white/7 p-6 backdrop-blur-xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Growth Snapshot</p>
-            <p className="mt-4 text-4xl font-semibold">+41%</p>
-            <p className="mt-2 text-sm text-white/75">Typical lift in qualified calls after conversion-layer rebuild.</p>
-            <div className="mt-5 h-px bg-white/15" />
-            <ul className="mt-5 space-y-2 text-sm text-white/85">
-              {outcomes.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
+          <aside className="floaty rounded-3xl border border-white/20 bg-white/10 p-3 backdrop-blur-xl">
+            <div className="relative h-[310px] overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src="/images/hero-mechanic.jpg"
+                alt="Technician checking a vehicle from below"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/80">Growth Snapshot</p>
+                <p className="mt-1 text-2xl font-semibold">+41% Qualified Calls</p>
+              </div>
+            </div>
           </aside>
         </section>
 
-        <section id="proof" className="mt-18 grid gap-4 md:grid-cols-3">
+        <section id="proof" className="mt-14 grid gap-4 md:grid-cols-3">
           {features.map((f) => (
             <article
               key={f.title}
@@ -96,6 +107,15 @@ export default function Home() {
           ))}
         </section>
 
+        <section className="mt-10 grid gap-4 md:grid-cols-2">
+          {gallery.map((item) => (
+            <div key={item.src} className="group relative h-56 overflow-hidden rounded-2xl border border-white/15">
+              <Image src={item.src} alt={item.alt} fill className="object-cover transition duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            </div>
+          ))}
+        </section>
+
         <section className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-7 md:p-10">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
@@ -104,12 +124,19 @@ export default function Home() {
                 We build your growth stack like a product, not a brochure.
               </h3>
             </div>
-            <ol className="space-y-4 text-sm text-white/80">
-              <li>1. Positioning + narrative architecture</li>
-              <li>2. Homepage and offer design system</li>
-              <li>3. SEO structure and schema deployment</li>
-              <li>4. Review funnel and CTA conversion loops</li>
-            </ol>
+            <div>
+              <ol className="space-y-4 text-sm text-white/80">
+                <li>1. Positioning + narrative architecture</li>
+                <li>2. Homepage and offer design system</li>
+                <li>3. SEO structure and schema deployment</li>
+                <li>4. Review funnel and CTA conversion loops</li>
+              </ol>
+              <ul className="mt-5 space-y-2 text-sm text-white/85">
+                {outcomes.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
