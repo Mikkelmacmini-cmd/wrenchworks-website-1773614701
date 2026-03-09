@@ -4,24 +4,24 @@ const cta = "#";
 
 const features = [
   {
-    title: "Huly-grade UX polish",
-    text: "Micro-interactions, visual hierarchy, and motion tuned for trust and speed.",
+    title: "Website systems that sell trust fast",
+    text: "Your homepage should answer three questions in 7 seconds: Can you fix my problem? Can I trust you? What do I do next?",
   },
   {
-    title: "Local SEO engine",
-    text: "Service-area pages, schema, and intent-led copy to rank for real buyer searches.",
+    title: "Local SEO built for booked bays",
+    text: "We target high-intent searches like diagnostics, A/C, brakes, and fleet service with service-area page architecture that drives calls.",
   },
   {
-    title: "Review momentum loops",
-    text: "Automated ask flows and profile optimization that turn jobs into social proof.",
+    title: "Review funnels that compound",
+    text: "We implement post-service ask flows, profile optimization, and response systems that turn completed jobs into social proof.",
   },
 ];
 
 const outcomes = [
-  "Clear premium positioning",
-  "Higher diag-call conversion rates",
-  "Faster lead response pathways",
-  "Better Google visibility and trust",
+  "Higher diagnostic-call conversion",
+  "More high-intent local leads",
+  "Stronger trust before first visit",
+  "Repeatable growth system, not random campaigns",
 ];
 
 const gallery = [
@@ -56,14 +56,14 @@ export default function Home() {
         <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.22em] text-cyan-100/80">
-              Pass 4 Direction — Premium Build
+              Growth Infrastructure for Auto Repair Shops
             </p>
             <h1 className="font-display text-4xl font-semibold leading-tight md:text-6xl">
-              Full Bay Media for shops that want premium growth, not generic marketing.
+              We help independent repair shops win more of the right customers.
             </h1>
             <p className="mt-6 max-w-2xl text-base text-white/75 md:text-lg">
-              We build high-converting web experiences, local discovery systems, and review funnels
-              that move real revenue. No fluff. No agency theater.
+              Full Bay Media builds premium websites, local search systems, and review funnels designed
+              to increase booked diagnostics, improve close rates, and stabilize monthly car count.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -92,8 +92,8 @@ export default function Home() {
                 priority
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/80">Growth Snapshot</p>
-                <p className="mt-1 text-2xl font-semibold">+41% Qualified Calls</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/80">Typical Outcomes</p>
+                <p className="mt-1 text-2xl font-semibold">+41% Qualified Diagnostic Calls</p>
               </div>
             </div>
           </aside>
@@ -123,17 +123,17 @@ export default function Home() {
         <section className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-7 md:p-10">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Build Sequence</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How We Execute</p>
               <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
-                We build your growth stack like a product, not a brochure.
+                One clear system from first impression to booked appointment.
               </h3>
             </div>
             <div>
               <ol className="space-y-4 text-sm text-white/80">
-                <li>1. Positioning + narrative architecture</li>
-                <li>2. Homepage and offer design system</li>
-                <li>3. SEO structure and schema deployment</li>
-                <li>4. Review funnel and CTA conversion loops</li>
+                <li>1. Clarify your offer and ideal customer profile</li>
+                <li>2. Build a conversion-first homepage and service pages</li>
+                <li>3. Deploy local SEO structure + schema by service area</li>
+                <li>4. Launch review and follow-up funnels tied to booked calls</li>
               </ol>
               <ul className="mt-5 space-y-2 text-sm text-white/85">
                 {outcomes.map((item) => (
@@ -150,10 +150,10 @@ export default function Home() {
             style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
           />
           <div className="relative">
-          <p className="text-xs uppercase tracking-[0.22em] text-cyan-100/80">Ready to diagnose growth constraints?</p>
+          <p className="text-xs uppercase tracking-[0.22em] text-cyan-100/80">Ready for a real growth diagnosis?</p>
           <h3 className="mt-3 font-display text-3xl font-semibold">Book a Diag Call</h3>
           <p className="mx-auto mt-3 max-w-2xl text-white/75">
-            We’ll audit your current site, local presence, and review engine, then hand you a prioritized revenue roadmap.
+            We’ll review your current website, local visibility, and review performance — then show you the highest-impact moves to increase booked work.
           </p>
           <a
             href={cta}
