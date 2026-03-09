@@ -266,7 +266,7 @@ export default function Home() {
             >
               <div className="border-b border-white/10 bg-[#0b1224] p-2">
                 <div className={`relative flex h-52 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
-                  <div className={`relative h-full w-full ${item.imageBoxClass ?? "max-w-[280px]"}`}>
+                  <div className="relative h-full w-full max-w-[280px]">
                     <Image
                       src={item.image}
                       alt={item.alt}
@@ -294,39 +294,29 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">Your shop growth roadmap</h3>
 
-          <div className="relative mt-10">
-            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_35%_35%,rgba(56,189,248,0.28),transparent_45%),radial-gradient(circle_at_70%_65%,rgba(139,92,246,0.2),transparent_40%)]" />
+          <div className="relative mt-10 overflow-x-auto rounded-3xl border border-white/15 bg-[#060a16] p-6 md:p-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.22),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.2),transparent_45%)]" />
+            <div className="pointer-events-none absolute left-8 right-8 top-1/2 h-[6px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/70 via-cyan-200/40 to-violet-300/60" />
 
-            <div className="relative grid gap-4 md:grid-cols-6">
-              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
-                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[0].step}</p>
-                <h4 className="mt-2 font-display text-lg font-semibold">{process[0].title}</h4>
-                <p className="mt-2 text-sm text-white/75">{process[0].text}</p>
-              </article>
+            <div className="relative flex min-w-[920px] items-center justify-between gap-4 py-6">
+              {process.map((item, idx) => (
+                <article key={item.step} className="group relative w-[170px]">
+                  <div className="rounded-2xl border border-white/20 bg-gradient-to-b from-cyan-300/25 to-violet-300/15 p-4 backdrop-blur-sm transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-200/70 group-hover:shadow-[0_12px_30px_-12px_rgba(34,211,238,0.65)]">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-200/60 bg-[#0b1224] text-xs font-semibold text-cyan-100">
+                        {idx + 1}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-[0.18em] text-cyan-100/70">Stop</span>
+                    </div>
+                    <h4 className="mt-3 font-display text-base font-semibold">{item.title}</h4>
+                  </div>
 
-              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
-                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[1].step}</p>
-                <h4 className="mt-2 font-display text-lg font-semibold">{process[1].title}</h4>
-                <p className="mt-2 text-sm text-white/75">{process[1].text}</p>
-              </article>
-
-              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-6 md:col-span-6">
-                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[2].step}</p>
-                <h4 className="mt-2 font-display text-xl font-semibold">{process[2].title}</h4>
-                <p className="mt-2 max-w-3xl text-sm text-white/75">{process[2].text}</p>
-              </article>
-
-              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
-                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[3].step}</p>
-                <h4 className="mt-2 font-display text-lg font-semibold">{process[3].title}</h4>
-                <p className="mt-2 text-sm text-white/75">{process[3].text}</p>
-              </article>
-
-              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
-                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[4].step}</p>
-                <h4 className="mt-2 font-display text-lg font-semibold">{process[4].title}</h4>
-                <p className="mt-2 text-sm text-white/75">{process[4].text}</p>
-              </article>
+                  <div className="pointer-events-none absolute left-1/2 top-[calc(100%+10px)] z-20 w-[220px] -translate-x-1/2 rounded-xl border border-cyan-200/30 bg-[#090f1f]/95 p-3 text-xs leading-relaxed text-white/85 opacity-0 shadow-xl transition duration-200 group-hover:opacity-100">
+                    <p className="text-[10px] uppercase tracking-[0.16em] text-cyan-100/70">Step {item.step}</p>
+                    <p className="mt-1">{item.text}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
