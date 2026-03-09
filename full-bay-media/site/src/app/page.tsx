@@ -11,28 +11,34 @@ type ServiceItem = {
   imageScale?: number;
   imageFrameClass?: string;
   imageBoxClass?: string;
+  imageFit?: "contain" | "cover";
+  imagePositionClass?: string;
 };
 
 const services: ServiceItem[] = [
   {
     title: "Google Business Profile",
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
-    image: "/images/service-gbp-v5.png",
+    image: "/images/service-gbp-v6.png",
     alt: "Google Business Profile for an automotive repair shop on mobile",
+    imageFit: "cover",
+    imagePositionClass: "object-center",
   },
   {
     title: "Mobile-First Websites",
     text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
     image: "/images/service-websites-v5.png",
     alt: "Automotive repair website shown on laptop and phone",
+    imageFit: "cover",
+    imagePositionClass: "object-center object-[center_15%]",
   },
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v8.png",
+    image: "/images/service-local-seo-v9.png",
     alt: "SEO and AI search results for local auto repair shops",
-    imageScale: 1,
-    imageFrameClass: "pt-8 pb-4",
+    imageFit: "cover",
+    imagePositionClass: "object-center object-[center_58%]",
   },
   {
     title: "Automated Review Systems",
@@ -161,8 +167,8 @@ export default function Home() {
         style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "420px", backgroundRepeat: "repeat" }}
       />
 
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-8 md:px-10">
-        <header className="mb-14 flex items-center justify-between rounded-full border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-xl">
+      <main className="relative mx-auto max-w-[1600px] px-8 pb-24 pt-8 md:px-14">
+        <header className="mb-16 flex items-center justify-between rounded-full border border-white/20 bg-white/10 px-5 py-3 shadow-[0_10px_35px_-20px_rgba(56,189,248,0.55)] backdrop-blur-xl">
           <Image src="/full-bay-logo.svg" alt="Full Bay Media logo" width={150} height={32} priority />
 
           <div className="flex items-center gap-3">
@@ -233,7 +239,7 @@ export default function Home() {
           {promisePoints.map((point) => (
             <article
               key={point.text}
-              className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white/80"
+              className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white/80 backdrop-blur-sm transition hover:border-cyan-200/35 hover:bg-white/[0.09]"
             >
               <div className="mb-3 flex justify-center">
                 <div className="inline-flex items-center justify-center rounded-full border border-cyan-200/25 bg-cyan-300/10 p-2">
@@ -272,20 +278,19 @@ export default function Home() {
           {services.map((item) => (
             <article
               key={item.title}
-              className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
+              className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] shadow-[0_14px_32px_-24px_rgba(56,189,248,0.55)] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/40 hover:shadow-[0_20px_42px_-22px_rgba(56,189,248,0.75)]"
             >
-              <div className="border-b border-white/10 bg-[#0b1224] p-2">
-                <div className={`relative flex h-52 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
-                  <div className={`relative h-full w-full ${item.imageBoxClass ?? "max-w-[280px]"}`}>
+              <div className="border-b border-white/10 bg-[#0b1224] p-0">
+                <div className={`relative flex h-80 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
+                  <div className="relative h-full w-full">
                     <Image
                       src={item.image}
                       alt={item.alt}
                       width={1024}
                       height={1024}
                       unoptimized
-                      className="h-full w-full object-contain"
-                      style={{ transform: `scale(${item.imageScale ?? 1})`, transformOrigin: "center" }}
-                      sizes="280px"
+                      className={`h-full w-full ${item.imageFit === "cover" ? "object-cover" : "object-contain"} ${item.imagePositionClass ?? ""}` }
+                      sizes="(max-width: 768px) 100vw, 25vw"
                     />
                   </div>
                 </div>
@@ -304,14 +309,14 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Your shop growth roadmap</h3>
 
-          <div className="relative mt-12 overflow-x-auto p-2 md:p-4">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.22),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.2),transparent_45%)]" />
-            <div className="pointer-events-none absolute left-10 right-10 top-1/2 h-[8px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/70 via-cyan-200/40 to-violet-300/60" />
+          <div className="relative mt-12 overflow-hidden p-2 md:p-4">
+            <div className="pointer-events-none absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.18),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.16),transparent_50%)] blur-[2px]" />
+            <div className="pointer-events-none absolute left-10 right-10 top-1/2 h-[8px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/60 via-cyan-200/35 to-violet-300/50" />
 
-            <div className="relative flex min-w-[1180px] items-center justify-between gap-6 py-12">
+            <div className="relative flex w-full flex-wrap items-center justify-center gap-6 py-12">
               {process.map((item, idx) => (
-                <article key={item.step} className="group relative w-[210px]">
-                  <div className="rounded-2xl border border-white/20 bg-gradient-to-b from-cyan-300/25 to-violet-300/15 p-5 backdrop-blur-sm transition duration-300 group-hover:-translate-y-1 group-hover:border-cyan-200/70 group-hover:shadow-[0_12px_30px_-12px_rgba(34,211,238,0.65)]">
+                <article key={item.step} className="group relative w-[220px]">
+                  <div className="rounded-2xl border border-white/20 bg-gradient-to-b from-cyan-300/25 to-violet-300/15 p-5 backdrop-blur-sm transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-[1.02] group-hover:border-cyan-200/70 group-hover:shadow-[0_16px_34px_-12px_rgba(34,211,238,0.7)]">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-200/60 bg-[#0b1224] text-xs font-semibold text-cyan-100">
                         {idx + 1}
@@ -335,9 +340,9 @@ export default function Home() {
 
         <section id="faq" className="mt-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Frequently Asked Questions</p>
-          <div className="mt-4 space-y-3">
+          <div className="mt-6 space-y-4">
             {faqs.map((item) => (
-              <article key={item.q} className="rounded-2xl border border-white/15 bg-white/5 p-5">
+              <article key={item.q} className="rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-sm transition hover:border-cyan-200/35 hover:bg-white/[0.08]">
                 <h3 className="font-display text-lg font-semibold">{item.q}</h3>
                 <p className="mt-2 text-sm text-white/75">{item.a}</p>
               </article>
