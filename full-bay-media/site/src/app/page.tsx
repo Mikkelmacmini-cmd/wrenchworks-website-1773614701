@@ -281,24 +281,6 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="mt-10 grid gap-4 md:grid-cols-2" aria-label="Repair shop visual gallery">
-          <div className="group relative h-56 overflow-hidden rounded-2xl border border-white/15">
-            <Image src="/images/shop-floor.jpg" alt="Busy modern repair shop floor" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-          </div>
-          <div className="group relative h-56 overflow-hidden rounded-2xl border border-white/15">
-            <Image src="/images/advisor-customer.jpg" alt="Service advisor discussing repairs with customer" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-          </div>
-          <div className="group relative h-56 overflow-hidden rounded-2xl border border-white/15">
-            <Image src="/images/diagnostic-tablet.jpg" alt="Technician using tablet diagnostics" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-          </div>
-          <div className="group relative h-56 overflow-hidden rounded-2xl border border-white/15">
-            <Image src="/images/under-lift-inspection.jpg" alt="Vehicle inspection under hydraulic lift" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-          </div>
-        </section>
 
         <section id="process" className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
