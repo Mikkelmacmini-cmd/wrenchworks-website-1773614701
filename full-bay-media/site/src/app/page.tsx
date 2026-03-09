@@ -19,11 +19,9 @@ const services = [
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v6.png",
+    image: "/images/service-local-seo-v5.png",
     alt: "SEO and AI search results for local auto repair shops",
-    imageScale: 1.55,
-    imageFrameClass: "py-6",
-    imageBoxClass: "max-w-[340px]",
+    imageScale: 1.2,
   },
   {
     title: "Automated Review Systems",
