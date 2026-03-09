@@ -262,13 +262,14 @@ export default function Home() {
               key={item.title}
               className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
             >
-              <div className="relative h-72 w-full border-b border-white/10 bg-[#0b1224] p-2">
+              <div className="border-b border-white/10 bg-[#0b1224] p-2">
                 <Image
                   src={item.image}
                   alt={item.alt}
-                  fill
+                  width={1536}
+                  height={1024}
                   unoptimized
-                  className="object-contain"
+                  className="h-auto w-full"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
