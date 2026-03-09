@@ -9,28 +9,24 @@ const services = [
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
     image: "/images/service-gbp-v5.png",
     alt: "Google Business Profile for an automotive repair shop on mobile",
-    imageScale: 1,
   },
   {
     title: "Mobile-First Websites",
     text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
-    image: "/images/service-websites-v4.png",
+    image: "/images/service-websites-v5.png",
     alt: "Automotive repair website shown on laptop and phone",
-    imageScale: 1.2,
   },
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
     image: "/images/service-local-seo-v4.png",
     alt: "SEO and AI search results for local auto repair shops",
-    imageScale: 1.2,
   },
   {
     title: "Automated Review Systems",
     text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
     image: "/images/service-reviews-v4.png",
     alt: "Automated review funnel turning customer feedback into 5-star ratings",
-    imageScale: 1,
   },
 ];
 
@@ -274,8 +270,7 @@ export default function Home() {
                     width={1536}
                     height={1024}
                     unoptimized
-                    className="h-auto w-full"
-                    style={{ transform: `scale(${item.imageScale ?? 1})`, transformOrigin: "center" }}
+                    className="h-full w-full object-contain"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
