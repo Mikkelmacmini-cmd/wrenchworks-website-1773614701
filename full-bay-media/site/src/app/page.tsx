@@ -154,14 +154,18 @@ const faqLd = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-clip bg-background text-foreground">
+    <div
+      className="relative min-h-screen overflow-x-clip bg-background text-foreground"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 22% 15%, rgba(56,189,248,0.14), transparent 36%), radial-gradient(circle at 78% 22%, rgba(139,92,246,0.12), transparent 34%), radial-gradient(circle at 50% 100%, rgba(56,189,248,0.08), transparent 42%)",
+      }}
+    >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-[460px] w-[760px] -translate-x-1/2 rounded-full bg-cyan-300/20 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-180px] top-40 h-[440px] w-[440px] rounded-full bg-violet-400/20 blur-3xl" />
-      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-25" />
+      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-20" />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
         style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "420px", backgroundRepeat: "repeat" }}
@@ -310,8 +314,7 @@ export default function Home() {
           <h3 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Your shop growth roadmap</h3>
 
           <div className="relative mt-12 overflow-hidden p-2 md:p-4">
-            <div className="pointer-events-none absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.18),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.16),transparent_50%)] blur-[2px]" />
-            <div className="pointer-events-none absolute left-10 right-10 top-1/2 h-[8px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/60 via-cyan-200/35 to-violet-300/50" />
+            <div className="pointer-events-none absolute left-10 right-10 top-1/2 h-[8px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/55 via-cyan-200/30 to-violet-300/45" />
 
             <div className="relative flex w-full flex-wrap items-center justify-center gap-6 py-12">
               {process.map((item, idx) => (
