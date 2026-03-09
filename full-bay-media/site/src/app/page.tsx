@@ -214,13 +214,12 @@ export default function Home() {
               className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-white/80"
             >
               {point.showGauge ? (
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-200/25 bg-cyan-300/10 px-2 py-1">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-label="RPM gauge icon">
+                <div className="mb-3 inline-flex items-center rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-2">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-label="RPM gauge icon">
                     <path d="M4 15a8 8 0 1 1 16 0" stroke="#9AE6FF" strokeWidth="1.8" strokeLinecap="round" />
                     <path d="M12 12l5-3" stroke="#9AE6FF" strokeWidth="1.8" strokeLinecap="round" />
                     <circle cx="12" cy="12" r="1.5" fill="#9AE6FF" />
                   </svg>
-                  <span className="text-xs uppercase tracking-[0.16em] text-cyan-100/80">RPM Gauge</span>
                 </div>
               ) : null}
               <p>{point.text}</p>
