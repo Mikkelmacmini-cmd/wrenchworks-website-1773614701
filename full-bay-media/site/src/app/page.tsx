@@ -19,7 +19,7 @@ const services = [
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v4.png",
+    image: "/images/service-local-seo-v5.png",
     alt: "SEO and AI search results for local auto repair shops",
   },
   {
@@ -264,15 +264,16 @@ export default function Home() {
             >
               <div className="border-b border-white/10 bg-[#0b1224] p-2">
                 <div className="relative flex h-52 items-center justify-center overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    width={1536}
-                    height={1024}
-                    unoptimized
-                    className="h-full w-full object-contain"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                  <div className="relative h-full w-full max-w-[280px]">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      unoptimized
+                      className="object-contain"
+                      sizes="280px"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="p-6">
