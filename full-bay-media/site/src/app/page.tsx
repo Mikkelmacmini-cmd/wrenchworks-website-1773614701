@@ -13,7 +13,7 @@ const services = [
   {
     title: "Mobile-First Websites",
     text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
-    image: "/images/service-websites-v5.png",
+    image: "/images/service-websites-v6.png",
     alt: "Automotive repair website shown on laptop and phone",
   },
   {
