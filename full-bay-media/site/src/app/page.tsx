@@ -217,7 +217,7 @@ export default function Home() {
           </aside>
         </section>
 
-        <section className="mt-8 grid gap-3 md:grid-cols-3">
+        <section className="mt-12 grid gap-3 md:grid-cols-3">
           {promisePoints.map((point) => (
             <article
               key={point.text}
@@ -256,7 +256,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="services" className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <section id="services" className="mt-24 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {services.map((item) => (
             <article
               key={item.title}
@@ -284,7 +284,7 @@ export default function Home() {
         </section>
 
 
-        <section id="process" className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-7 md:p-10">
+        <section id="process" className="mt-24 rounded-3xl border border-white/15 bg-white/5 p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
           <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
             A clear 5-step process built to grow your shop.
@@ -300,7 +300,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-white/15 bg-white/5 p-6">
+        <section className="mt-24 rounded-3xl border border-white/15 bg-white/5 p-6">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Why this works</p>
           <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
             Times have changed. The first storefront most customers see is your Google Business Profile and
@@ -309,7 +309,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section id="faq" className="mt-16">
+        <section id="faq" className="mt-24">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Frequently Asked Questions</p>
           <div className="mt-4 space-y-3">
             {faqs.map((item) => (
@@ -323,7 +323,7 @@ export default function Home() {
 
         <section
           id="contact"
-          className="relative mt-16 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-8 text-center md:p-12"
+          className="relative mt-24 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-8 text-center md:p-12"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-20"
