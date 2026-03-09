@@ -6,7 +6,7 @@ const secondaryCta = "#services";
 const services = [
   {
     title: "Mobile-First Websites",
-    text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy to call, book, or get directions.",
+    text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
     image: "/images/service-websites-v3.png",
     alt: "Automotive repair website shown on laptop and phone",
   },
