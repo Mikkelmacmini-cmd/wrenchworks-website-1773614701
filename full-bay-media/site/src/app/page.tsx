@@ -7,18 +7,26 @@ const services = [
   {
     title: "Websites",
     text: "Fast, clean websites that make your shop look pro and make it easy for people to call, book, or get directions.",
+    image: "/images/service-websites.png",
+    alt: "Automotive repair website shown on laptop and phone",
   },
   {
     title: "Local SEO",
     text: "We help your shop show up when local drivers search for repair help, brakes, oil changes, and more.",
+    image: "/images/service-local-seo.png",
+    alt: "SEO and AI search results for local auto repair shops",
   },
   {
     title: "Google Business Profile",
     text: "We optimize your profile, services, photos, and posts so your first impression looks as strong as your work.",
+    image: "/images/service-gbp.png",
+    alt: "Google Business Profile for an automotive repair shop on mobile",
   },
   {
     title: "Automated Review Systems",
     text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
+    image: "/images/service-reviews.png",
+    alt: "Automated review funnel turning customer feedback into 5-star ratings",
   },
 ];
 
@@ -252,10 +260,15 @@ export default function Home() {
           {services.map((item) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] p-6 transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
+              className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/35"
             >
-              <h2 className="font-display text-xl font-semibold">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-white/75">{item.text}</p>
+              <div className="relative h-44 w-full border-b border-white/10">
+                <Image src={item.image} alt={item.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+              </div>
+              <div className="p-6">
+                <h2 className="font-display text-xl font-semibold">{item.title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-white/75">{item.text}</p>
+              </div>
             </article>
           ))}
         </section>
