@@ -5,18 +5,6 @@ const secondaryCta = "#services";
 
 const services = [
   {
-    title: "Mobile-First Websites",
-    text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
-    image: "/images/service-websites-v3.png",
-    alt: "Automotive repair website shown on laptop and phone",
-  },
-  {
-    title: "Local SEO + AI Search",
-    text: "Search is changing fast. We optimize your site so local drivers can find you in Google and in AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v3.png",
-    alt: "SEO and AI search results for local auto repair shops",
-  },
-  {
     title: "Google Business Profile",
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
     image: "/images/service-gbp-v4.png",
@@ -24,11 +12,23 @@ const services = [
     compactImage: true,
   },
   {
+    title: "Mobile-First Websites",
+    text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
+    image: "/images/service-websites-v3.png",
+    alt: "Automotive repair website shown on laptop and phone",
+  },
+  {
     title: "Automated Review Systems",
     text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
     image: "/images/service-reviews-v3.png",
     alt: "Automated review funnel turning customer feedback into 5-star ratings",
     compactImage: true,
+  },
+  {
+    title: "Local SEO + AI Search",
+    text: "Search is changing fast. We optimize your site so local drivers can find you in Google and in AI search, so your shop shows up where people are looking now.",
+    image: "/images/service-local-seo-v3.png",
+    alt: "SEO and AI search results for local auto repair shops",
   },
 ];
 
