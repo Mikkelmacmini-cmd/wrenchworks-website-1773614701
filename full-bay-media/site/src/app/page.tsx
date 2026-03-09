@@ -140,7 +140,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-8 text-center md:p-12">
+        <section className="relative mt-16 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-8 text-center md:p-12">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+          />
+          <div className="relative">
           <p className="text-xs uppercase tracking-[0.22em] text-cyan-100/80">Ready to diagnose growth constraints?</p>
           <h3 className="mt-3 font-display text-3xl font-semibold">Book a Diag Call</h3>
           <p className="mx-auto mt-3 max-w-2xl text-white/75">
@@ -152,6 +157,7 @@ export default function Home() {
           >
             Book a Diag Call
           </a>
+          </div>
         </section>
       </main>
     </div>
