@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const primaryCta = "#contact";
@@ -21,7 +23,7 @@ const services: ServiceItem[] = [
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
     image: "/images/service-gbp-v6.png",
     alt: "Google Business Profile for an automotive repair shop on mobile",
-    imageFit: "cover",
+    imageFit: "contain",
     imagePositionClass: "object-center",
   },
   {
@@ -29,16 +31,18 @@ const services: ServiceItem[] = [
     text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
     image: "/images/service-websites-v5.png",
     alt: "Automotive repair website shown on laptop and phone",
-    imageFit: "cover",
-    imagePositionClass: "object-center object-[center_15%]",
+    imageFit: "contain",
+    imagePositionClass: "object-center",
+    imageScale: 1.5,
   },
   {
     title: "Local SEO + AI Search",
     text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
     image: "/images/service-local-seo-v9.png",
     alt: "SEO and AI search results for local auto repair shops",
-    imageFit: "cover",
-    imagePositionClass: "object-center object-[center_58%]",
+    imageFit: "contain",
+    imagePositionClass: "object-center",
+    imageScale: 1.5,
   },
   {
     title: "Automated Review Systems",
@@ -66,7 +70,7 @@ const promisePoints = [
 const process = [
   {
     step: "01",
-    title: "Audit",
+    title: "Diagnosis",
     text: "We review your website, Google profile, reviews, and local search presence.",
   },
   {
@@ -94,7 +98,7 @@ const process = [
 const faqs = [
   {
     q: "Who do you work with?",
-    a: "Independent auto repair shops and multi-location service businesses.",
+    a: "Independent auto repair shops and Multi-store Operators.",
   },
   {
     q: "What do you help with first?",
@@ -102,7 +106,7 @@ const faqs = [
   },
   {
     q: "How long does setup take?",
-    a: "Most core work is done in 2–4 weeks, depending on how quickly we get access and approvals.",
+    a: "It depends on the scope of work. Some systems can be implemented immediately. Others like full website builds require more time and customization.",
   },
   {
     q: "Do you help us get more reviews?",
@@ -110,11 +114,11 @@ const faqs = [
   },
   {
     q: "Do you lock us into long contracts?",
-    a: "No long-term lock-ins are required to get started. We focus on results and clear next steps.",
+    a: "We believe in partnerships not contractual obligations. We offer 30 day agreements, or longer depending on <strong><u>your</u></strong> needs.",
   },
   {
     q: "What should we bring to the first call?",
-    a: "Your shop goals, current pain points, and access to your website and Google profile if possible.",
+    a: "Your shop goals, current pain points, and a link to your current website.",
   },
 ];
 
@@ -154,89 +158,85 @@ const faqLd = {
 
 export default function Home() {
   return (
-    <div
-      className="relative min-h-screen overflow-x-clip bg-background text-foreground"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle at 22% 15%, rgba(56,189,248,0.14), transparent 36%), radial-gradient(circle at 78% 22%, rgba(139,92,246,0.12), transparent 34%), radial-gradient(circle at 50% 100%, rgba(56,189,248,0.08), transparent 42%)",
-      }}
-    >
+    <div className="relative min-h-screen overflow-x-clip bg-[#0a1324] text-foreground clawx-bg-v3">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
-      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-20" />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
-        style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "420px", backgroundRepeat: "repeat" }}
-      />
+
+
+
+      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-12" />
 
       <main className="relative mx-auto max-w-[1600px] px-8 pb-24 pt-8 md:px-14">
-        <header className="mb-16 flex items-center justify-between rounded-full border border-white/20 bg-white/10 px-5 py-3 shadow-[0_10px_35px_-20px_rgba(56,189,248,0.55)] backdrop-blur-xl">
-          <Image src="/full-bay-logo.svg" alt="Full Bay Media logo" width={150} height={32} priority />
+        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+          <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between border-b border-white/15 bg-[#050812]/55 px-6 py-4 backdrop-blur-xl md:px-10">
+            <Image src="/full-bay-logo.svg" alt="Full Bay Media logo" width={160} height={34} priority />
 
-          <div className="flex items-center gap-3">
-            <a
-              href={primaryCta}
-              className="rounded-full border border-cyan-200/40 bg-cyan-300/10 px-5 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
-            >
-              Get More Cars in the Bay
-            </a>
-            <button
-              type="button"
-              aria-label="Open menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10"
-            >
-              <span className="sr-only">Menu</span>
-              <span className="flex flex-col gap-1">
-                <span className="block h-[2px] w-4 bg-white/90" />
-                <span className="block h-[2px] w-4 bg-white/90" />
-                <span className="block h-[2px] w-4 bg-white/90" />
-              </span>
-            </button>
-          </div>
-        </header>
-
-        <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-          <div>
-            <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.22em] text-cyan-100/80">
-              Digital Growth for Independent Auto Repair Shops
-            </p>
-            <h1 className="font-display text-4xl font-semibold leading-tight md:text-6xl">
-              You built the shop. We’ll bring the right people.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base text-white/75 md:text-lg">
-              Not your average marketing partner. We build websites, improve local SEO, optimize your Google
-              Business Profile, and set up AI-powered review funnels that grow car count.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="flex items-center gap-3">
               <a
                 href={primaryCta}
-                className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-6 py-3 text-sm font-bold text-[#081022] transition hover:brightness-110"
+                className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-5 py-2 text-sm font-bold text-[#081022] transition hover:brightness-110"
               >
-                Get More Cars in the Bay
+                Call Us Now
               </a>
-              <a
-                href={secondaryCta}
-                className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/15"
+              <button
+                type="button"
+                aria-label="Open menu"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10"
               >
-                See Services
-              </a>
+                <span className="sr-only">Menu</span>
+                <span className="flex flex-col gap-1">
+                  <span className="block h-[2px] w-4 bg-white/90" />
+                  <span className="block h-[2px] w-4 bg-white/90" />
+                  <span className="block h-[2px] w-4 bg-white/90" />
+                </span>
+              </button>
+            </div>
+          </header>
+
+          <div className="relative h-[560px] w-full md:h-[640px]">
+            <Image
+              src="/images/hero-shop.png"
+              alt="Auto repair shop exterior with open service bays"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#050812]/85 via-[#050812]/55 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050812]/70 via-transparent to-[#050812]/20" />
+
+            <div className="relative z-10 h-full p-8 md:p-14">
+              <div className="flex h-full max-w-3xl flex-col">
+                <h1 className="font-display text-4xl font-semibold leading-[1.08] md:pt-6 md:text-6xl">
+                  You built a great shop.
+                  <br className="hidden md:block" />
+                  Let us help you fill it.
+                </h1>
+
+                <div className="mt-auto pb-2">
+                  <p className="max-w-2xl text-base text-white/85 md:text-lg">
+                    We are not a one size fits all marketing company. We only work with auto repair and collision shops—so every strategy is built for your industry.
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a
+                      href={primaryCta}
+                      className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-6 py-3 text-sm font-bold text-[#081022] transition hover:brightness-110"
+                    >
+                      Call Us Now
+                    </a>
+                    <a
+                      href={secondaryCta}
+                      className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                    >
+                      How We Help
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <aside className="floaty rounded-3xl border border-white/20 bg-white/10 p-3 backdrop-blur-xl">
-            <div className="relative h-[320px] overflow-hidden rounded-2xl border border-white/10">
-              <Image
-                src="/images/hero-mechanic.jpg"
-                alt="Technician performing diagnostics under a vehicle"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-          </aside>
         </section>
 
         <section className="mt-12 grid gap-4 md:grid-cols-3">
@@ -278,14 +278,17 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="services" className="mt-36 grid gap-8 pb-28 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((item) => (
-            <article
-              key={item.title}
-              className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] shadow-[0_14px_32px_-24px_rgba(56,189,248,0.55)] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/40 hover:shadow-[0_20px_42px_-22px_rgba(56,189,248,0.75)]"
-            >
+        <section id="services" className="mt-36 pb-28">
+          <h3 className="mb-8 text-center font-display text-3xl font-semibold md:text-4xl">How We Help</h3>
+
+          <div className="grid gap-10 md:grid-cols-2">
+            {services.map((item) => (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] shadow-[0_14px_32px_-24px_rgba(56,189,248,0.55)] transition duration-200 hover:-translate-y-1 hover:border-cyan-200/40 hover:shadow-[0_20px_42px_-22px_rgba(56,189,248,0.75)]"
+              >
               <div className="border-b border-white/10 bg-[#0b1224] p-0">
-                <div className={`relative flex h-80 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
+                <div className={`relative flex h-96 items-center justify-center overflow-hidden ${item.imageFrameClass ?? ""}`}>
                   <div className="relative h-full w-full">
                     <Image
                       src={item.image}
@@ -294,42 +297,60 @@ export default function Home() {
                       height={1024}
                       unoptimized
                       className={`h-full w-full ${item.imageFit === "cover" ? "object-cover" : "object-contain"} ${item.imagePositionClass ?? ""}` }
+                      style={{ transform: `scale(${item.imageScale ?? 1})` }}
                       sizes="(max-width: 768px) 100vw, 25vw"
                     />
                   </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h2 className="font-display text-xl font-semibold">{item.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-white/75">{item.text}</p>
-              </div>
-            </article>
-          ))}
+                <div className="p-8">
+                  <h2 className="font-display text-xl font-semibold">{item.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-white/75">{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <div className="h-56" aria-hidden="true" />
 
         <section id="process" className="mt-0 p-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
-          <h3 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Your shop growth roadmap</h3>
+          <h3 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Our Shop Growth Roadmap</h3>
 
-          <div className="relative mt-12 overflow-hidden p-2 md:p-4">
-            <div className="pointer-events-none absolute left-10 right-10 top-1/2 h-[8px] -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-300/55 via-cyan-200/30 to-violet-300/45" />
+          <div className="relative mt-12 overflow-visible p-2 pb-24 md:p-4 md:pb-28">
+            <svg
+              className="pointer-events-none absolute left-1/2 top-4 hidden h-[980px] w-[540px] -translate-x-1/2 md:block"
+              viewBox="0 0 540 980"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M270 20 C 90 110, 450 190, 270 300 S 90 500, 270 610 S 450 810, 270 940"
+                fill="none"
+                stroke="rgba(125, 226, 255, 0.58)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeDasharray="2 14"
+              />
+            </svg>
 
-            <div className="relative flex w-full flex-wrap items-center justify-center gap-6 py-12">
+            <div className="relative flex flex-col items-center gap-20 py-10 md:gap-28 md:py-14">
               {process.map((item, idx) => (
-                <article key={item.step} className="group relative w-[220px]">
+                <article
+                  key={item.step}
+                  className={`group relative w-full max-w-[250px] ${idx === 0 ? "md:translate-x-0 md:-mt-20" : idx % 2 === 0 ? "md:-translate-x-36" : "md:translate-x-36"}`}
+                >
                   <div className="rounded-2xl border border-white/20 bg-gradient-to-b from-cyan-300/25 to-violet-300/15 p-5 backdrop-blur-sm transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-[1.02] group-hover:border-cyan-200/70 group-hover:shadow-[0_16px_34px_-12px_rgba(34,211,238,0.7)]">
-                    <div className="flex items-center justify-between">
+                    <div className="flex justify-center">
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-200/60 bg-[#0b1224] text-xs font-semibold text-cyan-100">
                         {idx + 1}
                       </span>
-                      <span className="text-[10px] uppercase tracking-[0.18em] text-cyan-100/70">Stop</span>
                     </div>
-                    <h4 className="mt-3 font-display text-base font-semibold">{item.title}</h4>
+                    <h4 className="mt-3 text-center font-display text-base font-semibold">{item.title}</h4>
                   </div>
 
-                  <div className="pointer-events-none absolute left-1/2 top-[calc(100%+10px)] z-20 w-[220px] -translate-x-1/2 rounded-xl border border-cyan-200/30 bg-[#090f1f]/95 p-3 text-xs leading-relaxed text-white/85 opacity-0 shadow-xl transition duration-200 group-hover:opacity-100">
+                  <div className="pointer-events-none absolute left-1/2 top-[calc(100%+10px)] z-20 w-[240px] -translate-x-1/2 rounded-xl border border-cyan-200/30 bg-[#090f1f]/95 p-3 text-xs leading-relaxed text-white/85 opacity-0 shadow-xl transition duration-200 group-hover:opacity-100">
                     <p className="text-[10px] uppercase tracking-[0.16em] text-cyan-100/70">Step {item.step}</p>
                     <p className="mt-1">{item.text}</p>
                   </div>
@@ -345,9 +366,12 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Frequently Asked Questions</p>
           <div className="mt-6 space-y-4">
             {faqs.map((item) => (
-              <article key={item.q} className="rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-sm transition hover:border-cyan-200/35 hover:bg-white/[0.08]">
+              <article key={item.q} className="group rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-sm transition hover:border-cyan-200/35 hover:bg-white/[0.08]">
                 <h3 className="font-display text-lg font-semibold">{item.q}</h3>
-                <p className="mt-2 text-sm text-white/75">{item.a}</p>
+                <p
+                  className="mt-2 max-h-0 overflow-hidden text-sm text-white/75 opacity-0 transition-all duration-300 group-hover:max-h-40 group-hover:opacity-100"
+                  dangerouslySetInnerHTML={{ __html: item.a }}
+                />
               </article>
             ))}
           </div>
@@ -357,11 +381,25 @@ export default function Home() {
 
         <section
           id="contact"
-          className="relative mt-0 overflow-hidden rounded-3xl border border-cyan-200/25 bg-gradient-to-r from-cyan-300/10 to-violet-300/10 p-12 text-center md:p-16"
+          className="relative mt-0 overflow-hidden rounded-3xl bg-white/[0.04] p-12 text-center md:p-16"
+          style={{
+            ['--mx' as string]: '50%',
+            ['--my' as string]: '50%',
+          }}
+          onMouseMove={(e) => {
+            const r = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - r.left) / r.width) * 100;
+            const y = ((e.clientY - r.top) / r.height) * 100;
+            e.currentTarget.style.setProperty('--mx', `${x}%`);
+            e.currentTarget.style.setProperty('--my', `${y}%`);
+          }}
         >
           <div
-            className="pointer-events-none absolute inset-0 opacity-20"
-            style={{ backgroundImage: "url('/images/pattern-gradient-dots.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+            className="pointer-events-none absolute inset-0 opacity-70 transition-all duration-150"
+            style={{
+              background:
+                'radial-gradient(220px 220px at var(--mx) var(--my), rgba(56,189,248,0.28), transparent 70%), radial-gradient(300px 300px at calc(var(--mx) + 8%) calc(var(--my) + 6%), rgba(139,92,246,0.24), transparent 72%)',
+            }}
           />
           <div className="relative">
             <p className="text-xs uppercase tracking-[0.22em] text-cyan-100/80">Ready for real growth?</p>
