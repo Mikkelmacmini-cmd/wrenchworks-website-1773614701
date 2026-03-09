@@ -176,30 +176,32 @@ export default function Home() {
 
       <main className="relative mx-auto max-w-[1600px] px-8 pb-24 pt-8 md:px-14">
         <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
-          <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between border-b border-white/15 bg-[#050812]/55 px-6 py-4 backdrop-blur-xl md:px-10">
-            <Image src="/full-bay-logo.svg" alt="Full Bay Media logo" width={160} height={34} priority />
+          <div className="absolute left-2 -top-6 z-20 md:left-4 md:-top-6">
+            <Link href="/" aria-label="Go to homepage" className="inline-flex">
+              <Image src="/full-bay-logo.png" alt="Full Bay Media logo" width={112} height={24} priority />
+            </Link>
+          </div>
 
-            <div className="flex items-center gap-3">
-              <a
-                href={primaryCta}
-                className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-5 py-2 text-sm font-bold text-[#081022] transition hover:brightness-110"
-              >
-                Call Us Now
-              </a>
-              <button
-                type="button"
-                aria-label="Open menu"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10"
-              >
-                <span className="sr-only">Menu</span>
-                <span className="flex flex-col gap-1">
-                  <span className="block h-[2px] w-4 bg-white/90" />
-                  <span className="block h-[2px] w-4 bg-white/90" />
-                  <span className="block h-[2px] w-4 bg-white/90" />
-                </span>
-              </button>
-            </div>
-          </header>
+          <div className="absolute right-4 top-12 z-20 flex items-center gap-3 md:right-6 md:top-12">
+            <a
+              href={primaryCta}
+              className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-5 py-2 text-sm font-bold text-[#081022] transition hover:brightness-110"
+            >
+              Call Us Now
+            </a>
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10"
+            >
+              <span className="sr-only">Menu</span>
+              <span className="flex flex-col gap-1">
+                <span className="block h-[2px] w-4 bg-white/90" />
+                <span className="block h-[2px] w-4 bg-white/90" />
+                <span className="block h-[2px] w-4 bg-white/90" />
+              </span>
+            </button>
+          </div>
 
           <div className="relative h-[560px] w-full md:h-[640px]">
             <Image
@@ -212,10 +214,11 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#050812]/85 via-[#050812]/55 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050812]/70 via-transparent to-[#050812]/20" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-[#0a1324]" />
 
             <div className="relative z-10 h-full p-8 md:p-14">
               <div className="flex h-full max-w-3xl flex-col">
-                <h1 className="font-display text-4xl font-semibold leading-[1.08] md:pt-6 md:text-6xl">
+                <h1 className="font-display text-4xl font-semibold leading-[1.08] pt-12 md:pt-20 md:text-6xl">
                   You built a great shop.
                   <br className="hidden md:block" />
                   Let us help you fill it.
@@ -227,14 +230,8 @@ export default function Home() {
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <a
-                      href={primaryCta}
-                      className="rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-6 py-3 text-sm font-bold text-[#081022] transition hover:brightness-110"
-                    >
-                      Call Us Now
-                    </a>
-                    <a
                       href={secondaryCta}
-                      className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                      className="rounded-full bg-gradient-to-r from-cyan-300 via-cyan-200 to-violet-300 px-8 py-3 text-xl font-bold text-[#081022] shadow-[0_16px_36px_-16px_rgba(125,226,255,0.8)] transition hover:brightness-110"
                     >
                       How We Help
                     </a>
@@ -317,7 +314,16 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </section>
+        
+
+          <div className="mt-12 flex justify-center">
+            <a
+              href={primaryCta}
+              className="rounded-full bg-gradient-to-r from-cyan-300 via-cyan-200 to-violet-300 px-12 py-4 text-2xl font-bold text-[#081022] shadow-[0_18px_42px_-18px_rgba(125,226,255,0.85)] transition hover:brightness-110"
+            >
+              Book Your Free Diag Call Now
+            </a>
+          </div></section>
 
         <div className="h-56" aria-hidden="true" />
 
