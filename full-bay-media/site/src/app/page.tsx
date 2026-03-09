@@ -53,6 +53,27 @@ const outcomes = [
   "Consistent monthly demand signal",
 ];
 
+const stats = [
+  { label: "Avg. lift in qualified calls", value: "+41%" },
+  { label: "Typical launch window", value: "2–4 weeks" },
+  { label: "Core KPIs tracked", value: "12" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "We stopped sounding like every other shop online. Calls got better and customers came in pre-sold.",
+    name: "Independent Shop Owner",
+    role: "5-Bay Repair Facility",
+  },
+  {
+    quote:
+      "The new structure made our Google profile and website finally work together. Lead quality improved fast.",
+    name: "Operations Manager",
+    role: "Multi-Location Auto Service",
+  },
+];
+
 const faqs = [
   {
     q: "Who is Full Bay Media built for?",
@@ -182,6 +203,15 @@ export default function Home() {
           ))}
         </section>
 
+        <section className="mt-6 grid gap-3 md:grid-cols-3">
+          {stats.map((stat) => (
+            <article key={stat.label} className="rounded-xl border border-cyan-200/20 bg-cyan-300/10 px-4 py-4">
+              <p className="font-display text-2xl font-semibold text-cyan-100">{stat.value}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/65">{stat.label}</p>
+            </article>
+          ))}
+        </section>
+
         <section id="services" className="mt-14 grid gap-4 md:grid-cols-3">
           {services.map((item) => (
             <article
@@ -246,6 +276,19 @@ export default function Home() {
               with a unified system so your growth is less dependent on luck or ad spend spikes.
             </p>
           </article>
+        </section>
+
+        <section className="mt-16">
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Operator Feedback</p>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {testimonials.map((t) => (
+              <article key={t.quote} className="rounded-2xl border border-white/15 bg-white/5 p-5">
+                <p className="text-sm leading-relaxed text-white/85">“{t.quote}”</p>
+                <p className="mt-4 text-sm font-semibold">{t.name}</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-white/60">{t.role}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="faq" className="mt-16">
