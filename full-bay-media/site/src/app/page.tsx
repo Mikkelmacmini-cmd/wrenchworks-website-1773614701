@@ -292,30 +292,41 @@ export default function Home() {
 
         <section id="process" className="mt-0 rounded-3xl border border-white/15 bg-white/5 p-10 md:p-14">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">How It Works</p>
-          <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">
-            Your shop growth roadmap
-          </h3>
+          <h3 className="mt-3 font-display text-2xl font-semibold md:text-3xl">Your shop growth roadmap</h3>
 
           <div className="relative mt-10">
-            <div className="pointer-events-none absolute left-5 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-cyan-200/70 via-violet-200/40 to-transparent md:left-1/2 md:-translate-x-1/2" />
+            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_35%_35%,rgba(56,189,248,0.28),transparent_45%),radial-gradient(circle_at_70%_65%,rgba(139,92,246,0.2),transparent_40%)]" />
 
-            <div className="space-y-8">
-              {process.map((item, idx) => (
-                <article
-                  key={item.step}
-                  className={`relative grid items-start gap-4 md:grid-cols-2 ${idx % 2 === 0 ? "" : "md:[&>div:first-child]:order-2"}`}
-                >
-                  <div className="relative rounded-2xl border border-white/15 bg-gradient-to-b from-white/10 to-white/[0.03] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_40px_-30px_rgba(34,211,238,0.45)]">
-                    <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {item.step}</p>
-                    <h4 className="mt-2 font-display text-lg font-semibold">{item.title}</h4>
-                    <p className="mt-2 text-sm text-white/75">{item.text}</p>
-                  </div>
+            <div className="relative grid gap-4 md:grid-cols-6">
+              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
+                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[0].step}</p>
+                <h4 className="mt-2 font-display text-lg font-semibold">{process[0].title}</h4>
+                <p className="mt-2 text-sm text-white/75">{process[0].text}</p>
+              </article>
 
-                  <div className="hidden md:block" />
+              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
+                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[1].step}</p>
+                <h4 className="mt-2 font-display text-lg font-semibold">{process[1].title}</h4>
+                <p className="mt-2 text-sm text-white/75">{process[1].text}</p>
+              </article>
 
-                  <span className="absolute left-5 top-6 h-3 w-3 -translate-x-1/2 rounded-full bg-cyan-200 shadow-[0_0_0_4px_rgba(34,211,238,0.2),0_0_16px_rgba(34,211,238,0.7)] md:left-1/2" />
-                </article>
-              ))}
+              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-6 md:col-span-6">
+                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[2].step}</p>
+                <h4 className="mt-2 font-display text-xl font-semibold">{process[2].title}</h4>
+                <p className="mt-2 max-w-3xl text-sm text-white/75">{process[2].text}</p>
+              </article>
+
+              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
+                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[3].step}</p>
+                <h4 className="mt-2 font-display text-lg font-semibold">{process[3].title}</h4>
+                <p className="mt-2 text-sm text-white/75">{process[3].text}</p>
+              </article>
+
+              <article className="rounded-3xl border border-white/20 bg-[#05070f]/90 p-5 md:col-span-3">
+                <p className="text-xs tracking-[0.2em] text-cyan-100/70">STEP {process[4].step}</p>
+                <h4 className="mt-2 font-display text-lg font-semibold">{process[4].title}</h4>
+                <p className="mt-2 text-sm text-white/75">{process[4].text}</p>
+              </article>
             </div>
           </div>
         </section>
