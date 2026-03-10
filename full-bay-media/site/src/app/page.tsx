@@ -67,10 +67,12 @@ export default function Home() {
   return (
     <main className="bg-white text-[#1f2937]">
       <header className="border-b border-[#e5e7eb] bg-white">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-3 md:px-10">
-          <p className="text-sm font-medium text-[#166534]">Serving Littleton and nearby communities</p>
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
+          <div className="relative h-14 w-52 md:h-16 md:w-64">
+            <Image src="/autotrek-logo.png" alt="AutoTrek Service Center logo" fill className="object-contain object-left" priority />
+          </div>
           <a href={business.phoneHref} className="rounded-full bg-[#dc2626] px-5 py-2 text-sm font-bold text-white hover:bg-[#b91c1c]">
-            Call Now: {business.phoneDisplay}
+            Schedule an Appointment
           </a>
         </div>
       </header>
@@ -78,9 +80,7 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-[#e5e7eb] bg-white">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 py-10 md:grid-cols-2 md:px-10 md:py-14">
           <div>
-            <div className="relative mb-5 h-16 w-64 md:h-20 md:w-80">
-              <Image src="/autotrek-logo.png" alt="AutoTrek Service Center logo" fill className="object-contain object-left" priority />
-            </div>
+            <p className="mb-4 text-sm font-medium text-[#166534]">Serving Littleton and nearby communities</p>
             <h1 className="text-4xl font-bold leading-tight text-[#111827] md:text-5xl">
               Reliable Auto Repair in Littleton, CO
             </h1>
@@ -103,7 +103,7 @@ export default function Home() {
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] shadow-sm">
-            <Image src="/images/shop-floor.jpg" alt="Auto service shop interior" width={1200} height={900} className="h-full w-full object-cover" />
+            <Image src="/images/autotrek-hero-chatgpt.png" alt="AutoTrek technician working on a truck in the shop" width={1200} height={900} className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
@@ -163,6 +163,19 @@ export default function Home() {
                 </span>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10">
+        <h3 className="text-2xl font-bold text-[#111827]">Inside AutoTrek</h3>
+        <p className="mt-2 text-[#4b5563]">Real photos from the shop and facility.</p>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
+          <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm">
+            <Image src="/images/autotrek-shop-floor-2.png" alt="Wide view of AutoTrek service bays" width={1200} height={900} className="h-full w-full object-cover" />
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm">
+            <Image src="/images/autotrek-building.png" alt="AutoTrek Service Center storefront" width={1200} height={900} className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
