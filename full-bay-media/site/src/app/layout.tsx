@@ -13,30 +13,24 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fullbaymedia.com"),
-  title: "Full Bay Media | Growth Systems for Auto Repair Shops",
+  metadataBase: new URL("https://autotrekservicecenter.com"),
+  title: "AutoTrek Service Center | Littleton Auto Repair",
   description:
-    "Premium websites, local SEO, and review funnels for independent auto repair shops that want more qualified diagnostic calls.",
+    "AutoTrek Service Center provides trusted auto repair, diagnostics, euro and fleet service in Littleton, CO.",
   keywords: [
-    "auto repair shop marketing",
-    "local seo for mechanics",
-    "repair shop website design",
-    "google business profile optimization",
-    "review funnel for auto shops",
+    "auto repair littleton co",
+    "euro repair littleton",
+    "fleet repair littleton",
+    "brake repair littleton",
+    "check engine light repair",
   ],
   openGraph: {
-    title: "Full Bay Media | Growth Systems for Auto Repair Shops",
+    title: "AutoTrek Service Center | Littleton Auto Repair",
     description:
-      "Web, SEO, and review systems designed to increase booked diagnostics and high-intent local leads.",
-    url: "https://fullbaymedia.com",
-    siteName: "Full Bay Media",
+      "Local-friendly auto repair in Littleton, CO. Diagnostics, maintenance, major service, euro and fleet repair.",
+    url: "https://autotrekservicecenter.com",
+    siteName: "AutoTrek Service Center",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Full Bay Media | Growth Systems for Auto Repair Shops",
-    description:
-      "Premium websites, local SEO, and review funnels for independent repair shops.",
   },
 };
 
