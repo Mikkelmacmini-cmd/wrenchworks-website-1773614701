@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-[1.4fr_0.8fr] md:px-10">
-        <article className="rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+        <article className="card-lift rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-bold text-[#111827]">In-Depth Service Overview</h2>
           <p className="mt-4 leading-7 text-[#374151]">{service.longDescription}</p>
 
@@ -74,11 +74,19 @@ export default async function ServiceDetailPage({ params }: Props) {
             <li>• Final quality check before vehicle handoff</li>
           </ul>
 
-          <h3 className="mt-8 text-xl font-semibold text-[#111827]">Local SEO + AI Search Relevance</h3>
+          <h3 className="mt-8 text-xl font-semibold text-[#111827]">Google + AI Search Visibility</h3>
           <p className="mt-3 leading-7 text-[#374151]">
-            This page is written to answer real customer questions in plain language, with location-specific context for Littleton and nearby cities.
-            That helps both Google Search and AI search systems understand service intent, location relevance, and shop expertise.
+            This page is intentionally structured for both Google Search and AI discovery systems: clear service intent, location context, customer-language FAQs, and direct conversion paths.
           </p>
+
+          <div className="mt-8 rounded-xl border border-[#dcfce7] bg-[#f0fdf4] p-4">
+            <p className="text-sm font-semibold text-[#14532d]">30 / 60 / 90 Day Expected Outcomes</p>
+            <ul className="mt-2 space-y-2 text-sm text-[#166534]">
+              <li><strong>30 Days:</strong> Technical cleanup and service-page trust signals fully in place.</li>
+              <li><strong>60 Days:</strong> Better local visibility and more qualified call/form actions.</li>
+              <li><strong>90 Days:</strong> Stronger ranking consistency and higher lead-quality momentum.</li>
+            </ul>
+          </div>
         </article>
 
         <aside className="space-y-4">
@@ -97,7 +105,18 @@ export default async function ServiceDetailPage({ params }: Props) {
             <p className="mt-2 text-sm text-[#4b5563]">Littleton, Highlands Ranch, Englewood, Lakewood, Centennial</p>
           </div>
           <div className="rounded-2xl border border-[#e5e7eb] bg-white p-5">
-            <Link href="/services" className="text-sm font-semibold text-[#166534] underline underline-offset-4">
+            <p className="font-semibold text-[#111827]">Quick FAQ</p>
+            <div className="mt-3 space-y-2">
+              <details className="rounded-lg border border-[#e5e7eb] p-3">
+                <summary className="cursor-pointer text-sm font-semibold">How quickly can I get scheduled?</summary>
+                <p className="mt-2 text-sm text-[#4b5563]">Most appointments can be scheduled within 1–3 business days depending on parts and bay availability.</p>
+              </details>
+              <details className="rounded-lg border border-[#e5e7eb] p-3">
+                <summary className="cursor-pointer text-sm font-semibold">Do you explain priority vs. optional repairs?</summary>
+                <p className="mt-2 text-sm text-[#4b5563]">Yes. We separate safety-critical, near-term, and monitor-only items so you can make clear decisions.</p>
+              </details>
+            </div>
+            <Link href="/services" className="mt-4 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
               See all services
             </Link>
           </div>

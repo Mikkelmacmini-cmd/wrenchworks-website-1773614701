@@ -32,3 +32,23 @@ h3,
 .font-display {
   font-family: var(--font-space-grotesk), var(--font-manrope), sans-serif;
 }
+
+@keyframes softFloat {
+  0%,
+  100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.card-lift {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -22px rgba(22, 101, 52, 0.35);
+}
+
+.glow-chip {
+  box-shadow: 0 10px 26px -18px rgba(22, 101, 52, 0.45);
+}
+

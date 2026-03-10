@@ -42,7 +42,7 @@ const faqs = [
 
 export default function Home() {
   return (
-    <main className="bg-white text-[#1f2937]">
+    <main className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_50%,#ffffff_100%)] text-[#1f2937]">
       <header className="border-b border-[#e5e7eb] bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
           <div className="relative h-14 w-52 md:h-16 md:w-64">
@@ -70,9 +70,14 @@ export default function Home() {
             <p className="mb-4 text-sm font-medium text-[#bbf7d0]">Serving Littleton and nearby communities</p>
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">Reliable Auto Repair in Littleton, CO</h1>
             <p className="mt-4 text-lg text-white/90">
-              Honest diagnostics, quality repairs, and friendly service for daily drivers, European vehicles, and fleet accounts.
+              ASE-certified diagnostics, quality repairs, and clear communication for daily drivers, European vehicles, and fleet accounts.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
+              <span className="glow-chip rounded-full border border-white/40 bg-white/15 px-3 py-1 text-xs font-semibold text-white">ASE-Certified Team</span>
+              <span className="glow-chip rounded-full border border-white/40 bg-white/15 px-3 py-1 text-xs font-semibold text-white">3yr / 36k Warranty</span>
+              <span className="glow-chip rounded-full border border-white/40 bg-white/15 px-3 py-1 text-xs font-semibold text-white">Serving Littleton Since 2009</span>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
               <a href={business.phoneHref} className="rounded-full bg-[#dc2626] px-6 py-3 font-semibold text-white hover:bg-[#b91c1c]">
                 Schedule an Appointment
               </a>
@@ -125,7 +130,7 @@ export default function Home() {
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="group card-lift overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm"
             >
               <Image src={service.image} alt={service.title} width={1200} height={900} className="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.03]" />
               <div className="p-4">
@@ -139,6 +144,19 @@ export default function Home() {
         <Link href="/services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
           See our full list of services
         </Link>
+
+        <div className="mt-8 rounded-2xl border border-[#dcfce7] bg-[#f0fdf4] p-5">
+          <h3 className="text-xl font-bold text-[#14532d]">Google + AI Search Visibility Method</h3>
+          <p className="mt-2 text-sm text-[#166534]">
+            We structure every service page around real customer intent so AutoTrek can rank in local Google results and be cited in AI-generated answers. That means clearer headings, city relevance, service depth, and conversion-focused content.
+          </p>
+          <ul className="mt-3 grid gap-2 text-sm text-[#166534] md:grid-cols-2">
+            <li>• Service + city relevance by page</li>
+            <li>• FAQ blocks for long-tail search</li>
+            <li>• Internal linking to key services</li>
+            <li>• Conversion-ready CTA placement</li>
+          </ul>
+        </div>
       </section>
 
       <section className="border-y border-[#e5e7eb] bg-[#f9fafb]">
