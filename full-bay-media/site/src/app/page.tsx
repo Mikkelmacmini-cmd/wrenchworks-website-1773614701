@@ -103,7 +103,7 @@ export default function Home() {
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] shadow-sm">
-            <Image src="/images/autotrek-hero-chatgpt.png" alt="AutoTrek technician working on a truck in the shop" width={1200} height={900} className="h-full w-full object-cover" />
+            <Image src="/images/ChatGPT-Image-Mar-9-2026-09_53_01-PM.png" alt="AutoTrek technician working on a truck in the shop" width={1200} height={900} className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
