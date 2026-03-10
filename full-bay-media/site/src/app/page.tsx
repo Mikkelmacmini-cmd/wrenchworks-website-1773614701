@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { featuredServices } from "@/lib/autotrek-services";
 
 const business = {
   name: "AutoTrek Service Center",
@@ -9,54 +11,6 @@ const business = {
   warranty: "36 months / 36,000 miles",
   reviewUrl: "https://share.google/aglkPp86GrLFRfT7V",
 };
-
-const featuredServices = [
-  {
-    title: "Vehicle Maintenance",
-    description: "Factory-scheduled upkeep to keep your car reliable and prevent expensive breakdowns.",
-    image: "/images/autotrek-hero-current.png",
-  },
-  {
-    title: "Brake Repair & Service",
-    description: "Pads, rotors, and brake-system checks for safer stops and better control.",
-    image: "/images/autotrek-shop-floor-2.png",
-  },
-  {
-    title: "Oil & Fluid Changes",
-    description: "Fast oil and fluid service to protect engine life and day-to-day performance.",
-    image: "/images/autotrek-building.png",
-  },
-  {
-    title: "Hybrid Repair",
-    description: "Confident diagnostics and repairs for hybrid systems, batteries, and drivability issues.",
-    image: "/images/autotrek-hero-current.png",
-  },
-  {
-    title: "European Auto Repair",
-    description: "Specialized service for European makes using proper diagnostics and repair procedures.",
-    image: "/images/autotrek-shop-floor-2.png",
-  },
-  {
-    title: "Fleet Repair & Service",
-    description: "Priority maintenance and repair support to keep your business vehicles on the road.",
-    image: "/images/autotrek-building.png",
-  },
-  {
-    title: "Vehicle Suspension Repair",
-    description: "Shocks, struts, and suspension fixes for smoother handling and tire life.",
-    image: "/images/autotrek-shop-floor-2.png",
-  },
-  {
-    title: "Vehicle Diagnosis & Repair",
-    description: "Check-engine and drivability troubleshooting with clear repair recommendations.",
-    image: "/images/autotrek-hero-current.png",
-  },
-  {
-    title: "Wheel Alignments",
-    description: "Precision alignment service to improve steering feel and reduce uneven tire wear.",
-    image: "/images/autotrek-building.png",
-  },
-];
 
 const serviceAreas = ["Littleton", "Highlands Ranch", "Englewood", "Lakewood", "Centennial"];
 
@@ -168,19 +122,23 @@ export default function Home() {
 
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {featuredServices.map((service) => (
-            <article key={service.title} className="overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm">
-              <Image src={service.image} alt={service.title} width={1200} height={900} className="h-44 w-full object-cover" />
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
+              className="group overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <Image src={service.image} alt={service.title} width={1200} height={900} className="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.03]" />
               <div className="p-4">
                 <h3 className="font-semibold text-[#111827]">{service.title}</h3>
-                <p className="mt-2 text-sm text-[#4b5563]">{service.description}</p>
+                <p className="mt-2 text-sm text-[#4b5563]">{service.shortDescription}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
-        <a href="/services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
+        <Link href="/services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
           See our full list of services
-        </a>
+        </Link>
       </section>
 
       <section className="border-y border-[#e5e7eb] bg-[#f9fafb]">
