@@ -10,7 +10,34 @@ const business = {
   reviewUrl: "https://share.google/aglkPp86GrLFRfT7V",
 };
 
-const services = [
+const featuredServices = [
+  {
+    title: "Auto Repair Service",
+    image: "/images/autotrek-hero-current.png",
+  },
+  {
+    title: "Brake Repair & Service",
+    image: "/images/autotrek-shop-floor-2.png",
+  },
+  {
+    title: "Oil & Fluid Changes",
+    image: "/images/autotrek-building.png",
+  },
+  {
+    title: "Hybrid Repair",
+    image: "/images/autotrek-hero-current.png",
+  },
+  {
+    title: "European Auto Repair",
+    image: "/images/autotrek-shop-floor-2.png",
+  },
+  {
+    title: "Fleet Repair & Service",
+    image: "/images/autotrek-building.png",
+  },
+];
+
+const fullServices = [
   "AC Service & Repair",
   "Check Engine Light Diagnostics",
   "EV & Hybrid Repair",
@@ -77,38 +104,38 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-[#e5e7eb] bg-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 py-10 md:grid-cols-2 md:px-10 md:py-14">
-          <div>
-            <p className="mb-4 text-sm font-medium text-[#166534]">Serving Littleton and nearby communities</p>
-            <h1 className="text-4xl font-bold leading-tight text-[#111827] md:text-5xl">
-              Reliable Auto Repair in Littleton, CO
-            </h1>
-            <p className="mt-4 text-lg text-[#374151]">
+      <section className="relative overflow-hidden border-b border-[#e5e7eb]">
+        <Image
+          src="/images/autotrek-hero-current.png"
+          alt="AutoTrek technician working on a truck in the shop"
+          width={2200}
+          height={1200}
+          className="h-[72vh] w-full object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div className="absolute inset-0 mx-auto flex w-full max-w-6xl items-end px-6 py-10 md:px-10 md:py-14">
+          <div className="max-w-3xl text-white">
+            <p className="mb-4 text-sm font-medium text-[#bbf7d0]">Serving Littleton and nearby communities</p>
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">Reliable Auto Repair in Littleton, CO</h1>
+            <p className="mt-4 text-lg text-white/90">
               Honest diagnostics, quality repairs, and friendly service for daily drivers, European vehicles, and fleet accounts.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href={business.phoneHref} className="rounded-full bg-[#dc2626] px-6 py-3 font-semibold text-white hover:bg-[#b91c1c]">
                 Schedule an Appointment
               </a>
-              <a href="#services" className="rounded-full border border-[#166534] px-6 py-3 font-semibold text-[#166534] hover:bg-[#f0fdf4]">
+              <a href="#services" className="rounded-full border border-white/70 px-6 py-3 font-semibold text-white hover:bg-white/15">
                 View Services
               </a>
             </div>
-            <div className="mt-5 flex flex-wrap gap-2 text-sm">
-              <span className="rounded-full bg-[#f0fdf4] px-3 py-1 text-[#166534]">Euro Specialist</span>
-              <span className="rounded-full bg-[#fef2f2] px-3 py-1 text-[#b91c1c]">Fleet Service</span>
-              <span className="rounded-full bg-[#f9fafb] px-3 py-1 text-[#374151]">Warranty: {business.warranty}</span>
-            </div>
-          </div>
 
-          <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] shadow-sm">
-            <Image src="/images/ChatGPT-Image-Mar-9-2026-09_53_01-PM.png" alt="AutoTrek technician working on a truck in the shop" width={1200} height={900} className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-6 py-8 md:grid-cols-3 md:px-10">
+      <section className="mx-auto grid max-w-6xl gap-4 px-6 py-8 md:grid-cols-2 md:px-10">
         <div className="rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] p-5">
           <p className="text-sm text-[#6b7280]">Address</p>
           <p className="mt-1 font-semibold">{business.address}</p>
@@ -117,22 +144,47 @@ export default function Home() {
           <p className="text-sm text-[#6b7280]">Hours</p>
           <p className="mt-1 font-semibold">{business.hours}</p>
         </div>
-        <div className="rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] p-5">
-          <p className="text-sm text-[#6b7280]">Warranty</p>
-          <p className="mt-1 font-semibold text-[#166534]">{business.warranty}</p>
-        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10">
+        <h2 className="text-3xl font-bold text-[#111827]">About Us</h2>
+        <p className="mt-3 text-[#4b5563]">
+          Since 2009, AutoTrek Service Center has been a trusted name in auto repair for Littleton and surrounding communities.
+          We’re committed to high-quality service, fair pricing, and a local family atmosphere that keeps customers coming back.
+        </p>
+        <p className="mt-3 text-[#4b5563]">
+          As a family-owned and operated shop, our team brings decades of combined experience and modern diagnostic tools to every visit.
+          We service both foreign and domestic vehicles, along with fleet accounts, and we focus on clear communication from start to finish.
+        </p>
+        <p className="mt-3 text-[#4b5563]">
+          Whether you need routine maintenance or a complex repair, we provide complete, accurate assessments and practical next steps.
+          Our goal is simple: fix it right, treat people fairly, and get you safely back on the road.
+        </p>
       </section>
 
       <section id="services" className="mx-auto max-w-6xl px-6 py-10 md:px-10">
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-3xl font-bold text-[#111827]">Auto Services We Offer</h2>
-            <p className="mt-2 text-[#4b5563]">Complete maintenance and repair for imports, domestics, EV/hybrid, and 4x4 vehicles.</p>
+            <p className="mt-2 text-[#4b5563]">Our most requested services in Littleton.</p>
           </div>
         </div>
 
-        <div className="mt-6 grid gap-3 md:grid-cols-2">
-          {services.map((service) => (
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {featuredServices.map((service) => (
+            <article key={service.title} className="overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm">
+              <Image src={service.image} alt={service.title} width={1200} height={900} className="h-44 w-full object-cover" />
+              <div className="p-4 font-semibold">{service.title}</div>
+            </article>
+          ))}
+        </div>
+
+        <a href="#all-services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
+          See our full list of services
+        </a>
+
+        <div id="all-services" className="mt-6 grid gap-3 md:grid-cols-2">
+          {fullServices.map((service) => (
             <div key={service} className="rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 shadow-sm">
               {service}
             </div>
