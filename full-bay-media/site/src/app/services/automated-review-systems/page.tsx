@@ -36,6 +36,15 @@ export default function AutomatedReviewSystemsPage() {
         <p className="mt-3 text-white/80"><strong>Can we pause or adjust requests?</strong> Yes. You keep control over timing, message style, and frequency.</p>
       </section>
 
+      <section className="mt-8 rounded-2xl border border-white/15 bg-white/5 p-5">
+        <h2 className="font-display text-xl font-semibold">Expected Outcomes (30 / 60 / 90 Days)</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-white/80">
+          <li><strong>30 days:</strong> Automated request system configured and live.</li>
+          <li><strong>60 days:</strong> Review velocity and average rating consistency improve.</li>
+          <li><strong>90 days:</strong> Stronger reputation moat and higher local conversion trust.</li>
+        </ul>
+      </section>
+
       <a href={bookingUrl} className="mt-10 inline-flex rounded-full bg-gradient-to-r from-cyan-300 to-violet-300 px-7 py-3 text-sm font-bold text-[#081022]">Book Your Free Diag Call</a>
     </main>
   );

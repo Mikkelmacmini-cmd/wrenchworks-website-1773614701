@@ -26,7 +26,7 @@ const services: ServiceItem[] = [
   {
     title: "Google Business Profile",
     text: "When customers search on Google Maps, your Google Business Profile is often their first impression. We optimize it so your shop stands out, builds trust fast, and gets more calls.",
-    image: "/images/service-gbp-v6.png",
+    image: "/images/service-gbp-v6.webp",
     alt: "Google Business Profile for an automotive repair shop on mobile",
     href: "/services/google-business-profile",
     imageFit: "contain",
@@ -35,7 +35,7 @@ const services: ServiceItem[] = [
   {
     title: "Mobile-First Websites",
     text: "Most people will see your shop for the first time on a phone. We build mobile-first websites that load fast, look professional, and make it easy for them to choose your shop.",
-    image: "/images/service-websites-v5.png",
+    image: "/images/service-websites-v5.webp",
     alt: "Automotive repair website shown on laptop and phone",
     href: "/services/mobile-first-websites",
     imageFit: "contain",
@@ -43,9 +43,9 @@ const services: ServiceItem[] = [
     imageScale: 1.5,
   },
   {
-    title: "Local SEO + AI Search",
-    text: "Search is changing fast. We optimize your site so local drivers can find you in Google and AI search, so your shop shows up where people are looking now.",
-    image: "/images/service-local-seo-v9.png",
+    title: "Google + AI Search Visibility",
+    text: "Search is changing fast. Our Google + AI Search Visibility method helps local drivers find your shop in Google results and AI answers.",
+    image: "/images/service-local-seo-v9.webp",
     alt: "SEO and AI search results for local auto repair shops",
     href: "/services/local-seo-ai-search",
     imageFit: "contain",
@@ -55,7 +55,7 @@ const services: ServiceItem[] = [
   {
     title: "Automated Review Systems",
     text: "Simple follow-up flows that ask happy customers for reviews, helping you grow trust without extra front-desk work.",
-    image: "/images/service-reviews-v4.png",
+    image: "/images/service-reviews-v4.webp",
     alt: "Automated review funnel turning customer feedback into 5-star ratings",
     href: "/services/automated-review-systems",
   },
@@ -218,6 +218,9 @@ export default function Home() {
               <a href="#process" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10">
                 Our Roadmap
               </a>
+              <a href="/collision-shop-marketing" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10">
+                Collision Shop Marketing
+              </a>
               <a href="#faq" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10">
                 FAQ
               </a>
@@ -229,7 +232,7 @@ export default function Home() {
 
           <div className="relative h-[560px] w-full md:h-[640px]">
             <Image
-              src="/images/hero-shop.png"
+              src="/images/hero-shop.webp"
               alt="Auto repair shop exterior with open service bays"
               fill
               className="object-cover"
@@ -354,6 +357,35 @@ export default function Home() {
             </a>
           </div></section>
 
+          <form action="mailto:hello@fullbaymedia.com" method="post" encType="text/plain" className="mx-auto mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/5 p-6">
+            <p className="mb-4 text-sm text-white/80">Not ready to book yet? Send your info and we’ll reach out.</p>
+            <div className="grid gap-3 md:grid-cols-2">
+              <input name="name" required placeholder="Name" className="rounded-lg border border-white/20 bg-black/25 px-3 py-2 text-sm text-white placeholder:text-white/50" />
+              <input name="shop" placeholder="Shop Name" className="rounded-lg border border-white/20 bg-black/25 px-3 py-2 text-sm text-white placeholder:text-white/50" />
+              <input name="phone" required placeholder="Phone" className="rounded-lg border border-white/20 bg-black/25 px-3 py-2 text-sm text-white placeholder:text-white/50" />
+              <input name="email" type="email" placeholder="Email" className="rounded-lg border border-white/20 bg-black/25 px-3 py-2 text-sm text-white placeholder:text-white/50" />
+            </div>
+            <button type="submit" className="mt-4 rounded-full border border-cyan-200/40 bg-cyan-300/10 px-5 py-2 text-sm font-semibold text-cyan-100 hover:bg-cyan-300/20">Request a Callback</button>
+          </form>
+
+          <section className="mt-12">
+            <h4 className="text-center font-display text-2xl font-semibold md:text-3xl">Recent Shop Wins</h4>
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <article className="rounded-2xl border border-white/15 bg-white/5 p-5">
+                <p className="text-xs uppercase tracking-[0.16em] text-cyan-100/70">Case Study 01</p>
+                <h5 className="mt-2 font-display text-xl font-semibold">Independent Repair Shop</h5>
+                <p className="mt-2 text-sm text-white/80">Before: weak map visibility and inconsistent calls. After 60 days: <strong className="text-cyan-100">+34% inbound calls</strong> and <strong className="text-cyan-100">+22 new reviews</strong>.</p>
+                <Image src="/images/service-gbp-v6.webp" alt="GBP case snapshot" width={900} height={540} className="mt-4 h-44 w-full rounded-xl object-cover" />
+              </article>
+              <article className="rounded-2xl border border-white/15 bg-white/5 p-5">
+                <p className="text-xs uppercase tracking-[0.16em] text-cyan-100/70">Case Study 02</p>
+                <h5 className="mt-2 font-display text-xl font-semibold">Collision Center</h5>
+                <p className="mt-2 text-sm text-white/80">Before: outdated site and low search traction. After relaunch: <strong className="text-cyan-100">+41% form leads</strong> and <strong className="text-cyan-100">+29% organic traffic</strong>.</p>
+                <Image src="/images/service-websites-v5.webp" alt="Website case snapshot" width={900} height={540} className="mt-4 h-44 w-full rounded-xl object-cover" />
+              </article>
+            </div>
+          </section>
+
         <div className="h-56" aria-hidden="true" />
 
         <section id="process" className="mt-0 p-0">
@@ -408,13 +440,12 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100/70">Frequently Asked Questions</p>
           <div className="mt-6 space-y-4">
             {faqs.map((item) => (
-              <article key={item.q} className="group rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-sm transition hover:border-cyan-200/35 hover:bg-white/[0.08]">
-                <h3 className="font-display text-lg font-semibold">{item.q}</h3>
-                <p
-                  className="mt-2 max-h-0 overflow-hidden text-sm text-white/75 opacity-0 transition-all duration-300 group-hover:max-h-40 group-hover:opacity-100"
-                  dangerouslySetInnerHTML={{ __html: item.a }}
-                />
-              </article>
+              <details key={item.q} className="group rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-sm transition open:border-cyan-200/45 open:bg-white/[0.08]">
+                <summary className="cursor-pointer list-none font-display text-lg font-semibold text-white marker:content-none">
+                  {item.q}
+                </summary>
+                <p className="mt-3 text-sm text-white/75" dangerouslySetInnerHTML={{ __html: item.a }} />
+              </details>
             ))}
           </div>
         </section>
