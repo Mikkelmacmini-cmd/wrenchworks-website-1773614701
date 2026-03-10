@@ -1,13 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #060a14;
-  --surface: #0d1426;
-  --surface-soft: rgba(255, 255, 255, 0.06);
-  --text: #f6f8ff;
-  --muted: rgba(233, 239, 255, 0.72);
-  --primary: #7ce2ff;
-  --accent: #9b84ff;
+  --bg: #ffffff;
+  --text: #1f2937;
 }
 
 @theme inline {
@@ -36,24 +31,4 @@ h2,
 h3,
 .font-display {
   font-family: var(--font-space-grotesk), var(--font-manrope), sans-serif;
-}
-
-.grid-overlay {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.floaty {
-  animation: floaty 7s ease-in-out infinite;
-}
-
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }
