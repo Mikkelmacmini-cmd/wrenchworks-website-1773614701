@@ -12,54 +12,50 @@ const business = {
 
 const featuredServices = [
   {
-    title: "Auto Repair Service",
+    title: "Vehicle Maintenance",
+    description: "Factory-scheduled upkeep to keep your car reliable and prevent expensive breakdowns.",
     image: "/images/autotrek-hero-current.png",
   },
   {
     title: "Brake Repair & Service",
+    description: "Pads, rotors, and brake-system checks for safer stops and better control.",
     image: "/images/autotrek-shop-floor-2.png",
   },
   {
     title: "Oil & Fluid Changes",
+    description: "Fast oil and fluid service to protect engine life and day-to-day performance.",
     image: "/images/autotrek-building.png",
   },
   {
     title: "Hybrid Repair",
+    description: "Confident diagnostics and repairs for hybrid systems, batteries, and drivability issues.",
     image: "/images/autotrek-hero-current.png",
   },
   {
     title: "European Auto Repair",
+    description: "Specialized service for European makes using proper diagnostics and repair procedures.",
     image: "/images/autotrek-shop-floor-2.png",
   },
   {
     title: "Fleet Repair & Service",
+    description: "Priority maintenance and repair support to keep your business vehicles on the road.",
     image: "/images/autotrek-building.png",
   },
-];
-
-const fullServices = [
-  "AC Service & Repair",
-  "Check Engine Light Diagnostics",
-  "EV & Hybrid Repair",
-  "Foreign Auto Repair",
-  "Minor Auto Service",
-  "Oil & Fluid Changes",
-  "Tires & Wheels",
-  "4WD Light Inspection",
-  "Brake Repair & Service",
-  "Dealer Service Alternative",
-  "Factory Recommended Major Auto Service",
-  "Pre-Purchase Inspection",
-  "Steering & Suspension",
-  "Transmission Repair",
-  "4X4 Auto Repair",
-  "Complete Auto Repair",
-  "Domestic Auto Repair",
-  "Fleet Repair & Service",
-  "Maintenance Lights",
-  "Preventative Maintenance",
-  "Timing Belt Repair",
-  "Wheel Alignment",
+  {
+    title: "Vehicle Suspension Repair",
+    description: "Shocks, struts, and suspension fixes for smoother handling and tire life.",
+    image: "/images/autotrek-shop-floor-2.png",
+  },
+  {
+    title: "Vehicle Diagnosis & Repair",
+    description: "Check-engine and drivability troubleshooting with clear repair recommendations.",
+    image: "/images/autotrek-hero-current.png",
+  },
+  {
+    title: "Wheel Alignments",
+    description: "Precision alignment service to improve steering feel and reduce uneven tire wear.",
+    image: "/images/autotrek-building.png",
+  },
 ];
 
 const serviceAreas = ["Littleton", "Highlands Ranch", "Englewood", "Lakewood", "Centennial"];
@@ -174,22 +170,17 @@ export default function Home() {
           {featuredServices.map((service) => (
             <article key={service.title} className="overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm">
               <Image src={service.image} alt={service.title} width={1200} height={900} className="h-44 w-full object-cover" />
-              <div className="p-4 font-semibold">{service.title}</div>
+              <div className="p-4">
+                <h3 className="font-semibold text-[#111827]">{service.title}</h3>
+                <p className="mt-2 text-sm text-[#4b5563]">{service.description}</p>
+              </div>
             </article>
           ))}
         </div>
 
-        <a href="#all-services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
+        <a href="/services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
           See our full list of services
         </a>
-
-        <div id="all-services" className="mt-6 grid gap-3 md:grid-cols-2">
-          {fullServices.map((service) => (
-            <div key={service} className="rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 shadow-sm">
-              {service}
-            </div>
-          ))}
-        </div>
       </section>
 
       <section className="border-y border-[#e5e7eb] bg-[#f9fafb]">
