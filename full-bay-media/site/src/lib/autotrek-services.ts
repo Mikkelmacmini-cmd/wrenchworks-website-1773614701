@@ -28,10 +28,10 @@ export type FeaturedService = {
 };
 
 export const homepageHeroAsset = {
-  src: "/visual-refresh/ai-no-faces/hero/hero-02-macro-bay-sensor.webp",
-  mobileSrc: "/visual-refresh/ai-no-faces/mobile/hero-02-macro-bay-sensor-mobile.webp",
+  src: "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q82.webp",
+  mobileSrc: "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q82-mobile.webp",
   srcSet:
-    "/visual-refresh/ai-no-faces/hero/hero-02-macro-bay-sensor.webp 1280w, /visual-refresh/ai-no-faces/mobile/hero-02-macro-bay-sensor-mobile.webp 768w",
+    "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q82.webp 1280w, /visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q82-mobile.webp 768w",
   alt: "Macro diagnostic bay sensor and tool detail emphasizing precision diagnostics without identifiable faces.",
 } as const;
 
@@ -105,7 +105,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "vehicle-maintenance",
     title: "Vehicle Maintenance",
-    shortDescription: "Factory-scheduled upkeep to keep your car reliable and prevent expensive breakdowns.",
+    shortDescription: "Stay ahead of failures with scheduled maintenance, condition checks, and a clear next-service plan.",
     longDescription:
       "Our vehicle maintenance service covers oil changes, fluid checks, filters, and scheduled inspections based on your mileage and driving habits. We help you stay ahead of expensive repairs by catching issues early and giving you a clear maintenance plan. If you commute daily in Littleton, Highlands Ranch, Englewood, Lakewood, or Centennial, this service keeps your vehicle dependable year-round.",
     image: serviceAssetManifest["vehicle-maintenance"].src,
@@ -126,7 +126,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "brake-repair-service",
     title: "Brake Repair & Service",
-    shortDescription: "Pads, rotors, and brake-system checks for safer stops and better control.",
+    shortDescription: "Noise, vibration, or weak stopping? We pinpoint brake risk fast and repair to restore confident control.",
     longDescription:
       "If your brakes squeak, grind, vibrate, or feel soft, our team can diagnose and repair the issue quickly. We service brake pads, rotors, calipers, and fluid so your vehicle stops confidently in every condition. We focus on safety-first recommendations with transparent pricing and clear explanations before work begins.",
     image: serviceAssetManifest["brake-repair-service"].src,
@@ -147,7 +147,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "oil-fluid-changes",
     title: "Oil & Fluid Changes",
-    shortDescription: "Fast oil and fluid service to protect engine life and day-to-day performance.",
+    shortDescription: "Protect engine and transmission life with interval-right fluid service and documented condition checks.",
     longDescription:
       "Regular oil and fluid changes are one of the easiest ways to protect your engine, transmission, and cooling system. We check condition, leaks, and service intervals so your vehicle runs smoothly and lasts longer. Whether you drive short city routes or long highway miles, we tailor the service to your real usage.",
     image: serviceAssetManifest["oil-fluid-changes"].src,
@@ -168,7 +168,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "hybrid-repair",
     title: "Hybrid Repair",
-    shortDescription: "Confident diagnostics and repairs for hybrid systems, batteries, and drivability issues.",
+    shortDescription: "Hybrid warning or performance drop? We isolate the fault path and recommend the smartest repair option.",
     longDescription:
       "Hybrid systems require precise diagnostics and experienced repair strategy. We inspect battery health, cooling performance, charging behavior, and warning codes to identify the root issue quickly. Our process is designed to reduce guesswork and help hybrid owners make smart, cost-effective repair decisions.",
     image: serviceAssetManifest["hybrid-repair"].src,
@@ -189,7 +189,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "european-auto-repair",
     title: "European Auto Repair",
-    shortDescription: "Specialized service for European makes using proper diagnostics and repair procedures.",
+    shortDescription: "Brand-specific diagnostics and repair standards for European vehicles—without dealer friction.",
     longDescription:
       "European vehicles need brand-specific diagnostics, quality parts, and proper repair procedures. Our team services major European makes with a focus on reliability, performance, and long-term ownership value. From warning-light diagnostics to major service intervals, we provide dealer-level precision without dealer friction.",
     image: serviceAssetManifest["european-auto-repair"].src,
@@ -210,7 +210,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "fleet-repair-service",
     title: "Fleet Repair & Service",
-    shortDescription: "Priority maintenance and repair support to keep your business vehicles on the road.",
+    shortDescription: "Reduce downtime with priority triage, consistent communication, and fleet-ready repair planning.",
     longDescription:
       "Downtime costs money, so our fleet service is built for speed, consistency, and communication. We provide preventive maintenance, diagnostics, and repair planning to keep your vehicles running and your teams moving. From single-unit businesses to larger local fleets, we tailor service intervals around your operational needs.",
     image: serviceAssetManifest["fleet-repair-service"].src,
@@ -231,7 +231,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "vehicle-suspension-repair",
     title: "Vehicle Suspension Repair",
-    shortDescription: "Shocks, struts, and suspension fixes for smoother handling and tire life.",
+    shortDescription: "Pulling, clunks, or bounce? We diagnose suspension instability and restore handling confidence.",
     longDescription:
       "If your vehicle pulls, bounces, clunks, or wears tires unevenly, suspension issues may be the cause. We inspect shocks, struts, links, bushings, and related components to restore handling and ride quality. Our goal is to improve comfort, control, and overall safety with repairs that solve the real problem.",
     image: serviceAssetManifest["vehicle-suspension-repair"].src,
@@ -252,7 +252,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "vehicle-diagnosis-repair",
     title: "Vehicle Diagnosis & Repair",
-    shortDescription: "Check-engine and drivability troubleshooting with clear repair recommendations.",
+    shortDescription: "Warning lights and drivability symptoms diagnosed to root cause, then prioritized by urgency and value.",
     longDescription:
       "When a warning light appears or your car feels off, accurate diagnosis comes first. We use modern diagnostic tools and technician expertise to pinpoint issues and explain your options in plain language. You get a clear game plan, prioritized recommendations, and repairs focused on reliability.",
     image: serviceAssetManifest["vehicle-diagnosis-repair"].src,
@@ -273,7 +273,7 @@ export const featuredServices: FeaturedService[] = [
   {
     slug: "wheel-alignments",
     title: "Wheel Alignments",
-    shortDescription: "Precision alignment service to improve steering feel and reduce uneven tire wear.",
+    shortDescription: "Correct steering drift and tire wear with spec-accurate alignment and suspension-aware setup.",
     longDescription:
       "Poor alignment can cause steering drift, vibration, and premature tire wear. Our wheel alignment service corrects angles to manufacturer specs for better handling, longer tire life, and a smoother drive. If you’ve hit potholes, replaced suspension components, or noticed uneven tire wear, alignment should be checked.",
     image: serviceAssetManifest["wheel-alignments"].src,
