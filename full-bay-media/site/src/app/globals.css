@@ -1,54 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #ffffff;
-  --text: #1f2937;
+  --bg: #0b0f14;
+  --surface: #121821;
+  --surface-2: #1a2330;
+  --ink: #eaf0f6;
+  --muted: #a9b4c2;
+  --accent: #c89b5e;
+  --accent-2: #e7cfa8;
+  --verify: #1e9bff;
 }
 
 @theme inline {
   --color-background: var(--bg);
-  --color-foreground: var(--text);
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-space-grotesk);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sora);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
+html, body {
   background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
 }
 
-body {
-  font-family: var(--font-manrope), system-ui, sans-serif;
+body { font-family: var(--font-inter), system-ui, sans-serif; }
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-sora), var(--font-inter), sans-serif;
+  letter-spacing: -0.02em;
 }
 
-h1,
-h2,
-h3,
-.font-display {
-  font-family: var(--font-space-grotesk), var(--font-manrope), sans-serif;
+p { color: var(--muted); }
+
+.premium-shell {
+  background: radial-gradient(circle at top right, rgba(200, 155, 94, 0.12), transparent 45%), var(--surface);
+  border: 1px solid rgba(169, 180, 194, 0.18);
 }
 
-@keyframes softFloat {
-  0%,
-  100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--verify);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
 }
 
-.card-lift {
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-.card-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px -22px rgba(22, 101, 52, 0.35);
-}
-
-.glow-chip {
-  box-shadow: 0 10px 26px -18px rgba(22, 101, 52, 0.45);
-}
-

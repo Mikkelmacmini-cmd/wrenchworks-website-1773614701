@@ -7,269 +7,110 @@ const business = {
   phoneDisplay: "(303) 328-3356",
   phoneHref: "tel:+13033283356",
   address: "8161 S Grant Way, Littleton, CO 80122",
-  directionsUrl: "https://maps.google.com/?q=8161+S+Grant+Way+Littleton+CO+80122",
-  hours: "Mon–Fri 9:00 AM – 5:00 PM",
-  warranty: "36 months / 36,000 miles",
   reviewUrl: "https://share.google/aglkPp86GrLFRfT7V",
 };
 
-const serviceAreas = ["Littleton", "Highlands Ranch", "Englewood", "Lakewood", "Centennial"];
+const trustStats = ["4.9★ Local Rating", "Serving Littleton Since 2009", "36/36 Warranty", "ASE-Certified Team"];
 
-const trustPoints = [
-  "Specialized in European and fleet vehicles",
-  "3 year / 36,000 mile nationwide warranty",
-  "Local-friendly service with clear communication",
-  "Dealer-level diagnostics without dealer hassle",
+const process = [
+  ["Diagnose", "Dealer-level diagnostics and a full inspection before any recommendation."],
+  ["Confirm", "You get options with priority tiers and transparent pricing posture."],
+  ["Repair", "Approved work is completed by certified technicians using quality parts."],
+  ["Verify", "Final quality checks and a clear handoff before you leave."],
 ];
-
-const faqs = [
-  {
-    q: "Do you work on European vehicles?",
-    a: "Yes — Euro vehicles are one of our specialties, along with domestic vehicles and fleet accounts.",
-  },
-  {
-    q: "Do you provide a warranty?",
-    a: "Absolutely. We stand behind our repairs with a 36 months / 36,000 miles warranty.",
-  },
-  {
-    q: "Do you offer financing?",
-    a: "Not at this time. We focus on transparent inspections and helping you prioritize the most important repairs first.",
-  },
-  {
-    q: "How do I schedule?",
-    a: "Call us at (303) 328-3356 and we’ll get your appointment locked in.",
-  },
-];
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "AutoRepair",
-  name: business.name,
-  telephone: business.phoneDisplay,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "8161 S Grant Way",
-    addressLocality: "Littleton",
-    addressRegion: "CO",
-    postalCode: "80122",
-    addressCountry: "US",
-  },
-  openingHours: "Mo-Fr 09:00-17:00",
-  areaServed: serviceAreas,
-  url: "https://autotrekservicecenter.com",
-};
 
 export default function Home() {
   return (
-    <main className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_50%,#ffffff_100%)] pb-24 text-[#1f2937] md:pb-0">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <header className="border-b border-[#e5e7eb] bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
-          <div className="relative h-14 w-52 md:h-16 md:w-64">
+    <main className="bg-[#0b0f14] text-[#eaf0f6]">
+      <header className="border-b border-white/10 bg-[#0b0f14]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <div className="relative h-14 w-56 md:h-16 md:w-64">
             <Image src="/autotrek-logo.png" alt="AutoTrek Service Center logo" fill className="object-contain object-left" priority />
           </div>
-          <a href={business.phoneHref} className="rounded-full bg-[#dc2626] px-5 py-2 text-sm font-bold text-white hover:bg-[#b91c1c]">
-            Schedule an Appointment
+          <a href={business.phoneHref} className="rounded-full bg-[#c89b5e] px-5 py-2 text-sm font-semibold text-[#0b0f14] hover:bg-[#e7cfa8]">
+            Book Inspection
           </a>
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-[#e5e7eb]">
-        <Image
-          src="/images/autotrek-hero-current.png"
-          alt="AutoTrek technician working on a truck in the shop"
-          width={2200}
-          height={1200}
-          className="h-[72vh] w-full object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/20" />
-
-        <div className="absolute inset-0 mx-auto flex w-full max-w-6xl items-end px-6 py-10 md:px-10 md:py-14">
-          <div className="max-w-3xl text-white">
-            <p className="mb-4 text-sm font-medium text-[#bbf7d0]">Serving Littleton and nearby communities</p>
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl">Reliable Auto Repair in Littleton, CO</h1>
-            <p className="mt-4 text-lg text-white/90">
-              ASE-certified diagnostics, quality repairs, and clear communication for daily drivers, European vehicles, and fleet accounts.
-            </p>
+      <section className="relative overflow-hidden border-b border-white/10">
+        <Image src="/images/autotrek-hero-current.png" alt="Technician servicing a vehicle" width={2200} height={1200} className="h-[74vh] w-full object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f14]/90 via-[#0b0f14]/70 to-black/45" />
+        <div className="absolute inset-0 mx-auto flex max-w-6xl items-end px-6 py-12 md:px-10 md:py-16">
+          <div className="max-w-3xl">
+            <p className="text-sm uppercase tracking-[0.18em] text-[#e7cfa8]">Executive-level auto care • Littleton, CO</p>
+            <h1 className="mt-3 text-5xl font-bold leading-[0.95] md:text-7xl">PREMIUM REPAIR. BOLD CLARITY. TRUSTED RESULTS.</h1>
+            <p className="mt-5 max-w-2xl text-lg text-[#d7e0eb]">From warning-light diagnostics to major repairs, AutoTrek gives you transparent recommendations, professional execution, and confidence on every mile.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <span className="glow-chip rounded-full border border-white/40 bg-white/15 px-3 py-1 text-xs font-semibold text-white">ASE-Certified Team</span>
-              <span className="glow-chip rounded-full border border-white/40 bg-white/15 px-3 py-1 text-xs font-semibold text-white">3yr / 36k Warranty</span>
-              <span className="glow-chip rounded-full border border-white/40 bg-white/15 px-3 py-1 text-xs font-semibold text-white">Serving Littleton Since 2009</span>
+              <a href={business.phoneHref} className="rounded-full bg-[#c89b5e] px-6 py-3 font-semibold text-[#0b0f14] hover:bg-[#e7cfa8]">Book Inspection</a>
+              <a href={business.phoneHref} className="rounded-full border border-white/60 px-6 py-3 font-semibold text-white hover:bg-white/10">Speak to Advisor — {business.phoneDisplay}</a>
             </div>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a href={business.phoneHref} className="rounded-full bg-[#dc2626] px-6 py-3 font-semibold text-white hover:bg-[#b91c1c]">
-                Schedule an Appointment
-              </a>
-              <a href="#services" className="rounded-full border border-white/70 px-6 py-3 font-semibold text-white hover:bg-white/15">
-                View Services
-              </a>
-            </div>
-
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-6 py-8 md:grid-cols-2 md:px-10">
-        <div className="rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] p-5">
-          <p className="text-sm text-[#6b7280]">Address</p>
-          <p className="mt-1 font-semibold">{business.address}</p>
-          <a href={business.directionsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
-            Get Directions
-          </a>
-        </div>
-        <div className="rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] p-5">
-          <p className="text-sm text-[#6b7280]">Hours</p>
-          <p className="mt-1 font-semibold">{business.hours}</p>
-          <a href={business.phoneHref} className="mt-3 inline-block text-sm font-semibold text-[#dc2626] underline underline-offset-4">
-            Call to Book
-          </a>
+      <section className="border-b border-white/10 bg-[#121821]">
+        <div className="mx-auto grid max-w-6xl gap-3 px-6 py-6 md:grid-cols-4 md:px-10">
+          {trustStats.map((item) => (
+            <div key={item} className="rounded-xl border border-white/10 bg-[#1a2330] px-4 py-3 text-sm font-semibold text-[#eaf0f6]">{item}</div>
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10">
-        <h2 className="text-3xl font-bold text-[#111827]">About Us</h2>
-        <p className="mt-3 text-[#4b5563]">
-          Since 2009, AutoTrek Service Center has been a trusted name in auto repair for Littleton and surrounding communities.
-          We’re committed to high-quality service, fair pricing, and a local family atmosphere that keeps customers coming back.
-        </p>
-        <p className="mt-3 text-[#4b5563]">
-          As a family-owned and operated shop, our team brings decades of combined experience and modern diagnostic tools to every visit.
-          We service both foreign and domestic vehicles, along with fleet accounts, and we focus on clear communication from start to finish.
-        </p>
-        <p className="mt-3 text-[#4b5563]">
-          Whether you need routine maintenance or a complex repair, we provide complete, accurate assessments and practical next steps.
-          Our goal is simple: fix it right, treat people fairly, and get you safely back on the road.
-        </p>
-      </section>
-
-      <section id="services" className="mx-auto max-w-6xl px-6 py-10 md:px-10">
-        <div className="flex items-end justify-between gap-4">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:px-10">
+        <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-3xl font-bold text-[#111827]">Auto Services We Offer</h2>
-            <p className="mt-2 text-[#4b5563]">Our most requested services in Littleton.</p>
+            <h2 className="text-4xl font-bold text-white">Services Built Around Real Symptoms</h2>
+            <p className="mt-2 max-w-2xl">Choose the issue you are feeling now. We will diagnose first, then confirm the right repair path.</p>
           </div>
+          <Link href="/services" className="hidden text-sm font-semibold text-[#e7cfa8] underline underline-offset-4 md:block">Open full services hub</Link>
         </div>
-
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {featuredServices.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group card-lift overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-sm"
-            >
-              <Image src={service.image} alt={service.title} width={1200} height={900} className="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.03]" />
-              <div className="p-4">
-                <h3 className="font-semibold text-[#111827]">{service.title}</h3>
-                <p className="mt-2 text-sm text-[#4b5563]">{service.shortDescription}</p>
-              </div>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          {featuredServices.slice(0, 6).map((service) => (
+            <Link key={service.slug} href={`/services/${service.slug}`} className="premium-shell rounded-2xl p-5 transition hover:-translate-y-0.5">
+              <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+              <p className="mt-2 text-sm">{service.shortDescription}</p>
+              <span className="mt-4 inline-block text-sm font-semibold text-[#e7cfa8]">See service details →</span>
             </Link>
           ))}
         </div>
-
-        <Link href="/services" className="mt-6 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
-          See our full list of services
-        </Link>
-
-        <div className="mt-8 rounded-2xl border border-[#dcfce7] bg-[#f0fdf4] p-5">
-          <h3 className="text-xl font-bold text-[#14532d]">Google + AI Search Visibility Method</h3>
-          <p className="mt-2 text-sm text-[#166534]">
-            We structure every service page around real customer intent so AutoTrek can rank in local Google results and be cited in AI-generated answers. That means clearer headings, city relevance, service depth, and conversion-focused content.
-          </p>
-          <ul className="mt-3 grid gap-2 text-sm text-[#166534] md:grid-cols-2">
-            <li>• Service + city relevance by page</li>
-            <li>• FAQ blocks for long-tail search</li>
-            <li>• Internal linking to key services</li>
-            <li>• Conversion-ready CTA placement</li>
-          </ul>
-        </div>
       </section>
 
-      <section className="border-y border-[#e5e7eb] bg-[#f9fafb]">
-        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-10 md:grid-cols-2 md:px-10">
-          <div>
-            <h3 className="text-2xl font-bold text-[#111827]">Why Drivers Choose AutoTrek</h3>
-            <ul className="mt-4 space-y-2 text-[#374151]">
-              {trustPoints.map((point) => (
-                <li key={point}>• {point}</li>
-              ))}
-            </ul>
-            <a href={business.phoneHref} className="mt-6 inline-block rounded-full bg-[#166534] px-6 py-3 font-semibold text-white hover:bg-[#14532d]">
-              Talk to Our Team
-            </a>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-[#111827]">Service Areas</h3>
-            <p className="mt-2 text-[#4b5563]">Helping drivers across the south Denver metro area.</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {serviceAreas.map((city) => (
-                <span key={city} className="rounded-full border border-[#d1d5db] bg-white px-3 py-1 text-sm">
-                  {city}, CO
-                </span>
-              ))}
-            </div>
+      <section className="border-y border-white/10 bg-[#121821]">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:px-10">
+          <h2 className="text-4xl font-bold text-white">Our 4-Step Repair Process</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-4">
+            {process.map(([title, copy], i) => (
+              <article key={title} className="rounded-2xl border border-[#1e9bff]/25 bg-[#0b0f14] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1e9bff]">Step {i + 1}</p>
+                <h3 className="mt-2 text-2xl font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm">{copy}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10">
-        <h3 className="text-2xl font-bold text-[#111827]">Inside AutoTrek</h3>
-        <p className="mt-2 text-[#4b5563]">Real photos from the shop and facility.</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm">
-            <Image src="/images/autotrek-shop-floor-2.png" alt="Wide view of AutoTrek service bays" width={1200} height={900} className="h-full w-full object-cover" />
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm">
-            <Image src="/images/autotrek-building.png" alt="AutoTrek Service Center storefront" width={1200} height={900} className="h-full w-full object-cover" />
-          </div>
+      <section className="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2 md:px-10">
+        <div className="premium-shell rounded-2xl p-6">
+          <h3 className="text-2xl font-bold text-white">Visit AutoTrek</h3>
+          <p className="mt-3">{business.address}</p>
+          <a href="https://maps.google.com/?q=8161+S+Grant+Way+Littleton+CO+80122" target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm font-semibold text-[#e7cfa8] underline underline-offset-4">Get directions</a>
+        </div>
+        <div className="premium-shell rounded-2xl p-6">
+          <h3 className="text-2xl font-bold text-white">Proof Before Promises</h3>
+          <p className="mt-3">Read verified local reviews, then call us for a direct, no-pressure diagnostic plan.</p>
+          <a href={business.reviewUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm font-semibold text-[#e7cfa8] underline underline-offset-4">Read Google Reviews</a>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10">
-        <h3 className="text-2xl font-bold text-[#111827]">Reviews from Local Drivers</h3>
-        <p className="mt-2 text-[#4b5563]">See what customers are saying about AutoTrek Service Center.</p>
-        <a
-          href={business.reviewUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-5 inline-block rounded-full border border-[#111827] px-5 py-3 font-semibold hover:bg-[#f3f4f6]"
-        >
-          Read Google Reviews
-        </a>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10">
-        <h3 className="text-2xl font-bold text-[#111827]">Frequently Asked Questions</h3>
-        <div className="mt-4 space-y-3">
-          {faqs.map((faq) => (
-            <details key={faq.q} className="rounded-xl border border-[#e5e7eb] bg-white p-4">
-              <summary className="cursor-pointer font-semibold">{faq.q}</summary>
-              <p className="mt-2 text-[#4b5563]">{faq.a}</p>
-            </details>
-          ))}
+      <section className="border-t border-white/10 bg-[#0b0f14] py-14">
+        <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
+          <h3 className="text-4xl font-bold text-white">Ready to move forward with confidence?</h3>
+          <p className="mx-auto mt-3 max-w-2xl">Call {business.phoneDisplay}. We will help you choose urgent, planned, or diagnosis-first scheduling based on your vehicle’s current condition.</p>
+          <a href={business.phoneHref} className="mt-6 inline-block rounded-full bg-[#c89b5e] px-8 py-3 font-semibold text-[#0b0f14] hover:bg-[#e7cfa8]">Book Inspection</a>
         </div>
       </section>
-
-      <section className="bg-[#111827] py-12 text-white">
-        <div className="mx-auto max-w-6xl px-6 text-center md:px-10">
-          <h3 className="text-3xl font-bold">Need service? Let’s get you scheduled.</h3>
-          <p className="mx-auto mt-3 max-w-2xl text-white/85">
-            Call {business.phoneDisplay} now and our team will help you pick the right appointment time.
-          </p>
-          <a href={business.phoneHref} className="mt-6 inline-block rounded-full bg-[#dc2626] px-8 py-3 font-bold text-white hover:bg-[#b91c1c]">
-            Schedule an Appointment
-          </a>
-        </div>
-      </section>
-
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#fecaca] bg-white/95 p-3 backdrop-blur md:hidden">
-        <a
-          href={business.phoneHref}
-          className="block w-full rounded-full bg-[#dc2626] px-5 py-3 text-center text-sm font-bold text-white shadow-sm hover:bg-[#b91c1c]"
-        >
-          Call Now — {business.phoneDisplay}
-        </a>
-      </div>
     </main>
   );
 }
