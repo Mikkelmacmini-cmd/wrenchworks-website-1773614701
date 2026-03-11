@@ -1,62 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DiagnosticProofRail } from "@/components/DiagnosticProofRail";
+import { MobileActionRail } from "@/components/MobileActionRail";
+import { SymptomTriageFunnel } from "@/components/SymptomTriageFunnel";
 import { featuredServices, fullServices } from "@/lib/autotrek-services";
 
 export const metadata: Metadata = {
-  title: "Auto Repair Services in Littleton, CO",
-  description: "Symptom-first services at AutoTrek: diagnostics, brakes, maintenance, hybrid, fleet, and European repair in Littleton.",
+  title: "Auto Repair Services in Littleton, CO | AutoTrek",
+  description: "Explore AutoTrek's full auto repair services in Littleton, CO—diagnostics, brakes, maintenance, hybrid, suspension, alignments, and fleet service.",
   alternates: { canonical: "/services" },
 };
 
-const symptoms = [
-  ["Check engine light on", "Start with vehicle diagnosis and repair."],
-  ["Brakes squeaking or vibrating", "Get brake inspection and repair now."],
-  ["Pulling, bouncing, rough ride", "Suspension and alignment check."],
-  ["Overdue maintenance reminder", "Factory-scheduled maintenance plan."],
-];
-
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0b0f14] px-6 py-12 text-[#eaf0f6] md:px-10">
+    <main className="min-h-screen bg-[var(--bg-canvas)] px-6 pb-28 pt-12 text-[var(--ink-primary)] md:px-10 md:pb-12">
       <div className="mx-auto max-w-6xl">
-        <Link href="/" className="text-sm font-semibold text-[#e7cfa8] underline underline-offset-4">← Back to Home</Link>
-        <h1 className="mt-4 text-5xl font-bold text-white">Service Hub</h1>
-        <p className="mt-2 max-w-3xl">Symptom-first navigation, clear process, and transparent recommendations for Littleton drivers.</p>
+        <Link href="/" className="text-sm font-semibold text-[var(--accent-gold-soft)] underline underline-offset-4">← Back to Home</Link>
+        <h1 className="mt-4 font-bold text-white">Service Hub</h1>
+        <p className="mt-2 max-w-3xl">Symptom-first navigation, clear process, and approval-first recommendations for Littleton drivers.</p>
 
-        <section className="mt-8">
-          <h2 className="text-2xl font-semibold text-white">Start with what you are noticing</h2>
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {symptoms.map(([title, copy]) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-[#121821] p-5">
-                <h3 className="text-xl font-semibold text-white">{title}</h3>
-                <p className="mt-2 text-sm">{copy}</p>
-              </article>
-            ))}
-          </div>
+        <section className="section-shell mt-10">
+          <DiagnosticProofRail title="Diagnostic Proof OS Across Services" subtitle="Each service path is anchored in evidence: finding, recommendation, and verified result." />
         </section>
 
-        <section className="mt-10">
-          <h2 className="text-2xl font-semibold text-white">Featured service details</h2>
-          <div className="mt-4 grid gap-4 md:grid-cols-3">
+        <section id="triage" className="section-shell mt-12">
+          <SymptomTriageFunnel />
+        </section>
+
+        <section className="section-shell mt-14" aria-labelledby="featured-services-title">
+          <h2 id="featured-services-title" className="font-semibold text-white">Featured service details</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
             {featuredServices.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="rounded-2xl border border-white/10 bg-[#121821] p-5 transition hover:-translate-y-0.5">
-                <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+              <Link key={service.slug} href={`/services/${service.slug}`} className="ui-card-depth-2 diagnostic-grid rounded-2xl border border-white/10 bg-[#121821] p-5">
+                <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                 <p className="mt-2 text-sm">{service.shortDescription}</p>
-                <span className="mt-3 inline-block text-sm font-semibold text-[#e7cfa8]">View details →</span>
+                <span className="mt-3 inline-block text-sm font-semibold text-[var(--accent-gold-soft)]">View details →</span>
               </Link>
             ))}
           </div>
         </section>
 
-        <section className="mt-10">
-          <h2 className="text-2xl font-semibold text-white">Full catalog</h2>
+        <section className="section-shell mt-14" aria-labelledby="catalog-title">
+          <h2 id="catalog-title" className="font-semibold text-white">Full catalog</h2>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             {fullServices.map((service) => (
-              <div key={service} className="rounded-xl border border-white/10 bg-[#121821] px-4 py-3 text-sm text-[#d7e0eb]">{service}</div>
+              <div key={service} className="ui-card-depth-1 rounded-xl border border-white/10 bg-[#121821] px-4 py-3 text-sm text-[#d7e0eb]">{service}</div>
             ))}
           </div>
         </section>
       </div>
+
+      <MobileActionRail
+        phoneHref="tel:+13033283356"
+        callbackHref="sms:+13033283356?body=Hi%20AutoTrek%2C%20please%20call%20me%20back%20about%20service."
+        quickDiagnosisHref="#triage"
+      />
     </main>
   );
 }
