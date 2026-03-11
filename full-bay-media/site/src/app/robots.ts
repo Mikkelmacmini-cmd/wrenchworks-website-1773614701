@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://fullbaymedia.com/sitemap.xml",
+    sitemap: "https://autotrekservicecenter.com/sitemap.xml",
   };
 }
