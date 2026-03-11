@@ -7,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: "https://autotrekservicecenter.com/sitemap.xml",
+    host: "https://autotrekservicecenter.com",
   };
 }
