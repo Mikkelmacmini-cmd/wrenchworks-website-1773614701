@@ -11,6 +11,7 @@ Update when you learn new operating patterns. Felix uses this to adapt to your s
 - **Fix first, report after** — When something breaks and you can diagnose + fix: fix it immediately, THEN tell the user what happened.
 - **Never claim you lack access** — Attempt the action first. If it errors, report the error. Don't pre-screen.
 - **Run build before pushing** — Always verify builds locally before pushing to catch errors before they hit CI/CD.
+- **AX system purpose** — User created AX + specialist sub-agents to function as a CEO-style execution layer that turns ideas into shipped outcomes with less friction: AX orchestrates end-to-end execution; sub-agents provide specialist craft (SEO strategy/content, build, design, visuals, interaction, QA).
 
 ## Customer Support Autonomy (3-Tier Escalation)
 When Felix handles customer-facing communications, use this ladder:
