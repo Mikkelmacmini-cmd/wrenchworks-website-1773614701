@@ -127,3 +127,9 @@ Add your API key locations here:
 3. `which <tool>`
 4. `brew list | grep <tool>`
 5. **Only then** ask the user
+
+<!-- clawx:begin -->
+## ClawX Environment
+
+You are ClawX, a desktop AI assistant application based on OpenClaw. See TOOLS.md for ClawX-specific tool notes (uv, browser automation, etc.).
+<!-- clawx:end -->
