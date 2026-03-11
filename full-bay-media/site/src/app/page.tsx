@@ -21,9 +21,27 @@ const trustStats = [
 ] as const;
 
 const snippets = [
-  ["2018 BMW X3", "Check-engine + rough idle", "Found failing ignition coil + injector issue. Same-day repair, no repeat light."],
-  ["Ford Transit Fleet Van", "Brake vibration", "Rotor + pad service with digital inspection report. Back in service next morning."],
-  ["Subaru Outback", "Intermittent overheating", "Pressure test traced coolant leak early. Repaired before head-gasket damage."],
+  [
+    "2018 BMW X3",
+    "Check-engine + rough idle",
+    "Found failing ignition coil + injector issue. Same-day repair, no repeat light.",
+    "/images/diagnostic-tablet.jpg",
+    "/images/service-local-seo.webp 1536w, /images/service-local-seo-v6.png 1147w, /images/service-local-seo.png 612w",
+  ],
+  [
+    "Ford Transit Fleet Van",
+    "Brake vibration",
+    "Rotor + pad service with digital inspection report. Back in service next morning.",
+    "/images/under-lift-inspection.jpg",
+    "/images/service-reviews-v4.webp 1024w, /images/service-reviews-v3.png 1024w",
+  ],
+  [
+    "Subaru Outback",
+    "Intermittent overheating",
+    "Pressure test traced coolant leak early. Repaired before head-gasket damage.",
+    "/images/advisor-customer.jpg",
+    "/images/service-gbp-v6.webp 1024w, /images/service-gbp-v4.png 1024w, /images/service-gbp-v3.png 437w",
+  ],
 ] as const;
 
 const compareRows = [
@@ -52,7 +70,7 @@ export default function Home() {
     "@type": "AutoRepair",
     name: business.name,
     telephone: business.phoneDisplay,
-    image: "https://autotrekservicecenter.com/images/autotrek-hero-current.png",
+    image: "https://autotrekservicecenter.com/images/hero-shop.webp",
     address: {
       "@type": "PostalAddress",
       streetAddress: "8161 S Grant Way",
@@ -84,15 +102,23 @@ export default function Home() {
       </header>
 
       <section className="relative isolate overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
-        <Image
-          src="/images/autotrek-hero-current.png"
-          alt="Technician inspecting a vehicle in AutoTrek service bay"
-          width={2200}
-          height={1200}
-          className="h-[80vh] min-h-[620px] w-full object-cover object-[72%_center] md:h-[74vh] md:min-h-0 md:object-center"
-          priority
-          sizes="100vw"
-        />
+        <picture>
+          <source
+            media="(min-width: 900px)"
+            srcSet="/images/hero-shop.webp 1536w, /images/autotrek-hero-current.png 680w"
+            sizes="100vw"
+          />
+          <source
+            media="(max-width: 899px)"
+            srcSet="/images/ChatGPT-Image-Mar-9-2026-09_53_01-PM.png 1536w, /images/autotrek-hero-chatgpt.png 680w"
+            sizes="100vw"
+          />
+          <img
+            src="/images/hero-shop.webp"
+            alt="Technician inspecting a vehicle in AutoTrek service bay"
+            className="h-[80vh] min-h-[620px] w-full object-cover object-[72%_center] md:h-[74vh] md:min-h-0 md:object-center"
+          />
+        </picture>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,14,24,.86)_0%,rgba(8,14,24,.58)_56%,rgba(8,14,24,.2)_100%)]" />
         <div className="absolute inset-0 hero-grain" />
         <div className="absolute inset-0 z-10 mx-auto flex max-w-6xl items-start px-6 pb-10 pt-[calc(var(--site-header-height)+1.25rem)] md:items-end md:px-10 md:pb-14 md:pt-[calc(var(--site-header-height)+1.75rem)]">
@@ -106,8 +132,10 @@ export default function Home() {
             </div>
             <div className="mt-4 flex flex-wrap gap-2" aria-label="Trust proof highlights">
               {trustStats.map(([title, sub]) => (
-                <div key={title} className="rounded-xl border border-white/15 bg-[rgba(8,15,24,.62)] px-3 py-2 text-xs text-[#d8e3f2]">
-                  <span className="font-semibold text-white">{title}</span> · {sub}
+                <div key={title} className="proof-chip max-w-full sm:max-w-none">
+                  <strong>{title}</strong>
+                  <span className="hidden sm:inline"> · {sub}</span>
+                  <span className="sm:hidden"> — {sub}</span>
                 </div>
               ))}
             </div>
@@ -124,7 +152,7 @@ export default function Home() {
       </section>
 
       <section id="process" className="section-shell border-y border-white/10 bg-[var(--bg-surface)]" aria-labelledby="process-title">
-        <div className="mx-auto max-w-6xl px-6 py-22 md:px-10 md:py-26">
+        <div className="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-20">
           <h2 id="process-title" className="font-bold text-white">How We Keep You in Control</h2>
           <p className="mt-2 max-w-2xl">A four-step journey built to remove guesswork: Diagnose → Confirm → Repair → Verify.</p>
           <div className="mt-7 rounded-2xl border border-[#45658d] bg-[#0b111c] p-5 text-lg font-semibold text-[#dce9f8]">No repairs begin until you approve the estimate.</div>
@@ -140,22 +168,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="section-shell mx-auto max-w-6xl px-6 py-22 md:px-10 md:py-26" aria-labelledby="reviews-title">
+      <section id="reviews" className="section-shell mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-20" aria-labelledby="reviews-title">
         <h2 id="reviews-title" className="font-bold text-white">Recent Repair Outcomes</h2>
         <p className="mt-2 max-w-2xl">Real outcomes from real vehicles. Clear diagnostics. Verified follow-through.</p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {snippets.map(([vehicle, issue, outcome]) => (
-            <article key={vehicle} className="ui-card-depth-2 rounded-2xl border border-white/10 bg-[#0d1420] p-5">
-              <p className="text-xs uppercase tracking-[0.14em] text-[#8fa6c2]">{vehicle}</p>
-              <h3 className="mt-2 text-xl font-semibold text-white">{issue}</h3>
-              <p className="mt-2 text-sm">{outcome}</p>
+          {snippets.map(([vehicle, issue, outcome, image, imageSrcSet]) => (
+            <article key={vehicle} className="ui-card-depth-2 overflow-hidden rounded-2xl border border-white/10 bg-[#0d1420] p-0">
+              <img src={image} srcSet={imageSrcSet} sizes="(min-width: 1024px) 30vw, 100vw" alt={issue} className="h-40 w-full object-cover" loading="lazy" />
+              <div className="p-5">
+                <p className="text-xs uppercase tracking-[0.14em] text-[#8fa6c2]">{vehicle}</p>
+                <h3 className="mt-2 text-xl font-semibold text-white">{issue}</h3>
+                <p className="mt-2 text-sm">{outcome}</p>
+              </div>
             </article>
           ))}
         </div>
         <a href={business.reviewUrl} target="_blank" rel="noreferrer" className="mt-6 inline-block text-sm font-semibold text-[var(--accent-gold-soft)] underline underline-offset-4">Read Google Reviews</a>
       </section>
 
-      <section className="section-shell mx-auto max-w-6xl px-6 pb-8 md:px-10 md:pb-12" aria-labelledby="team-title">
+      <section className="section-shell mx-auto max-w-6xl px-6 pb-4 md:px-10 md:pb-8" aria-labelledby="team-title">
         <h2 id="team-title" className="font-bold text-white">Who You’re Trusting With Your Vehicle</h2>
         <p className="mt-2 max-w-2xl">Named experts, documented credentials, and a single accountability chain from estimate to handoff.</p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -171,7 +202,7 @@ export default function Home() {
       </section>
 
       <section className="section-shell border-y border-white/10 bg-[#0f1724]" aria-labelledby="compare-title">
-        <div className="mx-auto max-w-6xl px-6 py-22 md:px-10 md:py-26">
+        <div className="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-20">
           <h2 id="compare-title" className="font-bold text-white">AutoTrek vs Dealer vs Chain</h2>
           <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10">
             <table className="w-full min-w-[720px] bg-[#0b0f14] text-left text-sm">
@@ -187,7 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="section-shell mx-auto grid max-w-6xl gap-6 px-6 py-22 md:grid-cols-2 md:px-10 md:py-26">
+      <section id="contact" className="section-shell mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2 md:px-10 md:py-20">
         <div className="premium-shell rounded-2xl p-6">
           <h3 className="font-bold text-white">Visit AutoTrek</h3>
           <p className="mt-3">{business.address}</p>

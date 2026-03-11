@@ -1,3 +1,13 @@
+export type ServiceDecisionBlock = {
+  commonSymptoms: string[];
+  typicalCauses: string[];
+  driveability: string;
+  timeWindow: string;
+  budgetRange: string;
+  whatCanWait: string;
+  whatCannotWait: string;
+};
+
 export type FeaturedService = {
   slug: string;
   title: string;
@@ -6,6 +16,8 @@ export type FeaturedService = {
   image: string;
   seoTitle: string;
   seoDescription: string;
+  decision: ServiceDecisionBlock;
+  relatedSlugs: string[];
 };
 
 export const featuredServices: FeaturedService[] = [
@@ -15,10 +27,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Factory-scheduled upkeep to keep your car reliable and prevent expensive breakdowns.",
     longDescription:
       "Our vehicle maintenance service covers oil changes, fluid checks, filters, and scheduled inspections based on your mileage and driving habits. We help you stay ahead of expensive repairs by catching issues early and giving you a clear maintenance plan. If you commute daily in Littleton, Highlands Ranch, Englewood, Lakewood, or Centennial, this service keeps your vehicle dependable year-round.",
-    image: "/images/autotrek-hero-current.png",
+    image: "/images/under-lift-inspection.jpg",
     seoTitle: "Vehicle Maintenance in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Factory-scheduled vehicle maintenance in Littleton, CO. Keep your car reliable with inspections, fluids, and preventive service at AutoTrek.",
+    decision: {
+      commonSymptoms: ["Mileage reminder active", "Slight drop in fuel economy", "Longer crank in cold starts"],
+      typicalCauses: ["Aged fluids", "Clogged filters", "Delayed scheduled services"],
+      driveability: "Usually safe short-term, but delays increase risk of preventable failures.",
+      timeWindow: "Book within 7 days.",
+      budgetRange: "$140–$480 depending on interval and vehicle type.",
+      whatCanWait: "Cabin filter or non-critical additive service.",
+      whatCannotWait: "Overdue oil, coolant, or brake-fluid service.",
+    },
+    relatedSlugs: ["oil-fluid-changes", "vehicle-diagnosis-repair", "wheel-alignments"],
   },
   {
     slug: "brake-repair-service",
@@ -26,10 +48,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Pads, rotors, and brake-system checks for safer stops and better control.",
     longDescription:
       "If your brakes squeak, grind, vibrate, or feel soft, our team can diagnose and repair the issue quickly. We service brake pads, rotors, calipers, and fluid so your vehicle stops confidently in every condition. We focus on safety-first recommendations with transparent pricing and clear explanations before work begins.",
-    image: "/images/autotrek-shop-floor-2.png",
+    image: "/images/shop-floor.jpg",
     seoTitle: "Brake Repair in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Trusted brake repair and brake service in Littleton, CO. Pads, rotors, diagnostics, and safety-first recommendations from AutoTrek.",
+    decision: {
+      commonSymptoms: ["Squeal or grinding", "Pedal pulsation", "Longer stopping distance"],
+      typicalCauses: ["Worn pads", "Heat-spotted rotors", "Hydraulic imbalance"],
+      driveability: "Use caution for minor noise. Stop driving if pedal feels soft or pulling is severe.",
+      timeWindow: "Same-day safety inspection recommended.",
+      budgetRange: "$280–$980 based on axle and hardware condition.",
+      whatCanWait: "Light cosmetic rotor rust.",
+      whatCannotWait: "Grinding, soft pedal, fluid leaks.",
+    },
+    relatedSlugs: ["vehicle-suspension-repair", "wheel-alignments", "vehicle-diagnosis-repair"],
   },
   {
     slug: "oil-fluid-changes",
@@ -37,10 +69,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Fast oil and fluid service to protect engine life and day-to-day performance.",
     longDescription:
       "Regular oil and fluid changes are one of the easiest ways to protect your engine, transmission, and cooling system. We check condition, leaks, and service intervals so your vehicle runs smoothly and lasts longer. Whether you drive short city routes or long highway miles, we tailor the service to your real usage.",
-    image: "/images/autotrek-building.png",
+    image: "/images/diagnostic-tablet.jpg",
     seoTitle: "Oil Change & Fluid Service in Littleton, CO | AutoTrek",
     seoDescription:
       "Oil changes and fluid service in Littleton, CO. Protect engine and transmission performance with scheduled maintenance at AutoTrek Service Center.",
+    decision: {
+      commonSymptoms: ["Maintenance light", "Burnt fluid smell", "Rough idle after cold start"],
+      typicalCauses: ["Fluid degradation", "Leak seepage", "Extended service interval"],
+      driveability: "Usually safe for short trips, but overdue fluid can accelerate wear quickly.",
+      timeWindow: "Book within 3–5 days.",
+      budgetRange: "$90–$360 depending on fluid package.",
+      whatCanWait: "Optional additive service.",
+      whatCannotWait: "Low oil level or overheating signs.",
+    },
+    relatedSlugs: ["vehicle-maintenance", "vehicle-diagnosis-repair", "wheel-alignments"],
   },
   {
     slug: "hybrid-repair",
@@ -48,10 +90,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Confident diagnostics and repairs for hybrid systems, batteries, and drivability issues.",
     longDescription:
       "Hybrid systems require precise diagnostics and experienced repair strategy. We inspect battery health, cooling performance, charging behavior, and warning codes to identify the root issue quickly. Our process is designed to reduce guesswork and help hybrid owners make smart, cost-effective repair decisions.",
-    image: "/images/autotrek-hero-current.png",
+    image: "/images/under-lift-inspection.jpg",
     seoTitle: "Hybrid Repair in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Hybrid diagnostics and repair in Littleton, CO. Battery checks, drivability diagnostics, and expert hybrid service from AutoTrek.",
+    decision: {
+      commonSymptoms: ["Hybrid warning light", "Battery fan noise", "Reduced EV assist"],
+      typicalCauses: ["Battery degradation", "Cooling circuit restrictions", "Sensor faults"],
+      driveability: "Use caution. Driveability may degrade quickly under load.",
+      timeWindow: "Diagnostic slot within 48 hours.",
+      budgetRange: "$220–$1,800+ based on component path.",
+      whatCanWait: "Mild efficiency drop without warnings.",
+      whatCannotWait: "Master warning lights or overheating battery alerts.",
+    },
+    relatedSlugs: ["vehicle-diagnosis-repair", "vehicle-maintenance"],
   },
   {
     slug: "european-auto-repair",
@@ -59,10 +111,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Specialized service for European makes using proper diagnostics and repair procedures.",
     longDescription:
       "European vehicles need brand-specific diagnostics, quality parts, and proper repair procedures. Our team services major European makes with a focus on reliability, performance, and long-term ownership value. From warning-light diagnostics to major service intervals, we provide dealer-level precision without dealer friction.",
-    image: "/images/autotrek-shop-floor-2.png",
+    image: "/images/shop-floor.jpg",
     seoTitle: "European Auto Repair in Littleton, CO | AutoTrek",
     seoDescription:
       "European auto repair in Littleton, CO for Audi, BMW, Mercedes, VW, and more. Dealer-level diagnostics and trusted service at AutoTrek.",
+    decision: {
+      commonSymptoms: ["Check-engine light", "Oil seepage", "Electrical warnings"],
+      typicalCauses: ["Platform-specific part wear", "Software calibration faults", "Cooling or PCV issues"],
+      driveability: "Varies by warning level; use caution until diagnosis.",
+      timeWindow: "Book this week or sooner for warning lights.",
+      budgetRange: "$220–$2,200 depending on platform and repair path.",
+      whatCanWait: "Minor cosmetic warning reminders.",
+      whatCannotWait: "Flashing warning lights or drivability loss.",
+    },
+    relatedSlugs: ["vehicle-diagnosis-repair", "brake-repair-service", "vehicle-maintenance"],
   },
   {
     slug: "fleet-repair-service",
@@ -70,10 +132,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Priority maintenance and repair support to keep your business vehicles on the road.",
     longDescription:
       "Downtime costs money, so our fleet service is built for speed, consistency, and communication. We provide preventive maintenance, diagnostics, and repair planning to keep your vehicles running and your teams moving. From single-unit businesses to larger local fleets, we tailor service intervals around your operational needs.",
-    image: "/images/autotrek-building.png",
+    image: "/images/diagnostic-tablet.jpg",
     seoTitle: "Fleet Repair & Maintenance in Littleton, CO | AutoTrek",
     seoDescription:
       "Fleet repair and fleet maintenance in Littleton, CO. Reduce downtime with priority service and clear communication from AutoTrek.",
+    decision: {
+      commonSymptoms: ["Recurring check-engine alerts", "Brake wear across units", "Unplanned downtime"],
+      typicalCauses: ["Interval drift", "Uneven duty cycles", "Deferred diagnostics"],
+      driveability: "Case-by-case. Safety faults should be parked until inspected.",
+      timeWindow: "Open a fleet triage call same day.",
+      budgetRange: "$180–$1,500 per unit depending on scope.",
+      whatCanWait: "Non-safety cosmetic repairs.",
+      whatCannotWait: "Brake, steering, overheating, or active fault codes.",
+    },
+    relatedSlugs: ["vehicle-maintenance", "vehicle-diagnosis-repair", "oil-fluid-changes"],
   },
   {
     slug: "vehicle-suspension-repair",
@@ -81,10 +153,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Shocks, struts, and suspension fixes for smoother handling and tire life.",
     longDescription:
       "If your vehicle pulls, bounces, clunks, or wears tires unevenly, suspension issues may be the cause. We inspect shocks, struts, links, bushings, and related components to restore handling and ride quality. Our goal is to improve comfort, control, and overall safety with repairs that solve the real problem.",
-    image: "/images/autotrek-shop-floor-2.png",
+    image: "/images/shop-floor.jpg",
     seoTitle: "Suspension Repair in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Suspension repair in Littleton, CO including shocks, struts, and steering-related diagnostics. Improve ride quality and control with AutoTrek.",
+    decision: {
+      commonSymptoms: ["Pulling at highway speed", "Bouncing", "Clunking over bumps"],
+      typicalCauses: ["Worn struts", "Loose links", "Bushing deterioration"],
+      driveability: "Use caution; unstable handling increases braking distance.",
+      timeWindow: "Book within 48–72 hours.",
+      budgetRange: "$340–$1,600 based on axle and parts.",
+      whatCanWait: "Minor ride comfort noise.",
+      whatCannotWait: "Steering instability, severe pull, uneven tire wear with vibration.",
+    },
+    relatedSlugs: ["wheel-alignments", "brake-repair-service", "vehicle-diagnosis-repair"],
   },
   {
     slug: "vehicle-diagnosis-repair",
@@ -92,10 +174,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Check-engine and drivability troubleshooting with clear repair recommendations.",
     longDescription:
       "When a warning light appears or your car feels off, accurate diagnosis comes first. We use modern diagnostic tools and technician expertise to pinpoint issues and explain your options in plain language. You get a clear game plan, prioritized recommendations, and repairs focused on reliability.",
-    image: "/images/autotrek-hero-current.png",
+    image: "/images/under-lift-inspection.jpg",
     seoTitle: "Vehicle Diagnostics in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Check-engine light diagnostics and vehicle repair in Littleton, CO. Fast troubleshooting and clear repair recommendations at AutoTrek.",
+    decision: {
+      commonSymptoms: ["Warning lights", "Rough idle", "Power loss"],
+      typicalCauses: ["Ignition/fuel issues", "Sensor faults", "Airflow or emissions problems"],
+      driveability: "Depends on fault severity; flashing lights require immediate stop.",
+      timeWindow: "Same-day or next-day diagnostic slot.",
+      budgetRange: "$180–$420 diagnostic path, repair quoted after findings.",
+      whatCanWait: "Stable, non-flashing light with no drivability issues.",
+      whatCannotWait: "Flashing CEL, misfires, overheating, or stalling.",
+    },
+    relatedSlugs: ["vehicle-maintenance", "brake-repair-service", "hybrid-repair"],
   },
   {
     slug: "wheel-alignments",
@@ -103,10 +195,20 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Precision alignment service to improve steering feel and reduce uneven tire wear.",
     longDescription:
       "Poor alignment can cause steering drift, vibration, and premature tire wear. Our wheel alignment service corrects angles to manufacturer specs for better handling, longer tire life, and a smoother drive. If you’ve hit potholes, replaced suspension components, or noticed uneven tire wear, alignment should be checked.",
-    image: "/images/autotrek-building.png",
+    image: "/images/diagnostic-tablet.jpg",
     seoTitle: "Wheel Alignment in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Wheel alignment service in Littleton, CO to improve handling and tire life. Precision alignment and suspension-aware setup at AutoTrek.",
+    decision: {
+      commonSymptoms: ["Vehicle drifts", "Steering wheel off-center", "Uneven tire wear"],
+      typicalCauses: ["Pothole impact", "Suspension wear", "Post-repair misalignment"],
+      driveability: "Usually drivable short-term, but tire and safety risk grows quickly.",
+      timeWindow: "Book within 3 days.",
+      budgetRange: "$140–$280 depending on platform.",
+      whatCanWait: "Minor steering wheel offset.",
+      whatCannotWait: "Rapid tire wear, vibration, or pull after impact.",
+    },
+    relatedSlugs: ["vehicle-suspension-repair", "brake-repair-service", "vehicle-maintenance"],
   },
 ];
 

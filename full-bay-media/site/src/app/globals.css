@@ -12,12 +12,18 @@
   --ink-primary: #f3f7fc;
   --ink-secondary: #c9d4e3;
   --ink-tertiary: #96a5b8;
-  --accent-gold: #d9ab67;
-  --accent-gold-soft: #f1d3aa;
-  --accent-sky: #8ab9e8;
-  --ok: #50d69d;
+  --accent-gold: #d92d20;
+  --accent-gold-soft: #f4f7fc;
+  --accent-sky: #3ecf8e;
+  --ok: #34c759;
   --warn: #f3c16b;
-  --danger: #ff7e7e;
+  --danger: #ff453a;
+
+  /* Proof chip tokens (AA small-text safe on dark + image-overlay contexts) */
+  --proof-chip-bg: rgba(6, 15, 11, 0.9);
+  --proof-chip-border: rgba(62, 207, 142, 0.36);
+  --proof-chip-title: #ffffff;
+  --proof-chip-body: #d9fbea;
 
   /* Type scale */
   --step--1: clamp(0.82rem, 0.79rem + 0.12vw, 0.9rem);
@@ -121,6 +127,24 @@ p { color: var(--ink-secondary); }
   box-shadow: var(--elev-1);
 }
 
+.proof-chip {
+  border-radius: 0.8rem;
+  border: 1px solid var(--proof-chip-border);
+  background: var(--proof-chip-bg);
+  color: var(--proof-chip-body);
+  padding: 0.58rem 0.72rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.proof-chip strong {
+  color: var(--proof-chip-title);
+  font-weight: 700;
+}
+
 .btn-primary,
 .btn-secondary,
 .btn-ghost,
@@ -133,9 +157,9 @@ p { color: var(--ink-secondary); }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #efc182 100%);
-  color: #081018;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #c81e1e 0%, var(--accent-gold) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.26);
   box-shadow: var(--elev-2);
 }
 

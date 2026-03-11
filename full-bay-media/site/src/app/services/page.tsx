@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
+const serviceCardImages: Record<string, { src: string; srcSet: string }> = {
+  "vehicle-maintenance": { src: "/images/under-lift-inspection.jpg", srcSet: "/images/under-lift-inspection.jpg 4000w, /images/service-websites.webp 1536w" },
+  "brake-repair-service": { src: "/images/shop-floor.jpg", srcSet: "/images/shop-floor.jpg 5401w, /images/service-reviews-v4.webp 1024w" },
+  "oil-fluid-changes": { src: "/images/diagnostic-tablet.jpg", srcSet: "/images/diagnostic-tablet.jpg 6000w, /images/service-local-seo.webp 1536w" },
+  "hybrid-repair": { src: "/images/hero-shop.webp", srcSet: "/images/hero-shop.webp 1536w, /images/service-local-seo-v2.png 1536w" },
+  "european-auto-repair": { src: "/images/advisor-customer.jpg", srcSet: "/images/advisor-customer.jpg 5760w, /images/service-gbp-v6.webp 1024w" },
+  "fleet-repair-service": { src: "/images/shop-floor.jpg", srcSet: "/images/shop-floor.jpg 5401w, /images/service-websites-v2.png 1536w" },
+  "vehicle-suspension-repair": { src: "/images/under-lift-inspection.jpg", srcSet: "/images/under-lift-inspection.jpg 4000w, /images/service-websites-v3.png 1536w" },
+  "vehicle-diagnosis-repair": { src: "/images/diagnostic-tablet.jpg", srcSet: "/images/diagnostic-tablet.jpg 6000w, /images/service-local-seo-v3.png 1536w" },
+  "wheel-alignments": { src: "/images/hero-shop.webp", srcSet: "/images/hero-shop.webp 1536w, /images/service-websites.png 1536w" },
+};
+
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-canvas)] px-6 pb-28 pt-12 text-[var(--ink-primary)] md:px-10 md:pb-12">
@@ -30,13 +42,19 @@ export default function ServicesPage() {
         <section className="section-shell mt-14" aria-labelledby="featured-services-title">
           <h2 id="featured-services-title" className="font-semibold text-white">Featured service details</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {featuredServices.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="ui-card-depth-2 diagnostic-grid rounded-2xl border border-white/10 bg-[#121821] p-5">
-                <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-                <p className="mt-2 text-sm">{service.shortDescription}</p>
-                <span className="mt-3 inline-block text-sm font-semibold text-[var(--accent-gold-soft)]">View details →</span>
-              </Link>
-            ))}
+            {featuredServices.map((service) => {
+              const media = serviceCardImages[service.slug];
+              return (
+                <Link key={service.slug} href={`/services/${service.slug}`} className="ui-card-depth-2 diagnostic-grid overflow-hidden rounded-2xl border border-white/10 bg-[#121821] p-0">
+                  <img src={media?.src ?? service.image} srcSet={media?.srcSet} sizes="(min-width: 1024px) 30vw, 100vw" alt={service.title} className="h-40 w-full object-cover" loading="lazy" />
+                  <div className="p-5">
+                    <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                    <p className="mt-2 text-sm">{service.shortDescription}</p>
+                    <span className="mt-3 inline-block text-sm font-semibold text-[var(--accent-gold-soft)]">View details →</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
