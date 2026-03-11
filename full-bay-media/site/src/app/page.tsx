@@ -15,227 +15,105 @@ const business = {
 };
 
 const trustStats = [
-  ["4.9★ Google", "1,200+ local reviews"],
-  ["Serving Littleton Since 2009", "Trusted by families + fleets"],
-  ["3yr / 36k Warranty", "Nationwide coverage"],
-  ["ASE-Certified Techs", "Dealer-level diagnostics"],
+  ["4.9★ Google", "1,200+ verified local reviews"],
+  ["Serving Littleton Since 2009", "Trusted by families and fleets"],
+  ["3yr / 36k Warranty", "Nationwide protection"],
+  ["ASE-Certified Technicians", "Dealer-level diagnostic accuracy"],
 ] as const;
 
 const snippets = [
-  [
-    "2018 BMW X3",
-    "Check-engine + rough idle",
-    "Found failing ignition coil + injector issue. Same-day repair, no repeat light.",
-    "/images/diagnostic-tablet.jpg",
-    "/images/service-local-seo.webp 1536w, /images/service-local-seo-v6.png 1147w, /images/service-local-seo.png 612w",
-  ],
-  [
-    "Ford Transit Fleet Van",
-    "Brake vibration",
-    "Rotor + pad service with digital inspection report. Back in service next morning.",
-    "/images/under-lift-inspection.jpg",
-    "/images/service-reviews-v4.webp 1024w, /images/service-reviews-v3.png 1024w",
-  ],
-  [
-    "Subaru Outback",
-    "Intermittent overheating",
-    "Pressure test traced coolant leak early. Repaired before head-gasket damage.",
-    "/images/advisor-customer.jpg",
-    "/images/service-gbp-v6.webp 1024w, /images/service-gbp-v4.png 1024w, /images/service-gbp-v3.png 437w",
-  ],
-] as const;
-
-const compareRows = [
-  ["Diagnostic depth", "Root-cause workflow", "Often swap-heavy", "Basic tier diagnostics"],
-  ["Communication", "Advisor + technician clarity", "Service desk relay", "Varies by location"],
-  ["Approval control", "No work before approval", "Process-dependent", "Process-dependent"],
-  ["Warranty", "3yr / 36k nationwide", "Typically shorter / brand-bound", "Often limited"],
-] as const;
-
-const processSteps = [
-  ["Diagnose", "45–90 min", "Digital scan + technician validation to isolate root cause."],
-  ["Confirm", "Same visit", "Advisor reviews findings, urgency, and options in plain language."],
-  ["Repair", "After approval", "Only approved work begins, with milestone updates if scope changes."],
-  ["Verify", "Before handoff", "Road test + post-repair checks with warranty-backed documentation."],
-] as const;
-
-const teamTrust = [
-  ["Megan R.", "Lead Service Advisor", "ASE C1 · Customer Communication", "Explains options and costs before any authorization."],
-  ["Carlos T.", "Master Technician", "ASE A1–A8", "Leads root-cause diagnostics for drivability + warning lights."],
-  ["Jenna P.", "Warranty Coordinator", "3yr/36k Claims", "Documents repair proof and keeps warranty support friction-free."],
+  ["2018 BMW X3", "Check-engine + rough idle", "Found failing ignition coil + injector issue. Same-day repair, no repeat light.", "/visual-refresh/ai-no-faces/support/support-02-diagnostics-scan.webp", "/visual-refresh/ai-no-faces/support/support-02-diagnostics-scan.webp 1280w, /visual-refresh/ai-no-faces/mobile/support-02-diagnostics-scan-mobile.webp 768w"],
+  ["Ford Transit Fleet Van", "Brake vibration", "Rotor + pad service with digital inspection report. Back in service next morning.", "/visual-refresh/ai-no-faces/support/support-01-brake-service.webp", "/visual-refresh/ai-no-faces/support/support-01-brake-service.webp 1280w, /visual-refresh/ai-no-faces/mobile/support-01-brake-service-mobile.webp 768w"],
+  ["Subaru Outback", "Intermittent overheating", "Pressure test traced coolant leak early. Repaired before head-gasket damage.", "/visual-refresh/ai-no-faces/support/support-03-oil-service.webp", "/visual-refresh/ai-no-faces/support/support-03-oil-service.webp 1280w, /visual-refresh/ai-no-faces/mobile/support-03-oil-service-mobile.webp 768w"],
 ] as const;
 
 export default function Home() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    name: business.name,
-    telephone: business.phoneDisplay,
-    image: `https://autotrekservicecenter.com${homepageHeroAsset.src}`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "8161 S Grant Way",
-      addressLocality: "Littleton",
-      addressRegion: "CO",
-      postalCode: "80122",
-      addressCountry: "US",
-    },
-  };
-
   return (
     <main className="bg-[var(--bg-canvas)] pb-28 text-[var(--ink-primary)] md:pb-0">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <header data-testid="site-header" className="sticky top-0 z-[70] border-b border-white/10 bg-[rgba(7,11,17,.92)] backdrop-blur" aria-label="Site header">
+      <header data-testid="site-header" className="sticky top-0 z-[70] border-b border-slate-200/80 bg-white/95 backdrop-blur" aria-label="Site header">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5 md:px-10 md:py-4">
           <div className="relative h-14 w-56 md:h-16 md:w-64">
             <Image src="/autotrek-logo.png" alt="AutoTrek Service Center logo" fill className="object-contain object-left" priority />
           </div>
           <nav className="hidden items-center gap-6 text-sm text-[var(--ink-secondary)] md:flex" aria-label="Primary navigation">
-            <a href="#triage">Quick Diagnosis</a>
-            <a href="#process">Process</a>
-            <a href="#reviews">Proof</a>
-            <a href="#contact">Contact</a>
+            <a className="inline-flex min-h-11 items-center" href="#triage">Quick Diagnosis</a><a className="inline-flex min-h-11 items-center" href="#process">Process</a><a className="inline-flex min-h-11 items-center" href="#reviews">Proof</a><a className="inline-flex min-h-11 items-center" href="#contact">Contact</a>
           </nav>
-          <a href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-5 py-2 text-sm font-semibold">
-            Book Inspection
-          </a>
+          <a href={business.phoneHref} className="btn-secondary ui-pressable hidden rounded-full px-5 py-2 text-sm font-semibold md:inline-flex">Call {business.phoneDisplay}</a>
         </div>
       </header>
 
-      <section className="relative isolate overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
+      <section className="relative isolate overflow-hidden border-b border-slate-200" aria-labelledby="hero-title">
         <picture>
           <source media="(max-width: 899px)" srcSet={homepageHeroAsset.mobileSrc} sizes="100vw" />
           <source media="(min-width: 900px)" srcSet={homepageHeroAsset.srcSet} sizes="100vw" />
-          <img
-            src={homepageHeroAsset.src}
-            alt={homepageHeroAsset.alt}
-            className="h-[80vh] min-h-[620px] w-full object-cover object-[72%_center] md:h-[74vh] md:min-h-0 md:object-center"
-          />
+          <img src={homepageHeroAsset.src} srcSet={homepageHeroAsset.srcSet} sizes="100vw" alt={homepageHeroAsset.alt} fetchPriority="high" loading="eager" decoding="async" width={1280} height={820} className="h-[80vh] min-h-[620px] w-full object-cover object-[72%_center] md:h-[74vh] md:min-h-0 md:object-center" />
         </picture>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,14,24,.86)_0%,rgba(8,14,24,.58)_56%,rgba(8,14,24,.2)_100%)]" />
-        <div className="absolute inset-0 hero-grain" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,.72)_0%,rgba(255,255,255,.5)_56%,rgba(255,255,255,.08)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 hero-grain" />
         <div className="absolute inset-0 z-10 mx-auto flex max-w-6xl items-start px-6 pb-10 pt-[calc(var(--site-header-height)+1.25rem)] md:items-end md:px-10 md:pb-14 md:pt-[calc(var(--site-header-height)+1.75rem)]">
-          <div className="diagnostic-grid max-w-3xl rounded-[var(--radius-lg)] border border-white/15 bg-[rgba(10,19,31,.7)] p-5 backdrop-blur-sm md:p-8">
+          <div className="diagnostic-grid max-w-3xl rounded-[1.5rem] border border-slate-200/90 bg-white/88 p-5 shadow-lg backdrop-blur-sm md:p-8">
             <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent-gold-soft)]">Littleton Auto Care Since 2009</p>
-            <h1 id="hero-title" className="mt-3 max-w-2xl font-bold">Get a Clear Repair Plan Before Small Issues Get Expensive.</h1>
-            <p className="mt-4 max-w-2xl text-[1.04rem] text-[#dee8f3]">We diagnose the root cause, explain your options, and only begin repairs after your approval—backed by a 3-year/36,000-mile warranty.</p>
+            <h1 id="hero-title" data-copy-id="hero.headline" className="mt-3 max-w-2xl font-bold text-slate-900">Dealer-Level Precision. Local-Shop Clarity.</h1>
+            <p data-copy-id="hero.subhead" className="mt-4 max-w-2xl text-[1.04rem] text-slate-700">We find the root cause, walk you through options in plain language, and only begin approved work—backed by a 3-year/36,000-mile warranty.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a data-testid="hero-primary-cta" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold">Book Inspection</a>
-              <a href={business.phoneHref} className="btn-secondary ui-pressable rounded-full px-6 py-3 font-semibold">Speak to Advisor</a>
+              <a data-testid="hero-primary-cta" data-copy-id="hero.cta.primary" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold">Book Diagnostic</a>
+              <a data-copy-id="hero.cta.secondary" href={business.phoneHref} className="btn-secondary ui-pressable rounded-full px-6 py-3 font-semibold">Speak to an Advisor</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-2" aria-label="Trust proof highlights">
-              {trustStats.map(([title, sub]) => (
-                <div key={title} className="proof-chip max-w-full sm:max-w-none">
-                  <strong>{title}</strong>
-                  <span className="hidden sm:inline"> · {sub}</span>
-                  <span className="sm:hidden"> — {sub}</span>
-                </div>
-              ))}
+              {trustStats.map(([title, sub]) => <div key={title} className="proof-chip"><strong>{title}</strong><span> · {sub}</span></div>)}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-shell mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14" aria-label="Evidence rail">
-        <DiagnosticProofRail />
-      </section>
+      <section className="section-shell mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-14" aria-label="Evidence rail"><DiagnosticProofRail /></section>
+      <section className="section-shell mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20"><SymptomTriageFunnel /></section>
 
-      <section className="section-shell mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
-        <SymptomTriageFunnel />
-      </section>
-
-      <section id="process" className="section-shell border-y border-white/10 bg-[var(--bg-surface)]" aria-labelledby="process-title">
+      <section id="process" className="section-shell border-y border-slate-200 bg-[var(--bg-surface)]" aria-labelledby="process-title">
         <div className="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-20">
-          <h2 id="process-title" className="font-bold text-white">How We Keep You in Control</h2>
-          <p className="mt-2 max-w-2xl">A four-step journey built to remove guesswork: Diagnose → Confirm → Repair → Verify.</p>
-          <div className="mt-7 rounded-2xl border border-[#45658d] bg-[#0b111c] p-5 text-lg font-semibold text-[#dce9f8]">No repairs begin until you approve the estimate.</div>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {processSteps.map(([step, timing, body]) => (
-              <article key={step} className="ui-card-depth-2 rounded-xl border border-white/10 bg-[#0b0f14] p-5">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#8fa6c2]">{timing}</p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">{step}</h3>
-                <p className="mt-2 text-sm">{body}</p>
-              </article>
-            ))}
-          </div>
+          <h2 id="process-title" data-copy-id="process.headline" className="font-bold text-slate-900">A Repair Process Built for Clear Decisions</h2>
+          <p data-copy-id="process.subhead" className="mt-2 max-w-2xl">Four deliberate steps to remove guesswork: Diagnose → Confirm → Repair → Verify.</p>
+          <div className="mt-7 rounded-2xl border border-emerald-300 bg-emerald-50 p-5 text-lg font-semibold text-emerald-900">No repairs begin until you approve the estimate.</div>
         </div>
       </section>
 
       <section id="reviews" className="section-shell mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-20" aria-labelledby="reviews-title">
-        <h2 id="reviews-title" className="font-bold text-white">Recent Repair Outcomes</h2>
-        <p className="mt-2 max-w-2xl">Real outcomes from real vehicles. Clear diagnostics. Verified follow-through.</p>
+        <h2 id="reviews-title" data-copy-id="proof.headline" className="font-bold text-slate-900">Recent Repair Outcomes</h2>
+        <p data-copy-id="proof.subhead" className="mt-2 max-w-2xl">Real vehicles. Documented findings. Verified results.</p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {snippets.map(([vehicle, issue, outcome, image, imageSrcSet]) => (
-            <article key={vehicle} className="ui-card-depth-2 overflow-hidden rounded-2xl border border-white/10 bg-[#0d1420] p-0">
+            <article key={vehicle} className="ui-card-depth-2 overflow-hidden rounded-2xl border border-slate-200 bg-white">
               <img src={image} srcSet={imageSrcSet} sizes="(min-width: 1024px) 30vw, 100vw" alt={issue} className="h-40 w-full object-cover" loading="lazy" />
-              <div className="p-5">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#8fa6c2]">{vehicle}</p>
-                <h3 className="mt-2 text-xl font-semibold text-white">{issue}</h3>
-                <p className="mt-2 text-sm">{outcome}</p>
-              </div>
+              <div className="p-5"><p className="text-xs uppercase tracking-[0.14em] text-slate-500">{vehicle}</p><h3 className="mt-2 text-xl font-semibold text-slate-900">{issue}</h3><p className="mt-2 text-sm">{outcome}</p></div>
             </article>
           ))}
         </div>
         <a href={business.reviewUrl} target="_blank" rel="noreferrer" className="mt-6 inline-block text-sm font-semibold text-[var(--accent-gold-soft)] underline underline-offset-4">Read Google Reviews</a>
       </section>
 
-      <section className="section-shell mx-auto max-w-6xl px-6 pb-4 md:px-10 md:pb-8" aria-labelledby="team-title">
-        <h2 id="team-title" className="font-bold text-white">Who You’re Trusting With Your Vehicle</h2>
-        <p className="mt-2 max-w-2xl">Named experts, documented credentials, and a single accountability chain from estimate to handoff.</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {teamTrust.map(([name, role, cert, detail]) => (
-            <article key={name} className="ui-card-depth-2 rounded-2xl border border-white/10 bg-[#121821] p-5">
-              <p className="text-xs uppercase tracking-[0.14em] text-[#8fa6c2]">{role}</p>
-              <h3 className="mt-2 text-2xl font-semibold text-white">{name}</h3>
-              <p className="mt-1 text-sm font-semibold text-[var(--accent-gold-soft)]">{cert}</p>
-              <p className="mt-2 text-sm">{detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-shell border-y border-white/10 bg-[#0f1724]" aria-labelledby="compare-title">
-        <div className="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-20">
-          <h2 id="compare-title" className="font-bold text-white">AutoTrek vs Dealer vs Chain</h2>
-          <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10">
-            <table className="w-full min-w-[720px] bg-[#0b0f14] text-left text-sm">
-              <caption className="sr-only">Comparison of diagnosis, communication, approval control and warranty across service options.</caption>
-              <thead className="bg-[#152033] text-[#d7e0eb]"><tr><th className="px-4 py-3">Decision Factor</th><th className="px-4 py-3 text-[var(--accent-gold-soft)]">AutoTrek</th><th className="px-4 py-3">Dealer</th><th className="px-4 py-3">Chain</th></tr></thead>
-              <tbody>
-                {compareRows.map((row) => (
-                  <tr key={row[0]} className="border-t border-white/10">{row.map((cell) => <td key={cell} className="px-4 py-3 text-[#c6d0dc]">{cell}</td>)}</tr>
-                ))}
-              </tbody>
-            </table>
+      <section id="contact" data-sticky-rail-stop="true" className="section-shell border-y border-slate-200 bg-[var(--bg-surface)]">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-14 md:grid-cols-2 md:px-10">
+          <div className="premium-shell rounded-2xl p-6">
+            <h3 className="font-bold text-slate-900">Visit AutoTrek</h3>
+            <p className="mt-3">{business.address}</p>
+            <Link href="/services" className="mt-4 block text-sm font-semibold text-[var(--accent-gold-soft)] underline underline-offset-4">Browse complete services hub</Link>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="section-shell mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2 md:px-10 md:py-20">
-        <div className="premium-shell rounded-2xl p-6">
-          <h3 className="font-bold text-white">Visit AutoTrek</h3>
-          <p className="mt-3">{business.address}</p>
-          <a href="https://maps.google.com/?q=8161+S+Grant+Way+Littleton+CO+80122" target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm font-semibold text-[var(--accent-gold-soft)] underline underline-offset-4">Get directions</a>
-          <Link href="/services" className="mt-4 block text-sm font-semibold text-[var(--accent-gold-soft)] underline underline-offset-4">Browse complete services hub</Link>
-        </div>
-      </section>
-
-      <section className="border-t border-white/10 bg-[#0b0f14] py-14" aria-labelledby="final-cta-title">
+      <section id="final-cta" data-sticky-rail-stop="true" className="border-t border-slate-200 bg-white py-14" aria-labelledby="final-cta-title">
         <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
-          <h3 id="final-cta-title" className="font-bold text-white">Ready for a Confident Answer on Your Vehicle?</h3>
-          <p className="mx-auto mt-3 max-w-2xl">Book now or speak directly with an advisor. Backed by our 3-year / 36,000-mile warranty.</p>
+          <h3 id="final-cta-title" data-copy-id="finalCta.headline" className="font-bold text-slate-900">Need a Clear Answer on Your Vehicle?</h3>
+          <p data-copy-id="finalCta.subhead" className="mx-auto mt-3 max-w-2xl">Start with a diagnostic and leave with a prioritized plan you can approve with confidence.</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-8 py-3 font-semibold">Book Inspection</a>
-            <a href={business.phoneHref} className="btn-secondary ui-pressable rounded-full px-8 py-3 font-semibold">Call {business.phoneDisplay}</a>
+            <a data-copy-id="finalCta.cta.primary" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-8 py-3 font-semibold">Book Diagnostic</a>
+            <a data-copy-id="finalCta.cta.secondary" href={business.phoneHref} className="btn-secondary ui-pressable rounded-full px-8 py-3 font-semibold">Call {business.phoneDisplay}</a>
           </div>
         </div>
       </section>
 
       <MobileActionRail phoneHref={business.phoneHref} callbackHref={business.callbackHref} quickDiagnosisHref="#triage" />
-
-      <section className="mx-auto max-w-6xl px-6 pb-8 md:hidden" aria-hidden>
-        <div className="h-20" />
-      </section>
+      <section className="mx-auto max-w-6xl px-6 pb-8 md:hidden" aria-hidden><div className="h-20" /></section>
     </main>
   );
 }
