@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { services } from "@/lib/site";
+export default function ServicesPage() { return <div className="mx-auto max-w-6xl px-4 py-16"><h1 className="mb-3 text-4xl font-bold">Auto Repair Services in Littleton, CO</h1><p className="mb-8 text-gray-700">Explore our full service catalog. Every page includes local intent, FAQs, and clear next steps.</p><div className="grid gap-4 md:grid-cols-2">{services.map(s=><Link key={s.slug} href={`/services/${s.slug}`} className="rounded-xl border p-5"><h2 className="font-semibold">{s.name}</h2><p className="text-sm text-gray-600">{s.short}</p></Link>)}</div></div>; }

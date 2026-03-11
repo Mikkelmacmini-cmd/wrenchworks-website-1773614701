@@ -1,0 +1,2 @@
+import { siteConfig } from "@/lib/site";
+export default function ReviewsPage() { return <div className="mx-auto max-w-4xl px-4 py-16"><h1 className="text-4xl font-bold">Customer Reviews</h1><p className="my-4 text-gray-700">See what local drivers are saying about their AutoTrek experience.</p><a href={siteConfig.reviewUrl} className="font-semibold text-[#1F7A4C] underline">Read Our Google Reviews</a></div>; }

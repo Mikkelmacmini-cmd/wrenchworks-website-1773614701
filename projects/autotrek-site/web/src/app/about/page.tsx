@@ -1,0 +1,1 @@
+export default function AboutPage() { return <div className="mx-auto max-w-4xl px-4 py-16"><h1 className="text-4xl font-bold">About AutoTrek Service Center</h1><p className="mt-4 text-gray-700">We’re a local Littleton shop focused on accurate diagnostics, honest recommendations, and quality repairs done right the first time.</p></div>; }

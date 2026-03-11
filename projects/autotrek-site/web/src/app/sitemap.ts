@@ -1,0 +1,3 @@
+import type { MetadataRoute } from "next";
+import { areas, services, siteConfig } from "@/lib/site";
+export default function sitemap(): MetadataRoute.Sitemap { const base = siteConfig.baseUrl; const pages = ["", "/services", "/service-areas", "/about", "/reviews", "/contact", "/thank-you", "/auto-repair-littleton-co"]; return [...pages.map((p) => ({ url: `${base}${p}`, changeFrequency: "weekly" as const, priority: p === "" ? 1 : 0.7 })), ...services.map((s) => ({ url: `${base}/services/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.8 })), ...areas.map((a) => ({ url: `${base}/service-areas/${a.slug}`, changeFrequency: "monthly" as const, priority: 0.75 }))]; }

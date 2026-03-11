@@ -1,0 +1,1 @@
+export default function ThankYou() { return <div className="mx-auto max-w-3xl px-4 py-20"><h1 className="text-4xl font-bold">Thanks — we received your request.</h1><p className="mt-4 text-gray-700">A team member will follow up shortly. If your need is urgent, call us now at <a className="text-[#C62828]" href="tel:+13033283356">(303) 328-3356</a>.</p></div>; }
