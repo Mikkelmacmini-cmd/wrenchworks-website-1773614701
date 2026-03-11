@@ -57,3 +57,41 @@ Implemented requested visual refresh with Muse/Lens direction:
 - `src/lib/autotrek-services.ts`
 - `qa-captures/visual-refresh-r1/*`
 - `agent-outputs/forge-visual-refresh.md`
+
+---
+
+## Visual Refresh R2 — Lens Asset Integration (2026-03-11)
+
+### Completed
+- Copied Lens-produced assets into served static paths:
+  - `public/visual-refresh/hero/*`
+  - `public/visual-refresh/service/*`
+  - `public/visual-refresh/mobile/*`
+- Replaced homepage hero source with visual-refresh hero asset + mobile crop fallback via `<picture>`.
+- Replaced service card imagery with visual-refresh assets and wired mobile-specific crops on:
+  - `/services` featured cards
+  - `/services/[slug]` hero media
+- Updated central asset manifest in `src/lib/autotrek-services.ts`:
+  - Added `homepageHeroAsset`
+  - Added `serviceAssetManifest` with desktop + mobile + srcSet + alt per service slug
+  - Updated `featuredServices[].image` to manifest-backed visual-refresh service assets
+
+### Build and QA capture
+- `npm run build` ✅
+- Captures generated to `qa-captures/visual-refresh-r2` ✅
+  - `desktop-1280-{viewport,full}.png`
+  - `tablet-768-{viewport,full}.png`
+  - `mobile-430-{viewport,full}.png`
+  - `mobile-390-{viewport,full}.png`
+  - `mobile-360-{viewport,full}.png`
+
+### R2 files touched
+- `public/visual-refresh/hero/*`
+- `public/visual-refresh/service/*`
+- `public/visual-refresh/mobile/*`
+- `src/lib/autotrek-services.ts`
+- `src/app/page.tsx`
+- `src/app/services/page.tsx`
+- `src/app/services/[slug]/page.tsx`
+- `qa-captures/visual-refresh-r2/*`
+- `agent-outputs/forge-visual-refresh.md`

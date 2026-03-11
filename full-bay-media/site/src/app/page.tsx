@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DiagnosticProofRail } from "@/components/DiagnosticProofRail";
 import { MobileActionRail } from "@/components/MobileActionRail";
 import { SymptomTriageFunnel } from "@/components/SymptomTriageFunnel";
+import { homepageHeroAsset } from "@/lib/autotrek-services";
 
 const business = {
   name: "AutoTrek Service Center",
@@ -70,7 +71,7 @@ export default function Home() {
     "@type": "AutoRepair",
     name: business.name,
     telephone: business.phoneDisplay,
-    image: "https://autotrekservicecenter.com/images/hero-shop.webp",
+    image: `https://autotrekservicecenter.com${homepageHeroAsset.src}`,
     address: {
       "@type": "PostalAddress",
       streetAddress: "8161 S Grant Way",
@@ -103,19 +104,11 @@ export default function Home() {
 
       <section className="relative isolate overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
         <picture>
-          <source
-            media="(min-width: 900px)"
-            srcSet="/images/hero-shop.webp 1536w, /images/autotrek-hero-current.png 680w"
-            sizes="100vw"
-          />
-          <source
-            media="(max-width: 899px)"
-            srcSet="/images/ChatGPT-Image-Mar-9-2026-09_53_01-PM.png 1536w, /images/autotrek-hero-chatgpt.png 680w"
-            sizes="100vw"
-          />
+          <source media="(max-width: 899px)" srcSet={homepageHeroAsset.mobileSrc} sizes="100vw" />
+          <source media="(min-width: 900px)" srcSet={homepageHeroAsset.srcSet} sizes="100vw" />
           <img
-            src="/images/hero-shop.webp"
-            alt="Technician inspecting a vehicle in AutoTrek service bay"
+            src={homepageHeroAsset.src}
+            alt={homepageHeroAsset.alt}
             className="h-[80vh] min-h-[620px] w-full object-cover object-[72%_center] md:h-[74vh] md:min-h-0 md:object-center"
           />
         </picture>

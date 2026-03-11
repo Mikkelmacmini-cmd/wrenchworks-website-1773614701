@@ -3,7 +3,7 @@ import Link from "next/link";
 import { DiagnosticProofRail } from "@/components/DiagnosticProofRail";
 import { MobileActionRail } from "@/components/MobileActionRail";
 import { SymptomTriageFunnel } from "@/components/SymptomTriageFunnel";
-import { featuredServices, fullServices } from "@/lib/autotrek-services";
+import { featuredServices, fullServices, serviceAssetManifest } from "@/lib/autotrek-services";
 
 export const metadata: Metadata = {
   title: "Auto Repair Services in Littleton, CO | AutoTrek",
@@ -11,17 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
-const serviceCardImages: Record<string, { src: string; srcSet: string }> = {
-  "vehicle-maintenance": { src: "/images/under-lift-inspection.jpg", srcSet: "/images/under-lift-inspection.jpg 4000w, /images/service-websites.webp 1536w" },
-  "brake-repair-service": { src: "/images/shop-floor.jpg", srcSet: "/images/shop-floor.jpg 5401w, /images/service-reviews-v4.webp 1024w" },
-  "oil-fluid-changes": { src: "/images/diagnostic-tablet.jpg", srcSet: "/images/diagnostic-tablet.jpg 6000w, /images/service-local-seo.webp 1536w" },
-  "hybrid-repair": { src: "/images/hero-shop.webp", srcSet: "/images/hero-shop.webp 1536w, /images/service-local-seo-v2.png 1536w" },
-  "european-auto-repair": { src: "/images/advisor-customer.jpg", srcSet: "/images/advisor-customer.jpg 5760w, /images/service-gbp-v6.webp 1024w" },
-  "fleet-repair-service": { src: "/images/shop-floor.jpg", srcSet: "/images/shop-floor.jpg 5401w, /images/service-websites-v2.png 1536w" },
-  "vehicle-suspension-repair": { src: "/images/under-lift-inspection.jpg", srcSet: "/images/under-lift-inspection.jpg 4000w, /images/service-websites-v3.png 1536w" },
-  "vehicle-diagnosis-repair": { src: "/images/diagnostic-tablet.jpg", srcSet: "/images/diagnostic-tablet.jpg 6000w, /images/service-local-seo-v3.png 1536w" },
-  "wheel-alignments": { src: "/images/hero-shop.webp", srcSet: "/images/hero-shop.webp 1536w, /images/service-websites.png 1536w" },
-};
 
 export default function ServicesPage() {
   return (
@@ -43,10 +32,13 @@ export default function ServicesPage() {
           <h2 id="featured-services-title" className="font-semibold text-white">Featured service details</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {featuredServices.map((service) => {
-              const media = serviceCardImages[service.slug];
+              const media = serviceAssetManifest[service.slug];
               return (
                 <Link key={service.slug} href={`/services/${service.slug}`} className="ui-card-depth-2 diagnostic-grid overflow-hidden rounded-2xl border border-white/10 bg-[#121821] p-0">
-                  <img src={media?.src ?? service.image} srcSet={media?.srcSet} sizes="(min-width: 1024px) 30vw, 100vw" alt={service.title} className="h-40 w-full object-cover" loading="lazy" />
+                  <picture>
+                    {media?.mobileSrc ? <source media="(max-width: 767px)" srcSet={media.mobileSrc} sizes="100vw" /> : null}
+                    <img src={media?.src ?? service.image} srcSet={media?.srcSet} sizes="(min-width: 1024px) 30vw, 100vw" alt={media?.alt ?? service.title} className="h-40 w-full object-cover" loading="lazy" />
+                  </picture>
                   <div className="p-5">
                     <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                     <p className="mt-2 text-sm">{service.shortDescription}</p>

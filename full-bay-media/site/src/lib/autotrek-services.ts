@@ -8,6 +8,13 @@ export type ServiceDecisionBlock = {
   whatCannotWait: string;
 };
 
+export type ServiceAssetSet = {
+  src: string;
+  mobileSrc: string;
+  srcSet: string;
+  alt: string;
+};
+
 export type FeaturedService = {
   slug: string;
   title: string;
@@ -20,6 +27,80 @@ export type FeaturedService = {
   relatedSlugs: string[];
 };
 
+export const homepageHeroAsset = {
+  src: "/visual-refresh/hero/hero-01-diagnostic-command.webp",
+  mobileSrc: "/visual-refresh/mobile/hero-01-diagnostic-command-mobile.webp",
+  srcSet:
+    "/visual-refresh/hero/hero-01-diagnostic-command.webp 1280w, /visual-refresh/mobile/hero-01-diagnostic-command-mobile.webp 768w",
+  alt: "Technician performing advanced vehicle diagnostics in a clean AutoTrek-style service bay with copy-safe space.",
+} as const;
+
+export const serviceAssetManifest: Record<string, ServiceAssetSet> = {
+  "vehicle-diagnosis-repair": {
+    src: "/visual-refresh/service/service-01-vehicle-diagnostics.webp",
+    mobileSrc: "/visual-refresh/mobile/service-01-vehicle-diagnostics-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-01-vehicle-diagnostics.webp 960w, /visual-refresh/mobile/service-01-vehicle-diagnostics-mobile.webp 720w",
+    alt: "Technician using a scan tablet and OBD tools for vehicle diagnostics.",
+  },
+  "brake-repair-service": {
+    src: "/visual-refresh/service/service-02-brake-repair.webp",
+    mobileSrc: "/visual-refresh/mobile/service-02-brake-repair-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-02-brake-repair.webp 960w, /visual-refresh/mobile/service-02-brake-repair-mobile.webp 720w",
+    alt: "Close-up of professional brake rotor and caliper service in progress.",
+  },
+  "oil-fluid-changes": {
+    src: "/visual-refresh/service/service-03-oil-fluid-service.webp",
+    mobileSrc: "/visual-refresh/mobile/service-03-oil-fluid-service-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-03-oil-fluid-service.webp 960w, /visual-refresh/mobile/service-03-oil-fluid-service-mobile.webp 720w",
+    alt: "Controlled oil and fluid maintenance being performed in a clean service environment.",
+  },
+  "vehicle-suspension-repair": {
+    src: "/visual-refresh/service/service-04-suspension-steering.webp",
+    mobileSrc: "/visual-refresh/mobile/service-04-suspension-steering-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-04-suspension-steering.webp 960w, /visual-refresh/mobile/service-04-suspension-steering-mobile.webp 720w",
+    alt: "Suspension and steering components inspected on a lifted vehicle with wheel removed.",
+  },
+  "hybrid-repair": {
+    src: "/visual-refresh/service/service-05-hybrid-repair.webp",
+    mobileSrc: "/visual-refresh/mobile/service-05-hybrid-repair-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-05-hybrid-repair.webp 960w, /visual-refresh/mobile/service-05-hybrid-repair-mobile.webp 720w",
+    alt: "Technician performing hybrid-system diagnostics with safety equipment in a modern bay.",
+  },
+  "fleet-repair-service": {
+    src: "/visual-refresh/service/service-06-fleet-service.webp",
+    mobileSrc: "/visual-refresh/mobile/service-06-fleet-service-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-06-fleet-service.webp 960w, /visual-refresh/mobile/service-06-fleet-service-mobile.webp 720w",
+    alt: "Multiple fleet vans receiving coordinated maintenance in a professional repair facility.",
+  },
+  "vehicle-maintenance": {
+    src: "/visual-refresh/service/service-03-oil-fluid-service.webp",
+    mobileSrc: "/visual-refresh/mobile/service-03-oil-fluid-service-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-03-oil-fluid-service.webp 960w, /visual-refresh/mobile/service-03-oil-fluid-service-mobile.webp 720w",
+    alt: "Controlled oil and fluid maintenance being performed in a clean service environment.",
+  },
+  "european-auto-repair": {
+    src: "/visual-refresh/service/service-01-vehicle-diagnostics.webp",
+    mobileSrc: "/visual-refresh/mobile/service-01-vehicle-diagnostics-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-01-vehicle-diagnostics.webp 960w, /visual-refresh/mobile/service-01-vehicle-diagnostics-mobile.webp 720w",
+    alt: "Technician using a scan tablet and OBD tools for vehicle diagnostics.",
+  },
+  "wheel-alignments": {
+    src: "/visual-refresh/service/service-04-suspension-steering.webp",
+    mobileSrc: "/visual-refresh/mobile/service-04-suspension-steering-mobile.webp",
+    srcSet:
+      "/visual-refresh/service/service-04-suspension-steering.webp 960w, /visual-refresh/mobile/service-04-suspension-steering-mobile.webp 720w",
+    alt: "Suspension and steering components inspected on a lifted vehicle with wheel removed.",
+  },
+};
+
 export const featuredServices: FeaturedService[] = [
   {
     slug: "vehicle-maintenance",
@@ -27,7 +108,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Factory-scheduled upkeep to keep your car reliable and prevent expensive breakdowns.",
     longDescription:
       "Our vehicle maintenance service covers oil changes, fluid checks, filters, and scheduled inspections based on your mileage and driving habits. We help you stay ahead of expensive repairs by catching issues early and giving you a clear maintenance plan. If you commute daily in Littleton, Highlands Ranch, Englewood, Lakewood, or Centennial, this service keeps your vehicle dependable year-round.",
-    image: "/images/under-lift-inspection.jpg",
+    image: serviceAssetManifest["vehicle-maintenance"].src,
     seoTitle: "Vehicle Maintenance in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Factory-scheduled vehicle maintenance in Littleton, CO. Keep your car reliable with inspections, fluids, and preventive service at AutoTrek.",
@@ -48,7 +129,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Pads, rotors, and brake-system checks for safer stops and better control.",
     longDescription:
       "If your brakes squeak, grind, vibrate, or feel soft, our team can diagnose and repair the issue quickly. We service brake pads, rotors, calipers, and fluid so your vehicle stops confidently in every condition. We focus on safety-first recommendations with transparent pricing and clear explanations before work begins.",
-    image: "/images/shop-floor.jpg",
+    image: serviceAssetManifest["brake-repair-service"].src,
     seoTitle: "Brake Repair in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Trusted brake repair and brake service in Littleton, CO. Pads, rotors, diagnostics, and safety-first recommendations from AutoTrek.",
@@ -69,7 +150,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Fast oil and fluid service to protect engine life and day-to-day performance.",
     longDescription:
       "Regular oil and fluid changes are one of the easiest ways to protect your engine, transmission, and cooling system. We check condition, leaks, and service intervals so your vehicle runs smoothly and lasts longer. Whether you drive short city routes or long highway miles, we tailor the service to your real usage.",
-    image: "/images/diagnostic-tablet.jpg",
+    image: serviceAssetManifest["oil-fluid-changes"].src,
     seoTitle: "Oil Change & Fluid Service in Littleton, CO | AutoTrek",
     seoDescription:
       "Oil changes and fluid service in Littleton, CO. Protect engine and transmission performance with scheduled maintenance at AutoTrek Service Center.",
@@ -90,7 +171,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Confident diagnostics and repairs for hybrid systems, batteries, and drivability issues.",
     longDescription:
       "Hybrid systems require precise diagnostics and experienced repair strategy. We inspect battery health, cooling performance, charging behavior, and warning codes to identify the root issue quickly. Our process is designed to reduce guesswork and help hybrid owners make smart, cost-effective repair decisions.",
-    image: "/images/under-lift-inspection.jpg",
+    image: serviceAssetManifest["hybrid-repair"].src,
     seoTitle: "Hybrid Repair in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Hybrid diagnostics and repair in Littleton, CO. Battery checks, drivability diagnostics, and expert hybrid service from AutoTrek.",
@@ -111,7 +192,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Specialized service for European makes using proper diagnostics and repair procedures.",
     longDescription:
       "European vehicles need brand-specific diagnostics, quality parts, and proper repair procedures. Our team services major European makes with a focus on reliability, performance, and long-term ownership value. From warning-light diagnostics to major service intervals, we provide dealer-level precision without dealer friction.",
-    image: "/images/shop-floor.jpg",
+    image: serviceAssetManifest["european-auto-repair"].src,
     seoTitle: "European Auto Repair in Littleton, CO | AutoTrek",
     seoDescription:
       "European auto repair in Littleton, CO for Audi, BMW, Mercedes, VW, and more. Dealer-level diagnostics and trusted service at AutoTrek.",
@@ -132,7 +213,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Priority maintenance and repair support to keep your business vehicles on the road.",
     longDescription:
       "Downtime costs money, so our fleet service is built for speed, consistency, and communication. We provide preventive maintenance, diagnostics, and repair planning to keep your vehicles running and your teams moving. From single-unit businesses to larger local fleets, we tailor service intervals around your operational needs.",
-    image: "/images/diagnostic-tablet.jpg",
+    image: serviceAssetManifest["fleet-repair-service"].src,
     seoTitle: "Fleet Repair & Maintenance in Littleton, CO | AutoTrek",
     seoDescription:
       "Fleet repair and fleet maintenance in Littleton, CO. Reduce downtime with priority service and clear communication from AutoTrek.",
@@ -153,7 +234,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Shocks, struts, and suspension fixes for smoother handling and tire life.",
     longDescription:
       "If your vehicle pulls, bounces, clunks, or wears tires unevenly, suspension issues may be the cause. We inspect shocks, struts, links, bushings, and related components to restore handling and ride quality. Our goal is to improve comfort, control, and overall safety with repairs that solve the real problem.",
-    image: "/images/shop-floor.jpg",
+    image: serviceAssetManifest["vehicle-suspension-repair"].src,
     seoTitle: "Suspension Repair in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Suspension repair in Littleton, CO including shocks, struts, and steering-related diagnostics. Improve ride quality and control with AutoTrek.",
@@ -174,7 +255,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Check-engine and drivability troubleshooting with clear repair recommendations.",
     longDescription:
       "When a warning light appears or your car feels off, accurate diagnosis comes first. We use modern diagnostic tools and technician expertise to pinpoint issues and explain your options in plain language. You get a clear game plan, prioritized recommendations, and repairs focused on reliability.",
-    image: "/images/under-lift-inspection.jpg",
+    image: serviceAssetManifest["vehicle-diagnosis-repair"].src,
     seoTitle: "Vehicle Diagnostics in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Check-engine light diagnostics and vehicle repair in Littleton, CO. Fast troubleshooting and clear repair recommendations at AutoTrek.",
@@ -195,7 +276,7 @@ export const featuredServices: FeaturedService[] = [
     shortDescription: "Precision alignment service to improve steering feel and reduce uneven tire wear.",
     longDescription:
       "Poor alignment can cause steering drift, vibration, and premature tire wear. Our wheel alignment service corrects angles to manufacturer specs for better handling, longer tire life, and a smoother drive. If you’ve hit potholes, replaced suspension components, or noticed uneven tire wear, alignment should be checked.",
-    image: "/images/diagnostic-tablet.jpg",
+    image: serviceAssetManifest["wheel-alignments"].src,
     seoTitle: "Wheel Alignment in Littleton, CO | AutoTrek Service Center",
     seoDescription:
       "Wheel alignment service in Littleton, CO to improve handling and tire life. Precision alignment and suspension-aware setup at AutoTrek.",

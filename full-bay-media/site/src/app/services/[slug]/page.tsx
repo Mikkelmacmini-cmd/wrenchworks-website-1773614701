@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DiagnosticProofRail } from "@/components/DiagnosticProofRail";
 import { MobileActionRail } from "@/components/MobileActionRail";
-import { featuredServices, findServiceBySlug } from "@/lib/autotrek-services";
+import { featuredServices, findServiceBySlug, serviceAssetManifest } from "@/lib/autotrek-services";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -15,11 +15,6 @@ const phone = {
   callbackHref: "sms:+13033283356?body=Hi%20AutoTrek%2C%20please%20call%20me%20back%20about%20service.",
 };
 
-const serviceHeroSrcSet: Record<string, string> = {
-  "/images/under-lift-inspection.jpg": "/images/under-lift-inspection.jpg 4000w, /images/service-websites.webp 1536w",
-  "/images/shop-floor.jpg": "/images/shop-floor.jpg 5401w, /images/service-reviews-v4.webp 1024w",
-  "/images/diagnostic-tablet.jpg": "/images/diagnostic-tablet.jpg 6000w, /images/service-local-seo.webp 1536w",
-};
 
 export async function generateStaticParams() {
   return featuredServices.map((service) => ({ slug: service.slug }));
@@ -57,6 +52,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   const related = service.relatedSlugs
     .map((s) => findServiceBySlug(s))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const heroMedia = serviceAssetManifest[service.slug];
 
   const schema = {
     "@context": "https://schema.org",
@@ -84,7 +80,10 @@ export default async function ServiceDetailPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <section className="relative overflow-hidden border-b border-white/10" aria-labelledby="service-title">
-        <img src={service.image} srcSet={serviceHeroSrcSet[service.image]} sizes="100vw" alt={service.title} className="h-[46vh] w-full object-cover" loading="eager" />
+        <picture>
+          {heroMedia?.mobileSrc ? <source media="(max-width: 767px)" srcSet={heroMedia.mobileSrc} sizes="100vw" /> : null}
+          <img src={heroMedia?.src ?? service.image} srcSet={heroMedia?.srcSet} sizes="100vw" alt={heroMedia?.alt ?? service.title} className="h-[46vh] w-full object-cover" loading="eager" />
+        </picture>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,14,24,.86)_0%,rgba(8,14,24,.58)_56%,rgba(8,14,24,.2)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-6xl px-6 py-10 md:px-10">
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-gold-soft)]">AutoTrek Service Detail</p>
