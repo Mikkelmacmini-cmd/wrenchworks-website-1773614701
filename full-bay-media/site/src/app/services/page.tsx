@@ -4,9 +4,25 @@ import Link from "next/link";
 import { featuredServices, fullServices } from "@/lib/autotrek-services";
 
 export const metadata: Metadata = {
-  title: "Auto Repair Services in Littleton, CO | AutoTrek Service Center",
+  title: "Auto Repair Services in Littleton, CO",
   description:
     "Browse AutoTrek Service Center services in Littleton, CO including diagnostics, brakes, maintenance, fleet, hybrid, suspension, and more.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Auto Repair Services in Littleton, CO | AutoTrek Service Center",
+    description:
+      "Diagnostics, brakes, oil and fluid service, suspension, hybrid, fleet, and more in Littleton, CO.",
+    url: "https://autotrekservicecenter.com/services",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auto Repair Services in Littleton, CO | AutoTrek Service Center",
+    description:
+      "Diagnostics, brakes, oil and fluid service, suspension, hybrid, fleet, and more in Littleton, CO.",
+  },
 };
 
 export default function ServicesPage() {

@@ -24,7 +24,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.seoTitle,
     description: service.seoDescription,
+    alternates: {
+      canonical: `/services/${service.slug}`,
+    },
     openGraph: {
+      title: service.seoTitle,
+      description: service.seoDescription,
+      url: `https://autotrekservicecenter.com/services/${service.slug}`,
+      images: [service.image],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
       title: service.seoTitle,
       description: service.seoDescription,
       images: [service.image],

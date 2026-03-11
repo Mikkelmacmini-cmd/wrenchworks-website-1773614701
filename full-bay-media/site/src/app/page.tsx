@@ -41,9 +41,28 @@ const faqs = [
   },
 ];
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  name: business.name,
+  telephone: business.phoneDisplay,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "8161 S Grant Way",
+    addressLocality: "Littleton",
+    addressRegion: "CO",
+    postalCode: "80122",
+    addressCountry: "US",
+  },
+  openingHours: "Mo-Fr 09:00-17:00",
+  areaServed: serviceAreas,
+  url: "https://autotrekservicecenter.com",
+};
+
 export default function Home() {
   return (
     <main className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_50%,#ffffff_100%)] pb-24 text-[#1f2937] md:pb-0">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <header className="border-b border-[#e5e7eb] bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
           <div className="relative h-14 w-52 md:h-16 md:w-64">
