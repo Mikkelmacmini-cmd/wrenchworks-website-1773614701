@@ -1,0 +1,94 @@
+name: Visual CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build-and-capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: |
+          npm ci
+
+      - name: Build
+        run: |
+          npm run build --if-present
+
+      - name: Run visual snapshot (Puppeteer + Percy/Fake)
+        id: snapshot
+        run: |
+          # This step should capture screenshots. Replace with project-specific capture tool (Playwright/Puppeteer).
+          mkdir -p .visual-ci
+          # Example: use Playwright to capture baseline images into .visual-ci/current
+          if [ -f package.json ] && jq -r '.scripts.capture // empty' package.json >/dev/null 2>&1; then
+            npm run capture || true
+          else
+            echo "No capture script found; create a scripts.capture that writes .visual-ci/current/*.png"
+          fi
+
+      - name: Upload screenshots as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-ci-screenshots
+          path: .visual-ci/current
+
+  compare-and-comment:
+    runs-on: ubuntu-latest
+    needs: build-and-capture
+    steps:
+      - name: Download screenshots
+        uses: actions/download-artifact@v4
+        with:
+          name: visual-ci-screenshots
+          path: .visual-ci/current
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install comparator
+        run: |
+          npm ci
+
+      - name: Compare images
+        id: compare
+        run: |
+          # Implement image diffing here (e.g., pixelmatch, resemblejs). Exit code 0 for no diffs, non-zero for diffs.
+          node ./scripts/visual-compare.js .visual-ci/current .visual-ci/baseline || echo "DIFFS_FOUND=true" > /tmp/visual-diff
+
+      - name: Post PR comment when diffs found
+        if: always()
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const core = require('@actions/core');
+            const diffFlag = fs.existsSync('/tmp/visual-diff');
+            const pr = context.payload.pull_request;
+            if (!pr) {
+              console.log('Not a PR event; skipping comment');
+            } else if (diffFlag) {
+              const body = 'Visual diffs detected. Please review the attached screenshots and the visual CI artifact.\n\nArtifacts: ' + process.env.GITHUB_SERVER_URL + '/' + context.repo.owner + '/' + context.repo.repo + '/suites';
+              github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body});
+              core.setFailed('Visual diffs detected');
+            } else {
+              console.log('No visual diffs found');
+            }

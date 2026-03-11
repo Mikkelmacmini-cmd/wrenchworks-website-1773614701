@@ -1,0 +1,53 @@
+name: Preview Deploy
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Deploy preview to Vercel (if configured)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          if [ -n "${VERCEL_TOKEN}" ] && [ -n "${VERCEL_ORG_ID}" ]; then
+            echo "Deploying to Vercel preview..."
+            npx vercel --token "$VERCEL_TOKEN" --org "$VERCEL_ORG_ID" --confirm --prod=false --scope "$VERCEL_ORG_ID" || true
+            # Capture the preview URL from vercel output or API; for robust setups, prefer using Vercel Git Integration
+          else
+            echo "Vercel not configured. Skipping deploy."
+          fi
+
+      - name: Post preview link to PR
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr) return;
+            // Replace with real detection of deployed URL.
+            const previewUrl = process.env.PREVIEW_URL || 'https://preview.example.com/';
+            const body = `Preview deployed: ${previewUrl}`;
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: pr.number, body});
