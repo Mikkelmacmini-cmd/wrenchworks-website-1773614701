@@ -48,16 +48,16 @@ export default function Home() {
           <source media="(min-width: 900px)" srcSet={homepageHeroAsset.srcSet} sizes="100vw" />
           <img src={homepageHeroAsset.src} srcSet={homepageHeroAsset.srcSet} sizes="100vw" alt={homepageHeroAsset.alt} fetchPriority="high" loading="eager" decoding="async" width={1280} height={820} className="h-[80vh] min-h-[620px] w-full object-cover object-[72%_center] md:h-[74vh] md:min-h-0 md:object-center" />
         </picture>
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,.72)_0%,rgba(255,255,255,.5)_56%,rgba(255,255,255,.08)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(96deg,rgba(255,255,255,.9)_0%,rgba(255,255,255,.74)_44%,rgba(255,255,255,.26)_72%,rgba(255,255,255,.08)_100%)]" />
         <div className="pointer-events-none absolute inset-0 hero-grain" />
-        <div className="absolute inset-0 z-10 mx-auto flex max-w-6xl items-start px-6 pb-10 pt-[calc(var(--site-header-height)+1.25rem)] md:items-end md:px-10 md:pb-14 md:pt-[calc(var(--site-header-height)+1.75rem)]">
-          <div className="diagnostic-grid max-w-3xl rounded-[1.5rem] border border-slate-200/90 bg-white/88 p-5 shadow-lg backdrop-blur-sm md:p-8">
+        <div className="absolute inset-0 z-10 mx-auto flex max-w-6xl items-start px-6 pb-10 pt-[calc(var(--site-header-height)+1.1rem)] md:items-end md:px-10 md:pb-14 md:pt-[calc(var(--site-header-height)+1.65rem)]">
+          <div className="diagnostic-grid max-w-3xl rounded-[1.5rem] border border-slate-200/90 bg-white/92 p-5 shadow-lg backdrop-blur-sm md:p-8">
             <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent-gold-soft)]">Littleton Auto Care Since 2009</p>
-            <h1 id="hero-title" data-copy-id="hero.headline" className="mt-3 max-w-2xl font-bold text-slate-900">Dealer-Level Precision. Local-Shop Clarity.</h1>
-            <p data-copy-id="hero.subhead" className="mt-4 max-w-2xl text-[1.04rem] text-slate-700">We find the root cause, walk you through options in plain language, and only begin approved work—backed by a 3-year/36,000-mile warranty.</p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a data-testid="hero-primary-cta" data-copy-id="hero.cta.primary" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold">Book Diagnostic</a>
-              <a data-copy-id="hero.cta.secondary" href={business.phoneHref} className="btn-secondary ui-pressable rounded-full px-6 py-3 font-semibold">Speak to an Advisor</a>
+            <h1 id="hero-title" data-copy-id="hero.headline" className="mt-3 max-w-2xl text-[clamp(1.95rem,6.2vw,3.45rem)] font-bold leading-[1.03] text-slate-900">Dealer-Level Precision. Local-Shop Clarity.</h1>
+            <p data-copy-id="hero.subhead" className="mt-4 max-w-2xl text-[1rem] leading-relaxed text-slate-800 md:text-[1.06rem]">We find the root cause, walk you through options in plain language, and only begin approved work—backed by a 3-year/36,000-mile warranty.</p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a data-testid="hero-primary-cta" data-copy-id="hero.cta.primary" href={business.phoneHref} className="btn-primary ui-pressable w-full rounded-full px-6 py-3 font-semibold sm:w-auto">Book Diagnostic</a>
+              <a data-copy-id="hero.cta.secondary" href={business.phoneHref} className="btn-secondary ui-pressable hidden rounded-full px-6 py-3 font-semibold sm:inline-flex">Speak to an Advisor</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-2" aria-label="Trust proof highlights">
               {trustStats.map(([title, sub]) => <div key={title} className="proof-chip"><strong>{title}</strong><span> · {sub}</span></div>)}
