@@ -56,3 +56,12 @@
 - Complete deeper trust/CTA module polish and any microcopy tightening.
 - Run stricter accessibility pass (keyboard traversal + landmark audit).
 - Execute LCP validation pass on emulated mid-tier mobile and tune if needed.
+
+---
+
+## Forge Update — Header Safety Patch (2026-03-11 r5)
+- Hardened sticky header layering/spacing so hero primary CTA never sits under the header across desktop/tablet/mobile.
+- Added deterministic selectors (`data-testid`) + Playwright coverage in `tests/header-cta.spec.ts` to assert CTA is visible and not occluded at 1280/768/390 breakpoints.
+- Added Playwright config + scripts: `npm run test:e2e`, `npm run qa:capture`.
+- Build + tests passed (`npm run build`, `npm run test:e2e`).
+- Refreshed QA screenshots in `qa-captures/2026-03-11-r5/`.

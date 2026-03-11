@@ -66,8 +66,8 @@ export default function Home() {
   return (
     <main className="bg-[var(--bg-canvas)] pb-28 text-[var(--ink-primary)] md:pb-0">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[rgba(7,11,17,.86)] backdrop-blur" aria-label="Site header">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+      <header data-testid="site-header" className="sticky top-0 z-[70] border-b border-white/10 bg-[rgba(7,11,17,.92)] backdrop-blur" aria-label="Site header">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5 md:px-10 md:py-4">
           <div className="relative h-14 w-56 md:h-16 md:w-64">
             <Image src="/autotrek-logo.png" alt="AutoTrek Service Center logo" fill className="object-contain object-left" priority />
           </div>
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
+      <section className="relative isolate overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
         <Image
           src="/images/autotrek-hero-current.png"
           alt="Technician inspecting a vehicle in AutoTrek service bay"
@@ -95,13 +95,13 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,14,24,.86)_0%,rgba(8,14,24,.58)_56%,rgba(8,14,24,.2)_100%)]" />
         <div className="absolute inset-0 hero-grain" />
-        <div className="absolute inset-0 mx-auto flex max-w-6xl items-start px-6 pb-10 pt-22 md:items-end md:px-10 md:py-14">
+        <div className="absolute inset-0 z-10 mx-auto flex max-w-6xl items-start px-6 pb-10 pt-[calc(var(--site-header-height)+1.25rem)] md:items-end md:px-10 md:pb-14 md:pt-[calc(var(--site-header-height)+1.75rem)]">
           <div className="diagnostic-grid max-w-3xl rounded-[var(--radius-lg)] border border-white/15 bg-[rgba(10,19,31,.7)] p-5 backdrop-blur-sm md:p-8">
             <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent-gold-soft)]">Littleton Auto Care Since 2009</p>
             <h1 id="hero-title" className="mt-3 max-w-2xl font-bold">Get a Clear Repair Plan Before Small Issues Get Expensive.</h1>
             <p className="mt-4 max-w-2xl text-[1.04rem] text-[#dee8f3]">We diagnose the root cause, explain your options, and only begin repairs after your approval—backed by a 3-year/36,000-mile warranty.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold">Book Inspection</a>
+              <a data-testid="hero-primary-cta" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold">Book Inspection</a>
               <a href={business.phoneHref} className="btn-secondary ui-pressable rounded-full px-6 py-3 font-semibold">Speak to Advisor</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-2" aria-label="Trust proof highlights">

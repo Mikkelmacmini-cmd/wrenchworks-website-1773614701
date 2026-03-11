@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const baseUrl = process.env.BASE_URL || "http://127.0.0.1:3000";
-const outDir = process.env.OUT_DIR || "qa-captures/2026-03-11-r4";
+const outDir = process.env.OUT_DIR || "qa-captures/2026-03-11-r5";
 
 const shots = [
   { name: "desktop-1280", width: 1280, height: 820 },

@@ -2,6 +2,7 @@
 
 :root {
   color-scheme: dark;
+  --site-header-height: 5.5rem;
 
   /* Color tokens */
   --bg-canvas: #070b11;
@@ -63,6 +64,10 @@
 html, body {
   background: var(--bg-canvas);
   color: var(--ink-primary);
+}
+
+html {
+  scroll-padding-top: var(--site-header-height);
 }
 
 body {
@@ -190,6 +195,12 @@ select:focus-visible {
   outline: 2px solid var(--accent-sky);
   outline-offset: 3px;
   border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --site-header-height: 6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
