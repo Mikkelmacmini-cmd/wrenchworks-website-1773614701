@@ -7,6 +7,7 @@ const business = {
   phoneDisplay: "(303) 328-3356",
   phoneHref: "tel:+13033283356",
   address: "8161 S Grant Way, Littleton, CO 80122",
+  directionsUrl: "https://maps.google.com/?q=8161+S+Grant+Way+Littleton+CO+80122",
   hours: "Mon–Fri 9:00 AM – 5:00 PM",
   warranty: "36 months / 36,000 miles",
   reviewUrl: "https://share.google/aglkPp86GrLFRfT7V",
@@ -42,7 +43,7 @@ const faqs = [
 
 export default function Home() {
   return (
-    <main className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_50%,#ffffff_100%)] text-[#1f2937]">
+    <main className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_50%,#ffffff_100%)] pb-24 text-[#1f2937] md:pb-0">
       <header className="border-b border-[#e5e7eb] bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
           <div className="relative h-14 w-52 md:h-16 md:w-64">
@@ -94,10 +95,16 @@ export default function Home() {
         <div className="rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] p-5">
           <p className="text-sm text-[#6b7280]">Address</p>
           <p className="mt-1 font-semibold">{business.address}</p>
+          <a href={business.directionsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#166534] underline underline-offset-4">
+            Get Directions
+          </a>
         </div>
         <div className="rounded-2xl border border-[#e5e7eb] bg-[#f9fafb] p-5">
           <p className="text-sm text-[#6b7280]">Hours</p>
           <p className="mt-1 font-semibold">{business.hours}</p>
+          <a href={business.phoneHref} className="mt-3 inline-block text-sm font-semibold text-[#dc2626] underline underline-offset-4">
+            Call to Book
+          </a>
         </div>
       </section>
 
@@ -235,6 +242,15 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#fecaca] bg-white/95 p-3 backdrop-blur md:hidden">
+        <a
+          href={business.phoneHref}
+          className="block w-full rounded-full bg-[#dc2626] px-5 py-3 text-center text-sm font-bold text-white shadow-sm hover:bg-[#b91c1c]"
+        >
+          Call Now — {business.phoneDisplay}
+        </a>
+      </div>
     </main>
   );
 }
