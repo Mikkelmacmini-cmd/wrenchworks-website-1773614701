@@ -28,11 +28,11 @@ export type FeaturedService = {
 };
 
 export const homepageHeroAsset = {
-  src: "/visual-refresh/hero/hero-01-diagnostic-command.webp",
-  mobileSrc: "/visual-refresh/mobile/hero-01-diagnostic-command-mobile.webp",
+  src: "/visual-refresh/ai-no-faces/hero/hero-02-macro-bay-sensor.webp",
+  mobileSrc: "/visual-refresh/ai-no-faces/mobile/hero-02-macro-bay-sensor-mobile.webp",
   srcSet:
-    "/visual-refresh/hero/hero-01-diagnostic-command.webp 1280w, /visual-refresh/mobile/hero-01-diagnostic-command-mobile.webp 768w",
-  alt: "Technician performing advanced vehicle diagnostics in a clean AutoTrek-style service bay with copy-safe space.",
+    "/visual-refresh/ai-no-faces/hero/hero-02-macro-bay-sensor.webp 1280w, /visual-refresh/ai-no-faces/mobile/hero-02-macro-bay-sensor-mobile.webp 768w",
+  alt: "Macro diagnostic bay sensor and tool detail emphasizing precision diagnostics without identifiable faces.",
 } as const;
 
 export const serviceAssetManifest: Record<string, ServiceAssetSet> = {
