@@ -51,6 +51,17 @@ export const metadata: Metadata = {
   },
 };
 
+// Critical inline CSS for above-the-fold stability (hero, header, primary CTA)
+const CRITICAL_CSS = `
+:root{--critical-bg:#0f172a}
+html,body{background:#fff}
+.header,header, .site-header{display:block}
+.hero{visibility:visible;opacity:1}
+.btn-primary{display:inline-block}
+/* minimal hero layout guards */
+.hero,.hero *{box-sizing:border-box}
+`; 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,6 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: CRITICAL_CSS }} />
+      </head>
       <body className={`${inter.variable} ${sora.variable} antialiased`}>
         {children}
       </body>
