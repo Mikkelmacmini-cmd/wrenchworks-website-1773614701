@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"../components/LottiePlayer.js -> lottie-web":{"id":1248,"files":["static/chunks/ea88be26.b5e292052716880b.js"]}}';

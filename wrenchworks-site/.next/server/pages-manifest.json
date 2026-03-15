@@ -1,0 +1,15 @@
+{
+  "/_app": "pages/_app.js",
+  "/case-studies": "pages/case-studies.js",
+  "/": "pages/index.js",
+  "/contact": "pages/contact.js",
+  "/services": "pages/services.js",
+  "/services/gbp-optimization": "pages/services/gbp-optimization.js",
+  "/services/local-seo": "pages/services/local-seo.js",
+  "/services/managed-hosting": "pages/services/managed-hosting.js",
+  "/services/review-funnels": "pages/services/review-funnels.js",
+  "/services/website-build": "pages/services/website-build.js",
+  "/_error": "pages/_error.js",
+  "/pricing": "pages/pricing.js",
+  "/_document": "pages/_document.js"
+}

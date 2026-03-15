@@ -1,4 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body { @apply bg-white text-slate-800 }
+body { background-color: #ffffff; color: #0f172a; }

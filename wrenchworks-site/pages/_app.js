@@ -1,2 +1,10 @@
 import '../styles/globals.css'
-export default function App({Component, pageProps}){return <Component {...pageProps} />}
+import Header from '../components/Header'
+export default function App({Component, pageProps}){return (
+  <div>
+    <Header />
+    <main className="pt-6">
+      <Component {...pageProps} />
+    </main>
+  </div>
+)}

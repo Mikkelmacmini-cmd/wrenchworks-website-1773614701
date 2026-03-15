@@ -1,0 +1,1 @@
+Overlay heatmap visualization of search demand across neighborhoods with gradient from teal to orange, semi-transparent layers over simplified map, legend and subtle grid, high-res

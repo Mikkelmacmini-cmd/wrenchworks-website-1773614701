@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import AuditForm from '../components/AuditForm';
 import FAQ from '../components/FAQ';
-import { readFileSync } from 'fs';
 
 const FAQ_ITEMS = [
   {q: 'What exactly does WrenchWorks do?', a: 'We reduce friction and improve execution consistency with audits, pilots, and scaled rollouts.'},
