@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <rect width="100%" height="100%" fill="#fffdf8" />
+  <!-- Header with centered logo -->
+  <rect x="24" y="24" width="1152" height="64" rx="8" fill="#fff" stroke="#efe6dd" />
+  <g transform="translate(540,36)">
+    <rect x="-36" y="0" width="72" height="48" rx="8" fill="#ff7a18" />
+    <text x="0" y="32" font-family="Arial" font-size="20" fill="#fff" text-anchor="middle">W</text>
+  </g>
+  <!-- Nav items left/right -->
+  <g transform="translate(120,44)" font-family="Arial" font-size="16" fill="#333">
+    <text x="0" y="0">Products</text>
+    <text x="110" y="0">Use Cases</text>
+  </g>
+  <g transform="translate(860,44)" font-family="Arial" font-size="16" fill="#333">
+    <text x="0" y="0">Sign in</text>
+    <text x="80" y="0">Start free</text>
+  </g>
+  <!-- Hero overlaps header from below, offset right -->
+  <g transform="translate(200,120)">
+    <rect width="760" height="140" rx="12" fill="#fff" stroke="#fdece0" />
+    <text x="40" y="48" font-family="Helvetica" font-size="28" fill="#663300">Mock 2 — Center logo, right-overlap hero</text>
+    <rect x="40" y="72" width="280" height="40" rx="6" fill="#ff7a18" />
+    <text x="180" y="98" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">Start trial</text>
+  </g>
+  <text x="48" y="280" font-family="Arial" font-size="12" fill="#666">Desktop — Option 2</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200">
+  <rect width="100%" height="100%" fill="#fffdf8" />
+  <!-- Header with small centered logo and nav hamburger -->
+  <rect x="12" y="12" width="336" height="48" rx="8" fill="#fff" stroke="#efe6dd" />
+  <g transform="translate(162,20)">
+    <rect x="-24" y="0" width="48" height="48" rx="8" fill="#ff7a18" />
+    <text x="0" y="32" font-family="Arial" font-size="18" fill="#fff" text-anchor="middle">W</text>
+  </g>
+  <g transform="translate(300,28)">
+    <rect width="28" height="6" rx="3" fill="#ccc" />
+    <rect y="12" width="28" height="6" rx="3" fill="#ccc" />
+  </g>
+  <!-- Hero card overlapping -->
+  <g transform="translate(18,84)">
+    <rect width="324" height="92" rx="12" fill="#fff" stroke="#fdece0" />
+    <text x="20" y="36" font-family="Helvetica" font-size="16" fill="#663300">Mock 2 — Mobile thumbnail</text>
+  </g>
+  <text x="12" y="188" font-family="Arial" font-size="10" fill="#666">Mobile — Option 2</text>
+</svg>
