@@ -1,18 +1,18 @@
 - id: task-ww-001
   name: Rework header & logo placement
-  status: pending
+  status: completed
   owner: AX
   description: Move Wrench Works logo to top-left, ensure legibility, act as home button. Adjust spacing and responsive behavior. Provide final CSS and assets.
-  next_step: AX to assign to design + dev-creator; design to provide 3 size/placement options, dev to implement chosen option
-  updated: 2026-03-14
+  next_step: Mock1 approved and implemented; QA + accessibility notes verified. Ready for staging.
+  updated: 2026-03-15
 
 - id: task-ww-002
   name: Create service pages
-  status: pending
+  status: in-progress
   owner: content
   description: Remove pricing page. Create individual pages for each service (e.g., Website Build, Local SEO, GBP Optimization, Review Funnels, Managed Hosting). Each page needs copy, CTA, and unique imagery/effects.
-  next_step: content to draft page outlines and hand to design for imagery prompts
-  updated: 2026-03-14
+  next_step: content drafted outlines saved to /workspace/content/service-pages/ — hand to design for imagery and hero production
+  updated: 2026-03-15
 
 - id: task-ww-003
   name: Hero form overlap spec
@@ -24,8 +24,8 @@
 
 - id: task-ww-004
   name: Prompt pack expansion
-  status: in-progress
+  status: completed
   owner: lens
   description: Finish full 25+ imagery prompts for site (hero, service headers, team, tools, maps, badges, social banners, favicon). Deliver CSV and files.
-  next_step: lens to complete prompts and copy them to /workspace/wrenchworks-prompts/
-  updated: 2026-03-14
+  next_step: Completed — prompts added to /workspace/wrenchworks-prompts/; hand off to design for review and iteration.
+  updated: 2026-03-15
