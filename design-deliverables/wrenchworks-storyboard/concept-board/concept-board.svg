@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680">
+  <title>Concept Board</title>
+  <rect width="100%" height="100%" fill="#FFF7EE"/>
+  <g><rect x="40" y="30" width="420" height="220" rx="14" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+    <text x="60" y="66" font-family="Arial" font-size="22" font-weight="700" fill="#2F2521">Style DNA</text>
+    <text x="60" y="96" font-family="Arial" font-size="16" fill="#2F2521">Rounded shapes • Warm palette • Friendly interactions</text></g>
+<circle cx="120" cy="140" r="28" fill="#FFD9B3" stroke="#3B2F2F" stroke-width="4"/>
+<g><rect x="500" y="40" width="340" height="220" rx="12" fill="#fff" stroke="#3B2F2F" stroke-width="4"/>
+    <rect x="520" y="55" width="300" height="30" rx="8" fill="#F28C52"/>
+    <text x="670.0" y="76" text-anchor="middle" font-family="Arial" font-size="16" fill="white" font-weight="700">Auto Repair Shop</text>
+    <rect x="518" y="100" width="304" height="75" rx="8" fill="#F9EFE3"/>
+    </g>
+<g><rect x="40" y="280" width="360" height="240" rx="14" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+    <text x="60" y="316" font-family="Arial" font-size="22" font-weight="700" fill="#2F2521">Customer Journey</text>
+    <text x="60" y="346" font-family="Arial" font-size="16" fill="#2F2521">Google → Phone Site → Drive → Front Desk → Service → Review</text></g>
+<g><rect x="430" y="280" width="410" height="240" rx="14" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+    <text x="450" y="316" font-family="Arial" font-size="22" font-weight="700" fill="#2F2521">Visual Motifs</text>
+    <text x="450" y="346" font-family="Arial" font-size="16" fill="#2F2521">Map pins, chat bubbles, stars, dashboard cards, wrench icons</text></g>
+<rect x="40" y="560" width="800" height="70" rx="12" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<circle cx="90" cy="595" r="20" fill="#F28C52" stroke="#3B2F2F" stroke-width="2"/>
+<circle cx="185" cy="595" r="20" fill="#4BA3C7" stroke="#3B2F2F" stroke-width="2"/>
+<circle cx="280" cy="595" r="20" fill="#F2C14E" stroke="#3B2F2F" stroke-width="2"/>
+<circle cx="375" cy="595" r="20" fill="#6BBF59" stroke="#3B2F2F" stroke-width="2"/>
+<circle cx="470" cy="595" r="20" fill="#FFF7EE" stroke="#3B2F2F" stroke-width="2"/>
+<text x="580" y="602" font-family="Arial" font-size="24" fill="#2F2521" font-weight="700">WrenchWorks Visual Concept Board</text>
+</svg>

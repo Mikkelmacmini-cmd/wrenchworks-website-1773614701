@@ -1,0 +1,10 @@
+{
+  "name": "wrenchworks_storyline_3",
+  "duration_s": 2.0,
+  "loop": true,
+  "frame_rate": 30,
+  "size": [800,450],
+  "description": "Placeholder Lottie-spec style JSON for animation 3. Replace with vector assets and keyframes per micro-animation spec.",
+  "key_elements": ["tool","motion","highlight"],
+  "notes": "Export as Lottie JSON after authoring in After Effects + Bodymovin. This file is a placeholder spec for review."
+}

@@ -1,0 +1,251 @@
+<!doctype html><html><head><meta charset="utf-8"><title>MEMORY.md Course</title><style>body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;color:#111;padding:0 20px}h1,h2,h3{color:#0f172a}pre{background:#f4f4f6;padding:12px;border-radius:6px;overflow:auto}</style></head><body><p>Memory.md - Beginner Course (6th-grade level)</p>
+<p>What you&#39;ll find here:</p>
+<ul>
+<li>A simple explanation of what MEMORY.md is and why it matters</li>
+<li>How to keep tacit knowledge (thinking habits, preferences, lessons learned)</li>
+<li>Rules for when to add or merge facts</li>
+<li>Examples and short exercises you can do</li>
+<li>A template to create your own MEMORY.md entries</li>
+<li>A one-page cheat-sheet for quick reference</li>
+</ul>
+<p>Goal: By the end you&#39;ll understand how to capture and care for tacit knowledge so it helps you and your team remember important ways you work.</p>
+<hr/><p>Lesson: What is MEMORY.md?</p>
+<ol>
+<li><p>Simple definition
+MEMORY.md is a place to write down &quot;how we do things&quot; — not facts about the world, but the habits, preferences, patterns, and lessons a person or team uses. It&#39;s like a cookbook for how you think and work.</p>
+</li>
+<li><p>Why it matters</p>
+</li>
+</ol>
+<ul>
+<li>Stops us from repeating mistakes</li>
+<li>Helps new people learn how we like to work</li>
+<li>Keeps small but important knowledge from disappearing</li>
+</ul>
+<ol start="3">
+<li>What goes in MEMORY.md</li>
+</ol>
+<ul>
+<li>Patterns: &quot;We always run tests before merging&quot;</li>
+<li>Preferences: &quot;Use 2-space indentation&quot; or &quot;Morning standups at 9:15&quot;</li>
+<li>Lessons learned: &quot;Deploying on Fridays caused outages; avoid it&quot;</li>
+<li>Decision rules: &quot;If two team members disagree, the owner decides&quot;</li>
+</ul>
+<ol start="4">
+<li>What does NOT belong</li>
+</ol>
+<ul>
+<li>Random facts about the world (use items.json or notes)</li>
+<li>Sensitive secrets (passwords, tokens)</li>
+</ul>
+<ol start="5">
+<li><p>Easy example (story)
+Imagine you and a friend build a treehouse. After some mistakes, you write down: &quot;Measure twice, cut once&quot; and &quot;Always wear gloves when using the saw.&quot; That&#39;s MEMORY.md — lessons so you don&#39;t forget next time.</p>
+</li>
+<li><p>How to read and use it</p>
+</li>
+</ol>
+<ul>
+<li>Read MEMORY.md when onboarding someone</li>
+<li>Check it before making big changes</li>
+<li>Update it when you learn something new about how you work</li>
+</ul>
+<ol start="7">
+<li>Short checklist for updates</li>
+</ol>
+<ul>
+<li>Is this about how we work or a world fact? If how we work → add it</li>
+<li>Is it simply replacing an older preference? Mark the old one superseded</li>
+<li>Is it time-sensitive? Note the date and reason</li>
+</ul>
+<hr/><p>How to maintain tacit knowledge (step-by-step)</p>
+<ol>
+<li>Capture quickly</li>
+</ol>
+<ul>
+<li>When you notice a pattern, preference, or lesson, jot it down right away in MEMORY.md (or a draft). Use simple sentences.</li>
+</ul>
+<ol start="2">
+<li>Be concrete</li>
+</ol>
+<ul>
+<li>Write the behavior: &quot;We ask for two reviewers on PRs&quot; instead of vague notes.</li>
+</ul>
+<ol start="3">
+<li>Use timestamps and sources</li>
+</ol>
+<ul>
+<li>Add a small note like: (2026-03-11) — learned after outage during deploy</li>
+</ul>
+<ol start="4">
+<li>Keep it short</li>
+</ol>
+<ul>
+<li>One idea per line. Long stories go in daily notes; MEMORY.md keeps the distilled rule.</li>
+</ul>
+<ol start="5">
+<li>Review regularly</li>
+</ol>
+<ul>
+<li>Weekly or monthly quick pass: anything outdated? Mark as superseded with a link to the new rule.</li>
+</ul>
+<ol start="6">
+<li>Merge carefully</li>
+</ol>
+<ul>
+<li>When two similar entries exist, merge into one clearer rule and mark the older with status: superseded and point to the merged id.</li>
+</ul>
+<ol start="7">
+<li>Who edits?</li>
+</ol>
+<ul>
+<li>Anyone can suggest edits, but major changes should note the author and date.</li>
+</ul>
+<ol start="8">
+<li>Never delete</li>
+</ol>
+<ul>
+<li>Instead mark status: superseded and add supersededBy to keep history.</li>
+</ul>
+<ol start="9">
+<li><p>Example entry
+id: tacit-001
+fact: &quot;We release to production only on Tuesdays after passing the full test suite.&quot;
+category: procedure
+timestamp: 2026-03-11
+source: post-mortem-2026-03-11
+status: active</p>
+</li>
+<li><p>Quick rules summary</p>
+</li>
+</ol>
+<ul>
+<li>Capture fast, write clear, review often, never delete — supersede.</li>
+</ul>
+<hr/><p>When to add facts</p>
+<p>Add a fact to MEMORY.md when:</p>
+<ul>
+<li>It describes how you or your team works (processes, preferences, rules)</li>
+<li>You or multiple people notice the same pattern repeatedly (3+ times)</li>
+<li>It affects future decisions (deployment rules, meeting norms)</li>
+<li>You learned a lesson worth remembering (post-mortem conclusion)</li>
+</ul>
+<p>When to merge facts</p>
+<p>Merge when:</p>
+<ul>
+<li>Two entries say the same thing in different words</li>
+<li>You have overlapping rules that cause confusion</li>
+<li>A newer rule replaces and clarifies an older one</li>
+</ul>
+<p>How to merge safely</p>
+<ul>
+<li>Create the merged entry with a new id</li>
+<li>Copy or summarize key details from both</li>
+<li>Update older entries: set status: superseded and add supersededBy: <new-id></li>
+<li>Add a short note explaining why you merged</li>
+</ul>
+<p>Example merge</p>
+<ul>
+<li>old: &quot;Deploy on Tuesdays&quot; and &quot;No Friday deploys&quot;</li>
+<li>merged: &quot;Deploy only on Tuesdays; never deploy on Fridays (superseded: deploy-2025-11)&quot;</li>
+</ul>
+<hr/><p>Examples (simple and useful)</p>
+<ol>
+<li>Preference</li>
+</ol>
+<ul>
+<li>fact: &quot;Use 2-space indentation for code.&quot; (category: preference)</li>
+</ul>
+<ol start="2">
+<li>Pattern</li>
+</ol>
+<ul>
+<li>fact: &quot;We open a short RFC for design decisions that change the API.&quot; (category: process)</li>
+</ul>
+<ol start="3">
+<li>Lesson learned</li>
+</ol>
+<ul>
+<li>fact: &quot;Hotfixing on production without tests caused data loss; require tests for hotfixes.&quot; (category: lesson)</li>
+</ul>
+<ol start="4">
+<li>Decision rule</li>
+</ol>
+<ul>
+<li>fact: &quot;If a security issue is found, escalate to the on-call and pause feature releases.&quot; (category: rule)</li>
+</ul>
+<ol start="5">
+<li>Small template example (single line)</li>
+</ol>
+<ul>
+<li>id: pref-001
+fact: &quot;Morning standups at 9:15&quot;
+category: preference
+timestamp: 2026-03-11
+status: active</li>
+</ul>
+<ol start="6">
+<li>Real short case study (story)
+Team had repeat outages because deploy happened late Friday. They wrote: &quot;Never deploy on Fridays; schedule deploys for Tuesdays after tests pass.&quot; Problem solved.</li>
+</ol>
+<hr/><p>Exercises (short, for practice)</p>
+<ol>
+<li>Spot the tacit knowledge
+Read these items and decide which belong in MEMORY.md and why:</li>
+</ol>
+<ul>
+<li>&quot;The server IP is 10.0.0.5&quot; (no)</li>
+<li>&quot;We always tag releases with semantic versioning&quot; (yes)</li>
+<li>&quot;Alice prefers async messages in the morning&quot; (yes)</li>
+</ul>
+<ol start="2">
+<li><p>Write a rule from a story
+Think of a time something went wrong. Write a one-line rule for MEMORY.md that would prevent it.</p>
+</li>
+<li><p>Merge two entries
+Given:</p>
+</li>
+</ol>
+<ul>
+<li>&quot;Run full tests before deploy&quot;</li>
+<li>&quot;Deploy only after code review and tests&quot;
+Create a single clear rule and mark which old entries are superseded.</li>
+</ul>
+<ol start="4">
+<li><p>Create an entry using the template (see template.md)
+Fill in the fields and save it.</p>
+</li>
+<li><p>Review practice
+Take three entries from older notes and decide: keep, edit, or supersede. Write a one-line reason for your choice.</p>
+</li>
+</ol>
+<hr/><p>MEMORY.md entry template (use this for new entries)</p>
+<p>id: <short-unique-id>
+fact: &quot;A single clear sentence describing the tacit knowledge&quot;
+category: preference|process|lesson|rule
+timestamp: YYYY-MM-DD
+source: &lt;where you learned it or which meeting/post-mortem&gt;
+status: active|superseded
+supersededBy: <id-of-new-entry-if-superseded>
+relatedEntities: [optional list]
+notes: <optional short explanation></p>
+<p>Example filled:
+id: deploy-002
+fact: &quot;Deploy to production only on Tuesdays after full test suite passes.&quot;
+category: process
+timestamp: 2026-03-11
+source: post-mortem-2026-03-11
+status: active
+notes: &quot;Changed after two outages in Oct/Nov.&quot;</p>
+<hr/><p>One-page cheat-sheet</p>
+<ul>
+<li>What to save: How we work, not world facts</li>
+<li>How to write: One idea per entry; be concrete</li>
+<li>When to add: When a pattern emerges (3+ times) or a decision affects future work</li>
+<li>When to merge: Similar entries or clarifications; mark old as superseded</li>
+<li>Never delete: mark status: superseded and keep history</li>
+<li>Review cadence: Weekly quick pass; full rewrite monthly or when many changes</li>
+<li>Quick template fields: id, fact, category, timestamp, source, status, supersededBy</li>
+</ul>
+<p>Remember: MEMORY.md helps people learn how you think. Keep it simple and useful.</p>
+<hr/></body></html>

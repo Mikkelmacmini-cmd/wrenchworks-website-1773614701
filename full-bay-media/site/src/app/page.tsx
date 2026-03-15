@@ -30,13 +30,13 @@ const snippets = [
 export default function Home() {
   return (
     <main className="bg-[var(--bg-canvas)] pb-28 text-[var(--ink-primary)] md:pb-0">
-      <header data-testid="site-header" className="sticky top-0 z-[70] border-b border-slate-200/80 bg-white/95 backdrop-blur" aria-label="Site header">
+      <header data-testid="site-header" className="sticky top-0 z-[70] border-b border-slate-200/90 bg-white/98 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur" aria-label="Site header">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5 md:px-10 md:py-4">
           <div className="relative h-14 w-56 md:h-16 md:w-64">
             <Image src="/autotrek-logo.png" alt="AutoTrek Service Center logo" fill className="object-contain object-left" priority />
           </div>
-          <nav className="hidden items-center gap-6 text-sm text-[var(--ink-secondary)] md:flex" aria-label="Primary navigation">
-            <a className="inline-flex min-h-11 items-center" href="#triage">Quick Diagnosis</a><a className="inline-flex min-h-11 items-center" href="#process">Process</a><a className="inline-flex min-h-11 items-center" href="#reviews">Proof</a><a className="inline-flex min-h-11 items-center" href="#contact">Contact</a>
+          <nav className="hidden items-center gap-6 text-sm text-slate-800 md:flex" aria-label="Primary navigation">
+            <a className="inline-flex min-h-11 items-center font-medium transition-colors hover:text-[var(--accent-gold-soft)] focus-visible:text-[var(--accent-gold-soft)]" href="#triage">Quick Diagnosis</a><a className="inline-flex min-h-11 items-center font-medium transition-colors hover:text-[var(--accent-gold-soft)] focus-visible:text-[var(--accent-gold-soft)]" href="#process">Process</a><a className="inline-flex min-h-11 items-center font-medium transition-colors hover:text-[var(--accent-gold-soft)] focus-visible:text-[var(--accent-gold-soft)]" href="#reviews">Proof</a><a className="inline-flex min-h-11 items-center font-medium transition-colors hover:text-[var(--accent-gold-soft)] focus-visible:text-[var(--accent-gold-soft)]" href="#contact">Contact</a>
           </nav>
           <a href={business.phoneHref} className="btn-secondary ui-pressable hidden rounded-full px-5 py-2 text-sm font-semibold md:inline-flex">Call {business.phoneDisplay}</a>
         </div>
@@ -56,7 +56,7 @@ export default function Home() {
             <h1 id="hero-title" data-copy-id="hero.headline" className="mt-3 max-w-2xl text-[clamp(1.95rem,6.2vw,3.45rem)] font-bold leading-[1.03] text-slate-900">Dealer-Level Precision. Local-Shop Clarity.</h1>
             <p data-copy-id="hero.subhead" className="mt-4 max-w-2xl text-[1rem] leading-relaxed text-slate-800 md:text-[1.06rem]">We find the root cause, walk you through options in plain language, and only begin approved work—backed by a 3-year/36,000-mile warranty.</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a data-testid="hero-primary-cta" data-copy-id="hero.cta.primary" href={business.phoneHref} className="btn-primary ui-pressable w-full rounded-full px-6 py-3 font-semibold sm:w-auto">Book Diagnostic</a>
+              <a data-testid="hero-primary-cta" data-copy-id="hero.cta.primary" href={business.phoneHref} className="btn-primary ui-pressable w-full rounded-full px-6 py-3 font-semibold sm:w-auto" role="button" aria-label="Book inspection by phone">Book Diagnostic</a>
               <a data-copy-id="hero.cta.secondary" href={business.phoneHref} className="btn-secondary ui-pressable hidden rounded-full px-6 py-3 font-semibold sm:inline-flex">Speak to an Advisor</a>
             </div>
             <div className="mt-4 flex flex-wrap gap-2" aria-label="Trust proof highlights">

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="545" viewBox="0 0 1170 545">
+  <title>Hero storyboard C</title>
+  <rect width="100%" height="100%" fill="#FFF7EE"/>
+  <text x="40" y="40" font-family="Arial" font-size="30" font-weight="700" fill="#2F2521">Hero Storyboard Variant C</text>
+<text x="40" y="70" font-family="Arial" font-size="18" fill="#2F2521">Speed-to-review narrative</text>
+<rect x="40" y="95" width="360" height="200" rx="16" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="54" y="123" font-family="Arial" font-size="14" font-weight="700" fill="#2F2521">1. Google Business Profile discovery</text>
+<rect x="290" y="115" width="90" height="160" rx="18" fill="#fff" stroke="#3B2F2F" stroke-width="4"/><rect x="300" y="140" width="70" height="115" rx="8" fill="#F9EFE3"/>
+
+<g transform="translate(150,181) scale(0.85)">
+  <circle cx="0" cy="0" r="30" fill="#FFD9B3" stroke="#3B2F2F" stroke-width="4"/>
+  <circle cx="-10" cy="-5" r="3" fill="#3B2F2F"/>
+  <circle cx="10" cy="-5" r="3" fill="#3B2F2F"/>
+  <path d="M-10,10 Q0,18 10,10" stroke="#3B2F2F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="-22" y="32" width="44" height="52" rx="16" fill="#F28C52" stroke="#3B2F2F" stroke-width="4"/>
+  <line x1="-22" y1="46" x2="22" y2="46" stroke="#3B2F2F" stroke-width="3"/>
+  <line x1="-28" y1="44" x2="-48" y2="60" stroke="#3B2F2F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="28" y1="44" x2="48" y2="60" stroke="#3B2F2F" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<circle cx="325" cy="150" r="10" fill="#6BBF59"/><text x="342" y="155" font-size="12" font-family="Arial">4.9 ★</text>
+<rect x="425" y="95" width="360" height="200" rx="16" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="439" y="123" font-family="Arial" font-size="14" font-weight="700" fill="#2F2521">2. Mobile website visit</text>
+<rect x="655" y="115" width="110" height="160" rx="18" fill="#fff" stroke="#3B2F2F" stroke-width="4"/><rect x="665" y="140" width="90" height="115" rx="8" fill="#F9EFE3"/>
+<rect x="667" y="147" width="86" height="25" rx="6" fill="#F28C52"/>
+
+<g transform="translate(535,181) scale(0.85)">
+  <circle cx="0" cy="0" r="30" fill="#FFD9B3" stroke="#3B2F2F" stroke-width="4"/>
+  <circle cx="-10" cy="-5" r="3" fill="#3B2F2F"/>
+  <circle cx="10" cy="-5" r="3" fill="#3B2F2F"/>
+  <path d="M-10,10 Q0,18 10,10" stroke="#3B2F2F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="-22" y="32" width="44" height="52" rx="16" fill="#4BA3C7" stroke="#3B2F2F" stroke-width="4"/>
+  <line x1="-22" y1="46" x2="22" y2="46" stroke="#3B2F2F" stroke-width="3"/>
+  <line x1="-28" y1="44" x2="-48" y2="60" stroke="#3B2F2F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="28" y1="44" x2="48" y2="60" stroke="#3B2F2F" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<rect x="810" y="95" width="360" height="200" rx="16" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="824" y="123" font-family="Arial" font-size="14" font-weight="700" fill="#2F2521">3. Drive + parking</text>
+<rect x="858" y="213" width="240" height="40" rx="20" fill="#4BA3C7" stroke="#3B2F2F" stroke-width="3"/>
+<circle cx="905" cy="255" r="20" fill="#333"/><circle cx="1055" cy="255" r="20" fill="#333"/>
+<text x="945" y="239" font-size="14" fill="#fff" font-family="Arial">Customer driving to shop</text>
+<rect x="40" y="320" width="360" height="200" rx="16" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="54" y="348" font-family="Arial" font-size="14" font-weight="700" fill="#2F2521">4. Front desk check-in</text>
+<g><rect x="220" y="355" width="160" height="130" rx="12" fill="#fff" stroke="#3B2F2F" stroke-width="4"/>
+    <rect x="240" y="370" width="120" height="30" rx="8" fill="#F28C52"/>
+    <text x="300.0" y="391" text-anchor="middle" font-family="Arial" font-size="16" fill="white" font-weight="700">Front Desk</text>
+    <rect x="238" y="415" width="124" height="75" rx="8" fill="#F9EFE3"/>
+    </g>
+
+<g transform="translate(140,410) scale(0.8)">
+  <circle cx="0" cy="0" r="30" fill="#FFD9B3" stroke="#3B2F2F" stroke-width="4"/>
+  <circle cx="-10" cy="-5" r="3" fill="#3B2F2F"/>
+  <circle cx="10" cy="-5" r="3" fill="#3B2F2F"/>
+  <path d="M-10,10 Q0,18 10,10" stroke="#3B2F2F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="-22" y="32" width="44" height="52" rx="16" fill="#F2C14E" stroke="#3B2F2F" stroke-width="4"/>
+  <line x1="-22" y1="46" x2="22" y2="46" stroke="#3B2F2F" stroke-width="3"/>
+  <line x1="-28" y1="44" x2="-48" y2="60" stroke="#3B2F2F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="28" y1="44" x2="48" y2="60" stroke="#3B2F2F" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<rect x="425" y="320" width="360" height="200" rx="16" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="439" y="348" font-family="Arial" font-size="14" font-weight="700" fill="#2F2521">5. Service + checkout</text>
+<rect x="455" y="410" width="130" height="70" rx="10" fill="#EFEFEF" stroke="#3B2F2F" stroke-width="3"/>
+<rect x="615" y="395" width="150" height="90" rx="10" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="630" y="430" font-size="14" font-family="Arial">Invoice Paid ✅</text>
+<rect x="810" y="320" width="360" height="200" rx="16" fill="#fff" stroke="#3B2F2F" stroke-width="3"/>
+<text x="824" y="348" font-family="Arial" font-size="14" font-weight="700" fill="#2F2521">6. SMS review tap</text>
+<rect x="1045" y="338" width="105" height="165" rx="18" fill="#fff" stroke="#3B2F2F" stroke-width="4"/><rect x="1055" y="363" width="85" height="120" rx="8" fill="#F9EFE3"/>
+<rect x="1055" y="368" width="85" height="65" rx="8" fill="#fff" stroke="#3B2F2F" stroke-width="2"/>
+<text x="1062" y="394" font-size="12" font-family="Arial">Leave a review</text>
+<circle cx="1090" cy="452" r="15" fill="#6BBF59"/>
+</svg>

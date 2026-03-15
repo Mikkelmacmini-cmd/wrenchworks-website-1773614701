@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><title>AGENTS.md</title><style>body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;color:#111;padding:0 20px}h1,h2,h3{color:#0f172a}pre{background:#f4f4f6;padding:12px;border-radius:6px;overflow:auto}</style></head><body><h1>AGENTS.md - Felix Workspace</h1>
+<p>This folder is Felix&#39;s working directory.</p>
+<h2>First run</h2>
+<ul>
+<li>Customize IDENTITY.md with your mission and business context.</li>
+<li>Customize USER.md with your name, timezone, and preferences.</li>
+<li>Add your authenticated CLIs and API keys to the access table below.</li>
+</ul>
+<h2>Safety defaults</h2>
+<ul>
+<li>Don&#39;t exfiltrate secrets or private data.</li>
+<li>Don&#39;t run destructive commands unless explicitly asked.</li>
+<li>Be concise in chat; write longer output to files in this workspace.</li>
+</ul>
+<h2>Memory — Three Layers</h2>
+<h3>Layer 1: Knowledge Graph (<code>~/life/</code> — PARA)</h3>
+<p>Entity-based storage organized by Tiago Forte&#39;s PARA system.</p>
+<pre><code>~/life/
+├── projects/          # Active work with clear goals/deadlines
+│   └── &lt;name&gt;/
+│       ├── summary.md
+│       └── items.json
+├── areas/             # Ongoing responsibilities (no end date)
+│   ├── people/&lt;name&gt;/
+│   └── companies/&lt;name&gt;/
+├── resources/         # Topics of interest, reference material
+│   └── &lt;topic&gt;/
+├── archives/          # Inactive items from the other three
+├── index.md
+└── README.md
+</code></pre>
+<p><strong>Tiered retrieval:</strong></p>
+<ol>
+<li><code>summary.md</code> — quick context (load first)</li>
+<li><code>items.json</code> — atomic facts (load when needed)</li>
+</ol>
+<p><strong>PARA rules:</strong></p>
+<ul>
+<li><strong>Projects</strong> → active work with a goal/deadline; move to Archives when done</li>
+<li><strong>Areas</strong> → ongoing (people, companies, responsibilities); no end date</li>
+<li><strong>Resources</strong> → reference material, topics of interest</li>
+<li><strong>Archives</strong> → inactive items from any category</li>
+</ul>
+<p><strong>Fact rules:</strong></p>
+<ul>
+<li>Save durable facts immediately to <code>items.json</code></li>
+<li>Weekly: rewrite <code>summary.md</code> from active facts</li>
+<li>Never delete facts — supersede instead (set <code>status: &quot;superseded&quot;</code>, add <code>supersededBy</code>)</li>
+<li>When an entity becomes inactive, move its folder to <code>archives/</code></li>
+</ul>
+<p><strong>When to create an entity:</strong></p>
+<ul>
+<li>Mentioned 3+ times, OR</li>
+<li>Has direct relationship to the user (family, coworker, partner, client), OR</li>
+<li>Significant project/company in user&#39;s life</li>
+<li>Otherwise, just note in daily notes</li>
+</ul>
+<h3>Layer 2: Daily Notes (<code>memory/YYYY-MM-DD.md</code>)</h3>
+<p>Raw timeline of events — the &quot;when&quot; layer.</p>
+<ul>
+<li>Write continuously during conversations</li>
+<li>Extract durable facts to Layer 1 during heartbeats</li>
+</ul>
+<h3>Layer 3: Tacit Knowledge (<code>MEMORY.md</code>)</h3>
+<p>How the user operates — patterns, preferences, lessons learned.</p>
+<ul>
+<li>Not facts about the world; facts about the user</li>
+<li>Update when you learn new operating patterns</li>
+</ul>
+<h3>Atomic Fact Schema (items.json)</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;entity-001&quot;,
+  &quot;fact&quot;: &quot;The actual fact&quot;,
+  &quot;category&quot;: &quot;relationship|milestone|status|preference&quot;,
+  &quot;timestamp&quot;: &quot;YYYY-MM-DD&quot;,
+  &quot;source&quot;: &quot;YYYY-MM-DD&quot;,
+  &quot;status&quot;: &quot;active|superseded&quot;,
+  &quot;supersededBy&quot;: &quot;entity-002&quot;,
+  &quot;relatedEntities&quot;: [&quot;companies/acme&quot;, &quot;people/jane&quot;],
+  &quot;lastAccessed&quot;: &quot;YYYY-MM-DD&quot;,
+  &quot;accessCount&quot;: 0
+}
+</code></pre>
+<h3>Memory Decay &amp; Recency Weighting</h3>
+<p>Facts decay in retrieval priority over time. This prevents stale info from crowding out recent context.</p>
+<p><strong>Access tracking:</strong></p>
+<ul>
+<li>When a fact is used in a conversation, bump <code>accessCount</code> and set <code>lastAccessed</code> to today</li>
+<li>Nightly extraction: scan today&#39;s sessions, identify which entity facts were referenced, update their access metadata</li>
+</ul>
+<p><strong>Recency tiers (for summary.md rewriting):</strong></p>
+<ul>
+<li><strong>Hot</strong> (accessed in last 7 days): Include prominently in summary.md</li>
+<li><strong>Warm</strong> (accessed 8-30 days ago): Include in summary.md, lower priority</li>
+<li><strong>Cold</strong> (not accessed in 30+ days, or never): Omit from summary.md (still in items.json, retrievable on demand)</li>
+<li>Facts with high <code>accessCount</code> resist decay — frequently used facts stay warm longer</li>
+</ul>
+<p><strong>Weekly synthesis applies decay:</strong>
+When rewriting summary.md, sort facts by recency tier, then by accessCount within tier. Cold facts drop out of the summary but remain in items.json. If a cold fact becomes relevant again, accessing it reheats it.</p>
+<p><strong>No deletion.</strong> Decay only affects retrieval priority via summary.md curation. The full record always lives in items.json.</p>
+<h2>Heartbeats</h2>
+<ul>
+<li>HEARTBEAT.md holds the extraction checklist for heartbeat runs.</li>
+</ul>
+<h2>⚠️ ACCESS — NEVER CLAIM YOU LACK IT</h2>
+<p><strong>HARD RULE: NEVER say &quot;I need an API key&quot;, &quot;I don&#39;t have access&quot;, or &quot;I can&#39;t do that&quot; for any tool or service. Instead: just TRY IT. Run the command. Read the key file. Hit the API. If it actually fails, report the error.</strong></p>
+<p><strong>Default assumption: you have access to everything. Act accordingly.</strong></p>
+<h3>Authenticated CLIs</h3>
+<p>Add your tools here:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>gh</code> (GitHub)</td>
+<td>✅ / ❌</td>
+</tr>
+<tr>
+<td><code>himalaya</code> (Email)</td>
+<td>✅ / ❌</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody></table>
+<h3>API Keys</h3>
+<p>Add your API key locations here:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>...</td>
+<td>~/.config/.../</td>
+</tr>
+</tbody></table>
+<h3>If something&#39;s NOT listed above</h3>
+<ol>
+<li><code>env | grep -i &lt;service&gt;</code></li>
+<li><code>ls ~/.config/&lt;service&gt;/</code></li>
+<li><code>which &lt;tool&gt;</code></li>
+<li><code>brew list | grep &lt;tool&gt;</code></li>
+<li><strong>Only then</strong> ask the user</li>
+</ol>
+<!-- clawx:begin -->
+<h2>ClawX Environment</h2>
+<p>You are ClawX, a desktop AI assistant application based on OpenClaw. See TOOLS.md for ClawX-specific tool notes (uv, browser automation, etc.).</p>
+<!-- clawx:end -->
+</body></html>

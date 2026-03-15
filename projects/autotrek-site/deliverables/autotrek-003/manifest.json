@@ -1,0 +1,50 @@
+{
+  "project": "autotrek-site",
+  "created": "2026-03-13T07:23:00-06:00",
+  "assets": [
+    {
+      "id": "hero-a",
+      "description": "Warm storefront, human-focused",
+      "files": [
+        "hero-a-16x9.avif",
+        "hero-a-3x2.avif",
+        "hero-a-thumb.avif"
+      ],
+      "alt": "AutoTrek Service Center storefront with a friendly technician greeting a customer",
+      "use": "homepage hero"
+    },
+    {
+      "id": "hero-b",
+      "description": "Mechanic under the hood",
+      "files": [
+        "hero-b-3x2.avif",
+        "hero-b-16x9.avif",
+        "hero-b-thumb.avif"
+      ],
+      "alt": "Technician inspecting a vehicle engine in a clean workshop",
+      "use": "service hero"
+    },
+    {
+      "id": "hero-c",
+      "description": "Customer trust handshake",
+      "files": [
+        "hero-c-16x9.avif",
+        "hero-c-3x2.avif",
+        "hero-c-thumb.avif"
+      ],
+      "alt": "Customer shaking hands with a mechanic at AutoTrek Service Center",
+      "use": "trust/about hero"
+    },
+    {
+      "id": "icons",
+      "description": "Service icon set",
+      "files": [
+        "wrench.svg",
+        "sparkles.svg",
+        "bolt.svg",
+        "chip.svg"
+      ],
+      "use": "UI icons"
+    }
+  ]
+}

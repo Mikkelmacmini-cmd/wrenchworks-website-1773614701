@@ -1,0 +1,5 @@
+/* Critical CSS: minimal header + hero + primary CTA styles for first paint */
+:root{--site-header-height:56px}
+header[data-testid="site-header"]{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.98);border-bottom:1px solid rgba(148,163,184,.35);backdrop-filter:blur(6px);}
+main .hero{padding-top:calc(var(--site-header-height) + 1.25rem)}
+.btn-primary{display:inline-block;border-radius:9999px;padding:0.75rem 1.5rem;font-weight:600}

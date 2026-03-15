@@ -1,0 +1,50 @@
+[
+  {
+    "file": "desktop-1280-viewport.png",
+    "width": 2560,
+    "height": 1640,
+    "diffPixels": 458125,
+    "total": 4198400,
+    "pct": 10.9119
+  },
+  {
+    "file": "mobile-390-viewport.png",
+    "width": 780,
+    "height": 1688,
+    "diffPixels": 105229,
+    "total": 1316640,
+    "pct": 7.9922
+  },
+  {
+    "file": "tablet-768-viewport.png",
+    "width": 1536,
+    "height": 2048,
+    "diffPixels": 249870,
+    "total": 3145728,
+    "pct": 7.9432
+  },
+  {
+    "file": "desktop-1280-full.png",
+    "width": 2560,
+    "height": 8266,
+    "diffPixels": 458125,
+    "total": 21160960,
+    "pct": 2.165
+  },
+  {
+    "file": "tablet-768-full.png",
+    "width": 1536,
+    "height": 8390,
+    "diffPixels": 249870,
+    "total": 12887040,
+    "pct": 1.9389
+  },
+  {
+    "file": "mobile-390-full.png",
+    "width": 780,
+    "height": 11180,
+    "diffPixels": 105229,
+    "total": 8720400,
+    "pct": 1.2067
+  }
+]

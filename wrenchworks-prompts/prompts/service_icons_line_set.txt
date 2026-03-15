@@ -1,0 +1,1 @@
+Create a set of four matching line icons: wrench, oil drop, brake disc, diagnostics gauge. Style: minimal single-stroke line icons with slight rounding, consistent weight, export-ready for web SVG. Neutral brand accent color.

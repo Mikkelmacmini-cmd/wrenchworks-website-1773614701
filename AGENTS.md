@@ -49,6 +49,13 @@ Example entry:
 
 If no active tasks: review backlog, propose top-3 suggestions.
 
+## Consolidated Subagents (new)
+- ax (AX Orchestrator) — orchestration, monitoring, job queue, throttling
+- design — Creative Director (visuals & imagery prompts)
+- content — SEO & Copy (city pages, ads, schema)
+- dev-creator — Site Builder (static builds, deploys)
+- qc — Final Editor & Release Checklist
+
 ## Blocked Task Recovery
 - Attempt 2 alternate approaches
 - Gather evidence and document blocker in active-tasks.md

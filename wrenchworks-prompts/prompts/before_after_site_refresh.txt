@@ -1,0 +1,1 @@
+Split before/after comparison: left side low-performing legacy site screenshot (muted), right side refreshed high-performance modern site UI (bright, premium). Clean divider and copy space.

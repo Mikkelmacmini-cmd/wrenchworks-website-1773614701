@@ -1,0 +1,9 @@
+Create a simple, friendly infographic that shows how our review system works for auto shops. Use a left→right flow with five clear steps and simple words (6th‑grade reading level) that can appear as short text inside the image:
+
+1) Service Done — Customer picks up car and pays the bill. Technician asks, “How did we do?”
+2) Tap to Review — Customer gets a quick text or email with one big button to leave feedback.
+3) Quick Rating — Customer taps a star rating and can add a short line if they want.
+4) Share the Good Stuff — High ratings become a short testimonial card (name + stars + one line) we can show on the site.
+5) More Reviews = More Visibility — The more good reviews you get, the more your shop shows up on Google.
+
+Visuals: use big, easy icons for each step and short lines of text beneath. Add a small example Google card at the end showing a shop with 5 stars and a short quote. Color: clear brand colors (deep indigo + cyan). Make an SVG and a PNG and a mobile version stacked vertically.

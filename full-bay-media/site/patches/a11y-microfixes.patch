@@ -1,0 +1,6 @@
+*** Begin Patch
+*** Update File: full-bay-media/site/src/app/page.tsx
+@@
+-<a data-testid="hero-primary-cta" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold">Book Inspection</a>
++<a data-testid="hero-primary-cta" href={business.phoneHref} className="btn-primary ui-pressable rounded-full px-6 py-3 font-semibold" role="button" aria-label="Book inspection by phone">Book Inspection</a>
+*** End Patch

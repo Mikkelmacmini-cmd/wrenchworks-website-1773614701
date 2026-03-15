@@ -1,0 +1,65 @@
+[
+  {
+    "category": "hero",
+    "name": "hero-01-torque-wrench-closeup",
+    "prompt": "Ultra-realistic commercial automotive photo, tight close-up of a technician's gloved forearms and hands using a torque wrench on an engine component, no face visible, no full person, shallow depth of field, crisp metal textures, premium clean workshop lighting, brand-safe website hero image, no text, no watermark",
+    "desktop": "assets/visual-refresh/ai-no-faces/hero/hero-01-torque-wrench-closeup.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/hero-01-torque-wrench-closeup-mobile.webp"
+  },
+  {
+    "category": "hero",
+    "name": "hero-02-macro-bay-sensor",
+    "prompt": "Ultra-realistic macro shot in a modern auto service bay, technician arms only reaching into open hood with diagnostic probe and multimeter, illuminated diagnostic readouts in background bokeh, no face visible, no identifiable person, high contrast details, cinematic but natural lighting, no text, no watermark",
+    "desktop": "assets/visual-refresh/ai-no-faces/hero/hero-02-macro-bay-sensor.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/hero-02-macro-bay-sensor-mobile.webp"
+  },
+  {
+    "category": "hero",
+    "name": "hero-03-precision-tool-tray",
+    "prompt": "Photoreal automotive service scene, close framing of hands organizing precision tools on a spotless tool cart beside a vehicle bay, LED task lights reflecting on chrome and painted surfaces, no faces, no upper bodies, no logos, clean premium composition for homepage hero",
+    "desktop": "assets/visual-refresh/ai-no-faces/hero/hero-03-precision-tool-tray.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/hero-03-precision-tool-tray-mobile.webp"
+  },
+  {
+    "category": "support",
+    "name": "support-01-brake-service",
+    "prompt": "Photoreal close-up of brake service in progress, gloved hands removing brake caliper and inspecting rotor, detailed textures of pads and rotor surface, workshop background softly blurred, no faces or identifiable people, no text, no watermark",
+    "desktop": "assets/visual-refresh/ai-no-faces/support/support-01-brake-service.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/support-01-brake-service-mobile.webp"
+  },
+  {
+    "category": "support",
+    "name": "support-02-diagnostics-scan",
+    "prompt": "Photoreal automotive diagnostics image, technician hands holding OBD scan tablet near steering column, screen showing abstract diagnostic graphs and codes (non-branded), no face visible, modern clean garage lighting, no text overlays",
+    "desktop": "assets/visual-refresh/ai-no-faces/support/support-02-diagnostics-scan.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/support-02-diagnostics-scan-mobile.webp"
+  },
+  {
+    "category": "support",
+    "name": "support-03-oil-service",
+    "prompt": "Photoreal oil service close-up, gloved hands unscrewing oil filter and controlled oil drain into clean pan, emphasis on cleanliness and precision, no faces or full person, high-detail industrial lighting, no watermark",
+    "desktop": "assets/visual-refresh/ai-no-faces/support/support-03-oil-service.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/support-03-oil-service-mobile.webp"
+  },
+  {
+    "category": "support",
+    "name": "support-04-suspension-repair",
+    "prompt": "Photoreal suspension repair scene, close-up of mechanic hands using ratchet on strut assembly and control arm components, sharp detail on metal parts and gloves, no face visible, no text, clean commercial style",
+    "desktop": "assets/visual-refresh/ai-no-faces/support/support-04-suspension-repair.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/support-04-suspension-repair-mobile.webp"
+  },
+  {
+    "category": "support",
+    "name": "support-05-hybrid-repair",
+    "prompt": "Photoreal hybrid vehicle service, close-up of insulated gloved hands working near orange high-voltage cables and battery module access panel, safety-focused composition, no faces or identifiable people, clean modern shop, no text",
+    "desktop": "assets/visual-refresh/ai-no-faces/support/support-05-hybrid-repair.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/support-05-hybrid-repair-mobile.webp"
+  },
+  {
+    "category": "support",
+    "name": "support-06-fleet-maintenance",
+    "prompt": "Photoreal fleet maintenance bay scene, technician hands using diagnostic tool on light commercial van engine bay, multiple vehicles softly out of focus in background, operational efficiency mood, no faces, no logos, no text",
+    "desktop": "assets/visual-refresh/ai-no-faces/support/support-06-fleet-maintenance.webp",
+    "mobile": "assets/visual-refresh/ai-no-faces/mobile/support-06-fleet-maintenance-mobile.webp"
+  }
+]

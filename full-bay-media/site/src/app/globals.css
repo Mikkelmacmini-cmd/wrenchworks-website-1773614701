@@ -4,6 +4,9 @@
   color-scheme: light;
   --site-header-height: 5.5rem;
   --mobile-rail-height: 0px;
+  /* CTA safe spacing breakpoints */
+  --cta-safe-offset-mobile: 5.25rem; /* 84px */
+  --cta-safe-offset-md: 6.5rem; /* 104px */
 
   --bg-canvas: #ffffff;
   --bg-surface: #f5f7f6;
@@ -97,6 +100,12 @@ p { color: var(--ink-secondary); }
 
 .proof-chip { border-radius: .8rem; border: 1px solid var(--proof-chip-border); background: var(--proof-chip-bg); color: var(--proof-chip-body); padding: .62rem .78rem; font-size: .95rem; line-height: 1.35rem; backdrop-filter: blur(5px); }
 .proof-chip strong { color: var(--proof-chip-title); font-weight: 800; }
+
+/* Utility class for hero CTA safety */
+.hero-cta-safe { padding-top: var(--cta-safe-offset-mobile); }
+@media (min-width: 768px) {
+  .hero-cta-safe { padding-top: var(--cta-safe-offset-md); }
+}
 
 .btn-primary, .btn-secondary, .btn-ghost, .ui-pressable { transition: transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), background-color var(--dur-micro) linear, border-color var(--dur-micro) linear; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 .btn-primary { background: linear-gradient(135deg, #d32f2f 0%, var(--accent-gold) 100%); color: #fff; border: 1px solid rgba(255, 255, 255, 0.26); box-shadow: var(--elev-2); }

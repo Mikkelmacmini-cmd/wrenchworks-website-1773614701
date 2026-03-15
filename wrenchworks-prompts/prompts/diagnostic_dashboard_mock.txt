@@ -1,0 +1,1 @@
+Realistic UI dashboard mock: traffic, conversions, review score, bookings. Clean panels, minimal charts, export PNG for hero detail mockups.

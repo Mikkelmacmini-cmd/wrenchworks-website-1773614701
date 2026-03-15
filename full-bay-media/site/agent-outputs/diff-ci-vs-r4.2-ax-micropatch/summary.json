@@ -1,0 +1,62 @@
+[
+  {
+    "file": "desktop-1280-viewport.png",
+    "diffPixels": 2483,
+    "totalPixels": 4198400,
+    "diffPercent": 0.0591
+  },
+  {
+    "file": "tablet-768-viewport.png",
+    "diffPixels": 3185,
+    "totalPixels": 3145728,
+    "diffPercent": 0.1012
+  },
+  {
+    "file": "mobile-360-viewport.png",
+    "diffPixels": 0,
+    "totalPixels": 1123200,
+    "diffPercent": 0
+  },
+  {
+    "file": "mobile-390-viewport.png",
+    "diffPixels": 0,
+    "totalPixels": 1316640,
+    "diffPercent": 0
+  },
+  {
+    "file": "mobile-430-viewport.png",
+    "diffPixels": 0,
+    "totalPixels": 1603040,
+    "diffPercent": 0
+  },
+  {
+    "file": "desktop-1280-full.png",
+    "diffPixels": 2483,
+    "totalPixels": 21160960,
+    "diffPercent": 0.0117
+  },
+  {
+    "file": "tablet-768-full.png",
+    "diffPixels": 3185,
+    "totalPixels": 12887040,
+    "diffPercent": 0.0247
+  },
+  {
+    "file": "mobile-360-full.png",
+    "diffPixels": 0,
+    "totalPixels": 8029440,
+    "diffPercent": 0
+  },
+  {
+    "file": "mobile-390-full.png",
+    "diffPixels": 0,
+    "totalPixels": 8720400,
+    "diffPercent": 0
+  },
+  {
+    "file": "mobile-430-full.png",
+    "diffPixels": 0,
+    "totalPixels": 9697360,
+    "diffPercent": 0
+  }
+]

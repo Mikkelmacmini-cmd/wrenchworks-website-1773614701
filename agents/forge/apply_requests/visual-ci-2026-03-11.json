@@ -1,0 +1,15 @@
+{
+  "requester":"subagent:599aec98",
+  "branch":"visual/ci-95-sprint",
+  "patches":[
+    "full-bay-media/site/patches/critical-css.patch",
+    "full-bay-media/site/patches/cta-breakpoints.patch",
+    "full-bay-media/site/patches/a11y-microfixes.patch"
+  ],
+  "scripts":[
+    "full-bay-media/site/scripts/capture-ci.mjs",
+    "full-bay-media/site/scripts/visual-compare.mjs"
+  ],
+  "checklist":"full-bay-media/site/forge-checklist.md",
+  "notes":"Please apply patches, run build+tests, generate CI captures, and report back when r4.3 captures ready for final Sentinel. Do not run final Sentinel."
+}

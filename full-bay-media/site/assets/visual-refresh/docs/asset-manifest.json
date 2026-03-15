@@ -1,0 +1,86 @@
+{
+  "palette": {
+    "surfacePage": "#F8FAFC",
+    "surfaceCard": "#FFFFFF",
+    "textPrimary": "#0F172A",
+    "textSecondary": "#334155",
+    "brandPrimaryRed": "#B91C1C",
+    "brandPrimaryRedHover": "#991B1B",
+    "brandTrustGreen": "#166534",
+    "brandTrustGreenSoft": "#DCFCE7",
+    "borderDefault": "#CBD5E1",
+    "focusRing": "#2563EB",
+    "overlayHero": "rgba(15, 23, 42, 0.60)"
+  },
+  "assets": [
+    {
+      "type": "hero",
+      "path": "full-bay-media/site/assets/visual-refresh/hero/hero-01-diagnostic-command.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/hero-01-diagnostic-command-mobile.webp",
+      "alt": "Technician performing advanced vehicle diagnostics in a clean AutoTrek-style service bay with copy-safe space."
+    },
+    {
+      "type": "hero",
+      "path": "full-bay-media/site/assets/visual-refresh/hero/hero-02-trust-consultation.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/hero-02-trust-consultation-mobile.webp",
+      "alt": "Service advisor reviewing repair findings with a customer beside a vehicle in a premium workshop."
+    },
+    {
+      "type": "hero",
+      "path": "full-bay-media/site/assets/visual-refresh/hero/hero-03-performance-bay.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/hero-03-performance-bay-mobile.webp",
+      "alt": "Wide view of a professional multi-bay auto shop with technicians performing precision repair and diagnostics."
+    },
+    {
+      "type": "service",
+      "path": "full-bay-media/site/assets/visual-refresh/service/service-01-vehicle-diagnostics.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/service-01-vehicle-diagnostics-mobile.webp",
+      "alt": "Technician using a scan tablet and OBD tools for vehicle diagnostics."
+    },
+    {
+      "type": "service",
+      "path": "full-bay-media/site/assets/visual-refresh/service/service-02-brake-repair.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/service-02-brake-repair-mobile.webp",
+      "alt": "Close-up of professional brake rotor and caliper service in progress."
+    },
+    {
+      "type": "service",
+      "path": "full-bay-media/site/assets/visual-refresh/service/service-03-oil-fluid-service.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/service-03-oil-fluid-service-mobile.webp",
+      "alt": "Controlled oil and fluid maintenance being performed in a clean service environment."
+    },
+    {
+      "type": "service",
+      "path": "full-bay-media/site/assets/visual-refresh/service/service-04-suspension-steering.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/service-04-suspension-steering-mobile.webp",
+      "alt": "Suspension and steering components inspected on a lifted vehicle with wheel removed."
+    },
+    {
+      "type": "service",
+      "path": "full-bay-media/site/assets/visual-refresh/service/service-05-hybrid-repair.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/service-05-hybrid-repair-mobile.webp",
+      "alt": "Technician performing hybrid-system diagnostics with safety equipment in a modern bay."
+    },
+    {
+      "type": "service",
+      "path": "full-bay-media/site/assets/visual-refresh/service/service-06-fleet-service.webp",
+      "mobilePath": "full-bay-media/site/assets/visual-refresh/mobile/service-06-fleet-service-mobile.webp",
+      "alt": "Multiple fleet vans receiving coordinated maintenance in a professional repair facility."
+    }
+  ],
+  "heroPolish": {
+    "variantsManifest": "full-bay-media/site/assets/visual-refresh/docs/hero-polish-manifest.json",
+    "recommendedDefaultWhiteFirst": {
+      "desktop": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q82.webp",
+      "mobile": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q82-mobile.webp"
+    },
+    "recommendedHighContrast": {
+      "desktop": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-contrast-boosted-q82.webp",
+      "mobile": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-contrast-boosted-q82-mobile.webp"
+    },
+    "recommendedCompressed": {
+      "desktop": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q68.webp",
+      "mobile": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q68-mobile.webp"
+    }
+  }
+}

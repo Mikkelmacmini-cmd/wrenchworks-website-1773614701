@@ -1,0 +1,270 @@
+<!doctype html><html><head><meta charset="utf-8"><title>SOUL.md Course</title><style>body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;color:#111;padding:0 20px}h1,h2,h3{color:#0f172a}pre{background:#f4f4f6;padding:12px;border-radius:6px;overflow:auto}</style></head><body><h1>SOUL.md Fast-Track Course</h1>
+<p><strong>Goal:</strong> Help you write a production-ready <code>SOUL.md</code> fast.</p>
+<p><strong>Reading level:</strong> Simple, clear, 6th-grade language.</p>
+<p><strong>Who this is for:</strong> Builders, operators, and teams who want an AI agent to act with the right voice, choices, and boundaries.</p>
+<hr>
+<h2>How to Use This Course</h2>
+<ul>
+<li>Read each lesson in order.</li>
+<li>Do the exercises.</li>
+<li>Take the quizzes.</li>
+<li>Use the template.</li>
+<li>Run the final checklist before shipping.</li>
+</ul>
+<p>Time needed: <strong>2-3 hours</strong> for first draft, <strong>1 hour</strong> for review.</p>
+<hr>
+<h2>Module Map</h2>
+<ol>
+<li>Purpose of <code>SOUL.md</code></li>
+<li>Structure that works in production</li>
+<li>Voice and tone rules</li>
+<li>Good examples + before/after edits</li>
+<li>Common pitfalls and fixes</li>
+<li>Step-by-step authoring workflow</li>
+<li>Templates you can copy</li>
+<li>Exercises + answer key</li>
+<li>Quizzes</li>
+<li>Final checklist</li>
+<li>One-page cheat sheet</li>
+</ol>
+<hr>
+<h2>Lesson 1 — Purpose: Why <code>SOUL.md</code> Exists</h2>
+<p><code>SOUL.md</code> is the <strong>behavior contract</strong> for your agent.</p>
+<p>It tells the model:</p>
+<ul>
+<li><strong>Who it is</strong> (persona and role)</li>
+<li><strong>How to sound</strong> (voice and tone)</li>
+<li><strong>How to decide</strong> (principles)</li>
+<li><strong>What not to do</strong> (boundaries)</li>
+</ul>
+<p>Without <code>SOUL.md</code>, responses drift. The agent may be correct but still feel off-brand or unsafe.</p>
+<h3>Core job of <code>SOUL.md</code></h3>
+<p>A strong <code>SOUL.md</code> makes the agent:</p>
+<ul>
+<li>Consistent</li>
+<li>Trustworthy</li>
+<li>Useful under pressure</li>
+<li>Fast to align with team goals</li>
+</ul>
+<h3>What <code>SOUL.md</code> is NOT</h3>
+<ul>
+<li>Not a giant policy dump</li>
+<li>Not a marketing slogan file</li>
+<li>Not a list of random adjectives</li>
+</ul>
+<p>It is a <strong>practical operating guide</strong>.</p>
+<hr>
+<h2>Lesson 2 — Structure: The Production Skeleton</h2>
+<p>Use this order:</p>
+<ol>
+<li><strong>Identity</strong> — name, role, mission</li>
+<li><strong>Voice &amp; Tone</strong> — style rules</li>
+<li><strong>Decision Principles</strong> — how to choose when trade-offs happen</li>
+<li><strong>Boundaries</strong> — safety and limits</li>
+<li><strong>Execution Rules</strong> — do-this-not-that actions</li>
+<li><strong>Response Style</strong> — format defaults</li>
+<li><strong>Escalation Rules</strong> — when to ask for help</li>
+<li><strong>Examples</strong> — good and bad snippets</li>
+</ol>
+<h3>Why this order works</h3>
+<ul>
+<li>Starts with intent (identity)</li>
+<li>Then communication (tone)</li>
+<li>Then judgment (principles)</li>
+<li>Then safety (boundaries)</li>
+<li>Then operations (execution)</li>
+</ul>
+<p>This matches how real work happens.</p>
+<hr>
+<h2>Lesson 3 — Voice &amp; Tone: Sound Human, Stay Useful</h2>
+<p>Good voice rules are short and testable.</p>
+<h3>Use voice pairs</h3>
+<p>Example pairs:</p>
+<ul>
+<li>Clear, not vague</li>
+<li>Warm, not fluffy</li>
+<li>Direct, not rude</li>
+<li>Confident, not arrogant</li>
+<li>Brief by default, detailed when needed</li>
+</ul>
+<h3>Add anti-patterns</h3>
+<p>Tell the model what to avoid:</p>
+<ul>
+<li>No buzzword soup</li>
+<li>No fake certainty</li>
+<li>No long disclaimers unless needed</li>
+<li>No fake hype</li>
+</ul>
+<h3>Tone test</h3>
+<p>Ask: “Would a busy teammate trust this in a real incident?”</p>
+<p>If no, tighten it.</p>
+<hr>
+<h2>Lesson 4 — Concrete Examples (Before/After)</h2>
+<h3>Example A: Vague voice</h3>
+<p><strong>Before</strong></p>
+<pre><code class="language-md">## Voice
+Be professional and nice.
+</code></pre>
+<p><strong>After</strong></p>
+<pre><code class="language-md">## Voice &amp; Tone
+- Clear and direct. Use short sentences.
+- Warm but not gushy.
+- State uncertainty honestly in one line.
+- Default to 3-7 bullet points for action plans.
+- Avoid corporate filler words.
+</code></pre>
+<p>Why better: You can test it. Team members can review it.</p>
+<hr>
+<h3>Example B: Weak boundaries</h3>
+<p><strong>Before</strong></p>
+<pre><code class="language-md">## Boundaries
+Be safe and careful.
+</code></pre>
+<p><strong>After</strong></p>
+<pre><code class="language-md">## Boundaries
+- Never make up facts, links, or results.
+- If data is missing, say what is missing and ask one clear question.
+- Never expose secrets, keys, tokens, or private user data.
+- Never perform destructive actions unless explicitly requested.
+- If instruction conflicts with policy, pause and escalate.
+</code></pre>
+<p>Why better: Specific rules reduce risky behavior.</p>
+<hr>
+<h3>Example C: No decision logic</h3>
+<p><strong>Before</strong></p>
+<pre><code class="language-md">## Principles
+Do what is best.
+</code></pre>
+<p><strong>After</strong></p>
+<pre><code class="language-md">## Decision Principles
+1. Safety before speed.
+2. Accuracy before style.
+3. Solve root cause, not just symptom.
+4. Fix first when low-risk and reversible, then report.
+5. Ask for confirmation before irreversible actions.
+</code></pre>
+<p>Why better: Clear priority order helps in hard moments.</p>
+<hr>
+<h2>Lesson 5 — Common Pitfalls</h2>
+<h3>Pitfall 1: Too abstract</h3>
+<p>Bad: “Be excellent.”
+Fix: Add observable behavior.</p>
+<h3>Pitfall 2: Contradictions</h3>
+<p>Bad: “Be concise” + “Always provide full detail.”
+Fix: Add condition: concise by default, expand when stakes are high.</p>
+<h3>Pitfall 3: Over-long walls of text</h3>
+<p>Fix: Use bullets, short rules, and sections.</p>
+<h3>Pitfall 4: No examples</h3>
+<p>Fix: Include before/after snippets.</p>
+<h3>Pitfall 5: No escalation policy</h3>
+<p>Fix: Define when to ask, when to act, and when to stop.</p>
+<h3>Pitfall 6: No update process</h3>
+<p>Fix: Add revision cadence (weekly or after incidents).</p>
+<hr>
+<h2>Lesson 6 — Step-by-Step Authoring Workflow</h2>
+<h3>Step 1: Define mission</h3>
+<p>Write one sentence: what outcome matters most?</p>
+<h3>Step 2: Pick tone anchors</h3>
+<p>Choose 4-6 tone traits and 4 anti-traits.</p>
+<h3>Step 3: Write decision principles</h3>
+<p>Use ranked priorities (1,2,3...).</p>
+<h3>Step 4: Set boundaries</h3>
+<p>Be specific: privacy, safety, destructive actions, uncertainty.</p>
+<h3>Step 5: Add execution defaults</h3>
+<p>Examples:</p>
+<ul>
+<li>Start with a short summary</li>
+<li>Then action items</li>
+<li>Then risks and next steps</li>
+</ul>
+<h3>Step 6: Add examples</h3>
+<p>Include at least 3 before/after edits.</p>
+<h3>Step 7: Red-team your file</h3>
+<p>Try tricky prompts:</p>
+<ul>
+<li>Urgent but unsafe request</li>
+<li>Missing data</li>
+<li>Conflicting goals</li>
+<li>Ambiguous instructions</li>
+</ul>
+<h3>Step 8: Revise and version</h3>
+<p>Add date and changelog note.</p>
+<hr>
+<h2>Lesson 7 — Template (Quick Start)</h2>
+<p>Use <code>templates/SOUL_TEMPLATE.md</code>.</p>
+<p>What makes this template “production-ready”:</p>
+<ul>
+<li>Explicit decision order</li>
+<li>Explicit no-go actions</li>
+<li>Measurable response format defaults</li>
+<li>Escalation conditions</li>
+</ul>
+<hr>
+<h2>Lesson 8 — Exercises</h2>
+<p>Do these in <code>exercises.md</code>:</p>
+<ol>
+<li>Rewrite weak voice section.</li>
+<li>Add boundary rules for a finance agent.</li>
+<li>Turn vague principles into ranked priorities.</li>
+<li>Fix a contradictory <code>SOUL.md</code> block.</li>
+<li>Write one escalation policy.</li>
+</ol>
+<p>Answer key included.</p>
+<hr>
+<h2>Lesson 9 — Quizzes</h2>
+<h3>Quiz 1 (Basics)</h3>
+<ol>
+<li>What is the main job of <code>SOUL.md</code>?</li>
+<li>Why are examples required?</li>
+<li>What comes before style: safety or voice?</li>
+</ol>
+<h3>Quiz 2 (Applied)</h3>
+<ol>
+<li>Rewrite: “Be careful.” into two concrete rules.</li>
+<li>Give one reversible vs irreversible action pair.</li>
+<li>When should the agent ask a clarifying question?</li>
+</ol>
+<p><strong>Suggested answers:</strong></p>
+<ul>
+<li><code>SOUL.md</code> sets consistent behavior and decisions.</li>
+<li>Examples make rules testable.</li>
+<li>Safety comes before style.</li>
+<li>Clarify when missing data blocks a safe action.</li>
+</ul>
+<hr>
+<h2>Lesson 10 — Final Checklist (Ship Gate)</h2>
+<p>Use this list before you deploy:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Identity is clear in 1-3 lines.</li>
+<li><input disabled="" type="checkbox"> Tone has positive rules and anti-rules.</li>
+<li><input disabled="" type="checkbox"> Decision principles are ranked.</li>
+<li><input disabled="" type="checkbox"> Boundaries are explicit and concrete.</li>
+<li><input disabled="" type="checkbox"> Destructive action policy is present.</li>
+<li><input disabled="" type="checkbox"> Uncertainty handling is defined.</li>
+<li><input disabled="" type="checkbox"> Escalation triggers are clear.</li>
+<li><input disabled="" type="checkbox"> 3+ before/after examples included.</li>
+<li><input disabled="" type="checkbox"> No contradictions across sections.</li>
+<li><input disabled="" type="checkbox"> File can be read in under 10 minutes.</li>
+<li><input disabled="" type="checkbox"> Last updated date is present.</li>
+</ul>
+<p>If any box is unchecked, do not ship yet.</p>
+<hr>
+<h2>Lesson 11 — One-Page Cheat Sheet</h2>
+<p>See <code>CHEAT_SHEET.md</code> for a compact build-and-review guide.</p>
+<hr>
+<h2>Suggested Team Workflow</h2>
+<ul>
+<li>Draft owner writes first version.</li>
+<li>One reviewer checks safety + contradictions.</li>
+<li>One reviewer checks tone + usability.</li>
+<li>Run 5 test prompts.</li>
+<li>Revise and version.</li>
+</ul>
+<hr>
+<h2>Wrap-Up</h2>
+<p>A great <code>SOUL.md</code> is not long. It is <strong>clear, testable, and enforceable</strong>.</p>
+<p>If your agent sounds right but makes bad choices, fix principles.
+If it chooses right but sounds wrong, fix voice.
+If it is risky, tighten boundaries.</p>
+<p>That is how you get high-leverage behavior fast.</p>
+<hr/></body></html>

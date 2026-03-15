@@ -1,0 +1,409 @@
+{
+  "heroPolishVariants": [
+    {
+      "slug": "hero-01-torque-wrench-closeup",
+      "desktop": [
+        {
+          "variant": "center-safe-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-lighter-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-lighter-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 69180
+        },
+        {
+          "variant": "center-safe-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-lighter-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-lighter-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 46958
+        },
+        {
+          "variant": "center-safe-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-contrast-boosted-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-contrast-boosted-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 71876
+        },
+        {
+          "variant": "center-safe-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-contrast-boosted-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-center-safe-contrast-boosted-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 49004
+        },
+        {
+          "variant": "lower-bay-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-lighter-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-lighter-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 71750
+        },
+        {
+          "variant": "lower-bay-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-lighter-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-lighter-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 48742
+        },
+        {
+          "variant": "lower-bay-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-contrast-boosted-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-contrast-boosted-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 74302
+        },
+        {
+          "variant": "lower-bay-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-contrast-boosted-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-01-torque-wrench-closeup-lower-bay-contrast-boosted-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 50836
+        }
+      ],
+      "mobile": [
+        {
+          "variant": "center-tight-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-lighter-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-lighter-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 45430
+        },
+        {
+          "variant": "center-tight-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-lighter-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-lighter-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 30774
+        },
+        {
+          "variant": "center-tight-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-contrast-boosted-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-contrast-boosted-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 47524
+        },
+        {
+          "variant": "center-tight-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-contrast-boosted-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-center-tight-contrast-boosted-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 32426
+        },
+        {
+          "variant": "right-focus-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-lighter-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-lighter-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 52926
+        },
+        {
+          "variant": "right-focus-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-lighter-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-lighter-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 37022
+        },
+        {
+          "variant": "right-focus-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-contrast-boosted-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-contrast-boosted-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 55450
+        },
+        {
+          "variant": "right-focus-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-contrast-boosted-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-01-torque-wrench-closeup-right-focus-contrast-boosted-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 38972
+        }
+      ]
+    },
+    {
+      "slug": "hero-02-macro-bay-sensor",
+      "desktop": [
+        {
+          "variant": "center-safe-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 47350
+        },
+        {
+          "variant": "center-safe-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-lighter-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 30340
+        },
+        {
+          "variant": "center-safe-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-contrast-boosted-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-contrast-boosted-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 50516
+        },
+        {
+          "variant": "center-safe-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-contrast-boosted-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-center-safe-contrast-boosted-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 32378
+        },
+        {
+          "variant": "lower-bay-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-lighter-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-lighter-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 46656
+        },
+        {
+          "variant": "lower-bay-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-lighter-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-lighter-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 29884
+        },
+        {
+          "variant": "lower-bay-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-contrast-boosted-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-contrast-boosted-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 49714
+        },
+        {
+          "variant": "lower-bay-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-contrast-boosted-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-02-macro-bay-sensor-lower-bay-contrast-boosted-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 31878
+        }
+      ],
+      "mobile": [
+        {
+          "variant": "center-tight-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 36500
+        },
+        {
+          "variant": "center-tight-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-lighter-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 24248
+        },
+        {
+          "variant": "center-tight-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-contrast-boosted-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-contrast-boosted-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 38442
+        },
+        {
+          "variant": "center-tight-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-contrast-boosted-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-center-tight-contrast-boosted-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 25764
+        },
+        {
+          "variant": "right-focus-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-lighter-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-lighter-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 27882
+        },
+        {
+          "variant": "right-focus-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-lighter-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-lighter-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 18370
+        },
+        {
+          "variant": "right-focus-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-contrast-boosted-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-contrast-boosted-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 29128
+        },
+        {
+          "variant": "right-focus-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-contrast-boosted-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-02-macro-bay-sensor-right-focus-contrast-boosted-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 19598
+        }
+      ]
+    },
+    {
+      "slug": "hero-03-precision-tool-tray",
+      "desktop": [
+        {
+          "variant": "center-safe-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-lighter-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-lighter-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 69404
+        },
+        {
+          "variant": "center-safe-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-lighter-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-lighter-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 45818
+        },
+        {
+          "variant": "center-safe-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-contrast-boosted-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-contrast-boosted-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 73972
+        },
+        {
+          "variant": "center-safe-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-contrast-boosted-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-center-safe-contrast-boosted-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 49136
+        },
+        {
+          "variant": "lower-bay-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-lighter-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-lighter-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 66710
+        },
+        {
+          "variant": "lower-bay-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-lighter-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-lighter-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 44796
+        },
+        {
+          "variant": "lower-bay-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-contrast-boosted-q82.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-contrast-boosted-q82.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 71622
+        },
+        {
+          "variant": "lower-bay-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-contrast-boosted-q68.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/desktop/hero-03-precision-tool-tray-lower-bay-contrast-boosted-q68.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 47522
+        }
+      ],
+      "mobile": [
+        {
+          "variant": "center-tight-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-lighter-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-lighter-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 61168
+        },
+        {
+          "variant": "center-tight-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-lighter-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-lighter-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 40422
+        },
+        {
+          "variant": "center-tight-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-contrast-boosted-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-contrast-boosted-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 64668
+        },
+        {
+          "variant": "center-tight-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-contrast-boosted-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-center-tight-contrast-boosted-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 43036
+        },
+        {
+          "variant": "right-focus-lighter-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-lighter-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-lighter-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 62798
+        },
+        {
+          "variant": "right-focus-lighter-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-lighter-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-lighter-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 42132
+        },
+        {
+          "variant": "right-focus-contrast-boosted-q82",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-contrast-boosted-q82-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-contrast-boosted-q82-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 66622
+        },
+        {
+          "variant": "right-focus-contrast-boosted-q68",
+          "path": "assets/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-contrast-boosted-q68-mobile.webp",
+          "publicPath": "/visual-refresh/ai-no-faces/hero-polish/mobile/hero-03-precision-tool-tray-right-focus-contrast-boosted-q68-mobile.webp",
+          "width": 720,
+          "height": 960,
+          "bytes": 45108
+        }
+      ]
+    }
+  ]
+}

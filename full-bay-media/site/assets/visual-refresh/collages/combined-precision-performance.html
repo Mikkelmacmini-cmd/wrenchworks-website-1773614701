@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body{margin:0;background:#fff;font-family:Inter,Arial}
+.container{width:1200px;margin:20px auto;padding:20px}
+.header{font-weight:800;font-size:20px;margin-bottom:12px}
+.row{display:flex;gap:12px}
+.col{flex:1}
+.card img{width:100%;height:320px;object-fit:cover;border-radius:6px}
+.pal{display:flex;gap:12px;margin-top:18px}
+.sw{width:140px;height:80px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.token{font-size:13px;margin-top:6px;color:#333}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;font-weight:700;margin-right:8px}
+.btn.red{background:#C62828;color:#fff}
+.btn.green{background:#127A43;color:#fff}
+.btn.ghost{background:#fff;border:2px solid #127A43;color:#127A43}
+.note{font-size:13px;color:#444;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">Combined Mood Board — Precision Clean + Performance Signal</div>
+  <div class="row">
+    <div class="col">
+      <div class="card"><img src="../hero/hero-01-diagnostic-command.webp"/></div>
+      <div class="note">1 — Precision Clean hero (diagnostic command)</div>
+    </div>
+    <div class="col">
+      <div class="card"><img src="../hero/hero-03-performance-bay.webp"/></div>
+      <div class="note">1 — Performance Signal hero (performance bay)</div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:12px">
+    <div class="col card"><img src="../service/service-01-vehicle-diagnostics.webp"/><div class="note">2 — vehicle diagnostics</div></div>
+    <div class="col card"><img src="../service/service-04-suspension-steering.webp"/><div class="note">3 — suspension/steering</div></div>
+    <div class="col card"><img src="../service/service-06-fleet-service.webp"/><div class="note">4 — fleet service</div></div>
+  </div>
+
+  <div class="header" style="margin-top:22px">Proposed color scheme & tokens</div>
+  <div class="pal">
+    <div>
+      <div class="sw" style="background:#FFFFFF;color:#000;border:1px solid #ddd">White</div>
+      <div class="token">--color-bg: #FFFFFF</div>
+    </div>
+    <div>
+      <div class="sw" style="background:#127A43">Green</div>
+      <div class="token">--color-primary: #127A43</div>
+    </div>
+    <div>
+      <div class="sw" style="background:#C62828">Red</div>
+      <div class="token">--color-accent: #C62828</div>
+    </div>
+    <div>
+      <div class="sw" style="background:#1F2937">Charcoal</div>
+      <div class="token">--color-text: #1F2937</div>
+    </div>
+    <div>
+      <div class="sw" style="background:#F5F7F6;color:#000">Soft Gray</div>
+      <div class="token">--color-surface: #F5F7F6</div>
+    </div>
+  </div>
+
+  <div style="margin-top:14px">
+    <span class="btn red">Primary (Book Now)</span>
+    <span class="btn green">Secondary (Get Quote)</span>
+    <span class="btn ghost">Ghost</span>
+  </div>
+
+  <div class="note">Notes: white is dominant; green used for trust & confirmation states; red reserved for main conversion CTA and urgent labels.</div>
+</div>
+</body>
+</html>

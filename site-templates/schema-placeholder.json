@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ service_name }}",
+  "description": "{{ short_description }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ provider_name }}",
+    "url": "{{ provider_url }}"
+  },
+  "serviceType": "{{ service_type }}",
+  "areaServed": "{{ area_served }}",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "{{ offer_name }}",
+      "price": "{{ price }}",
+      "priceCurrency": "{{ currency }}"
+    }
+  ],
+  "potentialAction": {
+    "@type": "Action",
+    "name": "Contact",
+    "target": "{{ cta_url }}"
+  }
+}

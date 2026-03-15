@@ -1,0 +1,1 @@
+Create a 3-step feature illustration set: discovery (map pin + magnifier), build (layered UI mock + code sheet), launch (site live with flag). Flat modern style, subtle gradients, limited palette, export as SVG and PNG variants.
