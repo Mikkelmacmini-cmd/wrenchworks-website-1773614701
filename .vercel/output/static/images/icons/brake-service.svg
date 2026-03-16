@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Rotor outer ring -->
+  <circle cx="44" cy="46" r="34" stroke="#2d2d2d" stroke-width="5" fill="none" stroke-dasharray="60 20" stroke-dashoffset="0"/>
+  <!-- Caliper (red arc, top-left) -->
+  <path d="M20 20 A34 34 0 0 1 58 16" stroke="#c0392b" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <!-- Rotor disc (red) -->
+  <circle cx="44" cy="46" r="18" fill="#c0392b"/>
+  <!-- Rotor hub (dark center) -->
+  <circle cx="44" cy="46" r="7" fill="#2d2d2d"/>
+  <!-- Lug bolt holes -->
+  <circle cx="44" cy="30" r="2.5" fill="white"/>
+  <circle cx="57" cy="38" r="2.5" fill="white"/>
+  <circle cx="53" cy="54" r="2.5" fill="white"/>
+  <circle cx="35" cy="54" r="2.5" fill="white"/>
+  <circle cx="31" cy="38" r="2.5" fill="white"/>
+  <!-- Wrench handle -->
+  <rect x="62" y="54" width="7" height="28" rx="3" fill="#2d2d2d" transform="rotate(-40 66 68)"/>
+  <!-- Wrench head (open end) -->
+  <path d="M72 42 Q82 36 84 46 Q86 56 76 58 L72 54 Q78 52 77 47 Q76 42 72 42Z" fill="#2d2d2d"/>
+</svg>
