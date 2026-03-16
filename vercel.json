@@ -1,5 +1,5 @@
 {
-  "installCommand": "cd wrenchworks-site && npm ci",
-  "buildCommand": "cd wrenchworks-site && npm run build",
-  "outputDirectory": "wrenchworks-site/out"
+  "outputDirectory": "wrenchworks-site/out",
+  "buildCommand": "echo 'pre-built static export'",
+  "installCommand": "echo 'no install needed'"
 }

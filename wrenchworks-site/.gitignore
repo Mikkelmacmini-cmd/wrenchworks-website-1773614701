@@ -2,4 +2,4 @@
 
 # Build outputs — let Vercel build these
 .next/
-out/
+# out/ — committed intentionally for Vercel static serving

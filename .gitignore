@@ -1,4 +1,4 @@
 .vercel
 wrenchworks-site/node_modules/
 wrenchworks-site/.next/
-wrenchworks-site/out/
+# wrenchworks-site/out/ — committed intentionally for Vercel static serving
