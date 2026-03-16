@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/JxSVriBFqezUYesg0oiRu/_buildManifest.js",
-    "static/JxSVriBFqezUYesg0oiRu/_ssgManifest.js"
+    "static/ffEbWliQYDBezYbbnUq-o/_buildManifest.js",
+    "static/ffEbWliQYDBezYbbnUq-o/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -22,7 +22,7 @@
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/css/dabece8b5e3be3d2.css",
+      "static/css/743bfbb56a9580d9.css",
       "static/chunks/pages/_app-2dfd096757008a0f.js"
     ],
     "/_error": [
@@ -45,6 +45,12 @@
       "static/chunks/main-7e15bfcfb5189b8e.js",
       "static/chunks/968-171ca8ded03c6e81.js",
       "static/chunks/pages/contact-7318deecbdd26546.js"
+    ],
+    "/preview/autotrek": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-7a7e500878b44665.js",
+      "static/chunks/main-7e15bfcfb5189b8e.js",
+      "static/chunks/pages/preview/autotrek-5592ff1cd8f4793d.js"
     ],
     "/services": [
       "static/chunks/webpack-ee7e63bc15b31913.js",

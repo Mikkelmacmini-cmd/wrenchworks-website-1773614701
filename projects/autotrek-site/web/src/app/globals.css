@@ -1,5 +1,21 @@
 @import "tailwindcss";
+
 :root { color-scheme: light; }
-body { font-family: Inter, Arial, sans-serif; color:#111827; }
-h1,h2,h3 { font-family: Montserrat, Inter, sans-serif; }
-section { scroll-margin-top: 90px; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: Montserrat, Inter, system-ui, sans-serif;
+}
+
+section { scroll-margin-top: 80px; }
+
+.hero-char {
+  display: inline-block;
+}

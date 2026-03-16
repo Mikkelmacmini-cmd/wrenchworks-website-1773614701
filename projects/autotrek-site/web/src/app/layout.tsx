@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const schema = {"@context": "https://schema.org","@type": "AutoRepair",name: siteConfig.name,telephone: siteConfig.phoneDisplay,address: {"@type": "PostalAddress",streetAddress: "8161 S Grant Way",addressLocality: "Littleton",addressRegion: "CO",postalCode: "80122"},openingHours: "Mo-Fr 09:00-17:00"};
-  return (<html lang="en"><body className="bg-white pb-24 md:pb-0"><Header /><main id="main">{children}</main><Footer /><MobileStickyBar /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></body></html>);
+  return (<html lang="en"><body className="bg-white pb-20 md:pb-0"><Header /><main id="main">{children}</main><Footer /><MobileStickyBar /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></body></html>);
 }
