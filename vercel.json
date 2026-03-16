@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd wrenchworks-site && npm install && npm run build",
-  "outputDirectory": "wrenchworks-site/out",
-  "installCommand": "echo 'install handled in buildCommand'"
+  "installCommand": "cd wrenchworks-site && npm ci",
+  "buildCommand": "cd wrenchworks-site && npm run build",
+  "outputDirectory": "wrenchworks-site/out"
 }
