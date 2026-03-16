@@ -55,8 +55,16 @@ export default function CaseStudies() {
   return (
     <div>
       <Head>
-        <title>Case Studies — WrenchWorks Digital</title>
+        <title>Case Studies | WrenchWorks Digital</title>
         <meta name="description" content="Real results for auto repair shops: +340% traffic, #1 Google Maps ranking, 2x phone calls." />
+        <link rel="canonical" href="https://www.wrenchworksdigital.com/case-studies/" />
+        <meta property="og:title" content="Case Studies | WrenchWorks Digital" />
+        <meta property="og:description" content="Real results for auto repair shops: +340% traffic, #1 Google Maps ranking, 2x phone calls." />
+        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
+        <meta property="og:url" content="https://www.wrenchworksdigital.com/case-studies" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WrenchWorks Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <Header />

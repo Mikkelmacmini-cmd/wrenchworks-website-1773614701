@@ -1,13 +1,36 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    const data = new FormData(form)
+    await fetch('https://formspree.io/f/xwplgqzv', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    })
+    setSubmitted(true)
+  }
+
   return (
     <div>
       <Head>
-        <title>Contact — WrenchWorks Digital</title>
+        <title>Contact | WrenchWorks Digital</title>
         <meta name="description" content="Get your free shop growth plan. Fill out the form and we will be in touch within 1 business day." />
+        <link rel="canonical" href="https://www.wrenchworksdigital.com/contact/" />
+        <meta property="og:title" content="Contact | WrenchWorks Digital" />
+        <meta property="og:description" content="Get your free shop growth plan. Fill out the form and we will be in touch within 1 business day." />
+        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
+        <meta property="og:url" content="https://www.wrenchworksdigital.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WrenchWorks Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <Header />
@@ -27,13 +50,16 @@ export default function Contact() {
             <h2 className="text-2xl font-extrabold mb-2" style={{ color: '#1a2332' }}>Get Your Free Growth Plan</h2>
             <p className="text-gray-500 text-sm mb-8">No pitch. No pressure. Just a clear look at how to grow your shop online.</p>
 
+            {submitted ? (
+              <div className="py-8 text-center">
+                <p className="text-green-600 font-bold text-lg">Thanks! We will be in touch within 1 business day.</p>
+              </div>
+            ) : (
             <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
+              onSubmit={handleSubmit}
               className="flex flex-col gap-5"
             >
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="_subject" value="New WrenchWorks Lead" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-1">
@@ -114,6 +140,7 @@ export default function Contact() {
                 We respond within 1 business day. No spam, ever.
               </p>
             </form>
+            )}
           </div>
         </div>
       </section>

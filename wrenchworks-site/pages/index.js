@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
@@ -40,11 +41,33 @@ const testimonials = [
 ]
 
 export default function Home() {
+  const [heroFormSent, setHeroFormSent] = useState(false)
+
+  async function handleHeroSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    const data = new FormData(form)
+    await fetch('https://formspree.io/f/xwplgqzv', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    })
+    setHeroFormSent(true)
+  }
+
   return (
     <div>
       <Head>
-        <title>WrenchWorks Digital — More Booked Appointments for Auto Repair Shops</title>
-        <meta name="description" content="We help auto repair shops dominate local search, convert more visitors, and fill their bays." />
+        <title>WrenchWorks Digital | Auto Repair Marketing Agency</title>
+        <meta name="description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
+        <link rel="canonical" href="https://www.wrenchworksdigital.com/" />
+        <meta property="og:title" content="WrenchWorks Digital | Auto Repair Marketing Agency" />
+        <meta property="og:description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
+        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
+        <meta property="og:url" content="https://www.wrenchworksdigital.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WrenchWorks Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <Header />
@@ -82,8 +105,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Hero Lead Form — floats over hero/services boundary */}
+      <div className="relative z-20 -mt-16 sm:-mt-20 px-4 sm:px-6 pb-0">
+        <div
+          className="max-w-3xl mx-auto rounded-2xl p-6 sm:p-8"
+          style={{
+            backgroundColor: '#1a2332',
+            boxShadow: '0 20px 60px rgba(0,0,0,0.35)',
+            border: '1px solid rgba(249,115,22,0.3)',
+          }}
+        >
+          {heroFormSent ? (
+            <div className="text-center py-6">
+              <p className="text-green-400 font-bold text-lg">Thanks! We will be in touch within 1 business day.</p>
+            </div>
+          ) : (
+            <>
+              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-1 text-center">Get My Free Growth Plan</h3>
+              <p className="text-gray-400 text-sm text-center mb-6">No spam. We respond within 1 business day.</p>
+              <form onSubmit={handleHeroSubmit} className="flex flex-col gap-4">
+                <input type="hidden" name="_subject" value="New WrenchWorks Lead (Hero Form)" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="first_name"
+                    required
+                    placeholder="First Name"
+                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Email Address"
+                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  />
+                  <input
+                    type="text"
+                    name="shop_city"
+                    required
+                    placeholder="What city is your shop in?"
+                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  style={{ backgroundColor: '#f97316' }}
+                  className="w-full py-4 rounded-lg text-white font-bold text-base hover:opacity-90 transition-opacity mt-1"
+                >
+                  Get My Free Growth Plan
+                </button>
+                <p className="text-center text-xs text-gray-500">No spam. We respond within 1 business day.</p>
+              </form>
+            </>
+          )}
+        </div>
+      </div>
+
       {/* Services */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" style={{ paddingTop: '5rem' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: '#1a2332' }}>What We Do</h2>

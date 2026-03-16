@@ -65,8 +65,16 @@ export default function Services() {
   return (
     <div>
       <Head>
-        <title>Services — WrenchWorks Digital</title>
+        <title>Services | WrenchWorks Digital</title>
         <meta name="description" content="Digital marketing services for auto repair shops: website design, local SEO, Google Business Profile, review funnels, and managed hosting." />
+        <link rel="canonical" href="https://www.wrenchworksdigital.com/services/" />
+        <meta property="og:title" content="Services | WrenchWorks Digital" />
+        <meta property="og:description" content="Digital marketing services for auto repair shops: website design, local SEO, Google Business Profile, review funnels, and managed hosting." />
+        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
+        <meta property="og:url" content="https://www.wrenchworksdigital.com/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WrenchWorks Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <Header />
