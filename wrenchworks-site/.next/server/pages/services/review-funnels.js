@@ -53,21 +53,42 @@ var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 
 
 function Reviews({ copy }) {
-    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-        className: "max-w-4xl mx-auto p-6",
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime.jsx((head_default()), {
                 children: /*#__PURE__*/ jsx_runtime.jsx("title", {
                     children: "Review Funnels — WrenchWorks"
                 })
             }),
-            /*#__PURE__*/ jsx_runtime.jsx("h1", {
-                className: "text-3xl font-bold",
-                children: "Review Funnels that build trust and rankings"
+            /*#__PURE__*/ jsx_runtime.jsx("div", {
+                style: {
+                    backgroundColor: "#1a2332"
+                },
+                className: "px-6 pt-8 pb-0",
+                children: /*#__PURE__*/ jsx_runtime.jsx("div", {
+                    className: "max-w-4xl mx-auto",
+                    children: /*#__PURE__*/ jsx_runtime.jsx("img", {
+                        src: "/images/review_funnel_diagram.png",
+                        className: "w-full max-h-96 object-cover rounded-lg shadow-lg",
+                        alt: "Review Funnels"
+                    })
+                })
             }),
             /*#__PURE__*/ jsx_runtime.jsx("div", {
-                className: "mt-4 whitespace-pre-line",
-                children: copy
+                className: "bg-white",
+                children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    className: "max-w-4xl mx-auto p-6",
+                    children: [
+                        /*#__PURE__*/ jsx_runtime.jsx("h1", {
+                            className: "text-3xl font-bold",
+                            children: "Review Funnels that build trust and rankings"
+                        }),
+                        /*#__PURE__*/ jsx_runtime.jsx("div", {
+                            className: "mt-4 whitespace-pre-line",
+                            children: copy
+                        })
+                    ]
+                })
             })
         ]
     });

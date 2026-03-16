@@ -1,15 +1,15 @@
 {
-  "/case-studies": "pages/case-studies.html",
-  "/contact": "pages/contact.html",
-  "/": "pages/index.html",
-  "/services": "pages/services.html",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/case-studies": "pages/case-studies.html",
+  "/": "pages/index.html",
+  "/contact": "pages/contact.html",
+  "/services": "pages/services.html",
   "/services/gbp-optimization": "pages/services/gbp-optimization.html",
   "/services/local-seo": "pages/services/local-seo.html",
   "/services/managed-hosting": "pages/services/managed-hosting.html",
-  "/services/website-build": "pages/services/website-build.js",
   "/services/review-funnels": "pages/services/review-funnels.js",
+  "/services/website-build": "pages/services/website-build.js",
   "/404": "pages/404.html"
 }

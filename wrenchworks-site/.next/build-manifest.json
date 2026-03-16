@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/7cyGTYHc_OG0xhjPGn1Sz/_buildManifest.js",
-    "static/7cyGTYHc_OG0xhjPGn1Sz/_ssgManifest.js"
+    "static/JxSVriBFqezUYesg0oiRu/_buildManifest.js",
+    "static/JxSVriBFqezUYesg0oiRu/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -16,13 +16,13 @@
       "static/chunks/main-7e15bfcfb5189b8e.js",
       "static/chunks/968-171ca8ded03c6e81.js",
       "static/chunks/721-8e1e605d93f9ae2d.js",
-      "static/chunks/pages/index-f7dffee9171ad60b.js"
+      "static/chunks/pages/index-19149437a8c30829.js"
     ],
     "/_app": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/css/d387700e3e0da3de.css",
+      "static/css/dabece8b5e3be3d2.css",
       "static/chunks/pages/_app-2dfd096757008a0f.js"
     ],
     "/_error": [
@@ -58,31 +58,31 @@
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/chunks/pages/services/gbp-optimization-fbbe3d419a5fe0f2.js"
+      "static/chunks/pages/services/gbp-optimization-1380426a17e329d4.js"
     ],
     "/services/local-seo": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/chunks/pages/services/local-seo-ef2cc743f661165b.js"
+      "static/chunks/pages/services/local-seo-6c461cf05bd35c08.js"
     ],
     "/services/managed-hosting": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/chunks/pages/services/managed-hosting-779dab054f745da1.js"
+      "static/chunks/pages/services/managed-hosting-7d10863ab7896ce1.js"
     ],
     "/services/review-funnels": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/chunks/pages/services/review-funnels-a21eed1b9a5681a5.js"
+      "static/chunks/pages/services/review-funnels-4ce7b98c933fd113.js"
     ],
     "/services/website-build": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-7e15bfcfb5189b8e.js",
-      "static/chunks/pages/services/website-build-f02e9d12b9013597.js"
+      "static/chunks/pages/services/website-build-b193b44ce81f75aa.js"
     ]
   },
   "ampFirstPages": []
