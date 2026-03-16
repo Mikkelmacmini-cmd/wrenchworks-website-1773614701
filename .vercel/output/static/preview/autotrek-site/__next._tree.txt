@@ -1,3 +1,3 @@
 :HL["/preview/autotrek-site/_next/static/chunks/1380224544f5bfb4.css","style"]
 :HL["/images/mechanic-1.jpg","image"]
-0:{"buildId":"Ccr9t_jvA1xYoDc1-r3kZ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"zACe7fLNDWu0lzLTPVcQP","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
