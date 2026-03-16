@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Engine block body -->
+  <rect x="9" y="20" width="46" height="28" rx="4" stroke="#c0392b" stroke-width="3.5" fill="none"/>
+  <!-- Top tabs -->
+  <rect x="19" y="13" width="9" height="9" rx="2" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <rect x="36" y="13" width="9" height="9" rx="2" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <!-- Left side connector -->
+  <rect x="1" y="26" width="9" height="10" rx="2" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <!-- Right side connector -->
+  <rect x="54" y="26" width="9" height="10" rx="2" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <!-- Lightning bolt inside -->
+  <path d="M35 22L27 34h7l-4 11 13-17h-8l5-8z" fill="#c0392b"/>
+</svg>
