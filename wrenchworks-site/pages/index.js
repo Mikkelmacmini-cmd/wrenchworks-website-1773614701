@@ -1,259 +1,433 @@
-import { useState } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Head from "next/head";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-const services = [
-  {
-    icon: '🖥️',
-    title: 'Website Build & Design',
-    desc: 'Professional, fast, mobile-first sites built to convert local searchers into booked appointments.',
-    href: '/services',
-  },
-  {
-    icon: '📍',
-    title: 'Local SEO & Google Maps',
-    desc: 'Dominate the map pack in your city so customers find you first — not the shop down the street.',
-    href: '/services',
-  },
-  {
-    icon: '⭐',
-    title: 'Review Generation & Reputation',
-    desc: 'Automated systems that turn happy customers into 5-star reviews on autopilot.',
-    href: '/services',
-  },
-]
+// Animated stat counter
+function StatCounter({ target, suffix = "" }) {
+  const [count, setCount] = useState(0);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  useEffect(() => {
+    if (!inView) return;
+    const end = parseInt(target.replace(/[^0-9]/g, ""));
+    const duration = 1500;
+    const step = Math.ceil(end / (duration / 16));
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= end) { setCount(end); clearInterval(timer); }
+      else setCount(current);
+    }, 16);
+    return () => clearInterval(timer);
+  }, [inView, target]);
+  const prefix = target.startsWith("#") ? "#" : "";
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+}
 
-const journey = [
-  { img: '/images/scene-01.png', caption: '1. Customer has a problem' },
-  { img: '/images/scene-02.png', caption: '2. They search Google' },
-  { img: '/images/scene-03.png', caption: '3. They find your shop' },
-  { img: '/images/scene-04.png', caption: '4. They approve the quote' },
-  { img: '/images/scene-05.png', caption: '5. Keys returned, happy customer' },
-  { img: '/images/scene-06.png', caption: '6. They leave you a 5-star review' },
-]
+// Scroll-reveal wrapper
+function Reveal({ children, delay = 0, className = "" }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+// Animated headline - each letter staggered
+function AnimatedHeadline({ text, className = "" }) {
+  const lines = text.split("\n");
+  return (
+    <div className={className}>
+      {lines.map((line, li) => (
+        <div key={li} className="overflow-hidden">
+          {line.split("").map((char, ci) => (
+            <motion.span
+              key={ci}
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (li * line.length + ci) * 0.03 }}
+              style={{ display: char === " " ? "inline" : "inline-block" }}
+            >
+              {char === " " ? "\u00a0" : char}
+            </motion.span>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const solutions = [
+  {
+    title: "Website Build",
+    titlePunc: ["Website", " Build"],
+    description: "Beautiful, fast-loading websites designed to convert visitors into booked appointments. Mobile-first, shop-owner-friendly, and built to rank.",
+    image: "/images/hero_shop_owner_laptop.png",
+    href: "/services/website-build",
+  },
+  {
+    title: "Local SEO & Google Maps",
+    titlePunc: ["Local SEO", " & Maps"],
+    description: "Dominate the map pack and organic results for high-intent searches like 'oil change near me' and 'transmission repair [city]'.",
+    image: "/images/scene-02.png",
+    href: "/services/local-seo",
+  },
+  {
+    title: "Google Business Profile",
+    titlePunc: ["Google Business", " Profile"],
+    description: "Fully optimized GBP listings that surface your shop at the top of local results, complete with categories, photos, and posts.",
+    image: "/images/diagnostic_dashboard_mock.png",
+    href: "/services/gbp-optimization",
+  },
+  {
+    title: "Review Funnels & Reputation",
+    titlePunc: ["Review Funnels", " & Reputation"],
+    description: "Automated follow-up sequences that turn satisfied customers into 5-star reviewers — building trust and ranking signals simultaneously.",
+    image: "/images/review_funnel_diagram.png",
+    href: "/services/review-funnels",
+  },
+  {
+    title: "Managed Hosting & Support",
+    titlePunc: ["Managed Hosting", " & Support"],
+    description: "Enterprise-grade hosting, daily backups, security monitoring, and ongoing updates — so you never have to think about your website again.",
+    image: "/images/topdown_laptop_coffee_paperwork.png",
+    href: "/services/managed-hosting",
+  },
+];
+
+const steps = [
+  { num: "01", title: "Discovery", desc: "We learn your shop, market, and goals inside out." },
+  { num: "02", title: "Build & Launch", desc: "Website live in days. GBP optimized. Systems activated." },
+  { num: "03", title: "Rank & Grow", desc: "SEO compounds. Traffic climbs. Phones start ringing." },
+  { num: "04", title: "Reviews & Retain", desc: "Automated review funnels build trust on autopilot." },
+];
+
+const caseStudies = [
+  { shop: "All-Star Auto Repair", stat: "+340%", result: "organic traffic in 90 days", image: "/images/scene-01.png" },
+  { shop: "Greenfield Tire & Service", stat: "#1", result: "map pack ranking for 12 keywords", image: "/images/scene-02.png" },
+  { shop: "Metro Fleet Mechanics", stat: "4.9★", result: "average rating across 200+ reviews", image: "/images/scene-03.png" },
+];
 
 const testimonials = [
-  { quote: 'We went from page 3 to the #1 spot in 6 weeks.', author: 'Dave R.', shop: 'Denver Auto Care' },
-  { quote: 'Our phone calls doubled. Best investment we ever made.', author: 'Maria S.', shop: 'Precision Tune' },
-  { quote: 'The website looks incredible and actually converts.', author: 'Tom H.', shop: 'Eagle Auto' },
-]
+  { name: "Mike R.", shop: "All-Star Auto Repair", quote: "WrenchWorks tripled our organic traffic in three months. The phone doesn't stop ringing." },
+  { name: "Sandra K.", shop: "Greenfield Tire & Service", quote: "We hit #1 on Google Maps for every keyword we care about. Game changer." },
+  { name: "Dave P.", shop: "Metro Fleet Mechanics", quote: "The review funnel alone paid for itself in the first week. Incredible ROI." },
+];
 
 export default function Home() {
-  const [heroFormSent, setHeroFormSent] = useState(false)
-
-  async function handleHeroSubmit(e) {
-    e.preventDefault()
-    const form = e.target
-    const data = new FormData(form)
-    await fetch('https://formspree.io/f/xwplgqzv', {
-      method: 'POST',
-      body: data,
-      headers: { Accept: 'application/json' },
-    })
-    setHeroFormSent(true)
-  }
+  const [activeTab, setActiveTab] = useState("Testimonials");
 
   return (
-    <div>
+    <>
       <Head>
-        <title>WrenchWorks Digital | Auto Repair Marketing Agency</title>
-        <meta name="description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
-        <link rel="canonical" href="https://www.wrenchworksdigital.com/" />
-        <meta property="og:title" content="WrenchWorks Digital | Auto Repair Marketing Agency" />
-        <meta property="og:description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
-        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
-        <meta property="og:url" content="https://www.wrenchworksdigital.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="WrenchWorks Digital" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <title>WrenchWorks Digital — Auto Repair Marketing That Fills Bays</title>
+        <meta name="description" content="WrenchWorks Digital delivers website design, local SEO, Google Business Profile optimization, and review systems for auto repair shops." />
+        <meta property="og:title" content="WrenchWorks Digital — Auto Repair Marketing That Fills Bays" />
+        <meta property="og:description" content="From single-location shops to multi-bay operations, WrenchWorks Digital helps auto repair shops dominate local search." />
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
 
-      {/* Hero */}
-      <section
-        className="relative min-h-screen flex items-center justify-center"
-        style={{
-          backgroundImage: "url('/images/hero_shop_owner_laptop.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(26,35,50,0.65)' }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-24">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            More Booked Appointments.<br />
-            <span style={{ color: '#f97316' }}>Less Guesswork.</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10">
-            We help auto repair shops dominate local search, convert more visitors, and fill their bays.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/contact"
-              style={{ backgroundColor: '#f97316' }}
-              className="px-8 py-4 rounded-lg text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
-            >
-              Get Your Free Growth Plan
-            </Link>
-            <Link href="/case-studies" className="text-white font-semibold text-lg hover:text-orange-400 transition-colors">
-              See Our Work →
-            </Link>
+      {/* ── HERO ────────────────────────────────────────────────── */}
+      <section className="min-h-screen bg-white flex flex-col justify-center pt-16 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 w-full py-24">
+          {/* Label */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-medium text-gray-500 mb-8 tracking-wide uppercase"
+          >
+            Auto Repair Marketing
+          </motion.p>
+
+          {/* Headline */}
+          <div className="text-7xl lg:text-8xl font-black tracking-tight text-gray-900 leading-none mb-4 relative">
+            <AnimatedHeadline text={"Where Growth"} className="block" />
+            {/* "Meets The" line with floating images */}
+            <div className="relative inline-block">
+              <AnimatedHeadline text={"Meets The"} className="block" />
+              {/* Floating circle images */}
+              <img src="/images/scene-01.png" className="animate-float hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 64, height: 64, top: "-30px", left: "320px" }} alt="" />
+              <img src="/images/scene-02.png" className="animate-float-delay hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 52, height: 52, top: "20px", left: "430px" }} alt="" />
+              <img src="/images/scene-03.png" className="animate-float-delay2 hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 70, height: 70, top: "-20px", left: "540px" }} alt="" />
+              <img src="/images/scene-04.png" className="animate-float hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 56, height: 56, top: "30px", left: "650px" }} alt="" />
+            </div>
+            <AnimatedHeadline text={"Shop Floor."} className="block" />
+          </div>
+
+          {/* Body copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mt-10 max-w-2xl"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/images/logo.png" className="h-8 w-auto" alt="" />
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              From single-location shops to multi-bay operations, WrenchWorks Digital delivers website design, local SEO, and review systems that fill bays and grow revenue.
+            </p>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="flex flex-wrap gap-4 mt-8"
+          >
+            <a href="/#solutions" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3.5 rounded-full transition-colors duration-200">
+              Discover Our Solutions
+            </a>
+            <a href="/#results" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold px-7 py-3.5 rounded-full transition-colors duration-200">
+              See Our Results
+            </a>
+          </motion.div>
+
+          {/* Scroll hint */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="mt-16 flex flex-col items-start gap-1"
+          >
+            <span className="text-sm text-gray-400">↓ Scroll for more</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── SOLUTIONS ───────────────────────────────────────────── */}
+      <section id="solutions" className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
+            <Reveal>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                Smart<span className="text-orange-500">.</span> Scalable<span className="text-orange-500">.</span> <span className="text-orange-500">Local.</span>
+              </h2>
+              <p className="mt-4 text-gray-600 max-w-lg">Our systems empower shop owners to attract more customers, convert more calls, and dominate their local market.</p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <a href="/#solutions" className="text-sm font-semibold text-gray-900 hover:text-orange-500 transition-colors">Discover Our Solutions →</a>
+            </Reveal>
+          </div>
+
+          {/* Alternating solution rows */}
+          {solutions.map((sol, i) => (
+            <div key={i} className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-20 items-center py-16 ${i < solutions.length - 1 ? "border-b border-gray-100" : ""}`}>
+              <Reveal className="flex-1" delay={0.1}>
+                <div>
+                  <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
+                    {sol.titlePunc[0]}<span className="text-orange-500">.</span>{sol.titlePunc[1]}<span className="text-orange-500">.</span>
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6 max-w-md">{sol.description}</p>
+                  <Link href={sol.href} className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors">Learn More →</Link>
+                </div>
+              </Reveal>
+              <Reveal className="flex-1 w-full" delay={0.2}>
+                <div className="rounded-2xl overflow-hidden bg-gray-100 aspect-video">
+                  <img src={sol.image} className="w-full h-full object-cover" alt={sol.title} />
+                </div>
+              </Reveal>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── TRANSFORMATIVE SECTION ──────────────────────────────── */}
+      <section className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight mb-6">
+                Transformative<span className="text-orange-500">.</span> Proven<span className="text-orange-500">.</span> Local<span className="text-orange-500">.</span>
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-8 max-w-lg">
+                We're not a generic agency. We're shop owners' secret weapon — purpose-built systems for auto repair businesses that want to dominate their local market.
+              </p>
+              <Link href="/case-studies" className="text-sm font-semibold text-gray-900 hover:text-orange-500 transition-colors">About Us →</Link>
+            </Reveal>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                { title: "Results-Driven", desc: "We measure everything. If it doesn't fill bays, we fix it." },
+                { title: "Fast Launch", desc: "Live in days, not months. No long contracts." },
+                { title: "Full Service", desc: "One vendor for website, SEO, reviews, and hosting." },
+              ].map((card, i) => (
+                <Reveal key={i} delay={i * 0.1}>
+                  <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 cursor-default">
+                    <h4 className="font-black text-gray-900 text-lg mb-2">{card.title}<span className="text-orange-500">.</span></h4>
+                    <p className="text-gray-500 text-sm">{card.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Hero Lead Form — floats over hero/services boundary */}
-      <div className="relative z-20 -mt-16 sm:-mt-20 px-4 sm:px-6 pb-0">
-        <div
-          className="max-w-3xl mx-auto rounded-2xl p-6 sm:p-8"
-          style={{
-            backgroundColor: '#1a2332',
-            boxShadow: '0 20px 60px rgba(0,0,0,0.35)',
-            border: '1px solid rgba(249,115,22,0.3)',
-          }}
-        >
-          {heroFormSent ? (
-            <div className="text-center py-6">
-              <p className="text-green-400 font-bold text-lg">Thanks! We will be in touch within 1 business day.</p>
-            </div>
-          ) : (
-            <>
-              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-1 text-center">Get My Free Growth Plan</h3>
-              <p className="text-gray-400 text-sm text-center mb-6">No spam. We respond within 1 business day.</p>
-              <form onSubmit={handleHeroSubmit} className="flex flex-col gap-4">
-                <input type="hidden" name="_subject" value="New WrenchWorks Lead (Hero Form)" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    name="first_name"
-                    required
-                    placeholder="First Name"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Email Address"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                  />
-                  <input
-                    type="text"
-                    name="shop_city"
-                    required
-                    placeholder="What city is your shop in?"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                  />
+      {/* ── STATS ───────────────────────────────────────────────── */}
+      <section className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <Reveal>
+              <div className="relative">
+                <img src="/images/scene-03.png" className="animate-float absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 80, height: 80, top: "-20px", right: "40px" }} alt="" />
+                <p className="text-7xl lg:text-8xl font-black text-gray-900">
+                  <StatCounter target="340" suffix="%" />
+                </p>
+                <p className="text-xl font-semibold text-gray-600 mt-2">Average Traffic Growth</p>
+                <p className="text-sm text-gray-400 mt-1">across client websites in first 90 days</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <div className="relative">
+                <img src="/images/scene-05.png" className="animate-float-delay absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 70, height: 70, top: "-10px", right: "60px" }} alt="" />
+                <p className="text-7xl lg:text-8xl font-black text-gray-900">
+                  <StatCounter target="#1" />
+                </p>
+                <p className="text-xl font-semibold text-gray-600 mt-2">Map Pack Rankings Achieved</p>
+                <p className="text-sm text-gray-400 mt-1">for competitive auto repair keywords</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ────────────────────────────────────────── */}
+      <section id="process" style={{ backgroundColor: "#1a2332" }} className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <Reveal>
+              <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+                How<span className="text-orange-500">.</span> It<span className="text-orange-500">.</span> Works<span className="text-orange-500">.</span>
+              </h2>
+              <p className="mt-4 text-gray-400 max-w-lg">WrenchWorks' plug-and-play marketing model flexes with your shop's needs, giving you expert support without the overhead.</p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <a href="/#solutions" className="text-sm font-semibold text-gray-400 hover:text-white transition-colors">Our Solutions →</a>
+            </Reveal>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((step, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <div className="border border-gray-700 rounded-2xl p-6 hover:border-orange-500 transition-colors duration-200">
+                  <p className="text-orange-500 font-black text-2xl mb-4">{step.num}</p>
+                  <h3 className="text-white font-black text-xl mb-2">{step.title}</h3>
+                  <p className="text-gray-400 text-sm">{step.desc}</p>
                 </div>
-                <button
-                  type="submit"
-                  style={{ backgroundColor: '#f97316' }}
-                  className="w-full py-4 rounded-lg text-white font-bold text-base hover:opacity-90 transition-opacity mt-1"
-                >
-                  Get My Free Growth Plan
-                </button>
-                <p className="text-center text-xs text-gray-500">No spam. We respond within 1 business day.</p>
-              </form>
-            </>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── RESULTS / CASE STUDIES ──────────────────────────────── */}
+      <section id="results" className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <Reveal className="mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900">Our<span className="text-orange-500">.</span> Results<span className="text-orange-500">.</span></h2>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {caseStudies.map((cs, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <div className="border border-gray-200 rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                  <div className="aspect-video bg-gray-100">
+                    <img src={cs.image} className="w-full h-full object-cover" alt={cs.shop} />
+                  </div>
+                  <div className="p-6">
+                    <p className="text-sm font-medium text-gray-500 mb-2">{cs.shop}</p>
+                    <p className="text-3xl font-black text-orange-500 mb-1">{cs.stat}</p>
+                    <p className="text-gray-700 font-medium">{cs.result}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TABS SECTION ────────────────────────────────────────── */}
+      <section className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Tab headers */}
+          <div className="flex gap-1 mb-12 border-b border-gray-200">
+            {["Clients", "Awards", "Testimonials"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-3 text-sm font-semibold transition-colors ${activeTab === tab ? "text-gray-900 border-b-2 border-gray-900 -mb-px" : "text-gray-500 hover:text-gray-700"}`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {activeTab === "Clients" && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {["All-Star Auto Repair", "Greenfield Tire & Service", "Metro Fleet Mechanics", "Highway Pro Auto", "Desert Star Automotive", "Lakeside Car Care", "Prime Lube & Tune", "Summit Service Center"].map((name, i) => (
+                <div key={i} className="border border-gray-200 rounded-xl p-4 text-center text-sm font-medium text-gray-600 hover:border-orange-500 transition-colors">
+                  {name}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "Awards" && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {["Best Local SEO Agency 2024", "Top Auto Marketing Firm", "Google Partner Certified", "5-Star Client Reviews", "Industry Growth Award", "Fastest Launch Record"].map((award, i) => (
+                <div key={i} className="border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:shadow-md transition-all duration-200">
+                  <div className="text-3xl mb-3">🏆</div>
+                  <p className="font-bold text-gray-900 text-sm">{award}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "Testimonials" && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((t, i) => (
+                <div key={i} className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                  <p className="text-gray-700 leading-relaxed mb-6">"{t.quote}"</p>
+                  <div>
+                    <p className="font-black text-gray-900">{t.name}</p>
+                    <p className="text-sm text-gray-500">{t.shop}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </div>
-      </div>
-
-      {/* Services */}
-      <section className="py-20 bg-gray-50" style={{ paddingTop: '5rem' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: '#1a2332' }}>What We Do</h2>
-            <p className="text-gray-500 mt-3 text-lg max-w-xl mx-auto">Everything your shop needs to win online — under one roof.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((s) => (
-              <div
-                key={s.title}
-                className="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 border-b-4 border-transparent hover:border-orange-400 transition-all duration-200"
-              >
-                <div className="text-4xl">{s.icon}</div>
-                <h3 className="text-xl font-bold" style={{ color: '#1a2332' }}>{s.title}</h3>
-                <p className="text-gray-500 text-sm flex-1">{s.desc}</p>
-                <Link href={s.href} style={{ color: '#f97316' }} className="text-sm font-semibold hover:underline">
-                  Learn More →
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
-      {/* How It Works / Storyline */}
-      <section className="py-20" style={{ backgroundColor: '#1a2332' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">The Shop Owner Journey</h2>
-            <p className="text-gray-400 mt-3 text-lg">From problem to 5-star review — we help you win every step.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {journey.map((step) => (
-              <div key={step.caption} className="flex flex-col items-center gap-3">
-                <div className="w-full aspect-square rounded-xl overflow-hidden">
-                  <img
-                    src={step.img}
-                    alt={step.caption}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <p className="text-gray-300 text-xs sm:text-sm text-center font-medium">{step.caption}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: '#1a2332' }}>What Shop Owners Are Saying</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div key={t.author} className="bg-gray-50 rounded-xl p-8 flex flex-col gap-4 shadow-sm">
-                <div className="text-2xl" style={{ color: '#f97316' }}>&#8220;</div>
-                <p className="text-gray-700 text-base italic flex-1">{t.quote}</p>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: '#1a2332' }}>{t.author}</p>
-                  <p className="text-gray-400 text-sm">{t.shop}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Banner */}
-      <section style={{ backgroundColor: '#f97316' }} className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready to fill your bays?</h2>
-          <p className="text-white text-lg mb-8 opacity-90">Let's build a growth plan tailored to your shop — completely free.</p>
-          <Link
-            href="/contact"
-            style={{ backgroundColor: '#1a2332' }}
-            className="inline-block px-8 py-4 rounded-lg text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
-          >
-            Schedule a Free Call
-          </Link>
+      {/* ── CTA STRIP ───────────────────────────────────────────── */}
+      <section style={{ backgroundColor: "#1a2332" }} className="py-24">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <Reveal>
+            <h2 className="text-5xl lg:text-6xl font-black text-white mb-4">
+              Streamline Your<br /><span className="text-orange-500">Growth.</span>
+            </h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">Discover how our shop marketing solutions can adapt to your needs.</p>
+            <Link href="/contact" className="bg-white text-gray-900 font-bold px-8 py-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200">
+              Contact Us →
+            </Link>
+          </Reveal>
         </div>
       </section>
 
       <Footer />
-    </div>
-  )
+    </>
+  );
 }

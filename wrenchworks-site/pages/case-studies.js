@@ -1,145 +1,90 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Head from "next/head";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+function Reveal({ children, delay = 0, className = "" }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  return (
+    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay }} className={className}>
+      {children}
+    </motion.div>
+  );
+}
 
 const cases = [
-  {
-    client: 'Denver Auto Care',
-    location: 'Denver, CO',
-    image: '/images/topdown_laptop_coffee_paperwork.png',
-    result: '+340% Organic Traffic',
-    period: '4 Months',
-    challenge: 'Denver Auto Care was invisible online — no Google presence, an outdated website, and losing customers to newer shops with better SEO.',
-    solution: 'We rebuilt their website from scratch, optimized their Google Business Profile, and launched a full local SEO campaign targeting high-intent keywords in the Denver metro.',
-    metrics: [
-      { label: 'Organic Traffic', value: '+340%' },
-      { label: 'Google Map Pack', value: 'Top 3' },
-      { label: 'Monthly Leads', value: '3× increase' },
-    ],
-    color: '#1a2332',
-  },
-  {
-    client: 'Precision Tune Mesa',
-    location: 'Mesa, AZ',
-    image: '/images/diagnostic_dashboard_mock.png',
-    result: '#1 Google Maps Ranking',
-    period: '6 Weeks',
-    challenge: 'Precision Tune was stuck at position #7 in the local map pack despite being one of the best shops in Mesa. They were losing walk-ins to competitors with less experience.',
-    solution: 'We performed a full Google Business Profile audit, built 40+ local citations, and ran a review funnel that collected 38 new 5-star reviews in the first two months.',
-    metrics: [
-      { label: 'Map Pack Position', value: '#1' },
-      { label: 'New Reviews', value: '38 in 60 days' },
-      { label: 'Time to Rank #1', value: '6 Weeks' },
-    ],
-    color: '#f97316',
-  },
-  {
-    client: 'Eagle Auto Colorado Springs',
-    location: 'Colorado Springs, CO',
-    image: '/images/virtual_meeting_shop_owner.png',
-    result: '2× Phone Call Volume',
-    period: '90 Days',
-    challenge: 'Eagle Auto had a dated website that drove almost no inbound calls. Customers would land on the page and immediately bounce to a competitor.',
-    solution: 'A full website rebuild with mobile-first design, click-to-call buttons, and a homepage built around local search intent doubled their inbound call volume within 90 days.',
-    metrics: [
-      { label: 'Phone Calls', value: '2× increase' },
-      { label: 'Bounce Rate', value: '−48%' },
-      { label: 'Page Speed Score', value: '94/100' },
-    ],
-    color: '#1a2332',
-  },
-]
+  { shop: "All-Star Auto Repair", location: "Phoenix, AZ", stat: "+340%", metric: "Organic Traffic", image: "/images/scene-01.png", desc: "A 3-bay independent shop struggling with online visibility. We rebuilt their website, optimized their GBP, and launched a local SEO campaign. In 90 days, organic traffic grew 340% and monthly calls doubled.", tags: ["Website Build", "Local SEO", "GBP"] },
+  { shop: "Greenfield Tire & Service", location: "Austin, TX", stat: "#1", metric: "Map Pack Ranking", image: "/images/scene-02.png", desc: "A tire and alignment shop competing against national chains. We focused on hyper-local content and GBP authority signals. They now rank #1 for 12 of their 15 target keywords.", tags: ["GBP Optimization", "Local SEO"] },
+  { shop: "Metro Fleet Mechanics", location: "Chicago, IL", stat: "4.9★", metric: "Average Rating (200+ reviews)", image: "/images/scene-03.png", desc: "A fleet service shop with a mixed reputation online. Our review funnel system turned satisfied customers into active reviewers. They went from 3.6 stars to 4.9 stars in 60 days.", tags: ["Review Funnels", "Reputation"] },
+  { shop: "Highway Pro Auto", location: "Denver, CO", stat: "2.4×", metric: "Lead Volume Increase", image: "/images/hero_shop_owner_laptop.png", desc: "A performance shop with no digital presence. We built their website from scratch with conversion-focused design. Lead volume more than doubled in the first month.", tags: ["Website Build", "Managed Hosting"] },
+  { shop: "Lakeside Car Care", location: "Nashville, TN", stat: "98%", metric: "Positive Review Rate", image: "/images/topdown_laptop_coffee_paperwork.png", desc: "A family-owned shop serving the same community for 30 years. Our review automation helped them capture the loyalty their customers already felt. 98% positive review rate achieved.", tags: ["Review Funnels"] },
+  { shop: "Summit Service Center", location: "Seattle, WA", stat: "60 days", metric: "Time to #1 Ranking", image: "/images/diagnostic_dashboard_mock.png", desc: "A newly opened shop that needed to establish authority fast. Combined GBP optimization, local citations, and content strategy got them to page 1 in just 60 days.", tags: ["Local SEO", "GBP Optimization"] },
+];
 
 export default function CaseStudies() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Case Studies | WrenchWorks Digital</title>
-        <meta name="description" content="Real results for auto repair shops: +340% traffic, #1 Google Maps ranking, 2x phone calls." />
-        <link rel="canonical" href="https://www.wrenchworksdigital.com/case-studies/" />
-        <meta property="og:title" content="Case Studies | WrenchWorks Digital" />
-        <meta property="og:description" content="Real results for auto repair shops: +340% traffic, #1 Google Maps ranking, 2x phone calls." />
-        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
-        <meta property="og:url" content="https://www.wrenchworksdigital.com/case-studies" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="WrenchWorks Digital" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <title>Case Studies — WrenchWorks Digital</title>
+        <meta name="description" content="Real results for real auto repair shops. See how WrenchWorks Digital grows traffic, rankings, and revenue." />
       </Head>
-
       <Header />
 
-      {/* Page Header */}
-      <section style={{ backgroundColor: '#1a2332' }} className="py-16 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">Case Studies</h1>
-          <p className="text-gray-300 text-lg">Real shops. Real results. Here is what we have helped our clients achieve.</p>
+      {/* Dark hero */}
+      <section style={{ backgroundColor: "#1a2332" }} className="pt-32 pb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-sm font-medium text-orange-500 mb-4 uppercase tracking-wide">Results</motion.p>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
+            Real Shops<span className="text-orange-500">.</span><br />Real Results<span className="text-orange-500">.</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="text-gray-400 text-lg max-w-xl">
+            Every client engagement is built around measurable outcomes. Here's what we've accomplished for shops like yours.
+          </motion.p>
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col gap-16">
-          {cases.map((c, i) => (
-            <div key={c.client} className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              {/* Hero Image */}
-              <div className="relative h-56 sm:h-72">
-                <img
-                  src={c.image}
-                  alt={c.client}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0" style={{ backgroundColor: `${c.color}cc` }} />
-                <div className="absolute inset-0 flex flex-col items-start justify-end p-8">
-                  <p className="text-sm font-semibold uppercase tracking-widest text-orange-300 mb-1">{c.location}</p>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white">{c.client}</h2>
-                  <p className="text-white text-lg font-bold mt-1" style={{ color: '#f97316' }}>{c.result} in {c.period}</p>
-                </div>
-              </div>
-
-              <div className="p-8">
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  {c.metrics.map((m) => (
-                    <div key={m.label} className="text-center p-4 rounded-xl" style={{ backgroundColor: '#f9fafb' }}>
-                      <p className="text-2xl font-extrabold" style={{ color: '#f97316' }}>{m.value}</p>
-                      <p className="text-xs text-gray-500 mt-1 font-medium">{m.label}</p>
+      {/* Case study grid */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cases.map((cs, i) => (
+              <Reveal key={i} delay={(i % 3) * 0.1}>
+                <div className="border border-gray-200 rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200 h-full flex flex-col">
+                  <div className="aspect-video bg-gray-100">
+                    <img src={cs.image} className="w-full h-full object-cover" alt={cs.shop} />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {cs.tags.map((tag, ti) => (
+                        <span key={ti} className="text-xs bg-orange-50 text-orange-600 font-semibold px-2.5 py-1 rounded-full">{tag}</span>
+                      ))}
                     </div>
-                  ))}
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: '#1a2332' }}>The Challenge</h3>
-                    <p className="text-gray-600 text-sm">{c.challenge}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: '#1a2332' }}>Our Solution</h3>
-                    <p className="text-gray-600 text-sm">{c.solution}</p>
+                    <p className="text-sm text-gray-500 mb-1">{cs.shop} — {cs.location}</p>
+                    <p className="text-4xl font-black text-orange-500 mb-1">{cs.stat}</p>
+                    <p className="text-sm font-semibold text-gray-700 mb-4">{cs.metric}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed flex-1">{cs.desc}</p>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section style={{ backgroundColor: '#f97316' }} className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">Your shop could be next.</h2>
-          <p className="text-white text-lg mb-8 opacity-90">Let us show you what is possible with a free growth plan tailored to your market.</p>
-          <Link
-            href="/contact"
-            style={{ backgroundColor: '#1a2332' }}
-            className="inline-block px-8 py-4 rounded-lg text-white font-bold text-lg hover:opacity-90 transition-opacity"
-          >
-            Get My Free Growth Plan
-          </Link>
+      <section style={{ backgroundColor: "#1a2332" }} className="py-24">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <Reveal>
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">Your Shop<span className="text-orange-500">.</span> Next<span className="text-orange-500">.</span></h2>
+            <p className="text-gray-400 mb-8 max-w-md mx-auto">Ready to become our next success story? Let's talk.</p>
+            <Link href="/contact" className="bg-white text-gray-900 font-bold px-8 py-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200">Start Your Growth →</Link>
+          </Reveal>
         </div>
       </section>
 
       <Footer />
-    </div>
-  )
+    </>
+  );
 }
