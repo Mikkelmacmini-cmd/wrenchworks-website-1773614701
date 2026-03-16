@@ -26,31 +26,18 @@ export default function AutoTrekPreview() {
     }
   }
 
+  useEffect(() => {
+    if (unlocked) {
+      window.location.href = '/preview/autotrek-site/'
+    }
+  }, [unlocked])
+
   if (unlocked) {
     return (
       <>
-        <Head>
-          <title>AutoTrek Service Center — Preview</title>
-        </Head>
-        <div style={{ margin: 0, padding: 0, background: '#0f1a0f' }}>
-          <div style={{
-            background: '#0f1a0f',
-            color: 'white',
-            padding: '8px 20px',
-            fontSize: '12px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontFamily: 'monospace'
-          }}>
-            <span>🔒 WrenchWorks Digital — Client Preview: AutoTrek Service Center</span>
-            <span style={{ opacity: 0.6 }}>Not indexed • For review only</span>
-          </div>
-          <iframe
-            src="/preview/autotrek/index.html"
-            style={{ width: '100%', height: 'calc(100vh - 36px)', border: 'none', display: 'block' }}
-            title="AutoTrek Service Center Preview"
-          />
+        <Head><title>Redirecting…</title></Head>
+        <div style={{ minHeight: '100vh', background: '#0f1a0f', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontFamily: 'sans-serif' }}>
+          Loading preview…
         </div>
       </>
     )
