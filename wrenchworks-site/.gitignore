@@ -1,0 +1,5 @@
+.vercel
+
+# Build outputs — let Vercel build these
+.next/
+out/
