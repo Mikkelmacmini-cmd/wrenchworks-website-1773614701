@@ -112,20 +112,7 @@ const steps = [
   { num: "04", title: "Reviews & Retain", desc: "Automated review funnels build trust on autopilot." },
 ];
 
-const caseStudies = [
-  { shop: "All-Star Auto Repair", stat: "+340%", result: "organic traffic in 90 days", image: "/images/scene-01.png" },
-  { shop: "Greenfield Tire & Service", stat: "#1", result: "map pack ranking for 12 keywords", image: "/images/scene-02.png" },
-  { shop: "Metro Fleet Mechanics", stat: "4.9★", result: "average rating across 200+ reviews", image: "/images/scene-03.png" },
-];
-
-const testimonials = [
-  { name: "Mike R.", shop: "All-Star Auto Repair", quote: "WrenchWorks tripled our organic traffic in three months. The phone doesn't stop ringing." },
-  { name: "Sandra K.", shop: "Greenfield Tire & Service", quote: "We hit #1 on Google Maps for every keyword we care about. Game changer." },
-  { name: "Dave P.", shop: "Metro Fleet Mechanics", quote: "The review funnel alone paid for itself in the first week. Incredible ROI." },
-];
-
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("Testimonials");
 
   return (
     <>
@@ -334,81 +321,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── RESULTS / CASE STUDIES ──────────────────────────────── */}
+      {/* ── WHAT TO EXPECT ──────────────────────────────────────── */}
       <section id="results" className="bg-white py-24 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900">Our<span className="text-orange-500">.</span> Results<span className="text-orange-500">.</span></h2>
+          <Reveal className="mb-4">
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900">What to<strong className="text-orange-500">.</strong> Expect<strong className="text-orange-500">.</strong></h2>
+          </Reveal>
+          <Reveal className="mb-16" delay={0.1}>
+            <p className="text-gray-600 text-lg">Most shops start seeing measurable movement within the first 90 days.</p>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudies.map((cs, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <div className="border border-gray-200 rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                  <div className="aspect-video bg-gray-100">
-                    <img src={cs.image} className="w-full h-full object-cover" alt={cs.shop} />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm font-medium text-gray-500 mb-2">{cs.shop}</p>
-                    <p className="text-3xl font-black text-orange-500 mb-1">{cs.stat}</p>
-                    <p className="text-gray-700 font-medium">{cs.result}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+            <Reveal delay={0.1}>
+              <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                <p className="text-sm font-semibold text-orange-500 mb-3">Week 1–2</p>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Live & Optimized</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Your new site is live, indexed, and technically optimized. Google Business Profile is claimed, verified, and fully built out.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                <p className="text-sm font-semibold text-orange-500 mb-3">Days 30–60</p>
+                <h3 className="text-xl font-black text-gray-900 mb-3">Ranking Movement</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Local keyword rankings start climbing. You appear in the map pack for your primary services. Review requests go out automatically.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                <p className="text-sm font-semibold text-orange-500 mb-3">Days 60–90</p>
+                <h3 className="text-xl font-black text-gray-900 mb-3">More Calls, More Bays</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Phone call volume increases from organic traffic. Reviews build social proof. You stop relying on word-of-mouth alone.</p>
+              </div>
+            </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* ── TABS SECTION ────────────────────────────────────────── */}
-      <section className="bg-white py-24 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Tab headers */}
-          <div className="flex gap-1 mb-12 border-b border-gray-200">
-            {["Clients", "Awards", "Testimonials"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-6 py-3 text-sm font-semibold transition-colors ${activeTab === tab ? "text-gray-900 border-b-2 border-gray-900 -mb-px" : "text-gray-500 hover:text-gray-700"}`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          {activeTab === "Clients" && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {["All-Star Auto Repair", "Greenfield Tire & Service", "Metro Fleet Mechanics", "Highway Pro Auto", "Desert Star Automotive", "Lakeside Car Care", "Prime Lube & Tune", "Summit Service Center"].map((name, i) => (
-                <div key={i} className="border border-gray-200 rounded-xl p-4 text-center text-sm font-medium text-gray-600 hover:border-orange-500 transition-colors">
-                  {name}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === "Awards" && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {["Best Local SEO Agency 2024", "Top Auto Marketing Firm", "Google Partner Certified", "5-Star Client Reviews", "Industry Growth Award", "Fastest Launch Record"].map((award, i) => (
-                <div key={i} className="border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                  <div className="text-3xl mb-3">🏆</div>
-                  <p className="font-bold text-gray-900 text-sm">{award}</p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === "Testimonials" && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <div key={i} className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                  <p className="text-gray-700 leading-relaxed mb-6">"{t.quote}"</p>
-                  <div>
-                    <p className="font-black text-gray-900">{t.name}</p>
-                    <p className="text-sm text-gray-500">{t.shop}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          <Reveal className="mt-10" delay={0.2}>
+            <p className="text-sm text-gray-400 italic">Results vary by market and competition. We set honest expectations upfront and track everything.</p>
+          </Reveal>
         </div>
       </section>
 
