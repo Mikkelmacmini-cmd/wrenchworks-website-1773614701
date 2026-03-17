@@ -104,7 +104,7 @@ function ScheduleForm() {
           className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d] resize-none" />
       </div>
       <button type="submit" disabled={loading}
-        className="w-full bg-[#c0392b] hover:bg-[#a93226] disabled:opacity-60 text-white font-bold py-3 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-md">
+        className="w-full bg-[#D32F2F] hover:bg-[#b71c1c] disabled:opacity-60 text-white font-bold py-3 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-md">
         {loading ? "Sending..." : "Schedule Service →"}
       </button>
       <p className="text-center text-xs text-gray-400">We respond same day · Mon–Fri 9AM–5PM</p>

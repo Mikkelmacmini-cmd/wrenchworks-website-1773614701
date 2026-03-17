@@ -71,7 +71,7 @@ export default function ContactPage() {
 
             <a
               href={siteConfig.phoneHref}
-              className="mt-8 w-full inline-flex items-center justify-center gap-2 bg-[#c0392b] hover:bg-[#a93226] text-white font-bold px-6 py-4 rounded-full transition-all hover:-translate-y-0.5 text-lg"
+              className="mt-8 w-full inline-flex items-center justify-center gap-2 bg-[#D32F2F] hover:bg-[#b71c1c] text-white font-bold px-6 py-4 rounded-full transition-all hover:-translate-y-0.5 text-lg"
             >
               Call Now: {siteConfig.phoneDisplay}
             </a>
@@ -148,7 +148,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full bg-[#c0392b] hover:bg-[#a93226] text-white font-bold py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                className="w-full bg-[#D32F2F] hover:bg-[#b71c1c] text-white font-bold py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Send Message →
               </button>

@@ -55,7 +55,7 @@ export default function ServicesPage() {
           </p>
           <a
             href={siteConfig.phoneHref}
-            className="inline-flex items-center gap-2 bg-[#c0392b] hover:bg-[#a93226] text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-[#D32F2F] hover:bg-[#b71c1c] text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5"
           >
             Call to Schedule: {siteConfig.phoneDisplay}
           </a>

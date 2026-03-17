@@ -1,4 +1,4 @@
-:HL["/preview/autotrek-site/_next/static/chunks/668742ed4ec597ef.css","style"]
+:HL["/preview/autotrek-site/_next/static/chunks/917e45cd63ced524.css","style"]
 :HL["/images/icons/ac-service.jpg","image"]
 :HL["/images/icons/brake-service.jpg","image"]
 :HL["/images/icons/check-engine.jpg","image"]
@@ -8,4 +8,4 @@
 :HL["/images/icons/oil-change.jpg","image"]
 :HL["/images/icons/steering-suspension.jpg","image"]
 :HL["/images/icons/tires-wheels.jpg","image"]
-0:{"buildId":"mhxOa5BJh9jsdb5Xu5u3t","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"auto-repair-littleton-co","paramType":null,"paramKey":"auto-repair-littleton-co","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"P-VWR7IENYRYbRDk7j8Mc","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"auto-repair-littleton-co","paramType":null,"paramKey":"auto-repair-littleton-co","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
