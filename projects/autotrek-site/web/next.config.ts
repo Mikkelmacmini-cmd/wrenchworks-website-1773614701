@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  trailingSlash: true,
+  basePath: "/preview/autotrek-site",
+  assetPrefix: "/preview/autotrek-site",
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

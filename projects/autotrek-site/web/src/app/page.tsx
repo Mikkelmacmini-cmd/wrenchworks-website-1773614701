@@ -99,7 +99,7 @@ export default function Home() {
                 What<strong style={{ color: "#c0392b" }}>.</strong> We<strong style={{ color: "#c0392b" }}>.</strong> Fix<strong style={{ color: "#c0392b" }}>.</strong>
               </h2>
               <p className="text-gray-600 text-lg max-w-xl mx-auto">
-                From oil changes to EV battery systems — if it rolls, we service it.
+                From oil changes to engine rebuilds — if it rolls, we service it.
               </p>
             </div>
           </ScrollReveal>

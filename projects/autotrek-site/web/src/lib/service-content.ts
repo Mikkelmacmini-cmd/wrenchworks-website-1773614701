@@ -205,4 +205,294 @@ export const serviceContent: Record<string, ServiceContent> = {
     ],
     closingCta: "Stay cool this summer. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122 for an AC inspection. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
   },
+
+  "steering-suspension-littleton-co": {
+    slug: "steering-suspension-littleton-co",
+    intro: "If your vehicle wanders on the highway, bottoms out over bumps, or the steering feels loose and imprecise — your suspension or steering system needs attention. At AutoTrek Service Center in Littleton, we diagnose and repair the full steering and suspension system: shocks, struts, tie rods, ball joints, control arms, bushings, and wheel alignment. We'll show you what's worn, explain what it means for your safety and ride quality, and give you a written quote before touching anything.",
+    whyMatters: {
+      heading: "Why Worn Suspension Is a Safety Problem, Not Just a Comfort Issue",
+      body: "Your suspension does more than smooth out bumps — it keeps your tires planted on the road, maintains braking stability, and controls body roll in turns. Worn shocks and struts increase stopping distances by up to 20%. Loose tie rods and ball joints can cause unpredictable steering. Failed bushings allow alignment to shift, chewing through tires. Colorado roads are especially hard on suspension. Potholes after freeze-thaw cycles, mountain switchbacks, and gravel roads all accelerate wear. If your vehicle doesn't handle like it used to, there's a reason — and it's usually fixable.",
+      signs: [
+        "Vehicle pulls to one side while driving straight",
+        "Steering wheel vibrates or feels loose",
+        "Clunking or knocking noises over bumps",
+        "Excessive body roll or nose dive when braking",
+        "Uneven tire wear patterns",
+        "Vehicle feels floaty or bouncy at highway speeds"
+      ]
+    },
+    process: {
+      heading: "Our Steering & Suspension Service Process",
+      steps: [
+        { title: "Visual & Hands-On Inspection", desc: "We inspect shocks, struts, springs, tie rods, ball joints, control arms, bushings, and sway bar links. We check for leaks, play, cracking, and wear. We also inspect tire wear patterns — they tell us a lot about alignment and suspension health." },
+        { title: "Road Test", desc: "We drive the vehicle to feel for the symptoms you described — pulling, wandering, clunking, vibration. This helps us correlate what we see on the lift with what you experience on the road." },
+        { title: "Written Quote with Priorities", desc: "We explain what's worn, what's critical for safety, and what can wait. You get a written estimate with parts and labor. We recommend addressing safety-critical items first." },
+        { title: "Repair & Alignment Check", desc: "After replacing worn components, we check and adjust wheel alignment to ensure your tires wear evenly and the vehicle tracks straight. We road test again to verify the repair." }
+      ]
+    },
+    included: [
+      "Full steering and suspension inspection",
+      "Shock, strut, and spring condition check",
+      "Tie rod, ball joint, and control arm inspection",
+      "Bushing and sway bar link check",
+      "Tire wear pattern analysis",
+      "Road test before and after repair",
+      "Alignment check after suspension work",
+      "Complimentary full-vehicle safety inspection"
+    ],
+    whyChoose: [
+      { title: "Complete System Approach", desc: "We inspect the entire steering and suspension system, not just the part you think might be bad. Problems are often interconnected." },
+      { title: "Alignment Included", desc: "Suspension work affects alignment. We check and adjust alignment after every suspension repair to protect your tires." },
+      { title: "Colorado Road Tested", desc: "We know what Colorado roads do to suspension. Potholes, altitude, temperature swings — we account for all of it." },
+      { title: "Safety First Recommendations", desc: "We prioritize by safety impact. If a bushing is slightly worn but your ball joint has play, we'll tell you which one matters more." }
+    ],
+    faqs: [
+      { q: "How do I know if I need new shocks or struts?", a: "If your vehicle bounces excessively after bumps, nose-dives when braking, leans heavily in turns, or feels unstable at highway speeds, your shocks or struts are likely worn. Most last 50,000–100,000 miles depending on driving conditions." },
+      { q: "What causes a clunking noise over bumps?", a: "Usually worn sway bar links, ball joints, tie rod ends, or strut mounts. We'll put it on the lift and find exactly which component is causing the noise." },
+      { q: "Do I need an alignment after suspension work?", a: "Yes — any time suspension components are replaced, alignment should be checked and adjusted. We include this as part of our suspension repair process." },
+      { q: "How much does suspension repair cost?", a: "It depends on what's worn and your vehicle type. Replacing a pair of sway bar links is very different from a full strut assembly replacement. We provide a detailed written quote after inspection." }
+    ],
+    closingCta: "Get your handling back. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122. We'll diagnose the issue, give you honest options, and get your ride feeling solid again. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
+
+  "tires-wheels-littleton-co": {
+    slug: "tires-wheels-littleton-co",
+    intro: "Your tires are the only thing between your vehicle and the road. Worn tread, improper inflation, and misalignment don't just wear your tires out faster — they compromise braking, handling, and safety. At AutoTrek Service Center in Littleton, we provide tire rotation, balancing, pressure checks, and tread inspections. We'll tell you honestly when your tires need replacing and help you choose the right ones for your vehicle and Colorado driving conditions.",
+    whyMatters: {
+      heading: "Why Tire Maintenance Saves You Money and Keeps You Safe",
+      body: "Tires wear unevenly depending on alignment, inflation, and driving habits. Front tires wear differently than rears. Without regular rotation, you'll replace tires twice as often. Under-inflated tires reduce fuel economy, increase stopping distances, and generate excess heat that can cause blowouts. Over-inflated tires reduce traction and cause center-tread wear. Colorado drivers face additional challenges: mountain passes, snow, temperature swings that affect pressure (tires lose about 1 PSI for every 10°F drop). Keeping your tires maintained isn't just about longevity — it's about getting home safe.",
+      signs: [
+        "Uneven tread wear (one side more worn than the other)",
+        "Tread depth below 4/32 inch (time to start shopping)",
+        "Visible cracks, bulges, or sidewall damage",
+        "Vehicle vibrates at highway speeds",
+        "Tire pressure warning light (TPMS) illuminated",
+        "It's been over 5,000 miles since your last rotation"
+      ]
+    },
+    process: {
+      heading: "Our Tire Service Process",
+      steps: [
+        { title: "Tread Depth & Condition Check", desc: "We measure tread depth at multiple points across each tire, check for uneven wear patterns (which indicate alignment or suspension issues), and inspect sidewalls for cracks, bulges, or damage." },
+        { title: "Tire Rotation & Balancing", desc: "We rotate tires according to your vehicle's recommended pattern (front-to-back, cross-pattern, etc.) and balance each wheel to eliminate vibration and ensure even wear." },
+        { title: "Pressure Check & Adjustment", desc: "We set all four tires (plus the spare) to manufacturer-recommended pressure. We also inspect the TPMS sensors if your vehicle has them." },
+        { title: "Alignment Recommendation", desc: "If we see uneven wear patterns that indicate alignment issues, we'll recommend an alignment check. Proper alignment extends tire life significantly." }
+      ]
+    },
+    included: [
+      "Tread depth measurement (all four tires)",
+      "Tire rotation to manufacturer pattern",
+      "Wheel balancing",
+      "Tire pressure adjustment (including spare)",
+      "Sidewall and tread condition inspection",
+      "TPMS sensor check",
+      "Wear pattern analysis for alignment issues",
+      "Complimentary full-vehicle safety inspection"
+    ],
+    whyChoose: [
+      { title: "Honest Tread Assessment", desc: "We'll measure your tread and tell you exactly how much life is left. If your tires are fine, we'll say so. No premature replacement recommendations." },
+      { title: "Colorado Tire Knowledge", desc: "We know what Colorado driving demands from tires — all-season vs. winter performance, altitude effects on pressure, and the wear patterns our roads cause." },
+      { title: "Alignment Awareness", desc: "Tire wear tells a story. We read the patterns and catch alignment or suspension issues before they destroy your new tires." },
+      { title: "Quick Service", desc: "Tire rotations and balancing are typically done in under an hour. Most services are same-day." }
+    ],
+    faqs: [
+      { q: "How often should I rotate my tires?", a: "Every 5,000–7,500 miles, or with every oil change. Regular rotation evens out wear and extends tire life significantly. Colorado's mix of highway and mountain driving makes rotation especially important." },
+      { q: "How do I know if I need new tires?", a: "If tread depth is at or below 2/32 inch, it's time. At 4/32 inch, start shopping — especially if you drive in rain or snow. We'll measure and give you an honest assessment." },
+      { q: "Why does my car vibrate at highway speeds?", a: "Usually unbalanced tires or a tire with a defect (belt separation, flat spot). Could also be worn suspension components. We'll diagnose which one it is." },
+      { q: "Do you sell tires?", a: "We can source and install tires for your vehicle. We'll recommend options based on your driving needs and budget — not the most expensive set on the wall." }
+    ],
+    closingCta: "Protect your investment and your safety. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122 for tire service. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
+
+  "transmission-repair-littleton-co": {
+    slug: "transmission-repair-littleton-co",
+    intro: "Transmission problems are stressful — and expensive if ignored. Whether you're feeling rough shifts, slipping gears, delayed engagement, or see a transmission warning light, AutoTrek Service Center in Littleton can help. We diagnose transmission issues accurately, explain what's happening in plain English, and give you real options — from fluid service to repair. No scare tactics, no inflated quotes.",
+    whyMatters: {
+      heading: "Why Transmission Problems Escalate Fast",
+      body: "Your transmission is one of the most complex and expensive components in your vehicle. It converts engine power into wheel movement through hundreds of precision parts working in harmony. When something goes wrong — a solenoid sticks, clutch packs wear, fluid breaks down — the problem cascades quickly. What starts as a rough shift can become a complete transmission failure in weeks. Early diagnosis saves thousands. A $200 fluid service today can prevent a $4,000 rebuild next month. Colorado mountain driving — steep grades, towing, stop-and-go — puts extra strain on transmissions.",
+      signs: [
+        "Rough, harsh, or delayed shifting",
+        "Transmission slipping — RPMs climb but the car doesn't accelerate",
+        "Grinding or shaking when shifting gears",
+        "Burning smell from under the vehicle",
+        "Transmission warning light or check engine light",
+        "Fluid leak (red or brown fluid under the vehicle)"
+      ]
+    },
+    process: {
+      heading: "Our Transmission Service Process",
+      steps: [
+        { title: "Diagnostic Scan & Road Test", desc: "We pull transmission-specific codes, monitor shift points and pressures with live data, and road test the vehicle to replicate the symptoms you described." },
+        { title: "Fluid Inspection & Level Check", desc: "We check transmission fluid level, color, smell, and condition. Dark, burnt fluid is a red flag. We also check for leaks at the pan, lines, cooler, and seals." },
+        { title: "Clear Explanation & Options", desc: "We explain what we found and give you real options: fluid service, solenoid replacement, valve body work, or if it's more serious — we'll tell you straight. Written quote, you decide." },
+        { title: "Service or Repair", desc: "From fluid and filter changes to internal component repair, we handle it with precision. After service, we road test to verify proper shift quality and timing." }
+      ]
+    },
+    included: [
+      "Transmission diagnostic code scan",
+      "Live data monitoring of shift points and pressures",
+      "Road test to verify symptoms",
+      "Fluid level, condition, and leak inspection",
+      "Written estimate before any work",
+      "Post-service road test verification",
+      "Complimentary full-vehicle safety inspection"
+    ],
+    whyChoose: [
+      { title: "Honest Assessment", desc: "We won't tell you your transmission is shot if it just needs a fluid change. We diagnose accurately and give you real options." },
+      { title: "Mountain-Ready", desc: "Colorado mountain driving is hard on transmissions. We understand the stress patterns and service accordingly." },
+      { title: "Transparent Pricing", desc: "Transmission work can be expensive. We give you a detailed written quote so you know exactly what you're paying for." },
+      { title: "Prevent, Don't Replace", desc: "Regular fluid service extends transmission life dramatically. We'll recommend a maintenance schedule that protects your investment." }
+    ],
+    faqs: [
+      { q: "How do I know if my transmission is failing?", a: "Rough or delayed shifts, slipping (RPMs rise without acceleration), grinding noises, or a burning smell are all warning signs. A dashboard warning light is the most obvious indicator. Get it checked promptly — catching problems early saves thousands." },
+      { q: "How much does transmission repair cost?", a: "It varies enormously — from a $200 fluid service to several thousand for major internal work. That's why accurate diagnosis matters. We'll tell you exactly what's wrong and what it costs before starting." },
+      { q: "How often should I service my transmission fluid?", a: "Most manufacturers recommend every 30,000–60,000 miles. If you tow, drive in mountains, or do a lot of stop-and-go driving, more frequent service is smart. Check your owner's manual or ask us." },
+      { q: "Can you fix my transmission or does it need to be replaced?", a: "Many transmission problems can be resolved without a full replacement — solenoid replacement, valve body repair, fluid service. We diagnose first and give you honest options." }
+    ],
+    closingCta: "Don't ignore transmission symptoms. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122. We'll diagnose the issue accurately and give you straight answers. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
+
+  "wheel-alignment-littleton-co": {
+    slug: "wheel-alignment-littleton-co",
+    intro: "If your vehicle pulls to one side, your steering wheel is off-center, or your tires are wearing unevenly — you likely need an alignment. At AutoTrek Service Center in Littleton, we use precision alignment equipment to measure and adjust your vehicle's camber, caster, and toe to manufacturer specifications. Proper alignment extends tire life, improves handling, and keeps you driving straight.",
+    whyMatters: {
+      heading: "Why Alignment Matters More Than You Think",
+      body: "Misalignment doesn't just cause your car to pull — it silently eats your tires. A vehicle that's just half a degree out of spec can scrub off thousands of miles of tread life. That's hundreds of dollars in premature tire replacement. Beyond tires, misalignment affects handling, braking stability, and fuel economy. Colorado potholes, construction zones, and curb strikes can knock alignment out of spec in an instant. After hitting a big pothole, it's worth getting checked.",
+      signs: [
+        "Vehicle pulls to the left or right",
+        "Steering wheel is off-center when driving straight",
+        "Uneven or rapid tire wear",
+        "Steering feels loose or wandering",
+        "Squealing tires on turns",
+        "Vehicle doesn't track straight after hitting a pothole or curb"
+      ]
+    },
+    process: {
+      heading: "Our Alignment Process",
+      steps: [
+        { title: "Pre-Alignment Inspection", desc: "Before we align, we inspect suspension components — tie rods, ball joints, bushings, struts. Aligning a vehicle with worn suspension parts is pointless because the alignment won't hold. We make sure the foundation is solid first." },
+        { title: "Precision Measurement", desc: "Using computerized alignment equipment, we measure all three alignment angles: camber (tilt), caster (steering axis), and toe (parallel tracking). We compare to your vehicle's manufacturer specifications." },
+        { title: "Adjustment", desc: "We adjust the angles that are out of spec. Some vehicles allow adjustment on all four wheels; others only the front. We'll let you know what your vehicle allows." },
+        { title: "Verification & Print", desc: "After adjustment, we verify all angles are within spec and provide you with a before-and-after alignment printout showing exactly what was corrected." }
+      ]
+    },
+    included: [
+      "Pre-alignment suspension inspection",
+      "Computerized alignment measurement (all angles)",
+      "Adjustment to manufacturer specifications",
+      "Before-and-after alignment printout",
+      "Tire pressure check and adjustment",
+      "Complimentary full-vehicle safety inspection"
+    ],
+    whyChoose: [
+      { title: "Suspension Check First", desc: "We inspect before we align. If a tie rod or ball joint is worn, we'll tell you — because aligning over worn parts wastes your money." },
+      { title: "Printout Proof", desc: "You get a before-and-after printout showing exactly what we measured and adjusted. Full transparency." },
+      { title: "Tire Life Extension", desc: "Proper alignment can add thousands of miles to your tire life. It pays for itself." },
+      { title: "Colorado Road Awareness", desc: "We know the potholes, construction, and road conditions around Littleton that knock alignments out. We see it every day." }
+    ],
+    faqs: [
+      { q: "How often do I need an alignment?", a: "We recommend checking alignment annually, after hitting a significant pothole or curb, after suspension work, or when you notice pulling or uneven tire wear. Some vehicles need it more frequently." },
+      { q: "How long does an alignment take?", a: "Typically 45 minutes to an hour. If suspension repairs are needed first, that adds time — but we'll discuss that with you before proceeding." },
+      { q: "Will an alignment fix my pulling?", a: "Usually, yes — if the cause is alignment-related. If a tire is defective or suspension is worn, alignment alone won't fix it. We check everything before recommending." },
+      { q: "Should I get an alignment with new tires?", a: "Absolutely. Starting with proper alignment protects your investment and ensures even wear from day one." }
+    ],
+    closingCta: "Save your tires and your handling. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122 for a precision alignment. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
+
+  "preventative-maintenance-littleton-co": {
+    slug: "preventative-maintenance-littleton-co",
+    intro: "The cheapest repair is the one you never need. Preventative maintenance catches small problems before they become expensive breakdowns. At AutoTrek Service Center in Littleton, we follow manufacturer-recommended service schedules tailored to your vehicle, your mileage, and Colorado driving conditions. Every visit includes a full safety inspection — because the best time to find a problem is before it leaves you stranded.",
+    whyMatters: {
+      heading: "Why Preventative Maintenance Saves You Thousands",
+      body: "Modern vehicles are reliable, but they're not maintenance-free. Belts crack, fluids break down, filters clog, and components wear. Manufacturer service schedules exist because engineers know exactly when parts need attention. Skipping scheduled maintenance doesn't save money — it shifts the cost to a larger repair bill later. A $150 coolant flush prevents a $2,000 overheating episode. A $30 air filter prevents reduced performance and fuel economy. Colorado's elevation, temperature extremes, and mountain driving accelerate wear on many components.",
+      signs: [
+        "Maintenance reminder light on your dashboard",
+        "It's been over a year since your last full service",
+        "You've hit a major mileage milestone (30k, 60k, 90k, 100k+)",
+        "Fluid levels dropping between oil changes",
+        "Vehicle doesn't feel as responsive or smooth as it used to",
+        "You're planning a long road trip or mountain drive"
+      ]
+    },
+    process: {
+      heading: "Our Maintenance Process",
+      steps: [
+        { title: "Review Service History & Schedule", desc: "We check your vehicle's recommended maintenance schedule against what's been done. We identify what's due now, what's coming up soon, and what can wait." },
+        { title: "Full Vehicle Inspection", desc: "We inspect all major systems: fluids, brakes, tires, belts, hoses, battery, suspension, lights, wipers. We measure and document — not just glance." },
+        { title: "Prioritized Recommendations", desc: "We categorize findings: needs attention now, should be done soon, and can plan for later. You get a written report with costs for each item. No pressure." },
+        { title: "Service & Document", desc: "We perform the maintenance you approve, update your service records, and reset maintenance reminders. You drive away knowing exactly where your vehicle stands." }
+      ]
+    },
+    included: [
+      "Manufacturer maintenance schedule review",
+      "Full multi-system vehicle inspection",
+      "Fluid level checks and top-offs",
+      "Tire pressure and tread assessment",
+      "Brake inspection",
+      "Belt and hose condition check",
+      "Battery test",
+      "Written report with prioritized recommendations"
+    ],
+    whyChoose: [
+      { title: "Schedule-Based, Not Sales-Based", desc: "We follow your manufacturer's recommendations, not our revenue targets. If something doesn't need doing yet, we'll say so." },
+      { title: "Full Picture Every Visit", desc: "Our inspection covers the entire vehicle. You always know the complete status — not just the one thing you came in for." },
+      { title: "Documented History", desc: "We keep records of what was done and when. This protects your warranty, supports resale value, and helps plan future maintenance." },
+      { title: "Colorado-Adjusted", desc: "Altitude and temperature extremes affect maintenance intervals. We account for real Colorado driving conditions." }
+    ],
+    faqs: [
+      { q: "What maintenance does my car need?", a: "It depends on your vehicle, mileage, and driving conditions. Common items include oil changes, fluid flushes, filter replacements, brake inspections, and belt/hose checks. We reference your manufacturer's schedule." },
+      { q: "My car seems fine — do I really need maintenance?", a: "Yes. Most maintenance prevents problems you can't see or feel yet. By the time you notice symptoms, the underlying issue has usually progressed. Prevention is always cheaper than repair." },
+      { q: "What's a 30k/60k/90k service?", a: "These are milestone services based on mileage. Each includes specific items recommended by your vehicle's manufacturer — typically more extensive than a basic oil change. We'll tell you exactly what's included for your vehicle." },
+      { q: "Can I just do the critical stuff and skip the rest?", a: "Absolutely. We prioritize recommendations so you can address the most important items first and plan for the rest. No pressure to do everything at once." }
+    ],
+    closingCta: "Stay ahead of breakdowns. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122 for a maintenance check. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
+
+  "complete-auto-repair-littleton-co": {
+    slug: "complete-auto-repair-littleton-co",
+    intro: "Whatever your vehicle needs — from a simple oil change to a complex engine repair — AutoTrek Service Center in Littleton handles it under one roof. We're a full-service auto repair shop staffed by ASE-certified technicians who work on domestic, foreign, trucks, and SUVs. Bring it in, we'll figure out what's wrong, explain it clearly, and fix it right. Every visit includes a full vehicle safety inspection at no extra charge.",
+    whyMatters: {
+      heading: "Why One Trusted Shop Beats Bouncing Between Specialists",
+      body: "Having a single shop that knows your vehicle saves time, money, and headaches. We keep records of every service, understand your vehicle's history, and can spot developing issues before they become emergencies. Instead of explaining your car's quirks to a new mechanic every time, you work with a team that already knows your vehicle. We handle brakes, engine, transmission, electrical, steering, suspension, AC, exhaust, and more. If it rolls into the bay, we can fix it.",
+      signs: [
+        "Dashboard warning lights (check engine, ABS, TPMS, etc.)",
+        "Unusual noises (grinding, clunking, squealing, ticking)",
+        "Performance changes (rough idle, hesitation, loss of power)",
+        "Fluid leaks under the vehicle",
+        "Overheating or temperature gauge rising",
+        "Anything that doesn't feel right when you drive"
+      ]
+    },
+    process: {
+      heading: "Our Repair Process",
+      steps: [
+        { title: "Listen & Diagnose", desc: "We start by listening to you — what symptoms you're experiencing, when they started, and what conditions trigger them. Then we diagnose using professional tools and hands-on inspection." },
+        { title: "Explain & Quote", desc: "We tell you what we found in plain English. Written estimate with parts and labor. We explain what's critical and what can wait. You decide." },
+        { title: "Repair", desc: "Our ASE-certified technicians perform the work using quality parts. We follow manufacturer specifications and don't cut corners." },
+        { title: "Verify & Return", desc: "We verify the repair resolved the issue — road test, system checks, code verification. You get your vehicle back running right." }
+      ]
+    },
+    included: [
+      "Professional diagnostics across all vehicle systems",
+      "Written estimate before any work begins",
+      "ASE-certified technician repair",
+      "Quality parts matched to your vehicle",
+      "Post-repair verification",
+      "Complimentary full-vehicle safety inspection",
+      "Service history documentation"
+    ],
+    whyChoose: [
+      { title: "Everything Under One Roof", desc: "Brakes, engine, transmission, electrical, AC, steering, tires — we handle it all. One shop, one team, one relationship." },
+      { title: "We Know Your Vehicle", desc: "We keep detailed service records. Over time, we understand your vehicle's history and can catch issues early." },
+      { title: "No Surprise Bills", desc: "Written quotes, you approve first. If we find something unexpected during repair, we call before proceeding." },
+      { title: "ASE-Certified Team", desc: "Our technicians are trained and certified. We invest in ongoing education and modern diagnostic equipment." }
+    ],
+    faqs: [
+      { q: "What vehicles do you work on?", a: "Domestic (Ford, Chevy, RAM, etc.), foreign (Toyota, Honda, BMW, Subaru, etc.), trucks, SUVs, and most specialty vehicles. If you're unsure, call us." },
+      { q: "Do I need an appointment?", a: "Appointments are recommended to guarantee your time slot, but we accept walk-ins when availability allows. Call ahead for the best experience." },
+      { q: "How long will my repair take?", a: "It depends on the repair. Simple services are often same-day. Complex repairs may take longer. We'll give you a realistic time estimate when you drop off." },
+      { q: "Can I get a ride or wait?", a: "We have a comfortable waiting area. For longer repairs, we can help arrange alternative transportation." }
+    ],
+    closingCta: "One shop for everything your vehicle needs. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
 }

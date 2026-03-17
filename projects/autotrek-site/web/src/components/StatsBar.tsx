@@ -12,8 +12,8 @@ interface Stat {
 const STATS: Stat[] = [
   { value: "22+", numericTarget: 22, suffix: "+", label: "Services Offered" },
   { value: "4.1★", label: "Google Rating" },
-  { value: "NAPA", label: "AutoCare Center" },
-  { value: "Mon–Fri", label: "9AM–5PM" },
+  { value: "ASE", label: "Certified Techs" },
+  { value: "Same Day", label: "Most Repairs" },
 ]
 
 function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
