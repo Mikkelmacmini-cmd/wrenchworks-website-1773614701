@@ -1,7 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+}
 
 const cases = [
   {
@@ -17,7 +23,7 @@ const cases = [
       { label: 'Google Map Pack', value: 'Top 3' },
       { label: 'Monthly Leads', value: '3× increase' },
     ],
-    color: '#1a2332',
+    overlayColor: 'rgba(28,28,30,0.75)',
   },
   {
     client: 'Precision Tune Mesa',
@@ -32,7 +38,7 @@ const cases = [
       { label: 'New Reviews', value: '38 in 60 days' },
       { label: 'Time to Rank #1', value: '6 Weeks' },
     ],
-    color: '#f97316',
+    overlayColor: 'rgba(44,42,40,0.75)',
   },
   {
     client: 'Eagle Auto Colorado Springs',
@@ -47,13 +53,13 @@ const cases = [
       { label: 'Bounce Rate', value: '−48%' },
       { label: 'Page Speed Score', value: '94/100' },
     ],
-    color: '#1a2332',
+    overlayColor: 'rgba(28,28,30,0.75)',
   },
 ]
 
 export default function CaseStudies() {
   return (
-    <div>
+    <div style={{ backgroundColor: '#FEFCF9' }}>
       <Head>
         <title>Case Studies | WrenchWorks Digital</title>
         <meta name="description" content="Real results for auto repair shops: +340% traffic, #1 Google Maps ranking, 2x phone calls." />
@@ -69,74 +75,121 @@ export default function CaseStudies() {
 
       <Header />
 
-      {/* Page Header */}
-      <section style={{ backgroundColor: '#1a2332' }} className="py-16 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">Case Studies</h1>
-          <p className="text-gray-300 text-lg">Real shops. Real results. Here is what we have helped our clients achieve.</p>
+      {/* ── Page Header ── */}
+      <section
+        className="grain-overlay py-24 text-center relative overflow-hidden"
+        style={{ backgroundColor: '#1C1C1E' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(232,93,42,0.1) 0%, transparent 70%)' }}
+        />
+        {/* Decorative circles */}
+        <svg className="absolute top-8 left-8 opacity-10 hidden lg:block" width="200" height="200" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="98" stroke="#D4A853" strokeWidth="1" />
+          <circle cx="100" cy="100" r="60" stroke="#D4A853" strokeWidth="0.5" />
+        </svg>
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+          <p className="eyebrow mb-4" style={{ color: '#D4A853' }}>Proof of Work</p>
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5">
+            Case Studies
+          </h1>
+          <p className="text-lg leading-relaxed" style={{ color: '#E8E2DC' }}>
+            Real shops. Real results. Here is what we have helped our clients achieve.
+          </p>
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col gap-16">
-          {cases.map((c, i) => (
-            <div key={c.client} className="bg-white rounded-2xl shadow-sm overflow-hidden">
+      {/* ── Case Studies ── */}
+      <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col gap-14">
+          {cases.map((c) => (
+            <motion.div
+              key={c.client}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden"
+              style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 32px rgba(28,28,30,0.09)' }}
+            >
               {/* Hero Image */}
-              <div className="relative h-56 sm:h-72">
-                <img
-                  src={c.image}
-                  alt={c.client}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0" style={{ backgroundColor: `${c.color}cc` }} />
+              <div className="relative h-60 sm:h-80">
+                <img src={c.image} alt={c.client} className="w-full h-full object-cover" />
+                <div className="absolute inset-0" style={{ backgroundColor: c.overlayColor }} />
                 <div className="absolute inset-0 flex flex-col items-start justify-end p-8">
-                  <p className="text-sm font-semibold uppercase tracking-widest text-orange-300 mb-1">{c.location}</p>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white">{c.client}</h2>
-                  <p className="text-white text-lg font-bold mt-1" style={{ color: '#f97316' }}>{c.result} in {c.period}</p>
+                  <p className="eyebrow mb-2" style={{ color: '#D4A853' }}>{c.location}</p>
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">{c.client}</h2>
+                  <p className="font-semibold mt-1 text-lg" style={{ color: '#E85D2A' }}>
+                    {c.result} in {c.period}
+                  </p>
                 </div>
               </div>
 
-              <div className="p-8">
+              <div className="p-8 sm:p-10">
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="grid grid-cols-3 gap-4 mb-10">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="text-center p-4 rounded-xl" style={{ backgroundColor: '#f9fafb' }}>
-                      <p className="text-2xl font-extrabold" style={{ color: '#f97316' }}>{m.value}</p>
-                      <p className="text-xs text-gray-500 mt-1 font-medium">{m.label}</p>
+                    <div
+                      key={m.label}
+                      className="text-center p-5 rounded-2xl"
+                      style={{ backgroundColor: '#F5F0EB' }}
+                    >
+                      <p className="font-serif text-2xl font-bold" style={{ color: '#E85D2A' }}>{m.value}</p>
+                      <p className="text-xs mt-1 font-medium uppercase tracking-wider" style={{ color: '#6B6560' }}>{m.label}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: '#1a2332' }}>The Challenge</h3>
-                    <p className="text-gray-600 text-sm">{c.challenge}</p>
+                    <p className="eyebrow mb-3">The Challenge</p>
+                    <p className="text-sm leading-relaxed" style={{ color: '#6B6560' }}>{c.challenge}</p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: '#1a2332' }}>Our Solution</h3>
-                    <p className="text-gray-600 text-sm">{c.solution}</p>
+                    <p className="eyebrow mb-3">Our Solution</p>
+                    <p className="text-sm leading-relaxed" style={{ color: '#6B6560' }}>{c.solution}</p>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ backgroundColor: '#f97316' }} className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">Your shop could be next.</h2>
-          <p className="text-white text-lg mb-8 opacity-90">Let us show you what is possible with a free growth plan tailored to your market.</p>
+      {/* ── CTA ── */}
+      <section
+        className="grain-overlay py-24 sm:py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#2C2A28' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,93,42,0.15) 0%, transparent 70%)' }}
+        />
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center"
+        >
+          <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>Your Turn</p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+            Your shop could be next.
+          </h2>
+          <p className="text-lg mb-10 leading-relaxed" style={{ color: '#E8E2DC' }}>
+            Let us show you what is possible with a free growth plan tailored to your market.
+          </p>
           <Link
             href="/contact"
-            style={{ backgroundColor: '#1a2332' }}
-            className="inline-block px-8 py-4 rounded-lg text-white font-bold text-lg hover:opacity-90 transition-opacity"
+            className="inline-block px-10 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
+            style={{ backgroundColor: '#E85D2A' }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
           >
             Get My Free Growth Plan
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />

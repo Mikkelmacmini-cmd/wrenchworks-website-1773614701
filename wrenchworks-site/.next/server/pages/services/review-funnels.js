@@ -2,10 +2,10 @@
 (() => {
 var exports = {};
 exports.id = 871;
-exports.ids = [871,660];
+exports.ids = [871];
 exports.modules = {
 
-/***/ 2498:
+/***/ 1247:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -14,10 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   config: () => (/* binding */ config),
-  "default": () => (/* binding */ next_route_loaderpage_2Fservices_2Freview_funnels_preferredRegion_absolutePagePath_private_next_pages_2Fservices_2Freview_funnels_js_absoluteAppPath_private_next_pages_2F_app_js_absoluteDocumentPath_next_2Fdist_2Fpages_2F_document_middlewareConfigBase64_e30_3D_),
+  "default": () => (/* binding */ next_route_loaderpage_2Fservices_2Freview_funnels_preferredRegion_absolutePagePath_private_next_pages_2Fservices_2Freview_funnels_js_absoluteAppPath_private_next_pages_2F_app_js_absoluteDocumentPath_private_next_pages_2F_document_js_middlewareConfigBase64_e30_3D_),
   getServerSideProps: () => (/* binding */ getServerSideProps),
   getStaticPaths: () => (/* binding */ getStaticPaths),
-  getStaticProps: () => (/* binding */ getStaticProps),
+  getStaticProps: () => (/* binding */ next_route_loaderpage_2Fservices_2Freview_funnels_preferredRegion_absolutePagePath_private_next_pages_2Fservices_2Freview_funnels_js_absoluteAppPath_private_next_pages_2F_app_js_absoluteDocumentPath_private_next_pages_2F_document_js_middlewareConfigBase64_e30_3D_getStaticProps),
   reportWebVitals: () => (/* binding */ reportWebVitals),
   routeModule: () => (/* binding */ routeModule),
   unstable_getServerProps: () => (/* binding */ unstable_getServerProps),
@@ -31,7 +31,8 @@ __webpack_require__.d(__webpack_exports__, {
 var review_funnels_namespaceObject = {};
 __webpack_require__.r(review_funnels_namespaceObject);
 __webpack_require__.d(review_funnels_namespaceObject, {
-  "default": () => (Reviews)
+  "default": () => (Reviews),
+  getStaticProps: () => (getStaticProps)
 });
 
 // EXTERNAL MODULE: ./node_modules/next/dist/server/future/route-modules/pages/module.js
@@ -39,25 +40,19 @@ var pages_module = __webpack_require__(3185);
 var module_default = /*#__PURE__*/__webpack_require__.n(pages_module);
 // EXTERNAL MODULE: ./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js
 var helpers = __webpack_require__(7182);
-// EXTERNAL MODULE: ./node_modules/next/dist/pages/_document.js
-var _document = __webpack_require__(2940);
-var _document_default = /*#__PURE__*/__webpack_require__.n(_document);
-// EXTERNAL MODULE: ./pages/_app.js + 1 modules
-var _app = __webpack_require__(7959);
+// EXTERNAL MODULE: ./pages/_document.js
+var _document = __webpack_require__(6088);
+// EXTERNAL MODULE: ./pages/_app.js
+var _app = __webpack_require__(6004);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(5893);
 // EXTERNAL MODULE: external "next/head"
 var head_ = __webpack_require__(968);
 var head_default = /*#__PURE__*/__webpack_require__.n(head_);
-// EXTERNAL MODULE: external "fs"
-var external_fs_ = __webpack_require__(7147);
-var external_fs_default = /*#__PURE__*/__webpack_require__.n(external_fs_);
 ;// CONCATENATED MODULE: ./pages/services/review-funnels.js
 
 
-
-function Reviews() {
-    const copy = external_fs_default().readFileSync("./content/service-pages/review-funnels.md", "utf8");
+function Reviews({ copy }) {
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
         className: "max-w-4xl mx-auto p-6",
         children: [
@@ -77,8 +72,19 @@ function Reviews() {
         ]
     });
 }
+async function getStaticProps() {
+    const fs = __webpack_require__(7147);
+    const path = __webpack_require__(1017);
+    const file = path.join(process.cwd(), "content", "service-pages", "review-funnels.md");
+    const copy = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+    return {
+        props: {
+            copy
+        }
+    };
+}
 
-;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?page=%2Fservices%2Freview-funnels&preferredRegion=&absolutePagePath=private-next-pages%2Fservices%2Freview-funnels.js&absoluteAppPath=private-next-pages%2F_app.js&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&middlewareConfigBase64=e30%3D!
+;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?page=%2Fservices%2Freview-funnels&preferredRegion=&absolutePagePath=private-next-pages%2Fservices%2Freview-funnels.js&absoluteAppPath=private-next-pages%2F_app.js&absoluteDocumentPath=private-next-pages%2F_document.js&middlewareConfigBase64=e30%3D!
 
         // Next.js Route Loader
         
@@ -92,10 +98,10 @@ function Reviews() {
         
 
         // Re-export the component (should be the default export).
-        /* harmony default export */ const next_route_loaderpage_2Fservices_2Freview_funnels_preferredRegion_absolutePagePath_private_next_pages_2Fservices_2Freview_funnels_js_absoluteAppPath_private_next_pages_2F_app_js_absoluteDocumentPath_next_2Fdist_2Fpages_2F_document_middlewareConfigBase64_e30_3D_ = ((0,helpers/* hoist */.l)(review_funnels_namespaceObject, "default"));
+        /* harmony default export */ const next_route_loaderpage_2Fservices_2Freview_funnels_preferredRegion_absolutePagePath_private_next_pages_2Fservices_2Freview_funnels_js_absoluteAppPath_private_next_pages_2F_app_js_absoluteDocumentPath_private_next_pages_2F_document_js_middlewareConfigBase64_e30_3D_ = ((0,helpers/* hoist */.l)(review_funnels_namespaceObject, "default"));
 
         // Re-export methods.
-        const getStaticProps = (0,helpers/* hoist */.l)(review_funnels_namespaceObject, "getStaticProps")
+        const next_route_loaderpage_2Fservices_2Freview_funnels_preferredRegion_absolutePagePath_private_next_pages_2Fservices_2Freview_funnels_js_absoluteAppPath_private_next_pages_2F_app_js_absoluteDocumentPath_private_next_pages_2F_document_js_middlewareConfigBase64_e30_3D_getStaticProps = (0,helpers/* hoist */.l)(review_funnels_namespaceObject, "getStaticProps")
         const getStaticPaths = (0,helpers/* hoist */.l)(review_funnels_namespaceObject, "getStaticPaths")
         const getServerSideProps = (0,helpers/* hoist */.l)(review_funnels_namespaceObject, "getServerSideProps")
         const config = (0,helpers/* hoist */.l)(review_funnels_namespaceObject, "config")
@@ -115,7 +121,7 @@ function Reviews() {
           ...options,
           components: {
             App: _app["default"],
-            Document: (_document_default()),
+            Document: _document["default"],
           },
           userland: review_funnels_namespaceObject,
         })
@@ -160,13 +166,6 @@ module.exports = require("next/dist/server/utils.js");
 
 /***/ }),
 
-/***/ 3280:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/app-router-context.js");
-
-/***/ }),
-
 /***/ 6724:
 /***/ ((module) => {
 
@@ -185,62 +184,6 @@ module.exports = require("next/dist/shared/lib/html-context.js");
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
-
-/***/ }),
-
-/***/ 4964:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router-context.js");
-
-/***/ }),
-
-/***/ 1751:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
-
-/***/ }),
-
-/***/ 3938:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
-
-/***/ }),
-
-/***/ 1109:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-local-url.js");
-
-/***/ }),
-
-/***/ 8854:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
-
-/***/ }),
-
-/***/ 3297:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
-
-/***/ }),
-
-/***/ 7782:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/resolve-href.js");
-
-/***/ }),
-
-/***/ 9232:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 
@@ -263,6 +206,13 @@ module.exports = require("react");
 
 module.exports = require("fs");
 
+/***/ }),
+
+/***/ 1017:
+/***/ ((module) => {
+
+module.exports = require("path");
+
 /***/ })
 
 };
@@ -272,7 +222,7 @@ module.exports = require("fs");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [940,869,959], () => (__webpack_exec__(2498)));
+var __webpack_exports__ = __webpack_require__.X(0, [207,947], () => (__webpack_exec__(1247)));
 module.exports = __webpack_exports__;
 
 })();

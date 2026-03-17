@@ -5,23 +5,62 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header style={{ backgroundColor: '#1a2332' }} className="sticky top-0 z-50 shadow-lg">
+    <header
+      className="sticky top-0 z-50"
+      style={{
+        backgroundColor: 'rgba(28,28,30,0.88)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(214,207,199,0.1)',
+      }}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <img src="/images/logo.png" alt="WrenchWorks Digital" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/services" className="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Services</Link>
-          <Link href="/case-studies" className="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Case Studies</Link>
-          <Link href="/contact" className="text-gray-300 hover:text-orange-400 text-sm font-medium transition-colors">Contact</Link>
-          <Link href="/contact" style={{ backgroundColor: '#f97316' }} className="px-4 py-2 rounded text-white text-sm font-semibold hover:opacity-90 transition-opacity">
+          <Link
+            href="/services"
+            className="text-sm font-medium transition-colors"
+            style={{ color: '#E8E2DC' }}
+            onMouseEnter={e => (e.target.style.color = '#E85D2A')}
+            onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
+          >
+            Services
+          </Link>
+          <Link
+            href="/case-studies"
+            className="text-sm font-medium transition-colors"
+            style={{ color: '#E8E2DC' }}
+            onMouseEnter={e => (e.target.style.color = '#E85D2A')}
+            onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
+          >
+            Case Studies
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-medium transition-colors"
+            style={{ color: '#E8E2DC' }}
+            onMouseEnter={e => (e.target.style.color = '#E85D2A')}
+            onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/contact"
+            className="px-5 py-2.5 rounded-xl text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+            style={{ backgroundColor: '#E85D2A' }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
+          >
             Get a Free Plan
           </Link>
         </nav>
 
         <button
-          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+          className="md:hidden focus:outline-none"
+          style={{ color: '#E8E2DC' }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -34,12 +73,23 @@ export default function Header() {
       </div>
 
       {open && (
-        <div style={{ backgroundColor: '#1a2332' }} className="md:hidden border-t border-gray-700 px-4 pb-4">
-          <nav className="flex flex-col gap-3 pt-3">
-            <Link href="/services" className="text-gray-300 hover:text-orange-400 text-sm font-medium" onClick={() => setOpen(false)}>Services</Link>
-            <Link href="/case-studies" className="text-gray-300 hover:text-orange-400 text-sm font-medium" onClick={() => setOpen(false)}>Case Studies</Link>
-            <Link href="/contact" className="text-gray-300 hover:text-orange-400 text-sm font-medium" onClick={() => setOpen(false)}>Contact</Link>
-            <Link href="/contact" style={{ backgroundColor: '#f97316' }} className="inline-block px-4 py-2 rounded text-white text-sm font-semibold text-center" onClick={() => setOpen(false)}>
+        <div
+          className="md:hidden px-4 pb-5"
+          style={{
+            backgroundColor: 'rgba(28,28,30,0.97)',
+            borderTop: '1px solid rgba(214,207,199,0.1)',
+          }}
+        >
+          <nav className="flex flex-col gap-4 pt-4">
+            <Link href="/services" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Services</Link>
+            <Link href="/case-studies" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Case Studies</Link>
+            <Link href="/contact" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Contact</Link>
+            <Link
+              href="/contact"
+              className="inline-block px-5 py-2.5 rounded-xl text-white text-sm font-semibold text-center"
+              style={{ backgroundColor: '#E85D2A' }}
+              onClick={() => setOpen(false)}
+            >
               Get a Free Plan
             </Link>
           </nav>

@@ -1,24 +1,51 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+}
+
+const staggerContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+}
+
 const services = [
   {
-    icon: '🖥️',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <rect x="4" y="8" width="32" height="24" rx="3" stroke="#E85D2A" strokeWidth="2" />
+        <path d="M4 14h32" stroke="#E85D2A" strokeWidth="2" />
+        <rect x="9" y="20" width="8" height="5" rx="1" fill="#E85D2A" fillOpacity="0.3" stroke="#E85D2A" strokeWidth="1.5" />
+      </svg>
+    ),
     title: 'Website Build & Design',
     desc: 'Professional, fast, mobile-first sites built to convert local searchers into booked appointments.',
     href: '/services',
   },
   {
-    icon: '📍',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <circle cx="20" cy="20" r="14" stroke="#E85D2A" strokeWidth="2" />
+        <path d="M20 9v11l7 4" stroke="#E85D2A" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="20" cy="20" r="3" fill="#E85D2A" />
+      </svg>
+    ),
     title: 'Local SEO & Google Maps',
     desc: 'Dominate the map pack in your city so customers find you first — not the shop down the street.',
     href: '/services',
   },
   {
-    icon: '⭐',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <path d="M20 6l3.6 7.3 8.1 1.2-5.85 5.7 1.38 8.05L20 24.3l-7.23 3.95 1.38-8.05L8.3 14.5l8.1-1.2L20 6z" stroke="#E85D2A" strokeWidth="2" strokeLinejoin="round" />
+      </svg>
+    ),
     title: 'Review Generation & Reputation',
     desc: 'Automated systems that turn happy customers into 5-star reviews on autopilot.',
     href: '/services',
@@ -56,7 +83,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#FEFCF9' }}>
       <Head>
         <title>WrenchWorks Digital | Auto Repair Marketing Agency</title>
         <meta name="description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
@@ -72,57 +99,111 @@ export default function Home() {
 
       <Header />
 
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section
-        className="relative min-h-screen flex items-center justify-center"
+        className="grain-overlay relative min-h-screen flex items-center justify-center"
         style={{
           backgroundImage: "url('/images/hero_shop_owner_laptop.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(26,35,50,0.65)' }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-24">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            More Booked Appointments.<br />
-            <span style={{ color: '#f97316' }}>Less Guesswork.</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+        {/* Dark overlay */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(28,28,30,0.72)' }} />
+
+        {/* Radial glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 60%, rgba(232,93,42,0.12) 0%, transparent 70%)' }}
+        />
+
+        {/* Decorative SVG circle */}
+        <svg className="absolute top-16 right-12 opacity-10 hidden lg:block" width="320" height="320" viewBox="0 0 320 320" fill="none">
+          <circle cx="160" cy="160" r="158" stroke="#D4A853" strokeWidth="1.5" />
+          <circle cx="160" cy="160" r="120" stroke="#D4A853" strokeWidth="0.75" />
+        </svg>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-28">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="eyebrow mb-5"
+            style={{ color: '#D4A853' }}
+          >
+            Auto Repair Marketing Agency
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] mb-7"
+          >
+            More Booked<br />
+            Appointments.<br />
+            <span style={{ color: '#E85D2A' }}>Less Guesswork.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+            style={{ color: '#E8E2DC' }}
+          >
             We help auto repair shops dominate local search, convert more visitors, and fill their bays.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
             <Link
               href="/contact"
-              style={{ backgroundColor: '#f97316' }}
-              className="px-8 py-4 rounded-lg text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
+              className="px-9 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
+              style={{ backgroundColor: '#E85D2A' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
             >
               Get Your Free Growth Plan
             </Link>
-            <Link href="/case-studies" className="text-white font-semibold text-lg hover:text-orange-400 transition-colors">
+            <Link
+              href="/case-studies"
+              className="font-semibold text-lg transition-colors"
+              style={{ color: '#E8E2DC' }}
+              onMouseEnter={e => (e.target.style.color = '#E85D2A')}
+              onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
+            >
               See Our Work →
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Hero Lead Form — floats over hero/services boundary */}
+      {/* ── Hero Lead Form ── */}
       <div className="relative z-20 -mt-16 sm:-mt-20 px-4 sm:px-6 pb-0">
-        <div
-          className="max-w-3xl mx-auto rounded-2xl p-6 sm:p-8"
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="max-w-3xl mx-auto rounded-2xl p-7 sm:p-10"
           style={{
-            backgroundColor: '#1a2332',
-            boxShadow: '0 20px 60px rgba(0,0,0,0.35)',
-            border: '1px solid rgba(249,115,22,0.3)',
+            backgroundColor: '#1C1C1E',
+            boxShadow: '0 24px 64px rgba(0,0,0,0.35)',
+            border: '1px solid rgba(232,93,42,0.25)',
           }}
         >
           {heroFormSent ? (
             <div className="text-center py-6">
-              <p className="text-green-400 font-bold text-lg">Thanks! We will be in touch within 1 business day.</p>
+              <p className="font-bold text-lg" style={{ color: '#D4A853' }}>Thanks! We will be in touch within 1 business day.</p>
             </div>
           ) : (
             <>
-              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-1 text-center">Get My Free Growth Plan</h3>
-              <p className="text-gray-400 text-sm text-center mb-6">No spam. We respond within 1 business day.</p>
+              <h3 className="font-serif text-white font-bold text-xl sm:text-2xl mb-1 text-center">Get My Free Growth Plan</h3>
+              <p className="text-sm text-center mb-6" style={{ color: '#6B6560' }}>No spam. We respond within 1 business day.</p>
               <form onSubmit={handleHeroSubmit} className="flex flex-col gap-4">
                 <input type="hidden" name="_subject" value="New WrenchWorks Lead (Hero Form)" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -131,126 +212,239 @@ export default function Home() {
                     name="first_name"
                     required
                     placeholder="First Name"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
                   />
                   <input
                     type="email"
                     name="email"
                     required
                     placeholder="Email Address"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
                   />
                   <input
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
                   />
                   <input
                     type="text"
                     name="shop_city"
                     required
                     placeholder="What city is your shop in?"
-                    className="rounded-lg px-4 py-3 text-sm bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
                   />
                 </div>
                 <button
                   type="submit"
-                  style={{ backgroundColor: '#f97316' }}
-                  className="w-full py-4 rounded-lg text-white font-bold text-base hover:opacity-90 transition-opacity mt-1"
+                  className="w-full py-4 rounded-xl text-white font-bold text-base transition-all duration-200 shadow-md mt-1"
+                  style={{ backgroundColor: '#E85D2A' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.01)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
                 >
                   Get My Free Growth Plan
                 </button>
-                <p className="text-center text-xs text-gray-500">No spam. We respond within 1 business day.</p>
+                <p className="text-center text-xs" style={{ color: '#6B6560' }}>No spam. We respond within 1 business day.</p>
               </form>
             </>
           )}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Services */}
-      <section className="py-20 bg-gray-50" style={{ paddingTop: '5rem' }}>
+      {/* ── Services ── */}
+      <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: '#1a2332' }}>What We Do</h2>
-            <p className="text-gray-500 mt-3 text-lg max-w-xl mx-auto">Everything your shop needs to win online — under one roof.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="eyebrow mb-4">Our Services</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#1C1C1E' }}>
+              What We Do
+            </h2>
+            <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: '#6B6560' }}>
+              Everything your shop needs to win online — under one roof.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             {services.map((s) => (
-              <div
+              <motion.div
                 key={s.title}
-                className="bg-white rounded-xl shadow-sm p-8 flex flex-col gap-4 border-b-4 border-transparent hover:border-orange-400 transition-all duration-200"
+                variants={fadeUp}
+                className="rounded-2xl p-10 flex flex-col gap-5 cursor-default transition-all duration-300"
+                style={{ backgroundColor: '#FEFCF9', boxShadow: '0 2px 12px rgba(28,28,30,0.07)' }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(28,28,30,0.12)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(28,28,30,0.07)' }}
               >
-                <div className="text-4xl">{s.icon}</div>
-                <h3 className="text-xl font-bold" style={{ color: '#1a2332' }}>{s.title}</h3>
-                <p className="text-gray-500 text-sm flex-1">{s.desc}</p>
-                <Link href={s.href} style={{ color: '#f97316' }} className="text-sm font-semibold hover:underline">
+                <div>{s.icon}</div>
+                <h3 className="font-serif text-xl font-bold" style={{ color: '#1C1C1E' }}>{s.title}</h3>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B6560' }}>{s.desc}</p>
+                <Link
+                  href={s.href}
+                  className="text-sm font-semibold transition-colors"
+                  style={{ color: '#E85D2A' }}
+                  onMouseEnter={e => (e.target.style.color = '#cf4e1e')}
+                  onMouseLeave={e => (e.target.style.color = '#E85D2A')}
+                >
                   Learn More →
                 </Link>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* How It Works / Storyline */}
-      <section className="py-20" style={{ backgroundColor: '#1a2332' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">The Shop Owner Journey</h2>
-            <p className="text-gray-400 mt-3 text-lg">From problem to 5-star review — we help you win every step.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {/* ── How It Works / Storyline ── */}
+      <section className="grain-overlay py-24 sm:py-32" style={{ backgroundColor: '#1C1C1E' }}>
+        {/* SVG dot-grid accent */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+          <svg className="absolute bottom-0 left-0 opacity-5" width="400" height="400" viewBox="0 0 400 400">
+            {Array.from({ length: 10 }).map((_, row) =>
+              Array.from({ length: 10 }).map((_, col) => (
+                <circle key={`${row}-${col}`} cx={col * 40 + 20} cy={row * 40 + 20} r="2" fill="#D4A853" />
+              ))
+            )}
+          </svg>
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="eyebrow mb-4" style={{ color: '#D4A853' }}>The Journey</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              The Shop Owner Journey
+            </h2>
+            <p className="text-lg" style={{ color: '#6B6560' }}>
+              From problem to 5-star review — we help you win every step.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+          >
             {journey.map((step) => (
-              <div key={step.caption} className="flex flex-col items-center gap-3">
-                <div className="w-full aspect-square rounded-xl overflow-hidden">
-                  <img
-                    src={step.img}
-                    alt={step.caption}
-                    className="w-full h-full object-cover"
-                  />
+              <motion.div key={step.caption} variants={fadeUp} className="flex flex-col items-center gap-3">
+                <div className="w-full aspect-square rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(214,207,199,0.12)' }}>
+                  <img src={step.img} alt={step.caption} className="w-full h-full object-cover" />
                 </div>
-                <p className="text-gray-300 text-xs sm:text-sm text-center font-medium">{step.caption}</p>
-              </div>
+                <p className="text-xs sm:text-sm text-center font-medium" style={{ color: '#E8E2DC' }}>{step.caption}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
+      {/* ── Testimonials ── */}
+      <section className="py-24 sm:py-32" style={{ backgroundColor: '#FEFCF9' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: '#1a2332' }}>What Shop Owners Are Saying</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="eyebrow mb-4">Testimonials</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold" style={{ color: '#1C1C1E' }}>
+              What Shop Owners Are Saying
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             {testimonials.map((t) => (
-              <div key={t.author} className="bg-gray-50 rounded-xl p-8 flex flex-col gap-4 shadow-sm">
-                <div className="text-2xl" style={{ color: '#f97316' }}>&#8220;</div>
-                <p className="text-gray-700 text-base italic flex-1">{t.quote}</p>
+              <motion.div
+                key={t.author}
+                variants={fadeUp}
+                className="rounded-2xl p-10 flex flex-col gap-5"
+                style={{
+                  backgroundColor: '#F5F0EB',
+                  boxShadow: '0 2px 12px rgba(28,28,30,0.06)',
+                  borderLeft: '4px solid #E85D2A',
+                }}
+              >
+                <p className="text-base leading-relaxed italic flex-1" style={{ color: '#2C2A28' }}>{t.quote}</p>
                 <div>
-                  <p className="font-bold text-sm" style={{ color: '#1a2332' }}>{t.author}</p>
-                  <p className="text-gray-400 text-sm">{t.shop}</p>
+                  <p className="font-bold text-sm" style={{ color: '#1C1C1E' }}>{t.author}</p>
+                  <p className="text-sm" style={{ color: '#6B6560' }}>{t.shop}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section style={{ backgroundColor: '#f97316' }} className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Ready to fill your bays?</h2>
-          <p className="text-white text-lg mb-8 opacity-90">Let's build a growth plan tailored to your shop — completely free.</p>
+      {/* ── CTA Banner ── */}
+      <section
+        className="grain-overlay py-24 sm:py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#2C2A28' }}
+      >
+        {/* Radial accent */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,93,42,0.15) 0%, transparent 70%)' }}
+        />
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center"
+        >
+          <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>Let's Work Together</p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+            Ready to fill your bays?
+          </h2>
+          <p className="text-lg mb-10 leading-relaxed" style={{ color: '#E8E2DC' }}>
+            Let's build a growth plan tailored to your shop — completely free.
+          </p>
           <Link
             href="/contact"
-            style={{ backgroundColor: '#1a2332' }}
-            className="inline-block px-8 py-4 rounded-lg text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
+            className="inline-block px-10 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
+            style={{ backgroundColor: '#E85D2A' }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
           >
             Schedule a Free Call
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
