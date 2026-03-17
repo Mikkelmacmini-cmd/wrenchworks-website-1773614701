@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[16946,["/preview/autotrek-site/_next/static/chunks/d5d26131480aa147.js","/preview/autotrek-site/_next/static/chunks/eb64afc5a7e05fd2.js"],"default"]
 3:I[67098,["/preview/autotrek-site/_next/static/chunks/d5d26131480aa147.js","/preview/autotrek-site/_next/static/chunks/eb64afc5a7e05fd2.js"],"default"]
-0:{"buildId":"3XVcyBDedxXCkddklTSSp","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"cEjWMRJPdF7mUtGGV_Bbc","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
