@@ -1,5 +1,5 @@
-:HL["/preview/autotrek-site/_next/static/chunks/f49c174f7ea761d3.css","style"]
+:HL["/preview/autotrek-site/_next/static/chunks/c8d987aca21256e6.css","style"]
 :HL["/images/about-team.jpg","image"]
 :HL["/images/shop-exterior.jpg","image"]
 :HL["/images/engine-work.jpg","image"]
-0:{"buildId":"cEjWMRJPdF7mUtGGV_Bbc","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"about","paramType":null,"paramKey":"about","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"z5at_YlQjTTcTGgBKA1Fg","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"about","paramType":null,"paramKey":"about","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
