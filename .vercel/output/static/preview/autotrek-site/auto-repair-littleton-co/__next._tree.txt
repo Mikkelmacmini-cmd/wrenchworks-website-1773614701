@@ -3,4 +3,5 @@
 :HL["/images/icons/check-engine.svg","image"]
 :HL["/images/mechanic-1.jpg","image"]
 :HL["/images/icons/oil-change.svg","image"]
-0:{"buildId":"IzSmL1buOcJAF016A6MKP","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"auto-repair-littleton-co","paramType":null,"paramKey":"auto-repair-littleton-co","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/images/icons/alignment.svg","image"]
+0:{"buildId":"nVRFZqkkThcuYIIi-uyKg","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"auto-repair-littleton-co","paramType":null,"paramKey":"auto-repair-littleton-co","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
