@@ -2,5 +2,5 @@
 2:I[24519,["/preview/autotrek-site/_next/static/chunks/380d52f46224e502.js"],""]
 3:I[79342,["/preview/autotrek-site/_next/static/chunks/d5d26131480aa147.js","/preview/autotrek-site/_next/static/chunks/eb64afc5a7e05fd2.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"OUwMI8ehbGOqqaO-L2lcC","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-3xl px-4 py-20","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"Page not found"}],["$","p",null,{"className":"my-3","children":"Let’s get you back on track."}],["$","$L2",null,{"className":"text-[#C62828] underline","href":"/services","children":"Browse services"}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"IzSmL1buOcJAF016A6MKP","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-3xl px-4 py-20","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"Page not found"}],["$","p",null,{"className":"my-3","children":"Let’s get you back on track."}],["$","$L2",null,{"className":"text-[#C62828] underline","href":"/services","children":"Browse services"}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
