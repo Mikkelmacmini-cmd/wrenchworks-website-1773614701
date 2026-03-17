@@ -5,14 +5,14 @@ import { ScrollReveal } from "@/components/ScrollReveal"
 
 export const metadata: Metadata = {
   title: "About AutoTrek Service Center | Littleton, CO",
-  description: "Learn about AutoTrek Service Center — Littleton's trusted NAPA AutoCare shop. Honest pricing, EV & hybrid expertise, and a 36-Month/36,000-Mile warranty.",
+  description: "Learn about AutoTrek Service Center — Littleton's trusted NAPA AutoCare shop. Honest pricing and expert auto repair.",
   alternates: { canonical: "/about" },
 }
 
 const VALUES = [
   { icon: "💬", title: "Transparent Pricing", desc: "You get a full written quote before any work begins. No surprises, no pressure." },
-  { icon: "🔬", title: "Expert Technicians", desc: "Our team is trained on domestic, foreign, EV, and hybrid vehicles — every make and model." },
-  { icon: "🏅", title: "NAPA Backed", desc: "As a NAPA AutoCare Center, every qualifying repair comes with a 36-Month/36,000-Mile warranty." },
+  { icon: "🔬", title: "Expert Technicians", desc: "Our team is trained on domestic and foreign vehicles — every make and model." },
+  { icon: "🏅", title: "NAPA Backed", desc: "As a NAPA AutoCare Center, every repair meets the highest standards of quality." },
   { icon: "🏘️", title: "Community First", desc: "We&apos;re locally owned and invested in the Littleton community — not a franchise or chain." },
 ]
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
                   AutoTrek Service Center is independently owned and operated in Littleton, Colorado. We built this business on a simple principle: treat every customer the way we&apos;d want to be treated — with honesty, respect, and real expertise.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  As a NAPA AutoCare Center, we have access to professional-grade parts and diagnostic tools, giving you dealer-level service at independent-shop prices. Every qualifying repair is backed by our nationwide 36-Month/36,000-Mile warranty.
+                  As a NAPA AutoCare Center, we have access to professional-grade parts and diagnostic tools, giving you dealer-level service at independent-shop prices.
                 </p>
                 <div className="bg-[#f8faf8] border border-[#2d6a2d]/20 rounded-xl p-4 text-sm text-gray-700">
                   <p className="font-bold text-[#2d6a2d] mb-1">4.1★ Google Rating</p>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className="text-5xl mb-4">🏅</div>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">NAPA AutoCare Certified</h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-              AutoTrek is a certified NAPA AutoCare Center, which means we meet strict standards for equipment, technician training, and customer service — plus every qualifying repair is backed by a nationwide 36-Month/36,000-Mile warranty.
+              AutoTrek is a certified NAPA AutoCare Center, which means we meet strict standards for equipment, technician training, and customer service — plus every repair meets strict quality standards.
             </p>
             <a
               href={siteConfig.phoneHref}

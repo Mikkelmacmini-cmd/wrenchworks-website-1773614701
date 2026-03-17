@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: { default: "Auto Repair in Littleton, CO | AutoTrek Service Center", template: "%s | AutoTrek Service Center" },
-  description: "Trusted auto repair in Littleton, CO for domestic, foreign, EV, and hybrid vehicles. NAPA Service Center with a 36-month/36,000-mile warranty.",
+  description: "Trusted auto repair in Littleton, CO for domestic and foreign vehicles. NAPA AutoCare Center.",
   alternates: { canonical: "/" },
   openGraph: { title: "AutoTrek Service Center", description: "Reliable repairs. Honest service.", url: siteConfig.baseUrl, siteName: siteConfig.name, type: "website" },
   twitter: { card: "summary_large_image", title: "AutoTrek Service Center", description: "Trusted auto repair in Littleton, CO." }

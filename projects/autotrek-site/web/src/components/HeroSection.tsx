@@ -3,24 +3,17 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
-const HEADLINE_LINES = [
-  "Reliable Repairs.",
-  "Honest Service.",
-  "Local Team.",
-]
+const HEADLINE_LINES = ["Reliable Repairs.", "Honest Service.", "Local Team."]
 
 function AnimatedHeadline() {
   const [started, setStarted] = useState(false)
-
   useEffect(() => {
     const t = setTimeout(() => setStarted(true), 300)
     return () => clearTimeout(t)
   }, [])
-
   let globalIndex = 0
-
   return (
-    <h1 className="text-5xl md:text-7xl font-black tracking-tight text-white leading-tight">
+    <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
       {HEADLINE_LINES.map((line, li) => (
         <span key={li} className="block">
           {line.split("").map((char, ci) => {
@@ -43,104 +36,135 @@ function AnimatedHeadline() {
   )
 }
 
+function ScheduleForm() {
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setLoading(true)
+    const form = e.currentTarget
+    const data = new FormData(form)
+    try {
+      await fetch("https://formspree.io/f/xwplgqzv", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      })
+      setSubmitted(true)
+    } catch {
+      setLoading(false)
+    }
+  }
+
+  if (submitted) {
+    return (
+      <div className="text-center py-8">
+        <div className="text-4xl mb-3">✅</div>
+        <p className="text-[#2d6a2d] font-bold text-lg">Request received!</p>
+        <p className="text-gray-600 text-sm mt-1">We&apos;ll call you back same day.</p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className="block text-xs font-semibold text-gray-600 mb-1">First Name</label>
+          <input name="first_name" type="text" placeholder="First Name" required
+            className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d]" />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-gray-600 mb-1">Last Name</label>
+          <input name="last_name" type="text" placeholder="Last Name" required
+            className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d]" />
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className="block text-xs font-semibold text-gray-600 mb-1">Phone *</label>
+          <input name="phone" type="tel" placeholder="(303) 000-0000" required
+            className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d]" />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-gray-600 mb-1">Email</label>
+          <input name="email" type="email" placeholder="you@email.com"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d]" />
+        </div>
+      </div>
+      <div>
+        <label className="block text-xs font-semibold text-gray-600 mb-1">Vehicle (Year / Make / Model)</label>
+        <input name="vehicle" type="text" placeholder="e.g. 2019 Toyota Camry"
+          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d]" />
+      </div>
+      <div>
+        <label className="block text-xs font-semibold text-gray-600 mb-1">What do you need?</label>
+        <textarea name="message" placeholder="Describe the issue or service needed..." rows={2}
+          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#2d6a2d] focus:ring-1 focus:ring-[#2d6a2d] resize-none" />
+      </div>
+      <button type="submit" disabled={loading}
+        className="w-full bg-[#c0392b] hover:bg-[#a93226] disabled:opacity-60 text-white font-bold py-3 rounded-lg text-base transition-all hover:-translate-y-0.5 hover:shadow-md">
+        {loading ? "Sending..." : "Schedule Service →"}
+      </button>
+      <p className="text-center text-xs text-gray-400">We respond same day · Mon–Fri 9AM–5PM</p>
+    </form>
+  )
+}
+
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Background image + overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-shop.jpg"
-          alt="AutoTrek Service Center shop exterior"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[#0f1a0f]/82" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a0f]/40 via-transparent to-[#0f1a0f]/60" />
+    <section className="relative flex flex-col">
+      <div className="flex flex-col md:flex-row min-h-screen">
+
+        {/* LEFT — dark content panel */}
+        <div className="relative md:w-1/2 bg-[#0f1a0f] flex flex-col justify-center px-8 md:px-12 pt-28 pb-12 md:py-24 overflow-y-auto">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2d6a2d]/10 to-transparent pointer-events-none" />
+
+          <div className="relative z-10">
+            {/* Animated headline */}
+            <AnimatedHeadline />
+
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="mt-4 text-base text-white/70 leading-relaxed max-w-md">
+              AutoTrek Service Center keeps Littleton drivers safe and on the road — without dealership pricing or runaround.
+            </motion.p>
+
+            {/* Schedule form — inside hero */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
+              className="mt-7 bg-white rounded-2xl p-6 border-l-4 border-[#2d6a2d] shadow-xl">
+              <h2 className="text-lg font-black text-gray-900 mb-4">Schedule Service</h2>
+              <ScheduleForm />
+            </motion.div>
+
+            {/* CTA buttons — below form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.9 }}
+              className="mt-5 flex flex-wrap gap-3">
+              <Link href="/services"
+                className="border border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:-translate-y-0.5 hover:bg-white/10">
+                Our Services →
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* RIGHT — mechanic photo */}
+        <div className="md:w-1/2 relative min-h-[50vh] md:min-h-full">
+          <img
+            src="/images/hero-mechanic.jpg"
+            alt="AutoTrek mechanic working on vehicle engine"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0f1a0f]/50 via-transparent to-transparent" />
+        </div>
       </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-24 pb-12 w-full">
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 mb-6"
-        >
-          <span className="bg-[#2d6a2d] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest">
-            NAPA AutoCare Center — Littleton, CO
-          </span>
-        </motion.div>
-
-        {/* Animated headline */}
-        <AnimatedHeadline />
-
-        {/* Subheadline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-6 text-xl text-white/80 max-w-2xl leading-relaxed"
-        >
-          AutoTrek Service Center keeps Littleton drivers safe and on the road — without dealership pricing or runaround.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-          className="mt-8 flex flex-wrap gap-4"
-        >
-          <a
-            href="tel:+13033283356"
-            className="bg-[#c0392b] hover:bg-[#a93226] text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#c0392b]/30"
-          >
-            Schedule Service
-          </a>
-          <Link
-            href="/services"
-            className="border-2 border-white/60 hover:border-white text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5 hover:bg-white/10"
-          >
-            See Our Services
-          </Link>
-        </motion.div>
-
-        {/* Trust bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.8 }}
-          className="mt-16 pt-8 border-t border-white/20 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {[
-            { icon: "✓", label: "NAPA AutoCare" },
-            { icon: "🛡", label: "36k/36-Month Warranty" },
-            { icon: "⚡", label: "EV & Hybrid Ready" },
-            { icon: "🕐", label: "Mon–Fri 9–5" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2 text-white/90">
-              <span className="text-[#c0392b] text-lg">{item.icon}</span>
-              <span className="text-sm font-semibold">{item.label}</span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/50"
-      >
-        <span className="text-xs tracking-widest uppercase">Scroll to explore</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="text-lg"
-        >
-          ↓
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

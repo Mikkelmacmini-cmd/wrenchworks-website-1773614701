@@ -12,7 +12,7 @@ interface Stat {
 const STATS: Stat[] = [
   { value: "22+", numericTarget: 22, suffix: "+", label: "Services Offered" },
   { value: "4.1★", label: "Google Rating" },
-  { value: "36k", label: "Mile Warranty" },
+  { value: "NAPA", label: "AutoCare Center" },
   { value: "Mon–Fri", label: "9AM–5PM" },
 ]
 

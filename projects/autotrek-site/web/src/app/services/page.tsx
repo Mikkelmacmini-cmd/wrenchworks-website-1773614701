@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal"
 
 export const metadata: Metadata = {
   title: "Auto Repair Services in Littleton, CO | AutoTrek Service Center",
-  description: "22 auto repair services in Littleton, CO. From oil changes to EV repair, brake service, AC, diagnostics & more. NAPA AutoCare Center with 36k/36-month warranty.",
+  description: "22 auto repair services in Littleton, CO. From oil changes to brake service, AC, diagnostics & more. NAPA AutoCare Center.",
   alternates: { canonical: "/services" },
 }
 
@@ -51,7 +51,7 @@ export default function ServicesPage() {
             <span style={{ color: "#c0392b" }}>One Shop.</span>
           </h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto leading-relaxed mb-8">
-            From routine maintenance to complex diagnostics — every service backed by the NAPA 36-Month/36,000-Mile warranty.
+            From routine maintenance to complex diagnostics — expert service you can trust.
           </p>
           <a
             href={siteConfig.phoneHref}
@@ -70,7 +70,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
                 Everything Your Vehicle Needs
               </h2>
-              <p className="text-gray-600 text-lg">Domestic, foreign, EV, and hybrid — we work on it all.</p>
+              <p className="text-gray-600 text-lg">Domestic and foreign — we work on it all.</p>
             </div>
           </ScrollReveal>
 
@@ -98,7 +98,7 @@ export default function ServicesPage() {
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Every Repair. Backed by NAPA.</h2>
             <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">
-              Qualifying repairs come with the nationwide NAPA 36-Month/36,000-Mile warranty — valid at over 14,000 locations.
+              NAPA AutoCare certified — meet strict standards for equipment, training, and customer service.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a

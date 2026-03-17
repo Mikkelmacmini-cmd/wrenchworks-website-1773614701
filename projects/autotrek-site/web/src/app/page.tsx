@@ -6,25 +6,27 @@ import { ScrollReveal } from "@/components/ScrollReveal"
 
 export const metadata = {
   title: "Auto Repair in Littleton, CO | AutoTrek Service Center",
-  description: "Trusted NAPA AutoCare Center in Littleton, CO. Honest auto repair for domestic, foreign, EV & hybrid vehicles. 36-Month/36,000-Mile warranty. Call (303) 328-3356.",
+  description: "Trusted NAPA AutoCare Center in Littleton, CO. Honest auto repair for domestic and foreign vehicles. Call (303) 328-3356.",
   alternates: { canonical: "/" },
 }
 
 const FEATURED_SERVICES = [
-  { slug: "ac-service-repair-littleton-co", name: "AC Service & Repair", icon: "❄️", desc: "Stay cool with diagnostics, recharge, and AC component repair." },
-  { slug: "brake-repair-service-littleton-co", name: "Brake Repair & Service", icon: "🛑", desc: "Safe, responsive braking with full-system inspection and repair." },
-  { slug: "check-engine-light-diagnostics-littleton-co", name: "Check Engine Light", icon: "🔍", desc: "Accurate diagnostics to identify issues fast and fix them right." },
-  { slug: "ev-hybrid-repair-littleton-co", name: "EV & Hybrid Repair", icon: "⚡", desc: "Specialized service for hybrid and electric vehicle systems." },
-  { slug: "oil-fluid-changes-littleton-co", name: "Oil & Fluid Changes", icon: "🛢️", desc: "Protect engine life with timely oil and full fluid service." },
-  { slug: "wheel-alignment-littleton-co", name: "Wheel Alignment", icon: "🎯", desc: "Improve tire life and handling with precise alignment." },
+  { slug: "ac-service-repair-littleton-co", name: "AC Service & Repair", icon: "/images/icons/ac-service.jpg", desc: "Stay cool with diagnostics, recharge, and AC component repair." },
+  { slug: "brake-repair-service-littleton-co", name: "Brake Repair & Service", icon: "/images/icons/brake-service.jpg", desc: "Safe, responsive braking with full-system inspection and repair." },
+  { slug: "check-engine-light-diagnostics-littleton-co", name: "Check Engine Light", icon: "/images/icons/check-engine.jpg", desc: "Accurate diagnostics to identify issues fast and fix them right." },
+  { slug: "oil-fluid-changes-littleton-co", name: "Oil & Fluid Changes", icon: "/images/icons/oil-change.jpg", desc: "Protect engine life with timely oil and full fluid service." },
+  { slug: "steering-suspension-littleton-co", name: "Steering & Suspension", icon: "/images/icons/steering-suspension.jpg", desc: "Restore control, comfort, and handling precision." },
+  { slug: "tires-wheels-littleton-co", name: "Tires & Wheels", icon: "/images/icons/tires-wheels.jpg", desc: "Tire rotation, balancing, and full wheel service." },
+  { slug: "minor-auto-service-littleton-co", name: "Battery Service", icon: "🔋", desc: "Battery testing, replacement, and charging system inspection." },
+  { slug: "factory-recommended-major-service-littleton-co", name: "Tune-Up Service", icon: "⚙️", desc: "Spark plugs, filters, and full scheduled maintenance to keep you running smooth." },
 ]
 
 const REVIEWS = [
-  { stars: 5, text: "These guys saved me from a $3,000 dealer quote. Found the actual issue in 20 minutes, fixed it for $280. Honest, fast, fair.", name: "Mike T.", city: "Littleton" },
-  { stars: 5, text: "Brought in my hybrid and they knew exactly what they were doing. Most shops won't touch them. AutoTrek handled it no problem.", name: "Sarah K.", city: "Highlands Ranch" },
-  { stars: 4, text: "Good honest shop. They showed me the worn parts before replacing anything. That transparency is rare. Will be my go-to.", name: "James R.", city: "Englewood" },
-  { stars: 5, text: "Quick turnaround on brakes and rotors. In by 9, out by noon. Fair price, no upsells.", name: "Rachel M.", city: "Centennial" },
-  { stars: 5, text: "NAPA certification matters — you get a real warranty. Fixed my AC perfectly, still blowing cold months later.", name: "David L.", city: "Littleton" },
+  { stars: 5, text: "I spoke to Alan who got me in right away and fixed the issue in less than 2 hours. He was so nice and friendly, I felt like he was a family friend who fixed my car and not just some shady mechanic. I would 100% recommend this mechanic shop!", name: "Veronica P.", city: "Littleton" },
+  { stars: 5, text: "Alan and his team are absolutely amazing! I have taken my car here multiple times and have received exceptional service every time.", name: "Alex G.", city: "Littleton" },
+  { stars: 5, text: "Alan and his team was great! Reasonable price and honest! Also, he got me in quick. Highly recommend!", name: "Samara W.", city: "Littleton" },
+  { stars: 5, text: "The team is very responsive and quick (but thorough) with their work. I dropped my car off for an engine replacement and it was ready within a week. Alan spoke with my warranty company to ensure costs were covered and updated me every step of the way. Very pleased.", name: "Aubree B.", city: "Littleton" },
+  { stars: 5, text: "Had to have some work done on my car — they found some additional things wrong, but did a really fantastic job of getting me all taken care of.", name: "Namiko E.", city: "Littleton" },
 ]
 
 function StarRating({ count }: { count: number }) {
@@ -50,36 +52,40 @@ export default function Home() {
             <ScrollReveal direction="left">
               <div>
                 <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
-                  Honest<strong style={{ color: "#c0392b" }}>.</strong> Local<strong style={{ color: "#c0392b" }}>.</strong> Trusted<strong style={{ color: "#c0392b" }}>.</strong>
+                  Your Neighborhood<br /><span style={{ color: "#2d6a2d" }}>Mechanic.</span>
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  We&apos;ve been serving Littleton drivers with transparent, dealer-quality service without the dealer markup.
+                <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                  Alan and his team run a tight ship — transparent quotes, no upselling, and every car gets a full safety inspection every single visit. No surprises. No pressure.
                 </p>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Dealer-quality work at independent shop prices, right here in Littleton. We&apos;ve got a comfortable waiting area and we move fast — most jobs same day.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {["✓ Full inspection every visit", "✓ Written quotes, you approve first", "✓ Same-day service most repairs", "✓ Comfortable waiting area"].map(b => (
+                    <span key={b} className="bg-[#f0f7f0] text-[#2d6a2d] text-sm font-semibold px-3 py-1.5 rounded-full">{b}</span>
+                  ))}
+                </div>
                 <Link href="/about" className="text-[#2d6a2d] font-bold hover:underline text-lg">
-                  Learn About Us →
+                  Meet the Team →
                 </Link>
               </div>
             </ScrollReveal>
 
-            <div className="space-y-4">
-              {[
-                { icon: "🔧", title: "No Surprise Bills", desc: "You approve every repair before we start. Always. No hidden fees, no last-minute additions." },
-                { icon: "⚡", title: "EV & Hybrid Experts", desc: "Most shops turn away hybrids. We specialize in them — EV, plug-in hybrid, and traditional hybrid." },
-                { icon: "🛡️", title: "36k Warranty", desc: "Every qualifying repair backed by the NAPA 36-Month/36,000-Mile nationwide guarantee." },
-              ].map((card, i) => (
-                <ScrollReveal key={card.title} delay={i * 0.1}>
-                  <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 transition-transform duration-200 hover:shadow-lg hover:border-[#2d6a2d]/30 group">
-                    <div className="flex items-start gap-4">
-                      <span className="text-2xl">{card.icon}</span>
-                      <div>
-                        <h3 className="font-bold text-lg text-gray-900 mb-1 group-hover:text-[#2d6a2d] transition-colors">{card.title}</h3>
-                        <p className="text-gray-600">{card.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
+            {/* Google Maps */}
+            <ScrollReveal direction="right">
+              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-xl h-full min-h-[420px]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.5707442494795!2d-104.98765402375868!3d39.56928550678116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c839b6e73ec17%3A0xe6e27082d266b0cb!2sAutoTrek%20Member%20Service!5e0!3m2!1sen!2sus!4v1773708898576!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block', minHeight: '420px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="AutoTrek Service Center — 8161 S Grant Way, Littleton, CO"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -90,7 +96,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-                What We<strong style={{ color: "#c0392b" }}>.</strong> Fix<strong style={{ color: "#c0392b" }}>.</strong>
+                What<strong style={{ color: "#c0392b" }}>.</strong> We<strong style={{ color: "#c0392b" }}>.</strong> Fix<strong style={{ color: "#c0392b" }}>.</strong>
               </h2>
               <p className="text-gray-600 text-lg max-w-xl mx-auto">
                 From oil changes to EV battery systems — if it rolls, we service it.
@@ -105,10 +111,14 @@ export default function Home() {
                   href={`/services/${service.slug}`}
                   className="group block bg-white rounded-2xl border border-gray-200 p-6 hover:-translate-y-2 transition-all duration-200 hover:shadow-xl hover:border-t-[#2d6a2d] hover:border-t-4"
                 >
-                  <div className="text-3xl mb-3">{service.icon}</div>
-                  <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#2d6a2d] transition-colors">{service.name}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.desc}</p>
-                  <span className="text-[#2d6a2d] font-semibold text-sm group-hover:underline">Learn More →</span>
+                  <div className="mb-4 flex justify-center">
+                    {service.icon.startsWith("/")
+                      ? <img src={service.icon} alt="" className="w-20 h-20 object-contain border-0 outline-none" style={{border:'none',outline:'none',boxShadow:'none'}} />
+                      : <span className="text-4xl">{service.icon}</span>}
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#2d6a2d] transition-colors text-center">{service.name}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 text-center">{service.desc}</p>
+                  <div className="text-center"><span className="text-[#2d6a2d] font-semibold text-sm group-hover:underline">Learn More →</span></div>
                 </Link>
               </ScrollReveal>
             ))}
@@ -146,7 +156,7 @@ export default function Home() {
               { num: "01", title: "Drop Off", desc: "Bring your vehicle in. We'll take down the details and get you checked in fast." },
               { num: "02", title: "Inspect & Quote", desc: "We diagnose the issue and give you a clear, written quote — no vague estimates." },
               { num: "03", title: "You Approve", desc: "Nothing gets touched until you say go. Zero pressure, complete transparency." },
-              { num: "04", title: "Back on the Road", desc: "Repairs done right, backed by NAPA warranty. You're good to go." },
+              { num: "04", title: "Back on the Road", desc: "Repairs done right by ASE-certified techs. Pick up and drive with confidence." },
             ].map((step, i) => (
               <ScrollReveal key={step.num} delay={i * 0.1}>
                 <div className="text-center">
@@ -161,30 +171,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 4.5 Inspection Promise */}
+      <section className="bg-[#2d6a2d] py-12">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+              <p className="text-white/70 text-sm font-semibold uppercase tracking-widest mb-1">Every Single Visit</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white">Free full-vehicle safety inspection.</h3>
+              <p className="text-white/70 mt-1">We check every system — no extra charge, no obligation. You always know what&apos;s going on with your car.</p>
+            </div>
+            <a href={siteConfig.phoneHref} className="flex-shrink-0 bg-white text-[#2d6a2d] font-bold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:-translate-y-0.5 whitespace-nowrap">
+              Book a Visit
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* 5. Reviews */}
-      <section id="reviews" className="bg-white py-24">
+      <section id="reviews" className="bg-white py-24 overflow-hidden">
         <div className="mx-auto max-w-6xl px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-                What Drivers<strong style={{ color: "#c0392b" }}>.</strong> Say<strong style={{ color: "#c0392b" }}>.</strong>
+                What<strong style={{ color: "#c0392b" }}>.</strong> Drivers<strong style={{ color: "#c0392b" }}>.</strong> Say<strong style={{ color: "#c0392b" }}>.</strong>
               </h2>
-              <p className="text-gray-600 text-lg">Real reviews from real Littleton drivers.</p>
+              <p className="text-gray-600 text-lg">Real reviews from real customers.</p>
             </div>
           </ScrollReveal>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {REVIEWS.map((review, i) => (
-              <ScrollReveal key={review.name} delay={i * 0.08}>
-                <div className="bg-[#f8faf8] rounded-2xl p-6 border border-gray-100 hover:-translate-y-1 transition-transform duration-200 hover:shadow-lg h-full flex flex-col">
+        {/* Infinite scroll marquee */}
+        <div className="relative w-full overflow-hidden">
+          <style>{`
+            @keyframes marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .marquee-track {
+              display: flex;
+              width: max-content;
+              animation: marquee 30s linear infinite;
+            }
+            .marquee-track:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
+          <div className="marquee-track">
+            {[...REVIEWS, ...REVIEWS].map((review, i) => (
+              <div key={i} className="w-80 flex-shrink-0 mx-3">
+                <div className="bg-[#f8faf8] rounded-2xl p-6 border border-gray-100 h-full flex flex-col">
                   <StarRating count={review.stars} />
-                  <p className="text-gray-700 mt-3 mb-4 leading-relaxed flex-1">&ldquo;{review.text}&rdquo;</p>
+                  <p className="text-gray-700 mt-3 mb-4 leading-relaxed flex-1 text-sm">&ldquo;{review.text}&rdquo;</p>
                   <div className="text-sm font-bold text-gray-900">{review.name} <span className="text-gray-500 font-normal">— {review.city}</span></div>
                 </div>
-              </ScrollReveal>
+              </div>
             ))}
           </div>
+        </div>
 
+        <div className="mx-auto max-w-6xl px-4">
           <ScrollReveal delay={0.4}>
             <div className="text-center mt-10">
               <a
@@ -210,8 +255,8 @@ export default function Home() {
             <ScrollReveal direction="left">
               <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <img
-                  src="/images/mechanic-1.jpg"
-                  alt="AutoTrek mechanic working on a vehicle"
+                  src="/images/building-exterior.jpg"
+                  alt="AutoTrek Service Center building in Littleton, CO"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -220,19 +265,19 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
-                  Littleton&apos;s Trusted<br />
+                  Colorado&apos;s Trusted<br />
                   <span style={{ color: "#2d6a2d" }}>Repair Shop.</span>
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  AutoTrek Service Center has been serving the Littleton community with honest, expert auto repair. As a NAPA AutoCare Center, every qualifying repair is backed by a nationwide 36-Month/36,000-Mile warranty.
+                  AutoTrek Service Center has been serving the Littleton community with honest, expert auto repair. As a NAPA AutoCare Center, we hold ourselves to the highest standards of quality and service.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  We work on domestic vehicles, foreign imports, EVs, and hybrids — whatever you drive, we can fix it.
+                  We work on domestic and foreign vehicles — whatever you drive, we can fix it.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  <div className="bg-[#f8faf8] border border-[#2d6a2d]/20 rounded-full px-4 py-2 text-sm font-semibold text-[#2d6a2d]">✓ NAPA Certified</div>
-                  <div className="bg-[#f8faf8] border border-[#2d6a2d]/20 rounded-full px-4 py-2 text-sm font-semibold text-[#2d6a2d]">✓ 36k Warranty</div>
-                  <div className="bg-[#f8faf8] border border-[#2d6a2d]/20 rounded-full px-4 py-2 text-sm font-semibold text-[#2d6a2d]">✓ EV & Hybrid</div>
+                <div className="flex flex-wrap gap-4 items-center">
+                  <img src="/images/napa-autocare.jpg" alt="NAPA AutoCare Center" className="h-16 w-auto object-contain" />
+                  <img src="/images/ase-certified.jpg" alt="ASE Certified" className="h-16 w-auto object-contain" />
+
                 </div>
                 <Link
                   href="/about"

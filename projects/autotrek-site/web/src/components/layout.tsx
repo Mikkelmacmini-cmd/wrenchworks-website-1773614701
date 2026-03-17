@@ -3,14 +3,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { siteConfig } from "@/lib/site"
 
-function MountainIcon() {
-  return (
-    <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 21L10 6L15 13L18 9L27 21H1Z" fill="#2d6a2d" />
-      <path d="M15 13L18 9L23 16H11L15 13Z" fill="#c0392b" opacity="0.9" />
-    </svg>
-  )
-}
+
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -29,13 +22,10 @@ export function Header() {
       }`}
     >
       <a href="#main" className="sr-only focus:not-sr-only">Skip to main content</a>
-      <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-3">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <MountainIcon />
-          <span className="font-black text-xl tracking-tight text-[#2d6a2d] group-hover:text-[#1a4a1a] transition-colors">
-            AutoTrek
-          </span>
+      <div className="w-full flex items-center justify-between px-6 py-2">
+        {/* Logo — large, locked far left */}
+        <Link href="/" className="flex items-center flex-shrink-0">
+          <img src="/images/logo.jpg" alt="AutoTrek Service Center" className="h-24 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -49,9 +39,10 @@ export function Header() {
         {/* CTA */}
         <a
           href={siteConfig.phoneHref}
-          className="hidden md:inline-flex items-center gap-2 bg-[#c0392b] hover:bg-[#a93226] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-md"
+          className="hidden md:inline-flex items-center gap-2 bg-[#D32F2F] hover:bg-[#b71c1c] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-md"
         >
-          Call Now: {siteConfig.phoneDisplay}
+          <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-8.33-8.33 19.79 19.79 0 01-3.07-8.67A2 2 0 014 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
         </a>
 
         {/* Mobile menu button */}
@@ -73,7 +64,7 @@ export function Header() {
           <Link href="/about" className="block font-semibold text-gray-700 py-2" onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/reviews" className="block font-semibold text-gray-700 py-2" onClick={() => setMenuOpen(false)}>Reviews</Link>
           <Link href="/contact" className="block font-semibold text-gray-700 py-2" onClick={() => setMenuOpen(false)}>Contact</Link>
-          <a href={siteConfig.phoneHref} className="block w-full text-center bg-[#c0392b] text-white font-bold py-3 rounded-full">
+          <a href={siteConfig.phoneHref} className="block w-full text-center bg-[#D32F2F] text-white font-bold py-3 rounded-full">
             Call {siteConfig.phoneDisplay}
           </a>
         </div>
@@ -98,8 +89,9 @@ export function Footer() {
           <div className="flex flex-wrap gap-4 justify-center">
             <a
               href={siteConfig.phoneHref}
-              className="bg-[#c0392b] hover:bg-[#a93226] text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-[#D32F2F] hover:bg-[#b71c1c] text-white font-bold px-8 py-4 rounded-full text-lg transition-all hover:-translate-y-0.5"
             >
+              <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-8.33-8.33 19.79 19.79 0 01-3.07-8.67A2 2 0 014 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
               Call {siteConfig.phoneDisplay}
             </a>
             <Link
@@ -117,9 +109,8 @@ export function Footer() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-black text-xl text-[#2d6a2d]">AutoTrek</span>
-                <span className="text-white/40 text-sm">Service Center</span>
+              <div className="mb-3">
+                <img src="/images/logo.jpg" alt="AutoTrek Service Center" className="h-10 w-auto brightness-0 invert" />
               </div>
               <p className="text-white/50 text-sm leading-relaxed">
                 NAPA AutoCare Center serving Littleton and surrounding communities with honest, expert auto repair.
@@ -161,13 +152,14 @@ export function MobileStickyBar() {
       <div className="mx-auto flex max-w-md gap-2">
         <a
           href={siteConfig.phoneHref}
-          className="flex-1 rounded-full bg-[#c0392b] px-4 py-3 text-center font-bold text-white text-sm"
+          className="flex-1 rounded-full bg-[#c0392b] px-4 py-3 text-center font-bold text-white text-sm inline-flex items-center justify-center gap-2"
         >
+          <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-8.33-8.33 19.79 19.79 0 01-3.07-8.67A2 2 0 014 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
           Call Now
         </a>
         <Link
           href="/contact"
-          className="flex-1 rounded-full border-2 border-[#c0392b] px-4 py-3 text-center font-bold text-[#c0392b] text-sm"
+          className="flex-1 rounded-full border-2 border-[#D32F2F] px-4 py-3 text-center font-bold text-[#D32F2F] text-sm"
         >
           Schedule
         </Link>
