@@ -269,10 +269,10 @@ export default function Home() {
                   <span style={{ color: "#2d6a2d" }}>Repair Shop.</span>
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  AutoTrek Service Center has been serving the Littleton community with honest, expert auto repair. As a NAPA AutoCare Center, we hold ourselves to the highest standards of quality and service.
+                  Dealer-quality diagnostics and repairs at independent-shop prices. AutoTrek is NAPA AutoCare certified — which means strict standards for equipment, technician training, and customer service.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  We work on domestic and foreign vehicles — whatever you drive, we can fix it.
+                  Domestic, foreign, trucks, and SUVs — whatever you drive, we fix it right. And every single visit includes a complimentary full-vehicle safety inspection.
                 </p>
                 <div className="flex flex-wrap gap-4 items-center">
                   <img src="/images/napa-autocare.jpg" alt="NAPA AutoCare Center" className="h-16 w-auto object-contain" />
