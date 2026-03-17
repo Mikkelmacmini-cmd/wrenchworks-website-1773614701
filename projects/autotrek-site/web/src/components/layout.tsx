@@ -112,9 +112,13 @@ export function Footer() {
               <div className="mb-3">
                 <img src="/images/logo.jpg" alt="AutoTrek Service Center" className="h-10 w-auto brightness-0 invert" />
               </div>
-              <p className="text-white/50 text-sm leading-relaxed">
-                NAPA AutoCare Center serving Littleton and surrounding communities with honest, expert auto repair.
+              <p className="text-white/50 text-sm leading-relaxed mb-4">
+                Your neighborhood mechanic — serving Littleton and surrounding communities with honest, expert auto repair.
               </p>
+              <div className="flex gap-3 items-center">
+                <img src="/images/napa-autocare.jpg" alt="NAPA AutoCare Center" className="h-9 w-auto object-contain brightness-0 invert opacity-60" />
+                <img src="/images/ase-certified.jpg" alt="ASE Certified" className="h-9 w-auto object-contain brightness-0 invert opacity-60" />
+              </div>
             </div>
 
             <div>
@@ -137,8 +141,9 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-6 text-white/40 text-sm text-center">
-            © 2025 AutoTrek Service Center. All rights reserved.
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-white/40 text-sm">
+            <p>© {new Date().getFullYear()} AutoTrek Service Center. All rights reserved.</p>
+            <p>Serving Littleton · Highlands Ranch · Englewood · Centennial · Lakewood</p>
           </div>
         </div>
       </div>
