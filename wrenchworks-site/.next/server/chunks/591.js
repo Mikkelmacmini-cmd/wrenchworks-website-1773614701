@@ -191,8 +191,8 @@ function Footer() {
                                             label: "Services"
                                         },
                                         {
-                                            href: "/case-studies",
-                                            label: "Case Studies"
+                                            href: "/testimonials",
+                                            label: "Testimonials"
                                         },
                                         {
                                             href: "/contact",
@@ -303,7 +303,7 @@ function Header() {
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                             src: "/images/logo.png",
                             alt: "WrenchWorks Digital",
-                            className: "h-10 w-auto"
+                            className: "h-14 w-auto"
                         })
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("nav", {
@@ -320,14 +320,14 @@ function Header() {
                                 children: "Services"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                                href: "/case-studies",
+                                href: "/testimonials",
                                 className: "text-sm font-medium transition-colors",
                                 style: {
                                     color: "#E8E2DC"
                                 },
                                 onMouseEnter: (e)=>e.target.style.color = "#E85D2A",
                                 onMouseLeave: (e)=>e.target.style.color = "#E8E2DC",
-                                children: "Case Studies"
+                                children: "Testimonials"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                 href: "/contact",
@@ -353,7 +353,7 @@ function Header() {
                                     e.currentTarget.style.transform = "scale(1)";
                                     e.currentTarget.style.backgroundColor = "#E85D2A";
                                 },
-                                children: "Get a Free Plan"
+                                children: "Schedule a Call"
                             })
                         ]
                     }),
@@ -403,13 +403,13 @@ function Header() {
                             children: "Services"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                            href: "/case-studies",
+                            href: "/testimonials",
                             className: "text-sm font-medium",
                             style: {
                                 color: "#E8E2DC"
                             },
                             onClick: ()=>setOpen(false),
-                            children: "Case Studies"
+                            children: "Testimonials"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             href: "/contact",
@@ -427,7 +427,7 @@ function Header() {
                                 backgroundColor: "#E85D2A"
                             },
                             onClick: ()=>setOpen(false),
-                            children: "Get a Free Plan"
+                            children: "Schedule a Call"
                         })
                     ]
                 })

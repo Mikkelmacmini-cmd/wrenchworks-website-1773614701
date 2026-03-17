@@ -301,8 +301,20 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          <div className="text-center py-12">
-            <p className="italic" style={{ color: '#E8E2DC' }}>New journey visuals coming soon</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { img: '/images/journey-01.png', caption: '1. Empty bays, slow days' },
+              { img: '/images/journey-02.png', caption: '2. They find WrenchWorks Digital' },
+              { img: '/images/journey-03.png', caption: '3. New site, AI tools & Google presence' },
+              { img: '/images/journey-04.png', caption: '4. Full bays, full parking lot' },
+            ].map((step) => (
+              <FadeIn key={step.caption} className="flex flex-col items-center gap-3">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(214,207,199,0.12)' }}>
+                  <img src={step.img} alt={step.caption} className="w-full h-full object-cover" />
+                </div>
+                <p className="text-xs sm:text-sm text-center font-medium" style={{ color: '#E8E2DC' }}>{step.caption}</p>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
