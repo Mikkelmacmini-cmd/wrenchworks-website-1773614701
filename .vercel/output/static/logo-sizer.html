@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Sizer Tool</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f0eb;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #1c1c1e;
+    }
+    .preview-box {
+      background: #1c1c1e;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+    #logoPreview {
+      max-width: 100%;
+      height: auto;
+      cursor: grab;
+    }
+    #logoPreview:active {
+      cursor: grabbing;
+    }
+    .controls {
+      background: #f5f0eb;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .control-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1c1c1e;
+      font-size: 14px;
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #d4a853;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #e85d2a;
+      cursor: pointer;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #e85d2a;
+      cursor: pointer;
+      border: none;
+    }
+    .size-display {
+      font-size: 16px;
+      color: #1c1c1e;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .info-box {
+      background: #fefcf9;
+      border-left: 4px solid #e85d2a;
+      padding: 15px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #6b6560;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Logo Sizer Tool</h1>
+    
+    <div class="preview-box">
+      <img id="logoPreview" src="/images/logo-wide.png" alt="WrenchWorks Logo">
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="widthSlider">Logo Width (px)</label>
+        <input type="range" id="widthSlider" min="40" max="500" value="160">
+        <div class="size-display">Width: <strong id="widthValue">160</strong>px</div>
+      </div>
+
+      <div class="control-group">
+        <label for="heightSlider">Logo Height (px)</label>
+        <input type="range" id="heightSlider" min="40" max="500" value="160">
+        <div class="size-display">Height: <strong id="heightValue">160</strong>px</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Current dimensions:</strong> <span id="currentSize">160px × 160px</span><br>
+      <strong>Aspect ratio:</strong> <span id="aspectRatio">1:1</span><br>
+      Drag the logo to reposition. Use the sliders to adjust size.
+    </div>
+  </div>
+
+  <script>
+    const logo = document.getElementById('logoPreview');
+    const widthSlider = document.getElementById('widthSlider');
+    const heightSlider = document.getElementById('heightSlider');
+    const widthValue = document.getElementById('widthValue');
+    const heightValue = document.getElementById('heightValue');
+    const currentSize = document.getElementById('currentSize');
+    const aspectRatio = document.getElementById('aspectRatio');
+
+    function updateSize() {
+      const w = widthSlider.value;
+      const h = heightSlider.value;
+      logo.style.width = w + 'px';
+      logo.style.height = h + 'px';
+      widthValue.textContent = w;
+      heightValue.textContent = h;
+      currentSize.textContent = w + 'px × ' + h + 'px';
+      const ratio = (w / h).toFixed(2);
+      aspectRatio.textContent = ratio + ':1';
+    }
+
+    widthSlider.addEventListener('input', updateSize);
+    heightSlider.addEventListener('input', updateSize);
+
+    // Drag to reposition
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    logo.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - logo.getBoundingClientRect().left;
+      offsetY = e.clientY - logo.getBoundingClientRect().top;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const rect = logo.parentElement.getBoundingClientRect();
+        let x = e.clientX - rect.left - offsetX;
+        let y = e.clientY - rect.top - offsetY;
+        logo.style.position = 'relative';
+        logo.style.left = x + 'px';
+        logo.style.top = y + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    updateSize();
+  </script>
+</body>
+</html>

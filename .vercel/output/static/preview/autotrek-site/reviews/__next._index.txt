@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[67288,["/_next/static/chunks/e1f5fbb799febade.js"],"Header"]
+3:I[16946,["/_next/static/chunks/d5d26131480aa147.js","/_next/static/chunks/eb64afc5a7e05fd2.js"],"default"]
+4:I[67098,["/_next/static/chunks/d5d26131480aa147.js","/_next/static/chunks/eb64afc5a7e05fd2.js"],"default"]
+5:I[24519,["/_next/static/chunks/e1f5fbb799febade.js"],""]
+6:I[67288,["/_next/static/chunks/e1f5fbb799febade.js"],"Footer"]
+7:I[67288,["/_next/static/chunks/e1f5fbb799febade.js"],"MobileStickyBar"]
+:HL["/_next/static/chunks/9e0e61f0d7e8b7ed.css","style"]
+0:{"buildId":"WSKdbiF3BdPcxjV4QFKWc","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/9e0e61f0d7e8b7ed.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/e1f5fbb799febade.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"bg-white pb-20 md:pb-0","children":[["$","$L2",null,{}],["$","main",null,{"id":"main","children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[["$","div",null,{"className":"mx-auto max-w-3xl px-4 py-20","children":[["$","h1",null,{"className":"text-3xl font-bold","children":"Page not found"}],["$","p",null,{"className":"my-3","children":"Let’s get you back on track."}],["$","$L5",null,{"className":"text-[#C62828] underline","href":"/services","children":"Browse services"}]]}],[]]}]}],["$","$L6",null,{}],["$","$L7",null,{}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"AutoRepair\",\"name\":\"AutoTrek Service Center\",\"telephone\":\"(303) 328-3356\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"8161 S Grant Way\",\"addressLocality\":\"Littleton\",\"addressRegion\":\"CO\",\"postalCode\":\"80122\"},\"openingHours\":\"Mo-Fr 09:00-17:00\"}"}}]]}]}]]}],"loading":null,"isPartial":false}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Dashed bounding box -->
+  <rect x="14" y="10" width="72" height="80" rx="4" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 3" fill="none"/>
+
+  <!-- Car body (top-down view) -->
+  <path d="M50 22 C42 22 36 26 34 32 L32 48 C32 54 34 60 36 64 L38 72 C39 75 41 76 44 76 L56 76 C59 76 61 75 62 72 L64 64 C66 60 68 54 68 48 L66 32 C64 26 58 22 50 22Z" fill="#3d3d4d"/>
+  <!-- Windshield -->
+  <path d="M43 28 L57 28 L59 38 L41 38Z" fill="#6a6a80" opacity="0.6"/>
+  <!-- Rear window -->
+  <path d="M42 62 L58 62 L57 70 L43 70Z" fill="#6a6a80" opacity="0.6"/>
+
+  <!-- 4 Wheels with X marks -->
+  <!-- Front-left -->
+  <rect x="22" y="26" width="12" height="16" rx="3" fill="#3d3d4d"/>
+  <line x1="24" y1="28" x2="32" y2="40" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="32" y1="28" x2="24" y2="40" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Front-right -->
+  <rect x="66" y="26" width="12" height="16" rx="3" fill="#3d3d4d"/>
+  <line x1="68" y1="28" x2="76" y2="40" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="76" y1="28" x2="68" y2="40" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Rear-left -->
+  <rect x="22" y="58" width="12" height="16" rx="3" fill="#3d3d4d"/>
+  <line x1="24" y1="60" x2="32" y2="72" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="32" y1="60" x2="24" y2="72" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Rear-right -->
+  <rect x="66" y="58" width="12" height="16" rx="3" fill="#3d3d4d"/>
+  <line x1="68" y1="60" x2="76" y2="72" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="76" y1="60" x2="68" y2="72" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Top arrow (down) -->
+  <path d="M50 2 L50 10 M46 6 L50 10 L54 6" stroke="#c0392b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom arrow (up) -->
+  <path d="M50 98 L50 90 M46 94 L50 90 L54 94" stroke="#c0392b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Left arrow (right) -->
+  <path d="M2 50 L10 50 M6 46 L10 50 L6 54" stroke="#c0392b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right arrow (left) -->
+  <path d="M98 50 L90 50 M94 46 L90 50 L94 54" stroke="#c0392b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,5 +1,66 @@
-@import "tailwindcss";
-:root { color-scheme: light; }
-body { font-family: Inter, Arial, sans-serif; color:#111827; }
-h1,h2,h3 { font-family: Montserrat, Inter, sans-serif; }
-section { scroll-margin-top: 90px; }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1a4d5c;
+  --primary-light: #2a6d7c;
+  --primary-dark: #0f3440;
+  --accent: #d4a574;
+  --accent-dark: #c9935c;
+  --neutral-dark: #8b7355;
+  --neutral-light: #e8dcd2;
+  --success: #2d8f6f;
+  --danger: #d63031;
+}
+
+* {
+  transition: all 200ms;
+}
+
+body {
+  background: white;
+  color: #111827;
+  font-family: 'Figtree', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(1.875rem, 5vw, 3.75rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.2s; }
+.fade-in-delay-3 { animation-delay: 0.3s; }
+.fade-in-delay-4 { animation-delay: 0.4s; }
