@@ -291,6 +291,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 7.5 Pre-purchase CTA */}
+      <section className="bg-[#f8faf8] py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="bg-[#0f1a0f] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <p className="text-[#2d6a2d] font-bold uppercase tracking-widest text-xs mb-2">Buying a Used Car?</p>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Don&apos;t skip the inspection.</h2>
+              <p className="text-white/70 max-w-lg leading-relaxed">A pre-purchase inspection from AutoTrek can save you thousands. We check 50+ points on any vehicle before you hand over the money. Know exactly what you&apos;re buying.</p>
+            </div>
+            <div className="flex-shrink-0 flex flex-col gap-3">
+              <a href={siteConfig.phoneHref}
+                className="bg-[#D32F2F] hover:bg-[#b71c1c] text-white font-bold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 text-center whitespace-nowrap">
+                Book an Inspection
+              </a>
+              <a href="/services/pre-purchase-inspection-littleton-co"
+                className="border border-white/30 hover:border-white text-white/70 hover:text-white font-semibold px-8 py-3 rounded-full text-sm transition-all text-center whitespace-nowrap">
+                Learn More →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 8. Service Areas */}
       <section className="bg-[#f8faf8] py-16">
         <div className="mx-auto max-w-6xl px-4 text-center">

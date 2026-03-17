@@ -448,6 +448,55 @@ export const serviceContent: Record<string, ServiceContent> = {
     closingCta: "Stay ahead of breakdowns. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122 for a maintenance check. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
   },
 
+  "pre-purchase-inspection-littleton-co": {
+    slug: "pre-purchase-inspection-littleton-co",
+    intro: "Buying a used car is one of the biggest financial decisions most people make. A pre-purchase inspection from AutoTrek Service Center in Littleton can save you thousands — or save you from a very expensive mistake. We put any vehicle on the lift, check 50+ points, and give you a straight, honest report before you hand over the money. No sales pressure, no affiliations with the seller — just the facts.",
+    whyMatters: {
+      heading: "Why a Pre-Purchase Inspection Is Non-Negotiable",
+      body: "Private sellers and even dealerships don't always disclose everything. A car that looks pristine in photos can have a leaking transmission, a compromised frame from an undisclosed accident, or $5,000 in deferred maintenance waiting to hit you. An inspection typically costs $100–$150. It can reveal problems that cost $2,000–$10,000 to fix — or confirm the car is solid and worth buying. Either way, you're making an informed decision. Skipping this step is the single most expensive mistake used-car buyers make.",
+      signs: [
+        "You're about to buy a used vehicle from a private party",
+        "A dealership is pressuring you to decide quickly",
+        "The listing price seems too good to be true",
+        "The seller says it was in a minor accident",
+        "You don't have a mechanic you trust to evaluate it yourself",
+        "You're buying from out of state or sight unseen"
+      ]
+    },
+    process: {
+      heading: "What We Check in Our Pre-Purchase Inspection",
+      steps: [
+        { title: "Under-Hood & Engine Check", desc: "We check engine condition, fluid levels and condition, belts, hoses, leaks, battery, and look for signs of overheating, head gasket issues, or deferred maintenance." },
+        { title: "Undercarriage & Frame Inspection", desc: "We put the vehicle on the lift to inspect the frame for damage or repairs, check for rust (critical in Colorado), inspect suspension components, and look for leaks from engine, transmission, or differentials." },
+        { title: "Brakes, Tires & Drivetrain", desc: "We measure brake pad and rotor thickness, check tire tread and condition, inspect CV joints and axles, and test 4WD operation if applicable." },
+        { title: "Road Test & Electronics", desc: "We drive the vehicle to check transmission shifting, steering, braking, AC/heat, and listen for unusual noises. We also scan for stored diagnostic codes — which sellers sometimes clear before listing." }
+      ]
+    },
+    included: [
+      "50+ point inspection across all major systems",
+      "Engine and fluid condition check",
+      "Frame and undercarriage inspection",
+      "Brake and tire measurement",
+      "OBD-II diagnostic scan for hidden codes",
+      "Road test",
+      "Written report with pass/fail/monitor ratings",
+      "Verbal walkthrough of findings — plain English"
+    ],
+    whyChoose: [
+      { title: "No Conflict of Interest", desc: "We work for you, not the seller. Our only job is to tell you the truth about the vehicle's condition." },
+      { title: "Written Report", desc: "You get a documented inspection report — useful for negotiating price, walking away, or keeping records after purchase." },
+      { title: "Fast Turnaround", desc: "We know you're on a timeline. Most pre-purchase inspections are completed same day." },
+      { title: "Colorado Specific", desc: "We know Colorado vehicles — altitude effects, rust from mountain roads, and typical failure patterns for vehicles used here." }
+    ],
+    faqs: [
+      { q: "Can the seller bring the car to you?", a: "Yes — many sellers will drive the vehicle to our shop for an inspection. If they refuse, that's a red flag worth noting." },
+      { q: "What if the car is at a dealership?", a: "Most reputable dealerships allow third-party inspections. If a dealer refuses to allow an independent inspection, walk away." },
+      { q: "How much does a pre-purchase inspection cost?", a: "Call us for current pricing. It's typically a fraction of what you'd spend fixing undisclosed problems after purchase." },
+      { q: "What if you find problems?", a: "We give you a clear report with our findings. You can use it to negotiate a lower price, ask the seller to repair issues, or decide to walk away. The decision is yours — we just give you the information." }
+    ],
+    closingCta: "Don't buy blind. Call AutoTrek Service Center at (303) 328-3356 or stop by 8161 S Grant Way, Littleton, CO 80122 before you sign anything. Serving Littleton, Highlands Ranch, Englewood, Centennial, Lakewood, and the Denver metro area."
+  },
+
   "complete-auto-repair-littleton-co": {
     slug: "complete-auto-repair-littleton-co",
     intro: "Whatever your vehicle needs — from a simple oil change to a complex engine repair — AutoTrek Service Center in Littleton handles it under one roof. We're a full-service auto repair shop staffed by ASE-certified technicians who work on domestic, foreign, trucks, and SUVs. Bring it in, we'll figure out what's wrong, explain it clearly, and fix it right. Every visit includes a full vehicle safety inspection at no extra charge.",
