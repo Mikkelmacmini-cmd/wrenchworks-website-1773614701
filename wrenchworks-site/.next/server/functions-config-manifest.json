@@ -1,7 +1,7 @@
 {
   "version": 1,
   "functions": {
-    "/services/website-build": {},
-    "/services/review-funnels": {}
+    "/services/review-funnels": {},
+    "/services/website-build": {}
   }
 }

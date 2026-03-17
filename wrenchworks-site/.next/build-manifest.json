@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/tVxDkF0Abng9LUisbhGwS/_buildManifest.js",
-    "static/tVxDkF0Abng9LUisbhGwS/_ssgManifest.js"
+    "static/kaJJW_wYL2gJrat1uuhjQ/_buildManifest.js",
+    "static/kaJJW_wYL2gJrat1uuhjQ/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -15,13 +15,13 @@
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-91b0136e68d72f0b.js",
       "static/chunks/968-171ca8ded03c6e81.js",
-      "static/chunks/pages/index-839cde8202e84b26.js"
+      "static/chunks/pages/index-11e59fd403628378.js"
     ],
     "/_app": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-91b0136e68d72f0b.js",
-      "static/css/ab1ded974be06138.css",
+      "static/css/e7efe51c698da841.css",
       "static/chunks/pages/_app-2dfd096757008a0f.js"
     ],
     "/_error": [
@@ -35,14 +35,14 @@
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-91b0136e68d72f0b.js",
       "static/chunks/968-171ca8ded03c6e81.js",
-      "static/chunks/pages/case-studies-23772ba9740538b0.js"
+      "static/chunks/pages/case-studies-08c39fe182a3aed9.js"
     ],
     "/contact": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-91b0136e68d72f0b.js",
       "static/chunks/968-171ca8ded03c6e81.js",
-      "static/chunks/pages/contact-eed6ee3e5fc375b1.js"
+      "static/chunks/pages/contact-5eb501618a6f2c0f.js"
     ],
     "/pricing": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
@@ -55,7 +55,7 @@
       "static/chunks/framework-7a7e500878b44665.js",
       "static/chunks/main-91b0136e68d72f0b.js",
       "static/chunks/968-171ca8ded03c6e81.js",
-      "static/chunks/pages/services-4ad1767b5c967937.js"
+      "static/chunks/pages/services-c74b3f92c16cee51.js"
     ],
     "/services/gbp-optimization": [
       "static/chunks/webpack-ee7e63bc15b31913.js",
