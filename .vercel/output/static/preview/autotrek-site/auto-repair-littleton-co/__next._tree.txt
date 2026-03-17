@@ -1,4 +1,4 @@
-:HL["/preview/autotrek-site/_next/static/chunks/aabc8c9af6524c07.css","style"]
+:HL["/preview/autotrek-site/_next/static/chunks/c616452147963941.css","style"]
 :HL["/images/icons/ac-service.jpg","image"]
 :HL["/images/icons/brake-service.jpg","image"]
 :HL["/images/icons/check-engine.jpg","image"]
@@ -8,4 +8,4 @@
 :HL["/images/building-exterior.jpg","image"]
 :HL["/images/napa-autocare.jpg","image"]
 :HL["/images/ase-certified.jpg","image"]
-0:{"buildId":"kTGWn4AMuSq6OMYnQd6UN","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"auto-repair-littleton-co","paramType":null,"paramKey":"auto-repair-littleton-co","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"ZwyWE9codFKjLoGC22Rya","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"auto-repair-littleton-co","paramType":null,"paramKey":"auto-repair-littleton-co","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
