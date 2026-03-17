@@ -7,4 +7,5 @@
 :HL["/images/icons/oil-change.jpg","image"]
 :HL["/images/icons/alignment.jpg","image"]
 :HL["/images/icons/steering-suspension.jpg","image"]
-0:{"buildId":"jyTuNSfpbAf_Bc6WzBaYY","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/images/icons/tires-wheels.jpg","image"]
+0:{"buildId":"s3DwQsEPxzJv8QVKhCKCj","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
