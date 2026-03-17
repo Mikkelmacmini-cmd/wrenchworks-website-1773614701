@@ -1,13 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-}
+import FadeIn from '../components/FadeIn'
 
 const services = [
   {
@@ -114,43 +109,40 @@ export default function Services() {
       <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
           {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className={`rounded-2xl overflow-hidden flex flex-col md:flex-row ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
-              style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 24px rgba(28,28,30,0.08)' }}
-            >
+            <FadeIn key={s.title}>
               <div
-                className="md:w-1/3 flex items-center justify-center p-12"
-                style={{ backgroundColor: i % 2 === 0 ? '#1C1C1E' : '#2C2A28' }}
+                className={`rounded-2xl overflow-hidden flex flex-col md:flex-row ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 24px rgba(28,28,30,0.08)' }}
               >
-                <div className="text-6xl">{s.icon}</div>
-              </div>
-              <div className="flex-1 p-8 sm:p-10 flex flex-col gap-5">
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold" style={{ color: '#1C1C1E' }}>{s.title}</h2>
-                <p className="leading-relaxed" style={{ color: '#6B6560' }}>{s.description}</p>
-                <ul className="flex flex-col gap-2.5 mt-1">
-                  {s.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5 text-sm" style={{ color: '#2C2A28' }}>
-                      <span className="font-bold mt-0.5" style={{ color: s.accent }}>✓</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className="inline-block mt-2 px-7 py-3 rounded-xl text-white font-semibold text-sm transition-all duration-200 shadow-md w-fit"
-                  style={{ backgroundColor: '#E85D2A' }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
+                <div
+                  className="md:w-1/3 flex items-center justify-center p-12"
+                  style={{ backgroundColor: i % 2 === 0 ? '#1C1C1E' : '#2C2A28' }}
                 >
-                  Get Started →
-                </Link>
+                  <div className="text-6xl">{s.icon}</div>
+                </div>
+                <div className="flex-1 p-8 sm:p-10 flex flex-col gap-5">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold" style={{ color: '#1C1C1E' }}>{s.title}</h2>
+                  <p className="leading-relaxed" style={{ color: '#6B6560' }}>{s.description}</p>
+                  <ul className="flex flex-col gap-2.5 mt-1">
+                    {s.benefits.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-sm" style={{ color: '#2C2A28' }}>
+                        <span className="font-bold mt-0.5" style={{ color: s.accent }}>✓</span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="inline-block mt-2 px-7 py-3 rounded-xl text-white font-semibold text-sm transition-all duration-200 shadow-md w-fit"
+                    style={{ backgroundColor: '#E85D2A' }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
+                  >
+                    Get Started →
+                  </Link>
+                </div>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -164,13 +156,7 @@ export default function Services() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,93,42,0.15) 0%, transparent 70%)' }}
         />
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center"
-        >
+        <FadeIn className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>Start Today</p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
             Not sure where to start?
@@ -187,7 +173,7 @@ export default function Services() {
           >
             Book Your Free Call
           </Link>
-        </motion.div>
+        </FadeIn>
       </section>
 
       <Footer />

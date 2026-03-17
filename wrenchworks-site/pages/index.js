@@ -1,19 +1,9 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-}
-
-const staggerContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-}
+import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
 
 const services = [
   {
@@ -124,71 +114,58 @@ export default function Home() {
         </svg>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-28">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="eyebrow mb-5"
-            style={{ color: '#D4A853' }}
-          >
-            Auto Repair Marketing Agency
-          </motion.p>
+          <FadeIn delay={0}>
+            <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>
+              Auto Repair Marketing Agency
+            </p>
+          </FadeIn>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] mb-7"
-          >
-            More Booked<br />
-            Appointments.<br />
-            <span style={{ color: '#E85D2A' }}>Less Guesswork.</span>
-          </motion.h1>
+          <FadeIn delay={0.1}>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] mb-7">
+              More Booked<br />
+              Appointments.<br />
+              <span style={{ color: '#E85D2A' }}>Less Guesswork.</span>
+            </h1>
+          </FadeIn>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
-            style={{ color: '#E8E2DC' }}
-          >
-            We help auto repair shops dominate local search, convert more visitors, and fill their bays.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Link
-              href="/contact"
-              className="px-9 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
-              style={{ backgroundColor: '#E85D2A' }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
-            >
-              Get Your Free Growth Plan
-            </Link>
-            <Link
-              href="/case-studies"
-              className="font-semibold text-lg transition-colors"
+          <FadeIn delay={0.2}>
+            <p
+              className="text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
               style={{ color: '#E8E2DC' }}
-              onMouseEnter={e => (e.target.style.color = '#E85D2A')}
-              onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
             >
-              See Our Work →
-            </Link>
-          </motion.div>
+              We help auto repair shops dominate local search, convert more visitors, and fill their bays.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/contact"
+                className="px-9 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
+                style={{ backgroundColor: '#E85D2A' }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
+              >
+                Get Your Free Growth Plan
+              </Link>
+              <Link
+                href="/case-studies"
+                className="font-semibold text-lg transition-colors"
+                style={{ color: '#E8E2DC' }}
+                onMouseEnter={e => (e.target.style.color = '#E85D2A')}
+                onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
+              >
+                See Our Work →
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── Hero Lead Form ── */}
       <div className="relative z-20 -mt-16 sm:-mt-20 px-4 sm:px-6 pb-0">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+        <FadeIn
+          delay={0.4}
           className="max-w-3xl mx-auto rounded-2xl p-7 sm:p-10"
           style={{
             backgroundColor: '#1C1C1E',
@@ -260,19 +237,13 @@ export default function Home() {
               </form>
             </>
           )}
-        </motion.div>
+        </FadeIn>
       </div>
 
       {/* ── Services ── */}
       <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <FadeIn className="text-center mb-16">
             <p className="eyebrow mb-4">Our Services</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#1C1C1E' }}>
               What We Do
@@ -280,39 +251,33 @@ export default function Home() {
             <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: '#6B6560' }}>
               Everything your shop needs to win online — under one roof.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((s) => (
-              <motion.div
-                key={s.title}
-                variants={fadeUp}
-                className="rounded-2xl p-10 flex flex-col gap-5 cursor-default transition-all duration-300"
-                style={{ backgroundColor: '#FEFCF9', boxShadow: '0 2px 12px rgba(28,28,30,0.07)' }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(28,28,30,0.12)' }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(28,28,30,0.07)' }}
-              >
-                <div>{s.icon}</div>
-                <h3 className="font-serif text-xl font-bold" style={{ color: '#1C1C1E' }}>{s.title}</h3>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B6560' }}>{s.desc}</p>
-                <Link
-                  href={s.href}
-                  className="text-sm font-semibold transition-colors"
-                  style={{ color: '#E85D2A' }}
-                  onMouseEnter={e => (e.target.style.color = '#cf4e1e')}
-                  onMouseLeave={e => (e.target.style.color = '#E85D2A')}
+              <StaggerItem key={s.title}>
+                <div
+                  className="rounded-2xl p-10 flex flex-col gap-5 cursor-default transition-all duration-300"
+                  style={{ backgroundColor: '#FEFCF9', boxShadow: '0 2px 12px rgba(28,28,30,0.07)' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(28,28,30,0.12)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(28,28,30,0.07)' }}
                 >
-                  Learn More →
-                </Link>
-              </motion.div>
+                  <div>{s.icon}</div>
+                  <h3 className="font-serif text-xl font-bold" style={{ color: '#1C1C1E' }}>{s.title}</h3>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B6560' }}>{s.desc}</p>
+                  <Link
+                    href={s.href}
+                    className="text-sm font-semibold transition-colors"
+                    style={{ color: '#E85D2A' }}
+                    onMouseEnter={e => (e.target.style.color = '#cf4e1e')}
+                    onMouseLeave={e => (e.target.style.color = '#E85D2A')}
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </StaggerItem>
             ))}
-          </motion.div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -330,13 +295,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <FadeIn className="text-center mb-16">
             <p className="eyebrow mb-4" style={{ color: '#D4A853' }}>The Journey</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               The Shop Owner Journey
@@ -344,54 +303,35 @@ export default function Home() {
             <p className="text-lg" style={{ color: '#6B6560' }}>
               From problem to 5-star review — we help you win every step.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
-          >
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {journey.map((step) => (
-              <motion.div key={step.caption} variants={fadeUp} className="flex flex-col items-center gap-3">
+              <StaggerItem key={step.caption} className="flex flex-col items-center gap-3">
                 <div className="w-full aspect-square rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(214,207,199,0.12)' }}>
                   <img src={step.img} alt={step.caption} className="w-full h-full object-cover" />
                 </div>
                 <p className="text-xs sm:text-sm text-center font-medium" style={{ color: '#E8E2DC' }}>{step.caption}</p>
-              </motion.div>
+              </StaggerItem>
             ))}
-          </motion.div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ── Testimonials ── */}
       <section className="py-24 sm:py-32" style={{ backgroundColor: '#FEFCF9' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <FadeIn className="text-center mb-16">
             <p className="eyebrow mb-4">Testimonials</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold" style={{ color: '#1C1C1E' }}>
               What Shop Owners Are Saying
             </h2>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
-              <motion.div
+              <StaggerItem
                 key={t.author}
-                variants={fadeUp}
                 className="rounded-2xl p-10 flex flex-col gap-5"
                 style={{
                   backgroundColor: '#F5F0EB',
@@ -404,9 +344,9 @@ export default function Home() {
                   <p className="font-bold text-sm" style={{ color: '#1C1C1E' }}>{t.author}</p>
                   <p className="text-sm" style={{ color: '#6B6560' }}>{t.shop}</p>
                 </div>
-              </motion.div>
+              </StaggerItem>
             ))}
-          </motion.div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -421,13 +361,7 @@ export default function Home() {
           style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,93,42,0.15) 0%, transparent 70%)' }}
         />
 
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center"
-        >
+        <FadeIn className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>Let's Work Together</p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
             Ready to fill your bays?
@@ -444,7 +378,7 @@ export default function Home() {
           >
             Schedule a Free Call
           </Link>
-        </motion.div>
+        </FadeIn>
       </section>
 
       <Footer />

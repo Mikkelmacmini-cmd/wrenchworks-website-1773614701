@@ -1,13 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-}
+import FadeIn from '../components/FadeIn'
 
 const cases = [
   {
@@ -104,55 +99,52 @@ export default function CaseStudies() {
       <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col gap-14">
           {cases.map((c) => (
-            <motion.div
-              key={c.client}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden"
-              style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 32px rgba(28,28,30,0.09)' }}
-            >
-              {/* Hero Image */}
-              <div className="relative h-60 sm:h-80">
-                <img src={c.image} alt={c.client} className="w-full h-full object-cover" />
-                <div className="absolute inset-0" style={{ backgroundColor: c.overlayColor }} />
-                <div className="absolute inset-0 flex flex-col items-start justify-end p-8">
-                  <p className="eyebrow mb-2" style={{ color: '#D4A853' }}>{c.location}</p>
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">{c.client}</h2>
-                  <p className="font-semibold mt-1 text-lg" style={{ color: '#E85D2A' }}>
-                    {c.result} in {c.period}
-                  </p>
+            <FadeIn key={c.client}>
+              <div
+                className="rounded-2xl overflow-hidden"
+                style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 32px rgba(28,28,30,0.09)' }}
+              >
+                {/* Hero Image */}
+                <div className="relative h-60 sm:h-80">
+                  <img src={c.image} alt={c.client} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{ backgroundColor: c.overlayColor }} />
+                  <div className="absolute inset-0 flex flex-col items-start justify-end p-8">
+                    <p className="eyebrow mb-2" style={{ color: '#D4A853' }}>{c.location}</p>
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">{c.client}</h2>
+                    <p className="font-semibold mt-1 text-lg" style={{ color: '#E85D2A' }}>
+                      {c.result} in {c.period}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="p-8 sm:p-10">
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 mb-10">
-                  {c.metrics.map((m) => (
-                    <div
-                      key={m.label}
-                      className="text-center p-5 rounded-2xl"
-                      style={{ backgroundColor: '#F5F0EB' }}
-                    >
-                      <p className="font-serif text-2xl font-bold" style={{ color: '#E85D2A' }}>{m.value}</p>
-                      <p className="text-xs mt-1 font-medium uppercase tracking-wider" style={{ color: '#6B6560' }}>{m.label}</p>
+                <div className="p-8 sm:p-10">
+                  {/* Metrics */}
+                  <div className="grid grid-cols-3 gap-4 mb-10">
+                    {c.metrics.map((m) => (
+                      <div
+                        key={m.label}
+                        className="text-center p-5 rounded-2xl"
+                        style={{ backgroundColor: '#F5F0EB' }}
+                      >
+                        <p className="font-serif text-2xl font-bold" style={{ color: '#E85D2A' }}>{m.value}</p>
+                        <p className="text-xs mt-1 font-medium uppercase tracking-wider" style={{ color: '#6B6560' }}>{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <p className="eyebrow mb-3">The Challenge</p>
+                      <p className="text-sm leading-relaxed" style={{ color: '#6B6560' }}>{c.challenge}</p>
                     </div>
-                  ))}
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <p className="eyebrow mb-3">The Challenge</p>
-                    <p className="text-sm leading-relaxed" style={{ color: '#6B6560' }}>{c.challenge}</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-3">Our Solution</p>
-                    <p className="text-sm leading-relaxed" style={{ color: '#6B6560' }}>{c.solution}</p>
+                    <div>
+                      <p className="eyebrow mb-3">Our Solution</p>
+                      <p className="text-sm leading-relaxed" style={{ color: '#6B6560' }}>{c.solution}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -166,13 +158,7 @@ export default function CaseStudies() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,93,42,0.15) 0%, transparent 70%)' }}
         />
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center"
-        >
+        <FadeIn className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>Your Turn</p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
             Your shop could be next.
@@ -189,7 +175,7 @@ export default function CaseStudies() {
           >
             Get My Free Growth Plan
           </Link>
-        </motion.div>
+        </FadeIn>
       </section>
 
       <Footer />

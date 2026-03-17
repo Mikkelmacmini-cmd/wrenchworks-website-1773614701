@@ -1,13 +1,8 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import { motion } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-}
+import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
 
 const inputStyle = {
   backgroundColor: '#FEFCF9',
@@ -81,11 +76,7 @@ export default function Contact() {
       {/* ── Form Section ── */}
       <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
+          <FadeIn
             className="rounded-2xl p-8 sm:p-12"
             style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 32px rgba(28,28,30,0.09)' }}
           >
@@ -218,37 +209,30 @@ export default function Contact() {
                 </p>
               </form>
             )}
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── Trust Signals ── */}
       <section className="py-16" style={{ backgroundColor: '#FEFCF9' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center"
-          >
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             {[
               { icon: '⚡', title: 'Fast Response', desc: 'We respond within 1 business day — usually same day.' },
               { icon: '🎯', title: 'Custom Plan', desc: 'Every growth plan is tailored to your shop and your market.' },
               { icon: '🔒', title: 'No Obligation', desc: 'No pressure, no contracts until you are ready to move forward.' },
             ].map(({ icon, title, desc }) => (
-              <motion.div
+              <StaggerItem
                 key={title}
-                variants={fadeUp}
                 className="p-8 rounded-2xl"
                 style={{ backgroundColor: '#F5F0EB' }}
               >
                 <div className="text-3xl mb-3">{icon}</div>
                 <h3 className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: '#1C1C1E' }}>{title}</h3>
                 <p className="text-xs leading-relaxed" style={{ color: '#6B6560' }}>{desc}</p>
-              </motion.div>
+              </StaggerItem>
             ))}
-          </motion.div>
+          </StaggerContainer>
         </div>
       </section>
 
