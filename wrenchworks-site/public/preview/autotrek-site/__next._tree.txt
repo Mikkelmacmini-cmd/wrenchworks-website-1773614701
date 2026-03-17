@@ -3,9 +3,8 @@
 :HL["/images/icons/brake-service.jpg","image"]
 :HL["/images/icons/check-engine.jpg","image"]
 :HL["/images/mechanic-1.jpg","image"]
-:HL["/images/icons/ev-hybrid.jpg","image"]
 :HL["/images/icons/oil-change.jpg","image"]
 :HL["/images/icons/alignment.jpg","image"]
 :HL["/images/icons/steering-suspension.jpg","image"]
 :HL["/images/icons/tires-wheels.jpg","image"]
-0:{"buildId":"s3DwQsEPxzJv8QVKhCKCj","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"sG197CgeqMxXECqjE6yXA","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
