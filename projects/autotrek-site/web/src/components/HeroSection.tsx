@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
-const HEADLINE_LINES = ["Reliable Repairs.", "Honest Service.", "Local Team."]
+const HEADLINE_LINES = ["Honest Repairs.", "Fair Prices.", "Real Answers."]
 
 function AnimatedHeadline() {
   const [started, setStarted] = useState(false)
@@ -130,7 +130,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
               className="mt-4 text-base text-white/70 leading-relaxed max-w-md">
-              AutoTrek Service Center keeps Littleton drivers safe and on the road — without dealership pricing or runaround.
+              Your neighborhood mechanic in Littleton, CO — ASE-certified technicians, written quotes before any work, and a free safety inspection every visit. No surprises.
             </motion.p>
 
             {/* Schedule form — inside hero */}

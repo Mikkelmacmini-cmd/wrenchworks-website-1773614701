@@ -314,6 +314,41 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Schema.org LocalBusiness */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "AutoTrek Service Center",
+        "image": "https://www.wrenchworksdigital.com/preview/autotrek-site/images/logo.jpg",
+        "url": "https://www.wrenchworksdigital.com/preview/autotrek-site",
+        "telephone": "+13033283356",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8161 S Grant Way",
+          "addressLocality": "Littleton",
+          "addressRegion": "CO",
+          "postalCode": "80122",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.5693,
+          "longitude": -104.9877
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }],
+        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.1",
+          "reviewCount": "9"
+        }
+      })}} />
     </div>
   )
 }
