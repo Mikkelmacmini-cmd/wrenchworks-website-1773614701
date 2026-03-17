@@ -23,7 +23,7 @@ export default function Footer() {
               {[
                 { href: '/', label: 'Home' },
                 { href: '/services', label: 'Services' },
-                { href: '/case-studies', label: 'Case Studies' },
+                { href: '/testimonials', label: 'Testimonials' },
                 { href: '/contact', label: 'Contact' },
               ].map(({ href, label }) => (
                 <li key={label}>

@@ -16,7 +16,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <img src="/images/logo.png" alt="WrenchWorks Digital" className="h-10 w-auto" />
+          <img src="/images/logo.png" alt="WrenchWorks Digital" className="h-14 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -30,13 +30,13 @@ export default function Header() {
             Services
           </Link>
           <Link
-            href="/case-studies"
+            href="/testimonials"
             className="text-sm font-medium transition-colors"
             style={{ color: '#E8E2DC' }}
             onMouseEnter={e => (e.target.style.color = '#E85D2A')}
             onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
           >
-            Case Studies
+            Testimonials
           </Link>
           <Link
             href="/contact"
@@ -54,7 +54,7 @@ export default function Header() {
             onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
           >
-            Get a Free Plan
+            Schedule a Call
           </Link>
         </nav>
 
@@ -82,7 +82,7 @@ export default function Header() {
         >
           <nav className="flex flex-col gap-4 pt-4">
             <Link href="/services" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Services</Link>
-            <Link href="/case-studies" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Case Studies</Link>
+            <Link href="/testimonials" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Testimonials</Link>
             <Link href="/contact" className="text-sm font-medium" style={{ color: '#E8E2DC' }} onClick={() => setOpen(false)}>Contact</Link>
             <Link
               href="/contact"
@@ -90,7 +90,7 @@ export default function Header() {
               style={{ backgroundColor: '#E85D2A' }}
               onClick={() => setOpen(false)}
             >
-              Get a Free Plan
+              Schedule a Call
             </Link>
           </nav>
         </div>

@@ -40,22 +40,24 @@ const services = [
     desc: 'Automated systems that turn happy customers into 5-star reviews on autopilot.',
     href: '/services',
   },
+  {
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <circle cx="20" cy="16" r="8" stroke="#E85D2A" strokeWidth="2" />
+        <path d="M14 16h-2M28 16h2M20 8v-2M20 26v2" stroke="#E85D2A" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="14" cy="16" r="2" fill="#E85D2A" fillOpacity="0.4" stroke="#E85D2A" strokeWidth="1" />
+        <circle cx="26" cy="16" r="2" fill="#E85D2A" fillOpacity="0.4" stroke="#E85D2A" strokeWidth="1" />
+        <circle cx="20" cy="10" r="2" fill="#E85D2A" fillOpacity="0.4" stroke="#E85D2A" strokeWidth="1" />
+        <path d="M13 28c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="#E85D2A" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="20" cy="16" r="3" fill="#E85D2A" fillOpacity="0.2" stroke="#E85D2A" strokeWidth="1.5" />
+      </svg>
+    ),
+    title: 'AI Integration',
+    desc: 'Smart AI tools that automate customer communication, streamline scheduling, and boost your online presence 24/7.',
+    href: '/services',
+  },
 ]
 
-const journey = [
-  { img: '/images/scene-01.png', caption: '1. Customer has a problem' },
-  { img: '/images/scene-02.png', caption: '2. They search Google' },
-  { img: '/images/scene-03.png', caption: '3. They find your shop' },
-  { img: '/images/scene-04.png', caption: '4. They approve the quote' },
-  { img: '/images/scene-05.png', caption: '5. Keys returned, happy customer' },
-  { img: '/images/scene-06.png', caption: '6. They leave you a 5-star review' },
-]
-
-const testimonials = [
-  { quote: 'We went from page 3 to the #1 spot in 6 weeks.', author: 'Dave R.', shop: 'Denver Auto Care' },
-  { quote: 'Our phone calls doubled. Best investment we ever made.', author: 'Maria S.', shop: 'Precision Tune' },
-  { quote: 'The website looks incredible and actually converts.', author: 'Tom H.', shop: 'Eagle Auto' },
-]
 
 export default function Home() {
   const [heroFormSent, setHeroFormSent] = useState(false)
@@ -107,13 +109,7 @@ export default function Home() {
           style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 60%, rgba(232,93,42,0.12) 0%, transparent 70%)' }}
         />
 
-        {/* Decorative SVG circle */}
-        <svg className="absolute top-16 right-12 opacity-10 hidden lg:block" width="320" height="320" viewBox="0 0 320 320" fill="none">
-          <circle cx="160" cy="160" r="158" stroke="#D4A853" strokeWidth="1.5" />
-          <circle cx="160" cy="160" r="120" stroke="#D4A853" strokeWidth="0.75" />
-        </svg>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-28">
+<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-28">
           <FadeIn delay={0}>
             <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>
               Auto Repair Marketing Agency
@@ -138,22 +134,13 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex justify-center">
               <Link
-                href="/contact"
+                href="/services"
                 className="px-9 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
                 style={{ backgroundColor: '#E85D2A' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
-              >
-                Get Your Free Growth Plan
-              </Link>
-              <Link
-                href="/case-studies"
-                className="font-semibold text-lg transition-colors"
-                style={{ color: '#E8E2DC' }}
-                onMouseEnter={e => (e.target.style.color = '#E85D2A')}
-                onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
               >
                 See Our Work →
               </Link>
@@ -186,9 +173,9 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
-                    name="first_name"
+                    name="name"
                     required
-                    placeholder="First Name"
+                    placeholder="Name"
                     className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
                     style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
                     onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
@@ -218,6 +205,15 @@ export default function Home() {
                     name="shop_city"
                     required
                     placeholder="What city is your shop in?"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
+                  />
+                  <input
+                    type="url"
+                    name="website_url"
+                    placeholder="Website URL (optional)"
                     className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
                     style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
                     onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
@@ -253,7 +249,7 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((s) => (
               <StaggerItem key={s.title}>
                 <div
@@ -305,16 +301,9 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {journey.map((step) => (
-              <StaggerItem key={step.caption} className="flex flex-col items-center gap-3">
-                <div className="w-full aspect-square rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(214,207,199,0.12)' }}>
-                  <img src={step.img} alt={step.caption} className="w-full h-full object-cover" />
-                </div>
-                <p className="text-xs sm:text-sm text-center font-medium" style={{ color: '#E8E2DC' }}>{step.caption}</p>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <div className="text-center py-12">
+            <p className="italic" style={{ color: '#E8E2DC' }}>New journey visuals coming soon</p>
+          </div>
         </div>
       </section>
 
@@ -328,25 +317,9 @@ export default function Home() {
             </h2>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <StaggerItem
-                key={t.author}
-                className="rounded-2xl p-10 flex flex-col gap-5"
-                style={{
-                  backgroundColor: '#F5F0EB',
-                  boxShadow: '0 2px 12px rgba(28,28,30,0.06)',
-                  borderLeft: '4px solid #E85D2A',
-                }}
-              >
-                <p className="text-base leading-relaxed italic flex-1" style={{ color: '#2C2A28' }}>{t.quote}</p>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: '#1C1C1E' }}>{t.author}</p>
-                  <p className="text-sm" style={{ color: '#6B6560' }}>{t.shop}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <div className="text-center">
+            <p className="italic" style={{ color: '#6B6560' }}>Real testimonials coming soon.</p>
+          </div>
         </div>
       </section>
 
