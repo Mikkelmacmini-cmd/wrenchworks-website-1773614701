@@ -1,3 +1,3 @@
-:HL["/preview/autotrek-site/_next/static/chunks/4dc312fc327a7f9a.css","style"]
+:HL["/preview/autotrek-site/_next/static/chunks/0e4089ff639c60f1.css","style"]
 :HL["/images/hero-b.png","image"]
-0:{"buildId":"eFnD-V2pIY1aCnLpCR4RU","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"services","paramType":null,"paramKey":"services","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"y5sMcgOdbRocJ38gnJRPu","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"services","paramType":null,"paramKey":"services","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
