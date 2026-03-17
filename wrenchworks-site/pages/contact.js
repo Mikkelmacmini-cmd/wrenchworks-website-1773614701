@@ -1,94 +1,242 @@
-import Head from "next/head";
-import { motion } from "framer-motion";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { useState } from 'react'
+import Head from 'next/head'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
+
+const inputStyle = {
+  backgroundColor: '#FEFCF9',
+  color: '#1C1C1E',
+  border: '1.5px solid #D6CFC7',
+}
+
+const inputClass = 'rounded-xl px-4 py-3 text-sm focus:outline-none transition w-full'
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    const data = new FormData(form)
+    await fetch('https://formspree.io/f/xwplgqzv', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    })
+    setSubmitted(true)
+  }
+
+  function handleFocus(e) {
+    e.target.style.boxShadow = '0 0 0 2.5px #D4A853'
+    e.target.style.borderColor = '#D4A853'
+  }
+  function handleBlur(e) {
+    e.target.style.boxShadow = 'none'
+    e.target.style.borderColor = '#D6CFC7'
+  }
+
   return (
-    <>
+    <div style={{ backgroundColor: '#FEFCF9' }}>
       <Head>
-        <title>Contact — WrenchWorks Digital</title>
-        <meta name="description" content="Get in touch with WrenchWorks Digital. Let's talk about growing your auto repair shop." />
+        <title>Contact | WrenchWorks Digital</title>
+        <meta name="description" content="Get your free shop growth plan. Fill out the form and we will be in touch within 1 business day." />
+        <link rel="canonical" href="https://www.wrenchworksdigital.com/contact/" />
+        <meta property="og:title" content="Contact | WrenchWorks Digital" />
+        <meta property="og:description" content="Get your free shop growth plan. Fill out the form and we will be in touch within 1 business day." />
+        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
+        <meta property="og:url" content="https://www.wrenchworksdigital.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WrenchWorks Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
       <Header />
 
-      <section className="min-h-screen bg-white pt-16">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Left */}
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <p className="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wide">Let's Talk</p>
-              <h1 className="text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
-                Ready to Fill<br />Your Bays<span className="text-orange-500">?</span>
-              </h1>
-              <p className="text-gray-600 leading-relaxed mb-10 max-w-md">
-                Tell us about your shop and your goals. We'll put together a custom growth plan — no commitment required.
-              </p>
-              <div className="space-y-6">
-                <div>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:hello@wrenchworksdigital.com" className="text-gray-900 font-medium hover:text-orange-500 transition-colors">hello@wrenchworksdigital.com</a>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Response Time</p>
-                  <p className="text-gray-900 font-medium">Within 24 hours, weekdays</p>
-                </div>
-                <div className="flex flex-wrap gap-3 pt-4">
-                  {["Website Build", "Local SEO", "GBP", "Reviews", "Hosting"].map((svc) => (
-                    <span key={svc} className="border border-gray-200 text-sm text-gray-600 px-4 py-1.5 rounded-full">{svc}</span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+      {/* ── Page Header ── */}
+      <section
+        className="grain-overlay py-24 text-center relative overflow-hidden"
+        style={{ backgroundColor: '#1C1C1E' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(232,93,42,0.1) 0%, transparent 70%)' }}
+        />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+          <p className="eyebrow mb-4" style={{ color: '#D4A853' }}>Contact Us</p>
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5">
+            Let's Grow Your Shop
+          </h1>
+          <p className="text-lg leading-relaxed" style={{ color: '#E8E2DC' }}>
+            Fill out the form below and we will build a custom growth plan for your shop — completely free.
+          </p>
+        </div>
+      </section>
 
-            {/* Right — Formspree form */}
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <form action="https://formspree.io/f/xwplgqzv" method="POST" className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                    <input type="text" name="first_name" required className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-orange-500 transition-colors" placeholder="Mike" />
+      {/* ── Form Section ── */}
+      <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <FadeIn
+            className="rounded-2xl p-8 sm:p-12"
+            style={{ backgroundColor: '#FEFCF9', boxShadow: '0 4px 32px rgba(28,28,30,0.09)' }}
+          >
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#1C1C1E' }}>
+              Get Your Free Growth Plan
+            </h2>
+            <p className="text-sm mb-8 leading-relaxed" style={{ color: '#6B6560' }}>
+              No pitch. No pressure. Just a clear look at how to grow your shop online.
+            </p>
+
+            {submitted ? (
+              <div className="py-8 text-center">
+                <p className="font-bold text-lg" style={{ color: '#D4A853' }}>
+                  Thanks! We will be in touch within 1 business day.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <input type="hidden" name="_subject" value="New WrenchWorks Lead" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs uppercase tracking-widest font-semibold" style={{ color: '#1C1C1E' }}>
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="John Smith"
+                      className={inputClass}
+                      style={inputStyle}
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                    <input type="text" name="last_name" required className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-orange-500 transition-colors" placeholder="Rodriguez" />
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs uppercase tracking-widest font-semibold" style={{ color: '#1C1C1E' }}>
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="john@yourshop.com"
+                      className={inputClass}
+                      style={inputStyle}
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <input type="email" name="email" required className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-orange-500 transition-colors" placeholder="mike@allstarauto.com" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs uppercase tracking-widest font-semibold" style={{ color: '#1C1C1E' }}>
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="(303) 555-0100"
+                      className={inputClass}
+                      style={inputStyle}
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs uppercase tracking-widest font-semibold" style={{ color: '#1C1C1E' }}>
+                      Shop Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="shop_name"
+                      required
+                      placeholder="Denver Auto Care"
+                      className={inputClass}
+                      style={inputStyle}
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Shop Name</label>
-                  <input type="text" name="shop_name" className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-orange-500 transition-colors" placeholder="All-Star Auto Repair" />
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs uppercase tracking-widest font-semibold" style={{ color: '#1C1C1E' }}>
+                    City & State *
+                  </label>
+                  <input
+                    type="text"
+                    name="city"
+                    required
+                    placeholder="Denver, CO"
+                    className={inputClass}
+                    style={inputStyle}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                  />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">What do you need?</label>
-                  <select name="service" className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-orange-500 transition-colors bg-white">
-                    <option value="">Select a service...</option>
-                    <option>Website Build</option>
-                    <option>Local SEO</option>
-                    <option>Google Business Profile</option>
-                    <option>Review Funnels</option>
-                    <option>Managed Hosting</option>
-                    <option>Full Package</option>
-                  </select>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs uppercase tracking-widest font-semibold" style={{ color: '#1C1C1E' }}>
+                    What is your biggest challenge? *
+                  </label>
+                  <textarea
+                    name="challenge"
+                    required
+                    rows={4}
+                    placeholder="e.g. We don't show up on Google, our website is old, we need more reviews..."
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition resize-none w-full"
+                    style={inputStyle}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                  />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Tell us about your shop</label>
-                  <textarea name="message" rows={5} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-orange-500 transition-colors resize-none" placeholder="Location, number of bays, biggest challenge right now..."></textarea>
-                </div>
-                <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors duration-200">
-                  Send Message →
+
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-xl text-white font-bold text-base transition-all duration-200 shadow-md mt-2"
+                  style={{ backgroundColor: '#E85D2A' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.01)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
+                >
+                  Send Message
                 </button>
-                <p className="text-xs text-gray-400 text-center">No spam. No long-term contracts. Just results.</p>
+
+                <p className="text-center text-xs" style={{ color: '#6B6560' }}>
+                  We respond within 1 business day. No spam, ever.
+                </p>
               </form>
-            </motion.div>
-          </div>
+            )}
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Trust Signals ── */}
+      <section className="py-16" style={{ backgroundColor: '#FEFCF9' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            {[
+              { icon: '⚡', title: 'Fast Response', desc: 'We respond within 1 business day — usually same day.' },
+              { icon: '🎯', title: 'Custom Plan', desc: 'Every growth plan is tailored to your shop and your market.' },
+              { icon: '🔒', title: 'No Obligation', desc: 'No pressure, no contracts until you are ready to move forward.' },
+            ].map(({ icon, title, desc }) => (
+              <StaggerItem
+                key={title}
+                className="p-8 rounded-2xl"
+                style={{ backgroundColor: '#F5F0EB' }}
+              >
+                <div className="text-3xl mb-3">{icon}</div>
+                <h3 className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: '#1C1C1E' }}>{title}</h3>
+                <p className="text-xs leading-relaxed" style={{ color: '#6B6560' }}>{desc}</p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
       <Footer />
-    </>
-  );
+    </div>
+  )
 }

@@ -1,37 +1,75 @@
-import Link from "next/link";
+import Link from 'next/link'
+
 export default function Footer() {
   return (
-    <footer style={{backgroundColor: "#0f1621"}} className="text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-2">
-            <img src="/images/logo.png" className="h-10 w-auto mb-4 brightness-0 invert" alt="WrenchWorks Digital" />
-            <p className="text-gray-400 text-sm max-w-xs">Auto repair marketing that fills bays, builds reputations, and grows revenue.</p>
-            <a href="https://twitter.com" className="inline-flex items-center gap-2 mt-4 text-sm text-gray-400 hover:text-white transition-colors">Twitter / X →</a>
+    <footer style={{ backgroundColor: '#1C1C1E' }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="flex flex-col gap-4">
+            <img src="/images/logo.png" alt="WrenchWorks Digital" className="h-10 w-auto" />
+            <p className="text-sm max-w-xs leading-relaxed" style={{ color: '#6B6560' }}>
+              Growth systems for auto repair shops.
+            </p>
           </div>
+
           <div>
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Services</p>
-            <ul className="space-y-2">
-              <li><Link href="/services/website-build" className="text-sm text-gray-400 hover:text-white transition-colors">Website Build</Link></li>
-              <li><Link href="/services/local-seo" className="text-sm text-gray-400 hover:text-white transition-colors">Local SEO</Link></li>
-              <li><Link href="/services/gbp-optimization" className="text-sm text-gray-400 hover:text-white transition-colors">GBP Optimization</Link></li>
-              <li><Link href="/services/review-funnels" className="text-sm text-gray-400 hover:text-white transition-colors">Review Funnels</Link></li>
-              <li><Link href="/services/managed-hosting" className="text-sm text-gray-400 hover:text-white transition-colors">Managed Hosting</Link></li>
+            <h3
+              className="text-xs uppercase tracking-widest font-semibold mb-5"
+              style={{ color: '#D4A853' }}
+            >
+              Pages
+            </h3>
+            <ul className="flex flex-col gap-3 text-sm">
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/services', label: 'Services' },
+                { href: '/testimonials', label: 'Testimonials' },
+                { href: '/contact', label: 'Contact' },
+              ].map(({ href, label }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="transition-colors"
+                    style={{ color: '#E8E2DC' }}
+                    onMouseEnter={e => (e.target.style.color = '#E85D2A')}
+                    onMouseLeave={e => (e.target.style.color = '#E8E2DC')}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
           <div>
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Discover</p>
-            <ul className="space-y-2">
-              <li><Link href="/case-studies" className="text-sm text-gray-400 hover:text-white transition-colors">Case Studies</Link></li>
-              <li><Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-            </ul>
+            <h3
+              className="text-xs uppercase tracking-widest font-semibold mb-5"
+              style={{ color: '#D4A853' }}
+            >
+              Get in Touch
+            </h3>
+            <p className="text-sm mb-5 leading-relaxed" style={{ color: '#6B6560' }}>
+              Ready to grow your shop? We would love to hear from you.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-5 py-2.5 rounded-xl text-white text-sm font-semibold transition-all duration-200 shadow-md"
+              style={{ backgroundColor: '#E85D2A' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
+            >
+              Schedule a Free Call
+            </Link>
           </div>
         </div>
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-600">© {new Date().getFullYear()} WrenchWorks Digital. All rights reserved.</p>
-          <p className="text-sm text-gray-600">Built for shop owners who want to grow.</p>
+
+        <div
+          className="mt-12 pt-6 text-center text-xs"
+          style={{ borderTop: '1px solid rgba(214,207,199,0.12)', color: '#6B6560' }}
+        >
+          &copy; {new Date().getFullYear()} WrenchWorks Digital. All rights reserved.
         </div>
       </div>
     </footer>
-  );
+  )
 }

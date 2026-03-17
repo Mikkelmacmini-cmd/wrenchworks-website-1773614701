@@ -1,380 +1,372 @@
-import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { useState } from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import FadeIn, { StaggerContainer, StaggerItem } from '../components/FadeIn'
 
-// Animated stat counter
-function StatCounter({ target, suffix = "" }) {
-  const [count, setCount] = useState(0);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
-  useEffect(() => {
-    if (!inView) return;
-    const end = parseInt(target.replace(/[^0-9]/g, ""));
-    const duration = 1500;
-    const step = Math.ceil(end / (duration / 16));
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= end) { setCount(end); clearInterval(timer); }
-      else setCount(current);
-    }, 16);
-    return () => clearInterval(timer);
-  }, [inView, target]);
-  const prefix = target.startsWith("#") ? "#" : "";
-  return <span ref={ref}>{prefix}{count}{suffix}</span>;
-}
-
-// Scroll-reveal wrapper
-function Reveal({ children, delay = 0, className = "" }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-// Animated headline - each letter staggered
-function AnimatedHeadline({ text, className = "" }) {
-  const lines = text.split("\n");
-  return (
-    <div className={className}>
-      {lines.map((line, li) => (
-        <div key={li} className="overflow-hidden">
-          {line.split("").map((char, ci) => (
-            <motion.span
-              key={ci}
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: (li * line.length + ci) * 0.03 }}
-              style={{ display: char === " " ? "inline" : "inline-block" }}
-            >
-              {char === " " ? "\u00a0" : char}
-            </motion.span>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-const solutions = [
+const services = [
   {
-    title: "Website Build",
-    titlePunc: ["Website", " Build"],
-    description: "Beautiful, fast-loading websites designed to convert visitors into booked appointments. Mobile-first, shop-owner-friendly, and built to rank.",
-    image: "/images/hero_shop_owner_laptop.png",
-    href: "/services/website-build",
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <rect x="4" y="8" width="32" height="24" rx="3" stroke="#E85D2A" strokeWidth="2" />
+        <path d="M4 14h32" stroke="#E85D2A" strokeWidth="2" />
+        <rect x="9" y="20" width="8" height="5" rx="1" fill="#E85D2A" fillOpacity="0.3" stroke="#E85D2A" strokeWidth="1.5" />
+      </svg>
+    ),
+    title: 'Website Build & Design',
+    desc: 'Professional, fast, mobile-first sites built to convert local searchers into booked appointments.',
+    href: '/services',
   },
   {
-    title: "Local SEO & Google Maps",
-    titlePunc: ["Local SEO", " & Maps"],
-    description: "Dominate the map pack and organic results for high-intent searches like 'oil change near me' and 'transmission repair [city]'.",
-    image: "/images/scene-02.png",
-    href: "/services/local-seo",
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <circle cx="20" cy="20" r="14" stroke="#E85D2A" strokeWidth="2" />
+        <path d="M20 9v11l7 4" stroke="#E85D2A" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="20" cy="20" r="3" fill="#E85D2A" />
+      </svg>
+    ),
+    title: 'Local SEO & Google Maps',
+    desc: 'Dominate the map pack in your city so customers find you first — not the shop down the street.',
+    href: '/services',
   },
   {
-    title: "Google Business Profile",
-    titlePunc: ["Google Business", " Profile"],
-    description: "Fully optimized GBP listings that surface your shop at the top of local results, complete with categories, photos, and posts.",
-    image: "/images/diagnostic_dashboard_mock.png",
-    href: "/services/gbp-optimization",
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <path d="M20 6l3.6 7.3 8.1 1.2-5.85 5.7 1.38 8.05L20 24.3l-7.23 3.95 1.38-8.05L8.3 14.5l8.1-1.2L20 6z" stroke="#E85D2A" strokeWidth="2" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: 'Review Generation & Reputation',
+    desc: 'Automated systems that turn happy customers into 5-star reviews on autopilot.',
+    href: '/services',
   },
   {
-    title: "Review Funnels & Reputation",
-    titlePunc: ["Review Funnels", " & Reputation"],
-    description: "Automated follow-up sequences that turn satisfied customers into 5-star reviewers — building trust and ranking signals simultaneously.",
-    image: "/images/review_funnel_diagram.png",
-    href: "/services/review-funnels",
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <circle cx="20" cy="16" r="8" stroke="#E85D2A" strokeWidth="2" />
+        <path d="M14 16h-2M28 16h2M20 8v-2M20 26v2" stroke="#E85D2A" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="14" cy="16" r="2" fill="#E85D2A" fillOpacity="0.4" stroke="#E85D2A" strokeWidth="1" />
+        <circle cx="26" cy="16" r="2" fill="#E85D2A" fillOpacity="0.4" stroke="#E85D2A" strokeWidth="1" />
+        <circle cx="20" cy="10" r="2" fill="#E85D2A" fillOpacity="0.4" stroke="#E85D2A" strokeWidth="1" />
+        <path d="M13 28c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="#E85D2A" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="20" cy="16" r="3" fill="#E85D2A" fillOpacity="0.2" stroke="#E85D2A" strokeWidth="1.5" />
+      </svg>
+    ),
+    title: 'AI Integration',
+    desc: 'Smart AI tools that automate customer communication, streamline scheduling, and boost your online presence 24/7.',
+    href: '/services',
   },
-  {
-    title: "Managed Hosting & Support",
-    titlePunc: ["Managed Hosting", " & Support"],
-    description: "Enterprise-grade hosting, daily backups, security monitoring, and ongoing updates — so you never have to think about your website again.",
-    image: "/images/topdown_laptop_coffee_paperwork.png",
-    href: "/services/managed-hosting",
-  },
-];
+]
 
-const steps = [
-  { num: "01", title: "Discovery", desc: "We learn your shop, market, and goals inside out." },
-  { num: "02", title: "Build & Launch", desc: "Website live in days. GBP optimized. Systems activated." },
-  { num: "03", title: "Rank & Grow", desc: "SEO compounds. Traffic climbs. Phones start ringing." },
-  { num: "04", title: "Reviews & Retain", desc: "Automated review funnels build trust on autopilot." },
-];
 
 export default function Home() {
+  const [heroFormSent, setHeroFormSent] = useState(false)
+
+  async function handleHeroSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    const data = new FormData(form)
+    await fetch('https://formspree.io/f/xwplgqzv', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    })
+    setHeroFormSent(true)
+  }
 
   return (
-    <>
+    <div style={{ backgroundColor: '#FEFCF9' }}>
       <Head>
-        <title>WrenchWorks Digital — Auto Repair Marketing That Fills Bays</title>
-        <meta name="description" content="WrenchWorks Digital delivers website design, local SEO, Google Business Profile optimization, and review systems for auto repair shops." />
-        <meta property="og:title" content="WrenchWorks Digital — Auto Repair Marketing That Fills Bays" />
-        <meta property="og:description" content="From single-location shops to multi-bay operations, WrenchWorks Digital helps auto repair shops dominate local search." />
-        <meta property="og:image" content="/images/og-image.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>WrenchWorks Digital | Auto Repair Marketing Agency</title>
+        <meta name="description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
+        <link rel="canonical" href="https://www.wrenchworksdigital.com/" />
+        <meta property="og:title" content="WrenchWorks Digital | Auto Repair Marketing Agency" />
+        <meta property="og:description" content="We help auto repair shops dominate local search, get more 5-star reviews, and fill their bays. Website design, Local SEO, and Google Business Profile management." />
+        <meta property="og:image" content="/images/hero_shop_owner_laptop.png" />
+        <meta property="og:url" content="https://www.wrenchworksdigital.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WrenchWorks Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
       <Header />
 
-      {/* ── HERO ────────────────────────────────────────────────── */}
-      <section className="min-h-screen bg-white flex flex-col justify-center pt-16 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 w-full py-24">
-          {/* Label */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-gray-500 mb-8 tracking-wide uppercase"
-          >
-            Auto Repair Marketing
-          </motion.p>
+      {/* ── Hero ── */}
+      <section
+        className="grain-overlay relative min-h-screen flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/images/hero_shop_owner_laptop.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(28,28,30,0.72)' }} />
 
-          {/* Headline */}
-          <div className="text-7xl lg:text-8xl font-black tracking-tight text-gray-900 leading-none mb-4 relative">
-            <AnimatedHeadline text={"Where Growth"} className="block" />
-            {/* "Meets The" line with floating images */}
-            <div className="relative inline-block">
-              <AnimatedHeadline text={"Meets The"} className="block" />
-              {/* Floating circle images */}
-              <img src="/images/scene-01.png" className="animate-float hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 64, height: 64, top: "-30px", left: "320px" }} alt="" />
-              <img src="/images/scene-02.png" className="animate-float-delay hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 52, height: 52, top: "20px", left: "430px" }} alt="" />
-              <img src="/images/scene-03.png" className="animate-float-delay2 hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 70, height: 70, top: "-20px", left: "540px" }} alt="" />
-              <img src="/images/scene-04.png" className="animate-float hidden lg:block absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 56, height: 56, top: "30px", left: "650px" }} alt="" />
-            </div>
-            <AnimatedHeadline text={"Shop Floor."} className="block" />
-          </div>
+        {/* Radial glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 60%, rgba(232,93,42,0.12) 0%, transparent 70%)' }}
+        />
 
-          {/* Body copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-10 max-w-2xl"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/images/logo.png" className="h-8 w-auto" alt="" />
-            </div>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              From single-location shops to multi-bay operations, WrenchWorks Digital delivers website design, local SEO, and review systems that fill bays and grow revenue.
+<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white py-28">
+          <FadeIn delay={0}>
+            <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>
+              Auto Repair Marketing Agency
             </p>
-          </motion.div>
+          </FadeIn>
 
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="flex flex-wrap gap-4 mt-8"
-          >
-            <a href="/#solutions" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3.5 rounded-full transition-colors duration-200">
-              Discover Our Solutions
-            </a>
-            <a href="/#results" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold px-7 py-3.5 rounded-full transition-colors duration-200">
-              See Our Results
-            </a>
-          </motion.div>
+          <FadeIn delay={0.1}>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] mb-7">
+              More Booked<br />
+              Appointments.<br />
+              <span style={{ color: '#E85D2A' }}>Less Guesswork.</span>
+            </h1>
+          </FadeIn>
 
-          {/* Scroll hint */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="mt-16 flex flex-col items-start gap-1"
-          >
-            <span className="text-sm text-gray-400">↓ Scroll for more</span>
-          </motion.div>
-        </div>
-      </section>
+          <FadeIn delay={0.2}>
+            <p
+              className="text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+              style={{ color: '#E8E2DC' }}
+            >
+              We help auto repair shops dominate local search, convert more visitors, and fill their bays.
+            </p>
+          </FadeIn>
 
-      {/* ── SOLUTIONS ───────────────────────────────────────────── */}
-      <section id="solutions" className="bg-white py-24 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
-            <Reveal>
-              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
-                Smart<span className="text-orange-500">.</span> Scalable<span className="text-orange-500">.</span> <span className="text-orange-500">Local.</span>
-              </h2>
-              <p className="mt-4 text-gray-600 max-w-lg">Our systems empower shop owners to attract more customers, convert more calls, and dominate their local market.</p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <a href="/#solutions" className="text-sm font-semibold text-gray-900 hover:text-orange-500 transition-colors">Discover Our Solutions →</a>
-            </Reveal>
-          </div>
-
-          {/* Alternating solution rows */}
-          {solutions.map((sol, i) => (
-            <div key={i} className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-20 items-center py-16 ${i < solutions.length - 1 ? "border-b border-gray-100" : ""}`}>
-              <Reveal className="flex-1" delay={0.1}>
-                <div>
-                  <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
-                    {sol.titlePunc[0]}<span className="text-orange-500">.</span>{sol.titlePunc[1]}<span className="text-orange-500">.</span>
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 max-w-md">{sol.description}</p>
-                  <Link href={sol.href} className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors">Learn More →</Link>
-                </div>
-              </Reveal>
-              <Reveal className="flex-1 w-full" delay={0.2}>
-                <div className="rounded-2xl overflow-hidden bg-gray-100 aspect-video">
-                  <img src={sol.image} className="w-full h-full object-cover" alt={sol.title} />
-                </div>
-              </Reveal>
+          <FadeIn delay={0.3}>
+            <div className="flex justify-center">
+              <Link
+                href="/services"
+                className="px-9 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
+                style={{ backgroundColor: '#E85D2A' }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
+              >
+                See Our Work →
+              </Link>
             </div>
-          ))}
+          </FadeIn>
         </div>
       </section>
 
-      {/* ── TRANSFORMATIVE SECTION ──────────────────────────────── */}
-      <section className="bg-white py-24 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <Reveal>
-              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight mb-6">
-                Transformative<span className="text-orange-500">.</span> Proven<span className="text-orange-500">.</span> Local<span className="text-orange-500">.</span>
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-8 max-w-lg">
-                We're not a generic agency. We're shop owners' secret weapon — purpose-built systems for auto repair businesses that want to dominate their local market.
-              </p>
-              <Link href="/case-studies" className="text-sm font-semibold text-gray-900 hover:text-orange-500 transition-colors">About Us →</Link>
-            </Reveal>
-            <div className="grid grid-cols-1 gap-4">
-              {[
-                { title: "Results-Driven", desc: "We measure everything. If it doesn't fill bays, we fix it." },
-                { title: "Fast Launch", desc: "Live in days, not months. No long contracts." },
-                { title: "Full Service", desc: "One vendor for website, SEO, reviews, and hosting." },
-              ].map((card, i) => (
-                <Reveal key={i} delay={i * 0.1}>
-                  <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 cursor-default">
-                    <h4 className="font-black text-gray-900 text-lg mb-2">{card.title}<span className="text-orange-500">.</span></h4>
-                    <p className="text-gray-500 text-sm">{card.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
+      {/* ── Hero Lead Form ── */}
+      <div className="relative z-20 -mt-16 sm:-mt-20 px-4 sm:px-6 pb-0">
+        <FadeIn
+          delay={0.4}
+          className="max-w-3xl mx-auto rounded-2xl p-7 sm:p-10"
+          style={{
+            backgroundColor: '#1C1C1E',
+            boxShadow: '0 24px 64px rgba(0,0,0,0.35)',
+            border: '1px solid rgba(232,93,42,0.25)',
+          }}
+        >
+          {heroFormSent ? (
+            <div className="text-center py-6">
+              <p className="font-bold text-lg" style={{ color: '#D4A853' }}>Thanks! We will be in touch within 1 business day.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── STATS ───────────────────────────────────────────────── */}
-      <section className="bg-white py-24 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <Reveal>
-              <div className="relative">
-                <img src="/images/scene-03.png" className="animate-float absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 80, height: 80, top: "-20px", right: "40px" }} alt="" />
-                <p className="text-7xl lg:text-8xl font-black text-gray-900">
-                  <StatCounter target="340" suffix="%" />
-                </p>
-                <p className="text-xl font-semibold text-gray-600 mt-2">Average Traffic Growth</p>
-                <p className="text-sm text-gray-400 mt-1">across client websites in first 90 days</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="relative">
-                <img src="/images/scene-05.png" className="animate-float-delay absolute rounded-full object-cover border-4 border-white shadow-lg" style={{ width: 70, height: 70, top: "-10px", right: "60px" }} alt="" />
-                <p className="text-7xl lg:text-8xl font-black text-gray-900">
-                  <StatCounter target="#1" />
-                </p>
-                <p className="text-xl font-semibold text-gray-600 mt-2">Map Pack Rankings Achieved</p>
-                <p className="text-sm text-gray-400 mt-1">for competitive auto repair keywords</p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── HOW IT WORKS ────────────────────────────────────────── */}
-      <section id="process" style={{ backgroundColor: "#1a2332" }} className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <Reveal>
-              <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
-                How<span className="text-orange-500">.</span> It<span className="text-orange-500">.</span> Works<span className="text-orange-500">.</span>
-              </h2>
-              <p className="mt-4 text-gray-400 max-w-lg">WrenchWorks' plug-and-play marketing model flexes with your shop's needs, giving you expert support without the overhead.</p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <a href="/#solutions" className="text-sm font-semibold text-gray-400 hover:text-white transition-colors">Our Solutions →</a>
-            </Reveal>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <div className="border border-gray-700 rounded-2xl p-6 hover:border-orange-500 transition-colors duration-200">
-                  <p className="text-orange-500 font-black text-2xl mb-4">{step.num}</p>
-                  <h3 className="text-white font-black text-xl mb-2">{step.title}</h3>
-                  <p className="text-gray-400 text-sm">{step.desc}</p>
+          ) : (
+            <>
+              <h3 className="font-serif text-white font-bold text-xl sm:text-2xl mb-1 text-center">Get My Free Growth Plan</h3>
+              <p className="text-sm text-center mb-6" style={{ color: '#6B6560' }}>No spam. We respond within 1 business day.</p>
+              <form onSubmit={handleHeroSubmit} className="flex flex-col gap-4">
+                <input type="hidden" name="_subject" value="New WrenchWorks Lead (Hero Form)" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Name"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Email Address"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
+                  />
+                  <input
+                    type="text"
+                    name="shop_city"
+                    required
+                    placeholder="What city is your shop in?"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
+                  />
+                  <input
+                    type="url"
+                    name="website_url"
+                    placeholder="Website URL (optional)"
+                    className="rounded-xl px-4 py-3 text-sm focus:outline-none transition"
+                    style={{ backgroundColor: '#2C2A28', color: '#E8E2DC', border: '1px solid #3a3835' }}
+                    onFocus={e => (e.target.style.boxShadow = '0 0 0 2px #D4A853')}
+                    onBlur={e => (e.target.style.boxShadow = 'none')}
+                  />
                 </div>
-              </Reveal>
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-xl text-white font-bold text-base transition-all duration-200 shadow-md mt-1"
+                  style={{ backgroundColor: '#E85D2A' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.01)'; e.currentTarget.style.backgroundColor = '#cf4e1e' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.backgroundColor = '#E85D2A' }}
+                >
+                  Get My Free Growth Plan
+                </button>
+                <p className="text-center text-xs" style={{ color: '#6B6560' }}>No spam. We respond within 1 business day.</p>
+              </form>
+            </>
+          )}
+        </FadeIn>
+      </div>
+
+      {/* ── Services ── */}
+      <section className="py-24 sm:py-32" style={{ backgroundColor: '#F5F0EB' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <FadeIn className="text-center mb-16">
+            <p className="eyebrow mb-4">Our Services</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#1C1C1E' }}>
+              What We Do
+            </h2>
+            <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: '#6B6560' }}>
+              Everything your shop needs to win online — under one roof.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((s) => (
+              <StaggerItem key={s.title}>
+                <div
+                  className="rounded-2xl p-10 flex flex-col gap-5 cursor-default transition-all duration-300"
+                  style={{ backgroundColor: '#FEFCF9', boxShadow: '0 2px 12px rgba(28,28,30,0.07)' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(28,28,30,0.12)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(28,28,30,0.07)' }}
+                >
+                  <div>{s.icon}</div>
+                  <h3 className="font-serif text-xl font-bold" style={{ color: '#1C1C1E' }}>{s.title}</h3>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B6560' }}>{s.desc}</p>
+                  <Link
+                    href={s.href}
+                    className="text-sm font-semibold transition-colors"
+                    style={{ color: '#E85D2A' }}
+                    onMouseEnter={e => (e.target.style.color = '#cf4e1e')}
+                    onMouseLeave={e => (e.target.style.color = '#E85D2A')}
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ── How It Works / Storyline ── */}
+      <section className="grain-overlay py-24 sm:py-32" style={{ backgroundColor: '#1C1C1E' }}>
+        {/* SVG dot-grid accent */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+          <svg className="absolute bottom-0 left-0 opacity-5" width="400" height="400" viewBox="0 0 400 400">
+            {Array.from({ length: 10 }).map((_, row) =>
+              Array.from({ length: 10 }).map((_, col) => (
+                <circle key={`${row}-${col}`} cx={col * 40 + 20} cy={row * 40 + 20} r="2" fill="#D4A853" />
+              ))
+            )}
+          </svg>
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+          <FadeIn className="text-center mb-16">
+            <p className="eyebrow mb-4" style={{ color: '#D4A853' }}>The Journey</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              The Shop Owner Journey
+            </h2>
+            <p className="text-lg" style={{ color: '#6B6560' }}>
+              From problem to 5-star review — we help you win every step.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { img: '/images/journey-01.png', caption: '1. Empty bays, slow days' },
+              { img: '/images/journey-02.png', caption: '2. They find WrenchWorks Digital' },
+              { img: '/images/journey-03.png', caption: '3. New site, AI tools & Google presence' },
+              { img: '/images/journey-04.png', caption: '4. Full bays, full parking lot' },
+            ].map((step) => (
+              <FadeIn key={step.caption} className="flex flex-col items-center gap-3">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(214,207,199,0.12)' }}>
+                  <img src={step.img} alt={step.caption} className="w-full h-full object-cover" />
+                </div>
+                <p className="text-xs sm:text-sm text-center font-medium" style={{ color: '#E8E2DC' }}>{step.caption}</p>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── WHAT TO EXPECT ──────────────────────────────────────── */}
-      <section id="results" className="bg-white py-24 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="mb-4">
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900">What to<strong className="text-orange-500">.</strong> Expect<strong className="text-orange-500">.</strong></h2>
-          </Reveal>
-          <Reveal className="mb-16" delay={0.1}>
-            <p className="text-gray-600 text-lg">Most shops start seeing measurable movement within the first 90 days.</p>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Reveal delay={0.1}>
-              <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                <p className="text-sm font-semibold text-orange-500 mb-3">Week 1–2</p>
-                <h3 className="text-xl font-black text-gray-900 mb-3">Live & Optimized</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Your new site is live, indexed, and technically optimized. Google Business Profile is claimed, verified, and fully built out.</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                <p className="text-sm font-semibold text-orange-500 mb-3">Days 30–60</p>
-                <h3 className="text-xl font-black text-gray-900 mb-3">Ranking Movement</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Local keyword rankings start climbing. You appear in the map pack for your primary services. Review requests go out automatically.</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="border border-gray-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                <p className="text-sm font-semibold text-orange-500 mb-3">Days 60–90</p>
-                <h3 className="text-xl font-black text-gray-900 mb-3">More Calls, More Bays</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Phone call volume increases from organic traffic. Reviews build social proof. You stop relying on word-of-mouth alone.</p>
-              </div>
-            </Reveal>
+      {/* ── Testimonials ── */}
+      <section className="py-24 sm:py-32" style={{ backgroundColor: '#FEFCF9' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <FadeIn className="text-center mb-16">
+            <p className="eyebrow mb-4">Testimonials</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold" style={{ color: '#1C1C1E' }}>
+              What Shop Owners Are Saying
+            </h2>
+          </FadeIn>
+
+          <div className="text-center">
+            <p className="italic" style={{ color: '#6B6560' }}>Real testimonials coming soon.</p>
           </div>
-          <Reveal className="mt-10" delay={0.2}>
-            <p className="text-sm text-gray-400 italic">Results vary by market and competition. We set honest expectations upfront and track everything.</p>
-          </Reveal>
         </div>
       </section>
 
-      {/* ── CTA STRIP ───────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#1a2332" }} className="py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <Reveal>
-            <h2 className="text-5xl lg:text-6xl font-black text-white mb-4">
-              Streamline Your<br /><span className="text-orange-500">Growth.</span>
-            </h2>
-            <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">Discover how our shop marketing solutions can adapt to your needs.</p>
-            <Link href="/contact" className="bg-white text-gray-900 font-bold px-8 py-4 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200">
-              Contact Us →
-            </Link>
-          </Reveal>
-        </div>
+      {/* ── CTA Banner ── */}
+      <section
+        className="grain-overlay py-24 sm:py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#2C2A28' }}
+      >
+        {/* Radial accent */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(232,93,42,0.15) 0%, transparent 70%)' }}
+        />
+
+        <FadeIn className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <p className="eyebrow mb-5" style={{ color: '#D4A853' }}>Let's Work Together</p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5">
+            Ready to fill your bays?
+          </h2>
+          <p className="text-lg mb-10 leading-relaxed" style={{ color: '#E8E2DC' }}>
+            Let's build a growth plan tailored to your shop — completely free.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-10 py-4 rounded-xl text-white font-bold text-lg shadow-lg transition-all duration-200"
+            style={{ backgroundColor: '#E85D2A' }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,93,42,0.4)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '' }}
+          >
+            Schedule a Free Call
+          </Link>
+        </FadeIn>
       </section>
 
       <Footer />
-    </>
-  );
+    </div>
+  )
 }
